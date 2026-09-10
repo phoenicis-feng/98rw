@@ -1,0 +1,41 @@
+{{- /*
+Pricing / editions comparison driven by site.Data.<name>.
+
+Expected entry shape:
+  - name
+  - tagline
+  - price        (e.g. "Free", "$99/mo")
+  - priceNote    small text after price
+  - features     list of strings
+  - cta          { label, url, primary }
+  - featured     boolean
+  - tag          ribbon label on featured plans
+*/ -}}
+{{- $name := .Get "data" -}}
+{{- $items := index hugo.Data $name -}}
+{{- with $items }}
+  <div class="pricing">
+    {{- range . }}
+      <div class="pricing__plan{{ if .featured }} pricing__plan--featured{{ end }}"
+        {{- if .featured }} data-tag="{{ .tag | default "Featured" }}"{{ end }}>
+        <h3 class="pricing__name">{{ .name }}</h3>
+        <p class="pricing__price">{{ .price }}{{ with .priceNote }} <small>{{ . }}</small>{{ end }}</p>
+        {{- with .tagline }}
+          <p class="pricing__summary">{{ . }}</p>
+        {{- end }}
+        {{- with .features }}
+          <ul class="pricing__features">
+            {{- range . }}
+              <li>{{ partial "icon.html" "mdi:check" }}<span>{{ . }}</span></li>
+            {{- end }}
+          </ul>
+        {{- end }}
+        {{- with .cta }}
+          <div class="pricing__cta">
+            <a class="btn {{ if .primary }}btn--primary{{ else }}btn--secondary{{ end }}" href="{{ .url | relLangURL }}">{{ .label }}</a>
+          </div>
+        {{- end }}
+      </div>
+    {{- end }}
+  </div>
+{{- end }}

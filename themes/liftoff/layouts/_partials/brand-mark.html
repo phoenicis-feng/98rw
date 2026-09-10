@@ -1,0 +1,15 @@
+{{- /*
+Placeholder brand mark: two stacked ascending chevrons.
+
+Drawn as two solid shapes rather than one gradient-filled path, so no
+<defs> ids are needed. The mark appears twice per page (header and
+footer) and duplicate gradient ids would be invalid markup.
+
+The silhouette carries the recognition, which keeps the mark legible
+in accent presets with low-contrast brand colours. Override this
+partial to ship your own logo.
+*/ -}}
+<svg class="site-header__brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M12 2 21 11h-4l-5-5-5 5H3z"/>
+  <path fill="var(--color-secondary)" d="M12 12 21 21h-4l-5-5-5 5H3z"/>
+</svg>

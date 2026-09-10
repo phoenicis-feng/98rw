@@ -1,0 +1,36 @@
+{{- /*
+Favicon links.
+
+Each file is only linked when it actually exists, so a site that ships
+just a favicon.ico does not emit 404-producing links for the rest.
+Files are looked up in assets/ first (fingerprinted, cacheable), then
+in static/ (served verbatim from the site root).
+
+Recognised files:
+  favicon.svg          scalable, preferred by modern browsers
+  favicon.ico          legacy fallback, ideally 16/32/48
+  apple-touch-icon.png 180x180, opaque background
+  site.webmanifest     references icon-192.png and icon-512.png
+*/ -}}
+{{- $links := slice
+  (dict "file" "favicon.svg" "rel" "icon" "type" "image/svg+xml")
+  (dict "file" "favicon.ico" "rel" "icon" "sizes" "32x32")
+  (dict "file" "apple-touch-icon.png" "rel" "apple-touch-icon" "sizes" "180x180")
+  (dict "file" "site.webmanifest" "rel" "manifest")
+-}}
+{{- range $links }}
+  {{- $rel := .rel }}
+  {{- $type := .type }}
+  {{- $sizes := .sizes }}
+  {{- $href := "" }}
+  {{- with resources.Get .file }}
+    {{- $href = .RelPermalink }}
+  {{- else }}
+    {{- if os.FileExists (printf "static/%s" .file) }}
+      {{- $href = .file | relURL }}
+    {{- end }}
+  {{- end }}
+  {{- with $href }}
+<link rel="{{ $rel }}" href="{{ . }}"{{ with $type }} type="{{ . }}"{{ end }}{{ with $sizes }} sizes="{{ . }}"{{ end }}>
+  {{- end }}
+{{- end }}

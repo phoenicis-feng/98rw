@@ -1,0 +1,304 @@
+/*
+ * Top navigation header.
+ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background-color: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  height: 100%;
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  letter-spacing: var(--tracking-tight);
+}
+
+.site-header__brand:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* The mark is an inline SVG: the upper chevron takes currentColor, the
+   lower one reads --color-secondary directly. drop-shadow follows the
+   silhouette, which box-shadow would not. */
+.site-header__brand-mark {
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex: none;
+  color: var(--color-accent);
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--color-accent) 45%, transparent));
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: auto;
+}
+
+.site-header__nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+}
+
+.site-header__nav li + li {
+  margin-top: 0;
+}
+
+.site-header__nav a {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.site-header__nav a:hover {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-header__nav a.active,
+.site-header__nav a[aria-current="page"] {
+  color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: var(--space-2);
+}
+
+/* Icon-only buttons in the header. No border, hover highlights. */
+
+.site-header__theme-toggle,
+.social-icons a,
+.lang-switcher summary {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  line-height: 1;
+  transition: color var(--transition-base), background-color var(--transition-base);
+}
+
+.site-header__theme-toggle:hover,
+.social-icons a:hover,
+.lang-switcher summary:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg-surface);
+}
+
+/* The icon stands for the mode the user would switch TO, not the
+   current one. Hide the icon that matches the active theme. */
+[data-theme="dark"] [data-theme-icon="dark"],
+[data-theme="light"] [data-theme-icon="light"] {
+  display: none;
+}
+
+/* Repo stats badge */
+
+.repo-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  line-height: 1;
+  transition: border-color var(--transition-base), color var(--transition-base);
+}
+
+.repo-stats:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+  text-decoration: none;
+}
+
+.repo-stats__name {
+  font-weight: 500;
+}
+
+.repo-stats__divider {
+  width: 1px;
+  height: 12px;
+  background: var(--color-border);
+}
+
+.repo-stats__count {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Social icons row */
+
+.social-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons li + li {
+  margin-top: 0;
+}
+
+.social-icons a {
+  text-decoration: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+/* Language switcher dropdown */
+
+.lang-switcher {
+  position: relative;
+}
+
+.lang-switcher summary {
+  list-style: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  font-size: var(--text-xs);
+  padding-inline: var(--space-3);
+}
+
+.lang-switcher summary::-webkit-details-marker { display: none; }
+.lang-switcher summary::marker { content: ""; }
+
+.lang-switcher[open] > summary {
+  color: var(--color-text);
+  background-color: var(--color-bg-surface);
+}
+
+.lang-switcher__menu {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  right: 0;
+  z-index: 200;
+  min-width: 9rem;
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.lang-switcher__menu li + li {
+  margin-top: var(--space-1);
+}
+
+.lang-switcher__menu a {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.lang-switcher__menu a:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg-surface-2);
+  text-decoration: none;
+}
+
+.lang-switcher__menu a.active {
+  color: var(--color-accent);
+}
+
+/* Mobile menu toggle */
+
+.site-header__menu-toggle {
+  display: none;
+  appearance: none;
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+@media (max-width: 960px) {
+  .repo-stats__name { display: none; }
+}
+
+@media (max-width: 880px) {
+  .site-header__nav,
+  .site-header__actions {
+    display: none;
+  }
+
+  .site-header__menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-header[data-menu-open="true"] .site-header__nav,
+  .site-header[data-menu-open="true"] .site-header__actions {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .site-header[data-menu-open="true"] .site-header__nav ul {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+}

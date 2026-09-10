@@ -1,0 +1,31 @@
+{{- /* Font stylesheet: loaded outside css.Build so the url() to
+       /fonts/... is not resolved at build time. */ -}}
+{{- with resources.Get "css/fonts.css" }}
+  {{- $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+
+{{- /* Main bundled stylesheet (esbuild via css.Build) */ -}}
+{{- with resources.Get "css/main.css" }}
+  {{- $opts := dict
+    "minify" (cond hugo.IsDevelopment false true)
+    "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+  }}
+  {{- with . | css.Build $opts }}
+    {{- if hugo.IsDevelopment }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- else }}
+      {{- with . | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- /* Optional user stylesheet: assets/css/custom.css in the site
+       project overrides nothing in the bundle but loads after, so
+       any rule can override theme styles. */ -}}
+{{- with resources.Get "css/custom.css" }}
+  {{- $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{- end }}

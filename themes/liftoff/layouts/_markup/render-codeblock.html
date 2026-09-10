@@ -1,0 +1,13 @@
+{{- /*
+Render hook for fenced markdown code blocks.
+Wraps Hugo's chroma output in our codeblock chrome.
+*/ -}}
+{{- $lang := .Type | default "text" -}}
+{{- $code := trim .Inner "\n\r " -}}
+<div class="codeblock">
+  <div class="codeblock__head">
+    <span class="codeblock__lang">{{ $lang }}</span>
+    <button type="button" class="codeblock__copy" data-action="copy-code" aria-label="{{ i18n "copy" | default "Copy" }}">{{ i18n "copy" | default "Copy" }}</button>
+  </div>
+  {{ transform.Highlight $code $lang "" }}
+</div>

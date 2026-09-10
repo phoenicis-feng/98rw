@@ -1,0 +1,13 @@
+{{- /*
+Generic section wrapper. The inner body is rendered as markdown so
+headings, prose and nested shortcodes all work as expected.
+
+Parameters:
+  width   wide (default) or narrow
+*/ -}}
+{{- $width := .Get "width" | default "wide" -}}
+<section class="section">
+  <div class="container{{ if eq $width "narrow" }}-narrow{{ end }}">
+    {{ .Inner | $.Page.RenderString (dict "display" "block") }}
+  </div>
+</section>

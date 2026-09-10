@@ -1,0 +1,30 @@
+skip_to_content: Skip to content
+main_navigation: Main navigation
+open_menu: Open menu
+close_menu: Close menu
+toggle_theme: Toggle theme
+switch_language: Switch language
+read_more: Read more
+back_to_top: Back to top
+on_this_page: On this page
+last_updated: Last updated
+docs: Docs
+previous: Previous
+next: Next
+pagination: Pagination
+note_note: Note
+note_tip: Tip
+note_warning: Warning
+note_danger: Caution
+reading_time:
+  one: "{{ .Count }} minute read"
+  other: "{{ .Count }} minutes read"
+posted_on: Posted on
+tags: Tags
+all_tags: All
+filter_blueprints: Filter blueprints
+blueprint_reference: Shortcode reference
+copy: Copy
+copied: Copied
+home: Home
+powered_by: Powered by

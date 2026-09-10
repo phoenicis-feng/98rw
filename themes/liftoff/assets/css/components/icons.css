@@ -1,0 +1,28 @@
+/*
+ * Inline icons (Iconify SVGs).
+ * Iconify SVGs ship with width/height = 1em and fill = currentColor,
+ * so they scale with surrounding font-size and color automatically.
+ */
+
+.card__icon svg,
+.icon-tile__mark svg,
+.pill svg,
+.btn svg,
+.site-header__menu-toggle svg,
+.site-header__theme-toggle svg,
+.lang-switcher summary svg,
+.repo-stats svg,
+.social-icons a svg,
+.pricing__features li svg,
+.tabs__label svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.card__icon svg { font-size: 1.5rem; }
+.icon-tile__mark svg { font-size: 1.5rem; }
+.pill svg { color: var(--color-accent); font-size: 1.1em; }
+.pricing__features li svg { color: var(--color-accent); font-size: 1.1rem; flex: 0 0 auto; }

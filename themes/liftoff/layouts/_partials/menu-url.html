@@ -1,0 +1,16 @@
+{{- /*
+Resolves a menu entry to a language-aware URL. Context: a menu entry.
+
+Entries defined with `pageRef` carry a resolved .Page and are already
+correct. Entries defined with a hard `url` are raw strings, so
+root-relative ones need relLangURL. External URLs pass through.
+*/ -}}
+{{- $url := .URL -}}
+{{- with .Page -}}
+  {{- $url = .RelPermalink -}}
+{{- else -}}
+  {{- if and (strings.HasPrefix $url "/") (not (strings.HasPrefix $url "//")) -}}
+    {{- $url = $url | relLangURL -}}
+  {{- end -}}
+{{- end -}}
+{{- $url -}}

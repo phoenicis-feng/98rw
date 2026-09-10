@@ -1,0 +1,40 @@
+[
+  {
+    "id": "deploy-liftoff",
+    "execute-command": "/home/head/www-head/deploy-liftoff.sh",
+    "command-working-directory": "/home/head/www-head",
+    "response-message": "the deploy-liftoff hook was triggered",
+    "trigger-rule":
+    {
+      "and":
+      [
+        {
+          "match":
+          {
+            "type": "payload-hmac-sha512",
+            "secret": "{{ getenv "DEPLOY_SECRET_LIFTOFF" | js }}",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Signature"
+            }
+          }
+        }
+      ]
+    },
+    "pass-arguments-to-command":
+    [
+      { "source": "payload", "name": "package.name" },
+      { "source": "payload", "name": "package.environment" }
+    ],
+    "pass-file-to-command":
+    [
+      {
+        "source": "payload",
+        "name": "package",
+        "envname": "ENV_DEPLOY_PACKAGE",
+        "base64decode": true
+      }
+    ]
+  }
+]

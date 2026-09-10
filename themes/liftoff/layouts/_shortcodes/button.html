@@ -1,0 +1,35 @@
+{{- /*
+Button. Pair with the {{< buttons >}} wrapper to lay out multiple
+buttons in a row.
+
+  {{< button href="/docs" variant="primary" size="lg" icon="mdi:arrow-right" iconPosition="right" >}}
+  Read the docs
+  {{< /button >}}
+
+Parameters:
+  href            Link target. Internal paths run through relLangURL;
+                  http(s) URLs are left untouched.
+  target          HTML target attribute, e.g. "_blank". When set,
+                  rel="noopener noreferrer" is added automatically.
+  variant         primary (default), secondary, ghost.
+  size            sm, md (default), lg.
+  icon            Iconify "set:name", optional.
+  iconPosition    left (default) or right.
+*/ -}}
+{{- $href := .Get "href" | default "#" -}}
+{{- $target := .Get "target" -}}
+{{- $variant := .Get "variant" | default "primary" -}}
+{{- $size := .Get "size" | default "md" -}}
+{{- $icon := .Get "icon" -}}
+{{- $iconPos := .Get "iconPosition" | default "left" -}}
+{{- $external := or (strings.HasPrefix $href "http") (strings.HasPrefix $href "//") (strings.HasPrefix $href "mailto:") -}}
+{{- $finalHref := cond $external $href ($href | relLangURL) -}}
+{{- $cls := printf "btn btn--%s" $variant -}}
+{{- if ne $size "md" }}{{ $cls = printf "%s btn--%s" $cls $size }}{{ end -}}
+<a class="{{ $cls }}" href="{{ $finalHref }}"
+  {{- with $target }} target="{{ . }}" rel="noopener noreferrer"{{ end -}}
+>
+  {{- if and $icon (eq $iconPos "left") -}}{{ partial "icon.html" $icon }}{{- end -}}
+  <span>{{ trim .Inner " \n" | safeHTML }}</span>
+  {{- if and $icon (eq $iconPos "right") -}}{{ partial "icon.html" $icon }}{{- end -}}
+</a>

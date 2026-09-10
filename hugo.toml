@@ -1,0 +1,42 @@
+baseURL = 'https://your-site.pages.dev/'
+# 生产环境改为真实域名，Cloudflare Pages 会自动覆盖或你可以在 Pages 设置中配置
+defaultContentLanguage = 'zh-cn'
+languageCode = 'zh-CN'
+title = 'Liftoff 站点'
+# 使用 Liftoff 主题
+theme = 'liftoff'
+# 生成纯静态文件，适合 Cloudflare Pages
+disableKinds = ['RSS', 'SectionRSS', 'Taxonomy', 'TaxonomyRSS']
+# 构建设置
+[build]
+  writeStats = false
+  useResourceCacheWhenPossible = true
+[imaging]
+  quality = 85
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.goldmark]
+    renderer = {unsafe = true}
+[params]
+  # Liftoff 主题参数示例（可根据主题文档调整）
+  description = "一个 Hugo + Liftoff + Cloudflare Pages 站点"
+  author = "作者"
+  # 如果 tema 有导航菜单配置可在此添加
+[menus]
+  [[menus.main]]
+    name = "首页"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "文章"
+    pageRef = "/posts"
+    weight = 20
+  [[menus.main]]
+    name = "关于"
+    pageRef = "/about"
+    weight = 30
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+publish_dir = "public/"

@@ -1,0 +1,92 @@
+/*
+ * Accent presets.
+ *
+ * The palette's surface and text tokens stay put; only the two brand
+ * colours change. Selected with `params.accent` in the site config,
+ * which lands on <html data-accent="...">. The default (no attribute,
+ * or accent = "cyan") is defined in tokens.css.
+ *
+ * Each preset overrides the same six tokens per scheme. In dark mode
+ * `-strong` is the lighter variant so hover stays readable; in light
+ * mode it is the darker one.
+ */
+
+/* Ember: orange and rose. Warm, high energy. */
+
+[data-accent="ember"] {
+  --color-accent: #f97316;
+  --color-accent-strong: #fb923c;
+  --color-accent-soft: rgba(249, 115, 22, 0.12);
+  --color-secondary: #ec4899;
+  --color-secondary-soft: rgba(236, 72, 153, 0.14);
+  --shadow-glow: 0 0 24px rgba(249, 115, 22, 0.25);
+}
+
+[data-theme="light"][data-accent="ember"] {
+  --color-accent: #c2410c;
+  --color-accent-strong: #9a3412;
+  --color-accent-soft: rgba(194, 65, 12, 0.1);
+  --color-secondary: #be185d;
+  --color-secondary-soft: rgba(190, 24, 93, 0.1);
+  --shadow-glow: 0 0 24px rgba(194, 65, 12, 0.2);
+}
+
+/* Forest: emerald and teal. Calm, infrastructure-flavoured. */
+
+[data-accent="forest"] {
+  --color-accent: #10b981;
+  --color-accent-strong: #34d399;
+  --color-accent-soft: rgba(16, 185, 129, 0.12);
+  --color-secondary: #22d3ee;
+  --color-secondary-soft: rgba(34, 211, 238, 0.14);
+  --shadow-glow: 0 0 24px rgba(16, 185, 129, 0.25);
+}
+
+[data-theme="light"][data-accent="forest"] {
+  --color-accent: #047857;
+  --color-accent-strong: #065f46;
+  --color-accent-soft: rgba(4, 120, 87, 0.1);
+  --color-secondary: #0e7490;
+  --color-secondary-soft: rgba(14, 116, 144, 0.1);
+  --shadow-glow: 0 0 24px rgba(4, 120, 87, 0.2);
+}
+
+/* Indigo: indigo and violet. Conservative SaaS. */
+
+[data-accent="indigo"] {
+  --color-accent: #818cf8;
+  --color-accent-strong: #a5b4fc;
+  --color-accent-soft: rgba(129, 140, 248, 0.12);
+  --color-secondary: #e879f9;
+  --color-secondary-soft: rgba(232, 121, 249, 0.14);
+  --shadow-glow: 0 0 24px rgba(129, 140, 248, 0.25);
+}
+
+[data-theme="light"][data-accent="indigo"] {
+  --color-accent: #4338ca;
+  --color-accent-strong: #3730a3;
+  --color-accent-soft: rgba(67, 56, 202, 0.1);
+  --color-secondary: #a21caf;
+  --color-secondary-soft: rgba(162, 28, 175, 0.1);
+  --shadow-glow: 0 0 24px rgba(67, 56, 202, 0.2);
+}
+
+/* Mono: slate only. Lets content and code carry the page. */
+
+[data-accent="mono"] {
+  --color-accent: #94a3b8;
+  --color-accent-strong: #cbd5e1;
+  --color-accent-soft: rgba(148, 163, 184, 0.12);
+  --color-secondary: #64748b;
+  --color-secondary-soft: rgba(100, 116, 139, 0.16);
+  --shadow-glow: 0 0 24px rgba(148, 163, 184, 0.2);
+}
+
+[data-theme="light"][data-accent="mono"] {
+  --color-accent: #475569;
+  --color-accent-strong: #334155;
+  --color-accent-soft: rgba(71, 85, 105, 0.1);
+  --color-secondary: #64748b;
+  --color-secondary-soft: rgba(100, 116, 139, 0.12);
+  --shadow-glow: 0 0 24px rgba(71, 85, 105, 0.15);
+}

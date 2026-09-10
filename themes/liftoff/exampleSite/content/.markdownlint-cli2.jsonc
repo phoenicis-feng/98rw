@@ -1,0 +1,30 @@
+// Rules disabled for Hugo content only. The repository root keeps them
+// enabled for README, AUTHORS and other plain markdown.
+//
+// Each entry here is a conflict between markdownlint and Hugo shortcode
+// syntax, not a style choice.
+{
+  "config": {
+    // Fenced blocks sit directly inside {{< tab >}} ... {{< /tab >}}.
+    // A blank line would render as an empty paragraph in the tab panel.
+    "MD031": false,
+
+    // The testimonial shortcode parses a `metrics:` key followed
+    // immediately by its list. A blank line breaks that parsing.
+    "MD032": false,
+
+    // Shortcode parameters carry URLs, e.g. url="https://example.org".
+    // Those are attributes, not bare links in prose.
+    "MD034": false,
+
+    // Hugo escapes shortcodes as {{</* name */>}} so they render as
+    // literals. The /* and */ read as emphasis markers to markdownlint.
+    "MD037": false,
+
+    // Table pipes are not aligned to the column. These tables are kept
+    // in two languages with terms of differing length, so enforcing
+    // alignment would turn every wording change into a reformat of the
+    // whole table. The rendered output is identical either way.
+    "MD060": false
+  }
+}

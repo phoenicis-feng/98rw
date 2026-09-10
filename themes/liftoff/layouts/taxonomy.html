@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <section class="section">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+      {{- with .Data.Terms.Alphabetical }}
+        <div class="term-cloud">
+          {{- range . }}
+            <a class="badge badge--count" href="{{ .Page.RelPermalink }}">
+              {{ .Page.LinkTitle }}<span class="badge__count">{{ .Count }}</span>
+            </a>
+          {{- end }}
+        </div>
+      {{- end }}
+    </div>
+  </section>
+{{ end }}

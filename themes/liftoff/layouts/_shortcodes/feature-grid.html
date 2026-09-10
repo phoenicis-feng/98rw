@@ -1,0 +1,11 @@
+{{- /*
+Wraps multiple feature-card shortcodes in a responsive grid.
+
+  {{< feature-grid >}}
+    {{< feature-card title="A" >}}...{{< /feature-card >}}
+    {{< feature-card title="B" >}}...{{< /feature-card >}}
+  {{< /feature-grid >}}
+*/ -}}
+<div class="feature-grid">
+  {{ .Inner }}
+</div>

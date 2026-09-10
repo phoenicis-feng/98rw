@@ -1,0 +1,28 @@
+{{- /*
+Renders configured social links from site.Params.social.
+
+Expected shape:
+  [[params.social]]
+    icon = "simple-icons:codeberg"
+    url  = "https://codeberg.org/example"
+    name = "Codeberg"
+
+Internal paths (e.g. /index.xml) are passed through relLangURL so
+that the feed link resolves to the active language. External URLs
+are left untouched.
+*/ -}}
+{{- with site.Params.social }}
+  <ul class="social-icons" aria-label="Social">
+    {{- range . }}
+      {{- $url := .url -}}
+      {{- $external := or (strings.HasPrefix $url "http") (strings.HasPrefix $url "//") (strings.HasPrefix $url "mailto:") -}}
+      {{- $href := cond $external $url ($url | relLangURL) -}}
+      <li>
+        <a href="{{ $href }}"{{ if $external }} rel="noopener me"{{ end }}
+          {{- with .name }} aria-label="{{ . }}"{{ end }}>
+          {{ partial "icon.html" .icon }}
+        </a>
+      </li>
+    {{- end }}
+  </ul>
+{{- end }}

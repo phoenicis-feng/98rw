@@ -1,0 +1,9 @@
+{{- /*
+Lays out child {{< button >}} shortcodes in a centered, wrapping row.
+
+  {{< buttons >}}
+    {{< button href="/docs" variant="primary" size="lg" >}}Read the docs{{< /button >}}
+    {{< button href="/blueprints" variant="ghost" size="lg" >}}Blueprints{{< /button >}}
+  {{< /buttons >}}
+*/ -}}
+<div class="buttons">{{ .Inner }}</div>

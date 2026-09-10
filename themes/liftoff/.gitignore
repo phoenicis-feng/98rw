@@ -1,0 +1,15 @@
+# Hugo build artefacts
+public/
+resources/_gen/
+.hugo_build.lock
+
+# exampleSite build artefacts
+exampleSite/public/
+exampleSite/resources/_gen/
+exampleSite/.hugo_build.lock
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp

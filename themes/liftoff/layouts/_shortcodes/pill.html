@@ -1,0 +1,10 @@
+{{- /*
+Highlight pill. Use inside {{< pills >}}.
+
+  {{< pill icon="mdi:code-tags" >}}Any language{{< /pill >}}
+*/ -}}
+{{- $icon := .Get "icon" -}}
+<li class="pill">
+  {{- with $icon }}{{ partial "icon.html" . }}{{ end -}}
+  <span>{{ trim .Inner " \n" | safeHTML }}</span>
+</li>

@@ -1,0 +1,20 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <section class="section">
+    <div class="container">
+      {{- if not .Params.hero }}
+        <h1>{{ .Title }}</h1>
+      {{- end }}
+      {{ .Content }}
+      {{- $posts := where site.RegularPages "Section" "articles" }}
+      {{- $posts = sort $posts "Date" "desc" }}
+      {{- $paginator := .Paginate $posts }}
+      <div class="article-listing">
+        {{- range $paginator.Pages }}
+          {{ partial "post-card.html" . }}
+        {{- end }}
+      </div>
+      {{- partial "pagination.html" . }}
+    </div>
+  </section>
+{{ end }}

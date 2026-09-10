@@ -1,0 +1,76 @@
+/*
+ * Onboarding steps panel. Steps live inside a single card container,
+ * separated by a subtle divider. Each step header puts the step
+ * counter and the title on one line ("Step 1: Install Hugo").
+ */
+
+.steps {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-7);
+  margin-block: var(--space-6);
+}
+
+/* When steps live inside a tabs panel, the tabs container already
+   provides the card chrome. Drop the inner card so we don't stack
+   two card-styled panels. */
+.tabs__panel .steps {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.step + .step {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.step__header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.step__number {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.step__sep {
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.step__title {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.step__body {
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.step__body > *:first-child { margin-top: 0; }
+.step__body > *:last-child { margin-bottom: 0; }
+
+@media (max-width: 720px) {
+  .steps {
+    padding: var(--space-5);
+  }
+}

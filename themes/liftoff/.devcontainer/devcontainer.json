@@ -1,0 +1,29 @@
+{
+  "name": "liftoff",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "HUGO_VERSION": "0.164.0"
+    }
+  },
+  "remoteUser": "vscode",
+  "shutdownAction": "stopContainer",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1.8": {
+      "version": "latest",
+      "installTools": true
+    },
+    "ghcr.io/devcontainers/features/node:2.0.0": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers-extra/features/apt-packages:1.0.6": {
+      "packages": "git-lfs"
+    }
+  },
+  "postCreateCommand": {
+    "Setup aliases": "cp ${containerWorkspaceFolder}/.devcontainer/.bash_aliases /home/vscode/.bash_aliases",
+    "Setup global gitignore": "cp ${containerWorkspaceFolder}/.devcontainer/gitignore_global /home/vscode/.gitignore",
+    "Install Git LFS": "git lfs install",
+    "Install and setup pre-commit": "pip install pre-commit && pre-commit install"
+  }
+}

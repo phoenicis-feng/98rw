@@ -1,0 +1,24 @@
+{{- /*
+Renders an icon tile grid from a data file.
+
+  {{< icon-grid data="integrations" >}}
+
+Expects site.Data.<name> to be a list of:
+  - name   visible label
+  - icon   Iconify "set:name" identifier
+  - url    optional link target
+*/ -}}
+{{- $name := .Get "data" -}}
+{{- $items := index hugo.Data $name -}}
+{{- with $items }}
+  <div class="icon-grid">
+    {{- range . }}
+      <a class="icon-tile" href="{{ .url | default "#" | relLangURL }}">
+        <span class="icon-tile__mark" aria-hidden="true">
+          {{- with .icon }}{{ partial "icon.html" . }}{{ end }}
+        </span>
+        <span>{{ .name }}</span>
+      </a>
+    {{- end }}
+  </div>
+{{- end }}

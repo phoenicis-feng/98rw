@@ -1,0 +1,40 @@
+- name: Entwicklung
+  tagline: Das fehlende Stück bauen.
+  price: ab 800 EUR/Tag
+  features:
+    - Neue Features und Integrationen
+    - Migrationen und Refactorings
+    - Code-Review und Pair-Programming
+    - Open-Source-Beiträge
+  cta:
+    label: Anfrage stellen
+    url: "mailto:hello@acme.example?subject=Entwicklung"
+    primary: false
+
+- name: Beratung
+  tagline: Die richtige Entscheidung treffen.
+  price: 150 EUR/h
+  featured: true
+  tag: Häufig gebucht
+  features:
+    - Architektur-Audits
+    - Fachliche Beratung und Reviews
+    - Workshops und Trainings
+    - Pairing-Sessions
+  cta:
+    label: Termin buchen
+    url: "mailto:hello@acme.example?subject=Beratung"
+    primary: true
+
+- name: Customizing
+  tagline: Mach es zu deinem.
+  price: Festpreis
+  features:
+    - Theme-Anpassung
+    - Branding und Optik
+    - Layout- und Komponenten-Anpassungen
+    - Content-Migration
+  cta:
+    label: Brief schicken
+    url: "mailto:hello@acme.example?subject=Customizing"
+    primary: false

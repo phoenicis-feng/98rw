@@ -1,0 +1,40 @@
+- name: Development
+  tagline: Build the missing piece.
+  price: from 800 EUR/day
+  features:
+    - New features and integrations
+    - Migrations and refactorings
+    - Code review and pairing
+    - Open source contributions
+  cta:
+    label: Get a quote
+    url: "mailto:hello@acme.example?subject=Development"
+    primary: false
+
+- name: Consulting
+  tagline: Make the right call.
+  price: 150 EUR/h
+  featured: true
+  tag: Most booked
+  features:
+    - Architecture audits
+    - Tech advice and reviews
+    - Workshops and training
+    - Pair programming sessions
+  cta:
+    label: Book a call
+    url: "mailto:hello@acme.example?subject=Consulting"
+    primary: true
+
+- name: Customizing
+  tagline: Make it yours.
+  price: Fixed price
+  features:
+    - Theme adaptation
+    - Branding and visual tweaks
+    - Layout and component edits
+    - Content migration
+  cta:
+    label: Send a brief
+    url: "mailto:hello@acme.example?subject=Customizing"
+    primary: false

@@ -1,0 +1,16 @@
+{{- /*
+Renders a code block with header (language + copy) and syntax highlighting.
+
+Inputs (dict):
+  language  Highlight language identifier (e.g. "bash", "yaml").
+  content   Raw code string. Leading and trailing whitespace are trimmed.
+*/ -}}
+{{- $lang := .language | default "text" -}}
+{{- $code := trim .content "\n\r " -}}
+<div class="codeblock">
+  <div class="codeblock__head">
+    <span class="codeblock__lang">{{ $lang }}</span>
+    <button type="button" class="codeblock__copy" data-action="copy-code" aria-label="{{ i18n "copy" | default "Copy" }}">{{ i18n "copy" | default "Copy" }}</button>
+  </div>
+  {{ transform.Highlight $code $lang "" }}
+</div>

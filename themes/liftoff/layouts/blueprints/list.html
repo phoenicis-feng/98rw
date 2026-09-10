@@ -1,0 +1,44 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <section class="section">
+    <div class="container">
+      {{- if not .Params.hero }}
+        <h1>{{ .Title }}</h1>
+      {{- end }}
+      {{ .Content }}
+      {{- $items := where site.RegularPages "Section" "blueprints" }}
+      {{- $items = sort $items "Weight" }}
+      {{- $allFilters := slice }}
+      {{- range $items }}
+        {{- range .Params.filters }}
+          {{- $allFilters = $allFilters | append . }}
+        {{- end }}
+      {{- end }}
+      {{- $allFilters = $allFilters | uniq | sort }}
+      <div class="blueprints">
+        <div class="blueprints__filters" role="toolbar" aria-label="{{ i18n "filter_blueprints" }}">
+          <button class="blueprints__filter" type="button" data-blueprint-filter="*" data-active="true" aria-pressed="true">{{ i18n "all_tags" }}</button>
+          {{- range $allFilters }}
+            <button class="blueprints__filter" type="button" data-blueprint-filter="{{ . }}" data-active="false" aria-pressed="false">{{ . }}</button>
+          {{- end }}
+        </div>
+        <div class="blueprints__grid">
+          {{- range $items }}
+            <a class="blueprint-card" href="{{ .RelPermalink }}" data-tags="{{ delimit .Params.filters "," }}" data-hidden="false">
+              <div class="blueprint-card__head">
+                <span class="blueprint-card__mark" aria-hidden="true">{{ with .Params.mark }}{{ . }}{{ else }}{{ substr .Title 0 2 | upper }}{{ end }}</span>
+                <h3 class="blueprint-card__title">{{ .Title }}</h3>
+              </div>
+              <p class="blueprint-card__summary">{{ or .Description (.Summary | plainify) }}</p>
+              {{- with .Params.filters }}
+                <div class="blueprint-card__tags">
+                  {{- range . }}<span class="badge badge--accent">{{ . }}</span>{{- end }}
+                </div>
+              {{- end }}
+            </a>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,23 @@
+{{- /*
+Language switcher as native <details> dropdown. Hidden when the site
+has only one language.
+*/ -}}
+{{- $translations := site.Home.AllTranslations -}}
+{{- if gt (len $translations) 1 }}
+  <details class="lang-switcher">
+    <summary aria-label="{{ i18n "switch_language" | default "Switch language" }}">
+      <span>{{ site.Language.Lang | upper }}</span>
+      {{ partial "icon.html" "mdi:chevron-down" }}
+    </summary>
+    <ul class="lang-switcher__menu">
+      {{- range $translations }}
+        <li>
+          <a href="{{ .RelPermalink }}"
+            {{- if eq .Language.Lang $.Site.Language.Lang }} class="active" aria-current="true"{{ end }}>
+            {{ or .Language.Label .Language.Lang }}
+          </a>
+        </li>
+      {{- end }}
+    </ul>
+  </details>
+{{- end }}

@@ -1,0 +1,21 @@
+{{- /*
+Article-style teaser card. Context: a Page.
+
+Used by the articles listing and by taxonomy term pages, which may also
+contain dateless pages (blueprints), so the date block is guarded.
+*/ -}}
+<a class="post-card" href="{{ .RelPermalink }}">
+  <div class="post-card__meta">
+    {{- if not .Date.IsZero }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    {{- end }}
+    {{- with .ReadingTime }}<span>{{ i18n "reading_time" (dict "Count" .) }}</span>{{ end }}
+  </div>
+  <h2 class="post-card__title">{{ .Title }}</h2>
+  <p class="post-card__summary">{{ or .Description (.Summary | plainify) }}</p>
+  {{- with .GetTerms "tags" }}
+    <div class="post-card__tags">
+      {{- range . }}<span class="badge">{{ .LinkTitle }}</span>{{- end }}
+    </div>
+  {{- end }}
+</a>

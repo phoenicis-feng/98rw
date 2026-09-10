@@ -1,0 +1,32 @@
+{{- /*
+Repository stats badge. Reads site.Params.repo:
+
+  [params.repo]
+    host  = "codeberg"        # or "github"
+    owner = "head1328"
+    name  = "liftoff"
+*/ -}}
+{{- with site.Params.repo }}
+  {{- $host := .host | default "codeberg" -}}
+  {{- $owner := .owner -}}
+  {{- $name := .name -}}
+  {{- $href := "" -}}
+  {{- $hostIcon := "simple-icons:codeberg" -}}
+  {{- if eq $host "github" -}}
+    {{- $href = printf "https://github.com/%s/%s" $owner $name -}}
+    {{- $hostIcon = "simple-icons:github" -}}
+  {{- else -}}
+    {{- $href = printf "https://codeberg.org/%s/%s" $owner $name -}}
+  {{- end -}}
+  <a class="repo-stats" href="{{ $href }}"
+    data-repo-host="{{ $host }}"
+    data-repo-owner="{{ $owner }}"
+    data-repo-name="{{ $name }}"
+    aria-label="{{ $owner }}/{{ $name }}">
+    {{ partial "icon.html" $hostIcon }}
+    <span class="repo-stats__name">{{ $owner }}/{{ $name }}</span>
+    <span class="repo-stats__divider" aria-hidden="true"></span>
+    {{ partial "icon.html" "mdi:star" }}
+    <span class="repo-stats__count" data-stat="stars">-</span>
+  </a>
+{{- end }}

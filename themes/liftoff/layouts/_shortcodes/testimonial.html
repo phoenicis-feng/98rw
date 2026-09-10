@@ -1,0 +1,53 @@
+{{- /*
+Testimonial with optional author and metrics.
+
+  {{< testimonial author="Jane Doe" role="VP, Acme Corp" >}}
+  Quote text in markdown.
+
+  metrics:
+  - 80% deployment time saved
+  - 40+ teams onboarded
+  {{< /testimonial >}}
+
+Metrics are parsed from a trailing "metrics:" YAML-ish list in the body.
+*/ -}}
+{{- $body := .Inner -}}
+{{- $metrics := slice -}}
+{{- $quote := $body -}}
+{{- if strings.Contains $body "metrics:" -}}
+  {{- $parts := split $body "metrics:" -}}
+  {{- $quote = index $parts 0 -}}
+  {{- range (split (index $parts 1) "\n") -}}
+    {{- $line := trim . " -" -}}
+    {{- if $line -}}
+      {{- $split := split $line " " -}}
+      {{- $head := index $split 0 -}}
+      {{- $rest := delimit (after 1 $split) " " -}}
+      {{- $metrics = $metrics | append (dict "value" $head "label" $rest) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<figure class="testimonial">
+  <blockquote class="testimonial__quote">{{ $quote | markdownify }}</blockquote>
+  {{- with .Get "author" }}
+    <figcaption class="testimonial__author">
+      <span class="testimonial__avatar" aria-hidden="true"></span>
+      <div>
+        <p class="testimonial__author-name">{{ . }}</p>
+        {{- with $.Get "role" }}
+          <p class="testimonial__author-role">{{ . }}</p>
+        {{- end }}
+      </div>
+    </figcaption>
+  {{- end }}
+  {{- with $metrics }}
+    <div class="testimonial__metrics">
+      {{- range . }}
+        <div class="testimonial__metric">
+          <strong>{{ .value }}</strong>
+          <span>{{ .label }}</span>
+        </div>
+      {{- end }}
+    </div>
+  {{- end }}
+</figure>

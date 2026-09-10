@@ -1,0 +1,62 @@
+{{- /*
+Hero section. Reads .Params.hero from the page front matter.
+
+  hero:
+    highlights:
+      - icon: "mdi:code-tags"
+        label: "Any language"
+    title: "..."
+    titleAccent: "..."
+    subtitle: "..."
+    primary: { label, url }
+    secondary: { label, url }
+    code:
+      tabs:
+        - { name, language, content }
+*/ -}}
+{{- with .Params.hero }}
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <h1 class="hero__title">
+        {{ .title }}
+        {{- with .titleAccent }}
+          <span class="hero__title-accent">{{ . }}</span>
+        {{- end }}
+      </h1>
+      {{- with .subtitle }}
+        <p class="hero__subtitle">{{ . | markdownify }}</p>
+      {{- end }}
+      {{- with .highlights }}
+        <ul class="pills hero__highlights">
+          {{- range . }}
+            <li class="pill">
+              {{- with .icon }}{{ partial "icon.html" . }}{{ end }}
+              <span>{{ .label }}</span>
+            </li>
+          {{- end }}
+        </ul>
+      {{- end }}
+      {{- with .code }}
+        <div class="hero__code">
+          {{- if .tabs }}
+            {{ partial "hero-code-tabs.html" .tabs }}
+          {{- else }}
+            {{- partial "codeblock.html" (dict "language" .language "content" .content) }}
+          {{- end }}
+        </div>
+      {{- end }}
+      {{- if or .primary .secondary }}
+        <div class="hero__actions">
+          {{- with .primary }}
+            <a class="btn btn--primary btn--lg" href="{{ .url | relLangURL }}">{{ .label }}</a>
+          {{- end }}
+          {{- with .secondary }}
+            <a class="btn btn--ghost btn--lg" href="{{ .url | relLangURL }}">{{ .label }}</a>
+          {{- end }}
+        </div>
+      {{- end }}
+    </div>
+  </section>
+{{- end }}

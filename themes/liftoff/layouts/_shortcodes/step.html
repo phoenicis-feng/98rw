@@ -1,0 +1,21 @@
+{{- /*
+A single numbered onboarding step. Use inside {{< steps >}}. The
+body is rendered as markdown so nested shortcodes (tabs, code,
+feature-grid, etc.) and prose work as expected.
+
+  {{< step number="1" title="Install Hugo" >}}
+  Pick the path for your operating system.
+
+  {{< tabs >}} ... {{< /tabs >}}
+  {{< /step >}}
+*/ -}}
+{{- $number := .Get "number" -}}
+{{- $title := .Get "title" -}}
+<section class="step">
+  <header class="step__header">
+    {{- with $number }}<span class="step__number">Step {{ . }}</span>{{ end }}
+    {{- if and $number $title }}<span class="step__sep" aria-hidden="true">:</span>{{ end }}
+    {{- with $title }}<h2 class="step__title">{{ . }}</h2>{{ end }}
+  </header>
+  <div class="step__body">{{ .Inner | $.Page.RenderString (dict "display" "block") }}</div>
+</section>

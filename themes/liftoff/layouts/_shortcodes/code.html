@@ -1,0 +1,26 @@
+{{- /*
+Standalone code block with header (language + copy) and the same
+visual chrome the tabs and the markdown render-codeblock hook use.
+
+  {{< code language="bash" wide="true" >}}
+  brew install hugo
+  hugo server
+  {{< /code >}}
+
+Parameters:
+  language   Chroma language id (default "text").
+  wide       "true" to disable the hero width cap.
+  featured   "true" to draw an animated gradient border around the
+             code block.
+*/ -}}
+{{- $lang := .Get "language" | default "text" -}}
+{{- $wide := eq (.Get "wide" | default "") "true" -}}
+{{- $featured := eq (.Get "featured" | default "") "true" -}}
+{{- $code := trim .Inner "\n\r " -}}
+<div class="codeblock{{ if $wide }} codeblock--wide{{ end }}{{ if $featured }} codeblock--featured{{ end }}">
+  <div class="codeblock__head">
+    <span class="codeblock__lang">{{ $lang }}</span>
+    <button type="button" class="codeblock__copy" data-action="copy-code" aria-label="{{ i18n "copy" | default "Copy" }}">{{ i18n "copy" | default "Copy" }}</button>
+  </div>
+  {{ transform.Highlight $code $lang "" }}
+</div>

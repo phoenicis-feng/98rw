@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <section class="section">
+    <div class="container-narrow">
+      {{- if not .Params.hero }}
+        <h1>{{ .Title }}</h1>
+      {{- end }}
+      {{ .Content }}
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,23 @@
+{{- /*
+Renders an OS-tab strip with code panels for the hero. Same DOM and
+classes as the {{< tabs >}} shortcode so the same JS picks them up.
+
+Input: list of { name, icon?, language, content } entries.
+*/ -}}
+<div class="tabs">
+  <div class="tabs__nav" role="tablist">
+    {{- range $i, $tab := . }}
+      <button class="tabs__label" type="button" role="tab"
+        aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"
+        data-tab="hero-{{ $i }}">
+        {{- with $tab.icon }}{{ partial "icon.html" . }}{{ end }}
+        <span>{{ $tab.name }}</span>
+      </button>
+    {{- end }}
+  </div>
+  {{- range $i, $tab := . }}
+    <div class="tabs__panel" data-panel="hero-{{ $i }}"{{ if ne $i 0 }} hidden{{ end }}>
+      {{ partial "codeblock.html" (dict "language" $tab.language "content" $tab.content) }}
+    </div>
+  {{- end }}
+</div>

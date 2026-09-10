@@ -1,0 +1,144 @@
+baseURL = "https://hugo-liftoff.kevinhorst.de/"
+title = "Liftoff"
+theme = "liftoff"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+enableEmoji = false
+
+[pagination]
+  pagerSize = 6
+
+[params]
+  description = "A Hugo theme for product-landing, docs, articles and showcase sites."
+  tagline = "Minimal, expressive product sites, ready to ship with Hugo."
+  copyrightOwner = "ACME"
+  copyrightSuffix = "All rights reserved."
+
+[params.repo]
+  host  = "codeberg"
+  owner = "head1328"
+  name  = "hugo-liftoff"
+
+[params.footer]
+  address = """
+ACME
+Anytown, Germany
+[hello@acme.example](mailto:hello@acme.example)
+"""
+
+[[params.social]]
+  icon = "simple-icons:codeberg"
+  name = "Codeberg"
+  url  = "https://codeberg.org/head1328"
+
+[[params.social]]
+  icon = "simple-icons:mastodon"
+  name = "Mastodon"
+  url  = "https://chaos.social/@head1328"
+
+[[params.social]]
+  icon = "mdi:rss"
+  name = "RSS"
+  url  = "/index.xml"
+
+[languages]
+  [languages.en]
+    label = "English"
+    locale = "en"
+    weight = 1
+    title = "Liftoff"
+
+  [languages.de]
+    label = "Deutsch"
+    locale = "de"
+    weight = 2
+    title = "Liftoff"
+    [languages.de.params]
+      description = "Ein Hugo-Theme für Produkt-Landingpages, Docs, Artikel und Showcase."
+      tagline = "Minimal, ausdrucksstark, startklar. Produktseiten mit Hugo."
+      copyrightSuffix = "Alle Rechte vorbehalten."
+
+[menus]
+  [[menus.main]]
+    name = "Get started"
+    pageRef = "/get-started"
+    weight = 5
+  [[menus.main]]
+    name = "Docs"
+    pageRef = "/docs"
+    weight = 10
+  [[menus.main]]
+    name = "Shortcodes"
+    pageRef = "/docs/shortcodes"
+    weight = 15
+  [[menus.main]]
+    name = "Articles"
+    pageRef = "/articles"
+    weight = 20
+  [[menus.main]]
+    name = "Blueprints"
+    pageRef = "/blueprints"
+    weight = 30
+
+[[menus.footer]]
+  identifier = "project"
+  name = "Project"
+  weight = 10
+[[menus.footer]]
+  parent = "project"
+  name = "Get started"
+  url = "/get-started"
+[[menus.footer]]
+  parent = "project"
+  name = "Docs"
+  url = "/docs"
+[[menus.footer]]
+  parent = "project"
+  name = "Blueprints"
+  url = "/blueprints"
+
+[[menus.footer]]
+  identifier = "resources"
+  name = "Resources"
+  weight = 20
+[[menus.footer]]
+  parent = "resources"
+  name = "Shortcodes"
+  url = "/docs/shortcodes"
+[[menus.footer]]
+  parent = "resources"
+  name = "Articles"
+  url = "/articles"
+
+[[menus.footer]]
+  identifier = "source"
+  name = "Source"
+  weight = 30
+[[menus.footer]]
+  parent = "source"
+  name = "Codeberg"
+  url = "https://codeberg.org/head1328/hugo-liftoff"
+[[menus.footer]]
+  parent = "source"
+  name = "Issues"
+  url = "https://codeberg.org/head1328/hugo-liftoff/issues"
+[[menus.footer]]
+  parent = "source"
+  name = "License"
+  url = "https://codeberg.org/head1328/hugo-liftoff/src/branch/main/LICENSE"
+
+[markup]
+  [markup.highlight]
+    style = "github-dark"
+    noClasses = true
+    lineNos = false
+    codeFences = true
+    tabWidth = 2
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.146.0"

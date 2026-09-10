@@ -1,0 +1,41 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-json
+      - id: check-toml
+      - id: check-yaml
+      - id: check-merge-conflict
+      # Raised from the 500 KB default for images/screenshot.png, which
+      # the Hugo theme gallery requires at a minimum of 1500x1000.
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+
+  - repo: https://github.com/sirwart/ripsecrets
+    rev: v0.1.11
+    hooks:
+      - id: ripsecrets
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
+    hooks:
+      - id: shellcheck
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.23.1
+    hooks:
+      - id: markdownlint-cli2
+
+  - repo: local
+    hooks:
+      - id: hugo-build-check
+        name: Hugo build check
+        entry: bash -c 'mkdir -p /tmp/liftoff-themes && ln -sfn "$PWD" /tmp/liftoff-themes/liftoff && hugo --gc --minify --source exampleSite --themesDir /tmp/liftoff-themes --theme liftoff --destination /tmp/liftoff-build-check && rm -rf /tmp/liftoff-build-check /tmp/liftoff-themes'
+        language: system
+        pass_filenames: false
+        files: '^(layouts/|assets/|i18n/|exampleSite/)'
+
+exclude: ^\.devcontainer/devcontainer-lock\.json$

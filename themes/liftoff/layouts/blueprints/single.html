@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <article class="article">
+    <header class="article__header">
+      <span class="blueprint-card__mark" aria-hidden="true">{{ with .Params.mark }}{{ . }}{{ else }}{{ substr .Title 0 2 | upper }}{{ end }}</span>
+      <h1 class="article__title">{{ .Title }}</h1>
+      {{- with .Description }}
+        <p class="article__meta">{{ . }}</p>
+      {{- end }}
+      {{- with .Params.filters }}
+        <div class="article__meta">
+          {{- range . }}<span class="badge badge--accent">{{ . }}</span>{{- end }}
+        </div>
+      {{- end }}
+    </header>
+    <div class="article__body">
+      {{ .Content }}
+    </div>
+    {{- with .Params.startFrom }}
+      <div class="article__tags">
+        <a class="btn btn--primary" href="{{ . | relLangURL }}">{{ i18n "blueprint_reference" }}</a>
+      </div>
+    {{- end }}
+  </article>
+{{ end }}

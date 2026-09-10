@@ -1,0 +1,84 @@
+when:
+  - event: push
+  - event: manual
+
+clone:
+  - name: clone
+    image: woodpeckerci/plugin-git
+    settings:
+      lfs: false
+      recursive: false
+
+steps:
+  - name: build exampleSite
+    image: hugomods/hugo:git-0.164.0
+    commands:
+      # --themesDir resolves the theme by directory name. The repository
+      # is named hugo-liftoff while the theme is liftoff, so link it under
+      # the expected name instead of depending on the clone path.
+      - mkdir -p /tmp/themes && ln -sfn "$$PWD" /tmp/themes/liftoff
+      - hugo --gc --minify --source exampleSite --themesDir /tmp/themes --theme liftoff
+
+  - name: lint markdown
+    image: davidanson/markdownlint-cli2:v0.23.1
+    commands:
+      - markdownlint-cli2 "**/*.md" "#exampleSite/public" "#public"
+    when:
+      - event: push
+
+  # Mirrors the shellcheck pre-commit hook, which can be bypassed with
+  # --no-verify. Keep the image tag in sync with .pre-commit-config.yaml.
+  - name: lint shell
+    image: koalaman/shellcheck-alpine:v0.11.0
+    commands:
+      # `find -exec ... +` exits 0 when nothing matches, which would make
+      # this step pass without checking anything. Fail loudly instead.
+      - scripts=$(find . -name "*.sh" -not -path "./exampleSite/public/*")
+      - test -n "$$scripts" || { echo "no shell scripts found"; exit 1; }
+      - echo "$$scripts"
+      - shellcheck $$scripts
+    when:
+      - event: push
+
+  # Mirrors the ripsecrets pre-commit hook. Installed from the release
+  # binary because building it from source needs a Rust toolchain, and
+  # no container image is published. Upstream ships linux/amd64 only.
+  - name: scan for secrets
+    image: debian:stable-slim
+    environment:
+      RIPSECRETS_VERSION: 0.1.11
+    commands:
+      - apt-get update -qq && apt-get install -y -qq --no-install-recommends curl ca-certificates
+      - >-
+        curl -sSfL
+        "https://github.com/sirwart/ripsecrets/releases/download/v$${RIPSECRETS_VERSION}/ripsecrets-$${RIPSECRETS_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+        | tar -xz --strip-components=1 -C /usr/local/bin --wildcards "*/ripsecrets"
+      - ripsecrets
+    when:
+      - event: push
+
+  - name: build & deploy demo on production
+    image: hugomods/hugo:git-0.164.0
+    environment:
+      DEPLOY_TOKEN:
+        from_secret: deploy_token
+    when:
+      - branch: main
+        event: push
+    commands:
+      - mkdir -p /tmp/themes && ln -sfn "$$PWD" /tmp/themes/liftoff
+      - hugo --gc --minify --source exampleSite --themesDir /tmp/themes --theme liftoff
+      - apk add --no-cache curl openssl
+      - tar -C ./exampleSite -czf ${CI_COMMIT_SHA:0:8}.tar.gz public
+      - echo -n '{"package":"'"$(base64 -w0 -i ./${CI_COMMIT_SHA:0:8}.tar.gz)"'","package.name":"'"${CI_COMMIT_SHA:0:8}"'","package.environment":"production"}' > data.json
+      - sig=$(openssl dgst -sha512 -hmac $$DEPLOY_TOKEN data.json | awk '{print "sha512="$$2}')
+      - >-
+        curl
+        --fail
+        --silent
+        --show-error
+        --write-out '\nHTTP Status: %{http_code}\n'
+        -H "Content-Type: application/json"
+        -H "X-Signature: $$sig"
+        -X POST -d @./data.json
+        https://webhook.kevinhorst.de/hooks/deploy-liftoff

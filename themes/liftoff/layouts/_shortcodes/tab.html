@@ -1,0 +1,9 @@
+{{- /*
+Nested inside {{< tabs >}}. Pushes onto the parent's scratch.
+Optional `icon` accepts an Iconify "set:name" identifier.
+*/ -}}
+{{- .Parent.Scratch.Add "tabs" (slice (dict
+  "name" (.Get "name" | default (printf "Tab %d" (add .Ordinal 1)))
+  "icon" (.Get "icon")
+  "content" (.Inner | .Page.RenderString)
+)) -}}

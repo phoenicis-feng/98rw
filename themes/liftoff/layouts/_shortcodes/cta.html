@@ -1,0 +1,27 @@
+{{- /*
+CTA band.
+
+  {{< cta title="Ready to scale?" primary="Book a demo|/demo" secondary="Talk to us|/contact" >}}
+  Subtitle markdown body.
+  {{< /cta >}}
+*/ -}}
+{{- $primary := split (.Get "primary" | default "") "|" -}}
+{{- $secondary := split (.Get "secondary" | default "") "|" -}}
+<section class="cta">
+  {{- with .Get "title" }}
+    <h2 class="cta__title">{{ . }}</h2>
+  {{- end }}
+  {{- with .Inner }}
+    <p class="cta__subtitle">{{ . | markdownify }}</p>
+  {{- end }}
+  {{- if or (index $primary 0) (index $secondary 0) }}
+    <div class="cta__actions">
+      {{- if index $primary 0 }}
+        <a class="btn btn--primary btn--lg" href="{{ index $primary 1 | default "#" | relLangURL }}">{{ index $primary 0 }}</a>
+      {{- end }}
+      {{- if index $secondary 0 }}
+        <a class="btn btn--ghost btn--lg" href="{{ index $secondary 1 | default "#" | relLangURL }}">{{ index $secondary 0 }}</a>
+      {{- end }}
+    </div>
+  {{- end }}
+</section>

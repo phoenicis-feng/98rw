@@ -1,0 +1,33 @@
+{{- /*
+Render hook for blockquotes. Supports GitHub-style alert syntax:
+
+  > [!NOTE] / [!TIP] / [!WARNING] / [!DANGER] / [!CAUTION]
+  > Body text.
+
+Falls back to a normal blockquote.
+*/ -}}
+{{- $alertType := lower .AlertType -}}
+{{- if $alertType -}}
+  {{- $classes := dict
+    "note" "note"
+    "tip" "note note--tip"
+    "warning" "note note--warning"
+    "danger" "note note--danger"
+    "caution" "note note--danger"
+  -}}
+  {{- $labels := dict
+    "note" (i18n "note_note")
+    "tip" (i18n "note_tip")
+    "warning" (i18n "note_warning")
+    "danger" (i18n "note_danger")
+    "caution" (i18n "note_danger")
+  -}}
+  {{- $class := index $classes $alertType | default "note" -}}
+  {{- $label := index $labels $alertType | default (title $alertType) -}}
+  <aside class="{{ $class }}">
+    <p class="note__title">{{ $label }}</p>
+    {{ .Text }}
+  </aside>
+{{- else -}}
+  <blockquote>{{ .Text }}</blockquote>
+{{- end -}}

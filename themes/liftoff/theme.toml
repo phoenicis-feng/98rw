@@ -1,0 +1,12 @@
+name = "Liftoff"
+license = "MIT"
+licenselink = "https://codeberg.org/head1328/hugo-liftoff/src/branch/main/LICENSE"
+description = "Hugo theme for product-landing, docs, articles and showcase sites. Dark UI, code-first hero, designed for get-started style pages."
+homepage = "https://codeberg.org/head1328/hugo-liftoff"
+demosite = "https://hugo-liftoff.kevinhorst.de"
+tags = ["landing", "docs", "articles", "showcase", "dark", "product", "multilingual"]
+features = ["multilingual", "responsive", "dark"]
+
+[author]
+  name = "Kevin Horst"
+  homepage = "https://kevinhorst.de"

@@ -1,0 +1,129 @@
+/*
+ * Hero section. Uses a CSS-only grid pattern and radial glow as the
+ * background. The inner column stacks title, subtitle, pills, code
+ * and buttons centred. By default the code block inside a hero is
+ * width-capped; pass `wide` to the tabs / code shortcode to let it
+ * stretch to the container width.
+ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-9) var(--space-8);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center top;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mixed from the full-strength brand colours rather than the `-soft`
+   tokens: those sit at 12% for badge fills, which is far too faint to
+   read as a glow across a large surface. */
+.hero__glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 85% 80% at 18% 0%,
+      color-mix(in srgb, var(--color-accent) 45%, transparent) 0%, transparent 75%),
+    radial-gradient(ellipse 80% 75% at 85% 8%,
+      color-mix(in srgb, var(--color-secondary) 42%, transparent) 0%, transparent 75%);
+  /* .hero clips its overflow, so without this the tinted area ends on a
+     visible horizontal edge instead of resolving into the page. */
+  mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 92%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 92%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] .hero__glow {
+  background:
+    radial-gradient(ellipse 85% 80% at 18% 0%,
+      color-mix(in srgb, var(--color-accent) 22%, transparent) 0%, transparent 75%),
+    radial-gradient(ellipse 80% 75% at 85% 8%,
+      color-mix(in srgb, var(--color-secondary) 20%, transparent) 0%, transparent 75%);
+}
+
+[data-theme="light"] .hero__bg {
+  background-image:
+    linear-gradient(rgba(11, 16, 32, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 16, 32, 0.06) 1px, transparent 1px);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+}
+
+.hero__inner > * {
+  margin: 0;
+  width: 100%;
+}
+
+.hero__title {
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+/* Mostly horizontal: the accent is often a single short word, and a
+   45-degree ramp across a wide, flat box reads as one flat colour. */
+.hero__title-accent {
+  background: linear-gradient(105deg, var(--color-accent) 5%, var(--color-secondary) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__subtitle {
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+  line-height: var(--leading-snug);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* Highlights reuse the pills component; this only caps the row width
+   so long labels wrap under the subtitle rather than beside the code. */
+.hero__highlights {
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+/* Code block / tabs centred at a comfortable reading width. The
+   `--wide` modifier lets the block stretch to the container. */
+.hero__inner .codeblock,
+.hero__inner .tabs {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.hero__inner .codeblock--wide,
+.hero__inner .tabs--wide {
+  max-width: none;
+}

@@ -1,0 +1,35 @@
+{{- /*
+Tabs shortcode. Use with nested tab shortcodes.
+
+  {{< tabs wide="true" >}}
+    {{< tab name="macOS" icon="simple-icons:apple" >}}
+    ```bash
+    brew install yourapp
+    ```
+    {{< /tab >}}
+  {{< /tabs >}}
+
+Parameters:
+  wide       "true" to disable the hero width cap.
+  featured   "true" to draw an animated gradient border around the
+             tabs container.
+*/ -}}
+{{- $ignore := .Inner -}}
+{{- $items := .Scratch.Get "tabs" -}}
+{{- $wide := eq (.Get "wide" | default "") "true" -}}
+{{- $featured := eq (.Get "featured" | default "") "true" -}}
+{{- with $items }}
+  <div class="tabs{{ if $wide }} tabs--wide{{ end }}{{ if $featured }} tabs--featured{{ end }}">
+    <div class="tabs__nav" role="tablist">
+      {{- range $i, $tab := . }}
+        <button class="tabs__label" type="button" role="tab" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}" data-tab="{{ $i }}">
+          {{- with $tab.icon }}{{ partial "icon.html" . }}{{ end }}
+          <span>{{ $tab.name }}</span>
+        </button>
+      {{- end }}
+    </div>
+    {{- range $i, $tab := . }}
+      <div class="tabs__panel" data-panel="{{ $i }}"{{ if ne $i 0 }} hidden{{ end }}>{{ $tab.content }}</div>
+    {{- end }}
+  </div>
+{{- end }}

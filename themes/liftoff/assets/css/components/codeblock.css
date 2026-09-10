@@ -1,0 +1,114 @@
+/*
+ * Code block surface produced by render-codeblock.html.
+ * Wraps Hugo's chroma output and adds a header with language + copy button.
+ */
+
+.codeblock {
+  position: relative;
+  background-color: var(--color-code-bg);
+  border: 1px solid var(--color-code-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-size: var(--text-sm);
+  text-align: left;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Featured: a 1px conic-gradient border with a bright segment that
+ * orbits the block once every few seconds. The mask-composite trick
+ * keeps the gradient visible only inside the border ring; the centre
+ * stays transparent so the block background shows through. */
+
+.codeblock--featured,
+.tabs--featured {
+  position: relative;
+}
+
+.codeblock--featured::before,
+.tabs--featured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--liftoff-gradient-angle, 0deg),
+    transparent 0deg 240deg,
+    var(--color-accent) 290deg,
+    var(--color-secondary) 330deg,
+    transparent 360deg
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  animation: liftoff-rotate 4s linear infinite;
+}
+
+@keyframes liftoff-rotate {
+  to { --liftoff-gradient-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .codeblock--featured::before,
+  .tabs--featured::before {
+    animation: none;
+  }
+}
+
+.codeblock__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-code-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+}
+
+.codeblock__lang {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.codeblock__copy {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: var(--text-xs);
+  cursor: pointer;
+  transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.codeblock__copy:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.codeblock__copy[data-state="copied"] {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.codeblock pre,
+.codeblock .highlight pre {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: var(--space-4);
+}
+
+.codeblock .highlight {
+  background: transparent;
+}

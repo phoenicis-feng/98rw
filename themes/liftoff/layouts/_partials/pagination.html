@@ -1,0 +1,32 @@
+{{- /*
+Pagination control. Context: a Page that has already called .Paginate.
+
+Replaces Hugo's _internal/pagination.html, which emits Bootstrap class
+names the theme does not style.
+*/ -}}
+{{- $p := .Paginator -}}
+{{- if gt $p.TotalPages 1 }}
+  <nav class="pagination" aria-label="{{ i18n "pagination" }}">
+    {{- with $p.Prev }}
+      <a class="pagination__step" href="{{ .URL }}" rel="prev">{{ i18n "previous" }}</a>
+    {{- else }}
+      <span class="pagination__step" aria-disabled="true">{{ i18n "previous" }}</span>
+    {{- end }}
+    <ol class="pagination__pages">
+      {{- range $p.Pagers }}
+        <li>
+          {{- if eq .PageNumber $p.PageNumber }}
+            <span class="pagination__page" aria-current="page">{{ .PageNumber }}</span>
+          {{- else }}
+            <a class="pagination__page" href="{{ .URL }}">{{ .PageNumber }}</a>
+          {{- end }}
+        </li>
+      {{- end }}
+    </ol>
+    {{- with $p.Next }}
+      <a class="pagination__step" href="{{ .URL }}" rel="next">{{ i18n "next" }}</a>
+    {{- else }}
+      <span class="pagination__step" aria-disabled="true">{{ i18n "next" }}</span>
+    {{- end }}
+  </nav>
+{{- end }}

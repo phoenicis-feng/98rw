@@ -1,0 +1,21 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <section class="section">
+    <div class="container">
+      {{- if not .Params.hero }}
+        <h1>{{ .Title }}</h1>
+      {{- end }}
+      {{ .Content }}
+      {{- with .Pages }}
+        <div class="grid grid-3">
+          {{- range . }}
+            <a class="card card--linked" href="{{ .RelPermalink }}">
+              <h3 class="card__title">{{ .LinkTitle }}</h3>
+              <p class="card__body">{{ .Summary | plainify }}</p>
+            </a>
+          {{- end }}
+        </div>
+      {{- end }}
+    </div>
+  </section>
+{{ end }}

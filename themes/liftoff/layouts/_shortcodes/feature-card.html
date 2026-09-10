@@ -1,0 +1,22 @@
+{{- /*
+Feature card. Optional `url` makes the whole card clickable via an
+absolutely positioned overlay link. This keeps the card markup as a
+plain block container with block-level children (valid HTML).
+
+  {{< feature-card title="Docs" icon="mdi:book-open-page-variant" url="/docs" >}}
+  Sidebar, on-this-page TOC, render hooks.
+  {{< /feature-card >}}
+*/ -}}
+{{- $title := .Get "title" -}}
+{{- $url := .Get "url" -}}
+{{- $icon := .Get "icon" -}}
+<div class="card{{ if $url }} card--linked{{ end }}">
+  {{- with $url }}
+    <a class="card__link" href="{{ . | relLangURL }}" aria-label="{{ $title }}"></a>
+  {{- end }}
+  {{- with $icon }}
+    <div class="card__icon" aria-hidden="true">{{ partial "icon.html" . }}</div>
+  {{- end }}
+  <h3 class="card__title">{{ $title }}</h3>
+  <div class="card__body">{{ .Inner | markdownify }}</div>
+</div>

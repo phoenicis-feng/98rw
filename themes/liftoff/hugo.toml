@@ -1,0 +1,11 @@
+# Theme configuration.
+#
+# Deliberately minimal: anything set here is merged into the config of
+# every site that uses the theme, so only the Hugo version constraint
+# belongs in this file. Demo site configuration lives in
+# exampleSite/hugo.toml.
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.146.0"

@@ -1,0 +1,41 @@
+{{- /*
+Inline SVG icon. Resolves the identifier in this order:
+
+  1. "local:<name>" looks up assets/icons/<name>.svg in the site or
+     theme assets and inlines its content.
+  2. "set:name" hits the Iconify API at build time and caches the
+     fetched SVG. Use any set from https://icon-sets.iconify.design/.
+  3. A bare name defaults to the "mdi:" set.
+
+Examples:
+  {{ partial "icon.html" "simple-icons:codeberg" }}
+  {{ partial "icon.html" "mdi:home" }}
+  {{ partial "icon.html" "code-tags" }}      // resolves to mdi:code-tags
+  {{ partial "icon.html" "local:my-logo" }}  // assets/icons/my-logo.svg
+*/ -}}
+{{- $name := . -}}
+{{- if not (strings.Contains $name ":") -}}
+  {{- $name = printf "mdi:%s" $name -}}
+{{- end -}}
+{{- $parts := split $name ":" -}}
+{{- if eq (len $parts) 2 -}}
+  {{- $set := index $parts 0 -}}
+  {{- $id := index $parts 1 -}}
+  {{- if eq $set "local" -}}
+    {{- with resources.Get (printf "icons/%s.svg" $id) -}}
+      {{ .Content | safeHTML }}
+    {{- else -}}
+      {{- warnf "icon.html: assets/icons/%s.svg not found" $id -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $url := printf "https://api.iconify.design/%s/%s.svg" $set $id -}}
+    {{- $res := try (resources.GetRemote $url) -}}
+    {{- with $res.Err -}}
+      {{- warnf "icon.html: failed to fetch %s: %s" $name . -}}
+    {{- else -}}
+      {{- with $res.Value -}}
+        {{ .Content | safeHTML }}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

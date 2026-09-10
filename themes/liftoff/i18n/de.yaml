@@ -1,0 +1,30 @@
+skip_to_content: Zum Inhalt springen
+main_navigation: Hauptnavigation
+open_menu: Menü öffnen
+close_menu: Menü schließen
+toggle_theme: Farbschema wechseln
+switch_language: Sprache wechseln
+read_more: Weiterlesen
+back_to_top: Nach oben
+on_this_page: Auf dieser Seite
+last_updated: Zuletzt aktualisiert
+docs: Doku
+previous: Zurück
+next: Weiter
+pagination: Seitennummerierung
+note_note: Hinweis
+note_tip: Tipp
+note_warning: Warnung
+note_danger: Achtung
+reading_time:
+  one: "{{ .Count }} Minute Lesezeit"
+  other: "{{ .Count }} Minuten Lesezeit"
+posted_on: Veröffentlicht am
+tags: Schlagworte
+all_tags: Alle
+filter_blueprints: Blueprints filtern
+blueprint_reference: Shortcode-Referenz
+copy: Kopieren
+copied: Kopiert
+home: Start
+powered_by: Erstellt mit

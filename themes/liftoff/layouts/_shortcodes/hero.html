@@ -1,0 +1,24 @@
+{{- /*
+Hero wrapper. See docs/shortcodes for usage. Title, optional accent
+and optional subtitle come from parameters; the body is rendered
+inside the hero column verbatim.
+*/ -}}
+{{- $title := .Get "title" -}}
+{{- $titleAccent := .Get "titleAccent" -}}
+{{- $subtitle := .Get "subtitle" -}}
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    {{- with $title }}
+      <h1 class="hero__title">
+        {{ . }}
+        {{- with $titleAccent }} <span class="hero__title-accent">{{ . }}</span>{{ end }}
+      </h1>
+    {{- end }}
+    {{- with $subtitle }}
+      <p class="hero__subtitle">{{ . | markdownify }}</p>
+    {{- end }}
+    {{ .Inner }}
+  </div>
+</section>
