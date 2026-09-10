@@ -1,22 +1,20 @@
 ---
 title: "首页"
 hero:
-  title: "Liftoff 站点"
-  titleAccent: "起飞"
-  subtitle: "Hugo + Liftoff + Cloudflare Pages"
+  title: "AI 模型"
+  titleAccent: "指南站"
+  subtitle: "模型榜单 · 深度评测 · 使用教程"
   highlights:
-    - icon: "mdi:code-tags"
-      label: "Hugo"
-    - icon: "mdi:cloud"
-      label: "Cloudflare"
+    - icon: "mdi:trophy"
+      label: "榜单"
+    - icon: "mdi:magnify"
+      label: "评测"
+    - icon: "mdi:school"
+      label: "教程"
   primary:
-    label: "开始"
-    url: "/posts/hello/"
-  code:
-    tabs:
-      - name: "构建"
-        language: bash
-        content: "hugo server -D"
+    label: "查看模型榜单"
+    url: "/rankings/"
+  secondary:
+    label: "深度评测"
+    url: "/reviews/"
 ---
-
-内容...

@@ -1,0 +1,8 @@
+# 本地写作参考，不发布到线上
+content/tutorials/writing-guide.md
+
+# Hugo 构建锁文件
+.hugo_build.lock
+
+# 构建产物（Cloudflare 从源码重新构建，无需入库）
+public/

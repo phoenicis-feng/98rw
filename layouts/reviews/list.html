@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <section class="section">
+    <div class="container">
+      {{- if not .Params.hero }}
+        <h1>{{ .Title }}</h1>
+      {{- end }}
+      {{ .Content }}
+      {{- /* 栏目首页用 feature-grid 展示子分类；子分类页显示文章卡片列表 */ -}}
+      {{- if ne .CurrentSection .FirstSection }}
+        {{- with .Pages }}
+          <div class="grid grid-3">
+            {{- range . }}
+              <a class="card card--linked" href="{{ .RelPermalink }}">
+                <h3 class="card__title">{{ .LinkTitle }}</h3>
+                <p class="card__body">{{ .Summary | plainify }}</p>
+              </a>
+            {{- end }}
+          </div>
+        {{- end }}
+      {{- end }}
+    </div>
+  </section>
+{{ end }}

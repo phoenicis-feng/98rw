@@ -1,0 +1,11 @@
+/* 修复主题 bug：feature-card 的整卡覆盖链接 .card__link 没有任何样式，
+   导致卡片不可点击。这里补上 stretched-link 定位。 */
+.card--linked {
+  position: relative;
+}
+
+.card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}

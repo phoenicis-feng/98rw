@@ -36,14 +36,18 @@ disableKinds = ['RSS', 'taxonomy', 'term']
   [[menus.main]]
     name = "首页"
     pageRef = "/"
+    weight = 5
+  [[menus.main]]
+    name = "模型榜单"
+    pageRef = "/rankings"
     weight = 10
   [[menus.main]]
-    name = "文章"
-    pageRef = "/posts"
+    name = "深度评测"
+    pageRef = "/reviews"
     weight = 20
   [[menus.main]]
-    name = "关于"
-    pageRef = "/about"
+    name = "使用教程"
+    pageRef = "/tutorials"
     weight = 30
 
 [taxonomies]
