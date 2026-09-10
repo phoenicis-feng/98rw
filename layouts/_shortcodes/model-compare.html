@@ -1,0 +1,37 @@
+{{- /*
+模型对比组件：汇总所有 model: true 且带 specs 的模型专页数据，
+以 JSON 内嵌到页面，由 assets/js/custom.js 渲染交互式对比。
+
+  {{< model-compare >}}                      # 全部模型
+  {{< model-compare category="国内" >}}       # 只对比 specs.category 含 "国内" 的模型
+*/ -}}
+{{- $category := .Get "category" -}}
+{{- $models := slice -}}
+{{- range where site.Pages "Params.model" true -}}
+  {{- $page := . -}}
+  {{- with $page.Params.specs -}}
+    {{- $models = $models | append (dict
+      "name" $page.LinkTitle
+      "url" $page.RelPermalink
+      "specs" .
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $models -}}
+  <div class="model-compare" data-models='{{ . | jsonify }}'{{ with $category }} data-category="{{ . }}"{{ end }}>
+    <div class="model-compare__pickers">
+      <label class="model-compare__pick">
+        <span>模型 A</span>
+        <select data-pick="a"></select>
+      </label>
+      <span class="model-compare__vs" aria-hidden="true">VS</span>
+      <label class="model-compare__pick">
+        <span>模型 B</span>
+        <select data-pick="b"></select>
+      </label>
+    </div>
+    <div class="model-compare__result" aria-live="polite"></div>
+  </div>
+{{- else -}}
+  <p>暂无可对比的模型：请在模型专页 front matter 中添加 <code>specs</code> 字段。</p>
+{{- end -}}

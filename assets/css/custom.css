@@ -9,3 +9,67 @@
   inset: 0;
   z-index: 1;
 }
+
+/* ===== 模型对比组件 ===== */
+.model-compare__pickers {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.model-compare__pick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 160px;
+}
+
+.model-compare__pick span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.model-compare__pick select {
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-bg-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.model-compare__pick select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.model-compare__vs {
+  font-weight: 700;
+  color: var(--color-text-dim);
+  padding-top: 1.2rem;
+}
+
+.model-compare__table {
+  width: 100%;
+}
+
+.model-compare__table th,
+.model-compare__table td {
+  text-align: left;
+}
+
+.model-compare__group th {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.model-compare__win {
+  color: var(--color-accent);
+  font-weight: 700;
+}

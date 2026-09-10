@@ -1,5 +1,6 @@
 ---
 title: "Qwen-6 深度评测：中文场景的新标杆？"
+url: "/reviews/llm/qwen-6/deep-review/"   # 保持文章旧地址不变
 date: 2026-09-10
 description: "我们用真实中文工作负载测试了 Qwen-6 的推理、代码与长文本能力。"
 tags: ["Qwen-6", "评测"]

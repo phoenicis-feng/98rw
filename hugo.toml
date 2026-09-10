@@ -42,6 +42,10 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     pageRef = "/rankings"
     weight = 10
   [[menus.main]]
+    name = "模型对比"
+    pageRef = "/compare"
+    weight = 15
+  [[menus.main]]
     name = "深度评测"
     pageRef = "/reviews"
     weight = 20

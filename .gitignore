@@ -1,6 +1,9 @@
 # 本地写作参考，不发布到线上
 content/tutorials/writing-guide.md
 
+# 编辑器本地配置
+content/.obsidian/
+
 # Hugo 构建锁文件
 .hugo_build.lock
 
