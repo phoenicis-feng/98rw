@@ -1,0 +1,6 @@
+name = "98rw"
+compatibility_date = "2026-09-10"
+
+# 纯静态站点：直接由 Workers 静态资产服务 public/，无需 Worker 脚本
+[assets]
+directory = "./public"
