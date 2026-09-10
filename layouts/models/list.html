@@ -1,0 +1,28 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <section class="section">
+    <div class="container">
+      {{- if not .Params.hero }}
+        <h1>{{ .Title }}</h1>
+      {{- end }}
+      {{ .Content }}
+      {{- /* 自动汇总所有 front matter 标记 model: true 的模型专页 */ -}}
+      {{- $models := where site.Pages "Params.model" true }}
+      {{- with $models }}
+        <div class="grid grid-3">
+          {{- range .ByTitle }}
+            <a class="card card--linked" href="{{ .RelPermalink }}">
+              <h3 class="card__title">{{ .LinkTitle }}</h3>
+              <p class="card__body">{{ or .Description (.Summary | plainify) }}</p>
+              <p class="card__body">
+                <span class="badge">{{ len .RegularPages }} 篇文章</span>
+              </p>
+            </a>
+          {{- end }}
+        </div>
+      {{- else }}
+        <p>暂无收录模型。在模型目录的 <code>_index.md</code> 里加 <code>model: true</code> 即可出现在这里。</p>
+      {{- end }}
+    </div>
+  </section>
+{{ end }}

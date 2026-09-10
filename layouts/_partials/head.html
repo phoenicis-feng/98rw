@@ -1,0 +1,60 @@
+{{- /*
+站点覆盖版 head：基于主题原文件，仅调整加载顺序——
+CSS 提到最前（弱网下尽早开始下载样式，避免长时间无样式白屏），
+OG meta / favicon / feeds 挪到 CSS 之后，JS 保持 defer 在最后。
+*/ -}}
+{{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) -}}
+{{- $description := or .Description site.Params.description site.Params.Description "" -}}
+{{- $ogImage := "" -}}
+{{- with .Params.image -}}
+  {{- $ogImage = . -}}
+{{- else -}}
+  {{- with site.Params.ogImage -}}{{- $ogImage = . -}}{{- end -}}
+{{- end -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ $title }}</title>
+
+{{- /* 样式最优先：main.css → custom.css → fonts.css */ -}}
+{{ partialCached "head/css.html" . }}
+
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+{{- with $description }}
+<meta name="description" content="{{ . }}">
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{- end }}
+
+{{- /* Open Graph */ -}}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="{{ replace site.Language.Lang "-" "_" }}">
+{{- with $description }}
+<meta property="og:description" content="{{ . }}">
+{{- end }}
+{{- with $ogImage }}
+<meta property="og:image" content="{{ . | absURL }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ . | absURL }}">
+{{- else }}
+<meta name="twitter:card" content="summary">
+{{- end }}
+<meta name="twitter:title" content="{{ $title }}">
+{{- with $description }}
+<meta name="twitter:description" content="{{ . }}">
+{{- end }}
+
+{{- /* Favicons */ -}}
+{{ partial "favicons.html" . }}
+
+{{- /* Feeds */ -}}
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ site.Title }}">
+{{- end }}
+
+{{ partialCached "head/js.html" . }}

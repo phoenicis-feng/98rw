@@ -2,11 +2,10 @@
   <div class="container docs-page">
     <nav class="docs__breadcrumb" aria-label="breadcrumb">
       <a href="{{ site.Home.RelPermalink }}">首页</a>
-      <span aria-hidden="true">/</span>
-      <a href="{{ .FirstSection.RelPermalink }}">{{ .FirstSection.LinkTitle }}</a>
-      {{- if ne .Parent .FirstSection }}
+      {{- /* 完整祖先链：深度评测 / 大语言模型 / Qwen-6 …（.Ancestors 由近及远，反转后跳过首页） */ -}}
+      {{- range after 1 .Ancestors.Reverse }}
         <span aria-hidden="true">/</span>
-        <a href="{{ .Parent.RelPermalink }}">{{ .Parent.LinkTitle }}</a>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
       {{- end }}
       <span aria-hidden="true">/</span>
       <span aria-current="page">{{ .Title }}</span>
