@@ -19,6 +19,7 @@
   margin-bottom: 1.5rem;
 }
 
+
 .model-compare__pick {
   display: flex;
   flex-direction: column;
@@ -72,4 +73,68 @@
 .model-compare__win {
   color: var(--color-accent);
   font-weight: 700;
+}
+
+/* ===== /models/ 勾选对比 ===== */
+.card-pick {
+  position: relative;
+  height: 100%;
+}
+
+.card-pick__check {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.card-pick__check:has(input:checked) {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.card-pick:has(input:checked) .card {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+/* 已勾满 2 个：未选中的勾选框禁用 */
+.card-pick__check:has(input:disabled) {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.model-select__result {
+  margin-top: 2.5rem;
+  overflow-x: auto;
+}
+
+/* 勾选后跳转到 /compare/ 的按钮 */
+.model-select__go {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.model-select__go:hover {
+  background: var(--color-accent-strong);
+}
+
+[data-theme="light"] .model-select__go {
+  color: #fff;
 }

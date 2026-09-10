@@ -56,6 +56,14 @@
       `</tr></thead><tbody>${rows}</tbody></table>`;
   }
 
+  // /compare/?models=a,b：/models/ 索引页勾选后跳转带来的预选模型
+  let preset = [];
+  try {
+    preset = (new URLSearchParams(location.search).get("models") || "")
+      .split(",").map(decodeURIComponent).filter(Boolean);
+  } catch { /* 参数格式非法时忽略 */ }
+  let presetUsed = false;
+
   document.querySelectorAll(".model-compare").forEach((wrap) => {
     let models;
     try { models = JSON.parse(wrap.dataset.models); } catch { return; }
@@ -76,6 +84,15 @@
       return;
     }
 
+    // 带 ?models= 参数时：第一个不限分类的组件按参数预选两个模型（多余的忽略）
+    let presetTwo = null;
+    if (!presetUsed && !scope && preset.length >= 2) {
+      presetUsed = true;
+      const byUrl = new Map(models.map((m) => [m.url, m]));
+      const picked = preset.map((u) => byUrl.get(u)).filter(Boolean).slice(0, 2);
+      if (picked.length === 2) presetTwo = picked;
+    }
+
     const picks = {};
     wrap.querySelectorAll("select[data-pick]").forEach((sel, i) => {
       sel.innerHTML = models
@@ -84,6 +101,10 @@
       sel.value = String(i % Math.min(2, models.length));
       picks[sel.dataset.pick] = sel;
     });
+    if (presetTwo) {
+      picks.a.value = String(models.indexOf(presetTwo[0]));
+      picks.b.value = String(models.indexOf(presetTwo[1]));
+    }
 
     const result = wrap.querySelector(".model-compare__result");
     const update = () => {
@@ -95,6 +116,40 @@
 
     picks.a.addEventListener("change", update);
     picks.b.addEventListener("change", update);
+    update();
+  });
+
+  // /models/ 总索引：勾选两个模型卡片，跳转到 /compare/ 页面查看对比（最多勾 2 个）
+  document.querySelectorAll(".model-select").forEach((wrap) => {
+    let models;
+    try { models = JSON.parse(wrap.dataset.models); } catch { return; }
+    if (!Array.isArray(models) || models.length < 2) return;
+
+    const byUrl = new Map(models.map((m) => [m.url, m]));
+    const boxes = Array.from(wrap.querySelectorAll('input[type="checkbox"][data-model]'));
+    const result = wrap.querySelector(".model-select__result");
+    if (!result) return;
+
+    const update = () => {
+      const picked = boxes
+        .filter((b) => b.checked)
+        .map((b) => byUrl.get(b.dataset.model))
+        .filter(Boolean);
+      // 只能对比 2 个：勾满后禁用其余勾选框
+      const full = picked.length >= 2;
+      boxes.forEach((b) => { if (!b.checked) b.disabled = full; });
+      if (!full) {
+        result.innerHTML =
+          "<p>勾选上方两个模型卡片，即可前往对比页面对比规格与跑分。</p>";
+        return;
+      }
+      const href = "/compare/?models=" +
+        picked.slice(0, 2).map((m) => encodeURIComponent(m.url)).join(",");
+      result.innerHTML =
+        `<a class="model-select__go" href="${href}">前往对比这 2 个模型 →</a>`;
+    };
+
+    boxes.forEach((b) => b.addEventListener("change", update));
     update();
   });
 })();
