@@ -108,6 +108,130 @@
   outline-offset: -2px;
 }
 
+/* ===== 厂商树形侧边栏 ===== */
+.vendor-page {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (max-width: 1080px) {
+  .vendor-page { grid-template-columns: 1fr; }
+}
+
+.vendor-tree {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-4));
+  font-size: var(--text-sm);
+}
+
+.vendor-tree h3 {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-dim);
+  margin: 0 0 var(--space-3);
+}
+
+.vendor-tree__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vendor-tree__group + .vendor-tree__group {
+  margin-top: var(--space-3);
+}
+
+.vendor-tree__letter {
+  display: block;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  margin-bottom: var(--space-1);
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.vendor-tree__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vendor-tree__item + .vendor-tree__item {
+  margin-top: var(--space-1);
+}
+
+.vendor-tree__link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: block;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.vendor-tree__link:hover {
+  color: var(--color-text);
+  background: var(--color-bg-surface);
+  text-decoration: none;
+}
+
+.vendor-tree__link:hover::before {
+  content: "▸";
+  margin-right: var(--space-1);
+  color: var(--color-accent);
+}
+
+/* 厂商列表页：树形侧边栏 + 内容区域布局 */
+.vendor-page__content {
+  min-width: 0;
+}
+
+/* 厂商详情页：树形侧边栏 + 内容 + 规格表 */
+.docs-page .vendor-tree {
+  grid-column: 1;
+}
+
+.docs-page .docs {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 220px;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* 厂商页：3 列（树形 + 内容 + TOC）；模型页：2 列（内容 + TOC） */
+.page--models .docs-page .docs {
+  grid-template-columns: minmax(0, 1fr) 220px;
+}
+.page--models .docs-page .docs__content {
+  grid-column: 1;
+  min-width: 0;
+}
+.page--models .docs-page .docs__toc {
+  grid-column: 2;
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-4));
+}
+
+@media (max-width: 1080px) {
+  .docs-page .docs { grid-template-columns: minmax(0, 1fr); }
+  .docs-page .vendor-tree { display: none; }
+}
+
+.docs-page .docs__content {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.docs-page .docs__toc {
+  grid-column: 3;
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-4));
+}
+
 /* 已勾满 2 个：未选中的勾选框禁用 */
 .card-pick__check:has(input:disabled) {
   opacity: 0.45;
@@ -137,4 +261,605 @@
 
 [data-theme="light"] .model-select__go {
   color: #fff;
+}
+
+/* ============================================
+   模型推荐页面
+   ============================================ */
+
+.rec-section {
+  padding-block: var(--space-6);
+}
+
+/* Tab 栏 */
+.rec-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.rec-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.rec-tab:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.rec-tab--active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.rec-tab__icon {
+  font-size: var(--text-base);
+}
+
+/* 分类区块 */
+.rec-category {
+  display: none;
+}
+
+.rec-category--active {
+  display: block;
+}
+
+.rec-category__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.rec-category__icon {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+.rec-category__title {
+  font-size: var(--text-lg);
+  margin: 0 0 var(--space-1);
+}
+
+.rec-category__desc {
+  color: var(--color-text-dim);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+/* 排序下拉 */
+.rec-sort {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+.rec-sort label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.rec-sort select {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-surface);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.rec-sort select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* 模型卡片网格 */
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.rec-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+}
+
+.rec-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.rec-card__rank {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-dim);
+  background: var(--color-bg);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.rec-card__info {
+  margin-bottom: var(--space-1);
+}
+
+.rec-card__name {
+  font-size: var(--text-base);
+  margin: 0 0 2px;
+  color: var(--color-text);
+}
+
+.rec-card__vendor {
+  font-size: var(--text-sm);
+  color: var(--color-text-dim);
+  margin: 0;
+}
+
+.rec-card__scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.rec-score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.rec-score--reasoning { background: #e8f5e9; color: #2e7d32; }
+.rec-score--coding { background: #e3f2fd; color: #1565c0; }
+.rec-score--chinese { background: #f3e5f5; color: #7b1fa2; }
+.rec-score--longtext { background: #fff3e0; color: #e65100; }
+
+[data-theme="dark"] .rec-score--reasoning { background: rgba(46,125,50,0.2); color: #81c784; }
+[data-theme="dark"] .rec-score--coding { background: rgba(21,101,192,0.2); color: #90caf9; }
+[data-theme="dark"] .rec-score--chinese { background: rgba(123,31,162,0.2); color: #ce93d8; }
+[data-theme="dark"] .rec-score--longtext { background: rgba(230,81,0,0.2); color: #ffb74d; }
+
+.rec-card__price {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: var(--space-1);
+}
+
+.rec-card__price small {
+  font-weight: 400;
+  color: var(--color-text-dim);
+}
+
+.rec-card__context {
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+}
+
+.rec-card__modalities {
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+  background: var(--color-bg);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  width: fit-content;
+}
+
+/* openrouter 专题卡片 */
+.openrouter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.openrouter-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+}
+
+.openrouter-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.openrouter-card__name {
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.openrouter-card__vendor {
+  font-size: var(--text-sm);
+  color: var(--color-text-dim);
+  margin: 0;
+}
+
+.openrouter-card__context {
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+  margin: 0;
+}
+
+/* 对比表格 */
+.rec-comparison {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+.rec-comparison__title {
+  font-size: var(--text-base);
+  margin: 0 0 var(--space-4);
+  color: var(--color-text);
+}
+
+.rec-comparison__table {
+  overflow-x: auto;
+}
+
+.rec-comparison__table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.rec-comparison__table th,
+.rec-comparison__table td {
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.rec-comparison__table th {
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-bg-surface);
+}
+
+.rec-comparison__label {
+  text-align: left;
+  font-weight: 500;
+  color: var(--color-text-dim);
+  white-space: nowrap;
+}
+
+.rec-comparison__table td:not(.rec-comparison__label) {
+  white-space: nowrap;
+  font-weight: 600;
+  position: relative;
+  padding-right: 1rem;
+}
+
+/* 为对比表中的每个模型值添加分隔 */
+.rec-comparison__table tbody tr td:not(.rec-comparison__label):not(:last-child)::after {
+  content: "│";
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-dim);
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .rec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rec-categories {
+    gap: var(--space-1);
+  }
+
+  .rec-tab {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+  }
+}
+
+/* ===== OpenRouter 专题页面 ===== */
+.openrouter-stats {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.openrouter-stats .stat {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-bg-surface);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.openrouter-toolbar {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+  align-items: center;
+}
+
+.openrouter-search {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.openrouter-search input {
+  width: 100%;
+  padding: 0.6rem 0.8rem 0.6rem 2.2rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text);
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.openrouter-search input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.openrouter-search .mdi {
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+}
+
+.openrouter-filters {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.openrouter-filters select {
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.openrouter-filters select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* 模型网格 */
+.openrouter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.openrouter-card {
+  display: block;
+  padding: var(--space-4);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.openrouter-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.openrouter-card__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+  color: var(--color-accent);
+}
+
+.openrouter-card__vendor {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.openrouter-card__context {
+  font-size: var(--text-sm);
+  color: var(--color-text-dim);
+  margin-bottom: var(--space-2);
+}
+
+.openrouter-card__price {
+  display: flex;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.price-input {
+  color: var(--color-accent);
+}
+
+.price-output {
+  color: var(--color-text-muted);
+}
+
+.openrouter-empty {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-text-dim);
+}
+
+/* 模型规格卡片（single page） */
+.model-specs-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.model-specs-card__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.spec-label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-dim);
+}
+
+.spec-value {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* 评分条（single page） */
+.model-scores-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  padding: var(--space-3);
+  background: var(--color-bg-surface);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.score-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.score-bar__label {
+  width: 70px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+.score-bar__track {
+  flex: 1;
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-bar__fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 4px;
+  min-width: 2px;
+}
+
+.score-bar__value {
+  width: 40px;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .openrouter-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .openrouter-filters {
+    flex-direction: column;
+  }
+
+  .openrouter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .model-specs-card__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .openrouter-stats {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .openrouter-toolbar {
+    display: none;
+  }
 }

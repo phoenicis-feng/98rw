@@ -1,0 +1,56 @@
+{{ define "main" }}
+  <div class="container docs-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      <span aria-hidden="true">/</span>
+      <a href="/vendors/">厂商列表</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+    <header class="docs__header">
+      <h1>{{ .Title }}</h1>
+      <div class="docs__meta">
+        {{- with .Date }}
+          <time datetime="{{ .Format "2006-01-02" }}">发布于 {{ .Format "2006-01-02" }}</time>
+        {{- end }}
+      </div>
+    </header>
+    <div class="docs">
+      {{- partial "vendor-tree.html" . }}
+      <article class="docs__content">
+        {{ .Content }}
+        {{- $models := where (where site.Pages "Params.model" true) "Params.specs.vendor" "eq" .Title }}
+        {{- $sorted := $models.ByParam "specs.released" }}
+        {{- with $sorted }}
+          <h2>该厂商近期模型</h2>
+          <div class="grid grid-3">
+            {{- range .Reverse }}
+              <a class="card card--linked" href="{{ .RelPermalink }}">
+                <h3 class="card__title">{{ .LinkTitle }}</h3>
+                <p class="card__body">{{ or .Description (.Summary | plainify) }}</p>
+                {{- with .Params.specs }}
+                  <p class="card__body">
+                    <span class="badge">{{ .vendor }}</span>
+                    {{- with .released }}<span class="badge">{{ . }}</span>{{ end }}
+                  </p>
+                {{- end }}
+              </a>
+            {{- end }}
+          </div>
+        {{- end }}
+      </article>
+      {{- with .Params.specs }}
+        <aside class="docs__toc" aria-label="厂商信息">
+          <h2>厂商信息</h2>
+          <table class="specs-table">
+            {{- with .vendor }}<tr><th>厂商</th><td>{{ . }}</td></tr>{{ end }}
+            {{- with .released }}<tr><th>发布时间</th><td>{{ . }}</td></tr>{{ end }}
+            {{- with .category }}<tr><th>分类</th><td>{{ . }}</td></tr>{{ end }}
+            {{- with .context }}<tr><th>上下文</th><td>{{ . }}</td></tr>{{ end }}
+            {{- with .license }}<tr><th>许可证</th><td>{{ . }}</td></tr>{{ end }}
+          </table>
+        </aside>
+      {{- end }}
+    </div>
+  </div>
+{{ end }}

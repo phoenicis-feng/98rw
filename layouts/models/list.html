@@ -1,59 +1,89 @@
 {{ define "main" }}
   {{ partial "hero.html" . }}
-  <section class="section">
-    <div class="container">
-      {{- if not .Params.hero }}
-        <h1>{{ .Title }}</h1>
+  <div class="container docs-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      {{- range after 1 .Ancestors.Reverse }}
+        <span aria-hidden="true">/</span>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
       {{- end }}
-      {{ .Content }}
-      {{- if ne .CurrentSection .FirstSection }}
-        {{- /* 模型专页：列出本模型目录下的文章 */ -}}
-        {{- with .Pages }}
-          <div class="grid grid-3">
-            {{- range . }}
-              <a class="card card--linked" href="{{ .RelPermalink }}">
-                <h3 class="card__title">{{ .LinkTitle }}</h3>
-                <p class="card__body">{{ or .Description (.Summary | plainify) }}</p>
-              </a>
-            {{- end }}
-          </div>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+    <div class="docs">
+      <article class="docs__content">
+        {{- if not .Params.hero }}
+          <h1>{{ .Title }}</h1>
         {{- end }}
-      {{- else }}
-        {{- /* /models/ 总索引：自动汇总所有 front matter 标记 model: true 的模型专页 */ -}}
-        {{- $models := where site.Pages "Params.model" true }}
-        {{- with $models }}
-          {{- /* 汇总带 specs 的模型，供勾选对比用 */ -}}
-          {{- $specModels := slice }}
-          {{- range $m := . }}
-            {{- with $m.Params.specs }}
-              {{- $specModels = $specModels | append (dict "name" $m.LinkTitle "url" $m.RelPermalink "specs" .) }}
-            {{- end }}
-          {{- end }}
-          <div class="model-select" data-models='{{ $specModels | jsonify }}'>
+        {{ .Content }}
+        {{- if ne .CurrentSection .FirstSection }}
+          {{- with .Pages }}
             <div class="grid grid-3">
-              {{- range $m := .ByTitle }}
-                <div class="card-pick">
-                  <a class="card card--linked" href="{{ $m.RelPermalink }}">
-                    <h3 class="card__title">{{ $m.LinkTitle }}</h3>
-                    <p class="card__body">{{ or $m.Description ($m.Summary | plainify) }}</p>
-                    <p class="card__body">
-                      <span class="badge">{{ len $m.RegularPages }} 篇文章</span>
-                    </p>
-                  </a>
-                  {{- with $m.Params.specs }}
-                    <label class="card-pick__check" title="勾选两个模型进行对比（最多 2 个）">
-                      <input type="checkbox" data-model="{{ $m.RelPermalink }}"> 对比
-                    </label>
-                  {{- end }}
-                </div>
+              {{- range . }}
+                <a class="card card--linked" href="{{ .RelPermalink }}">
+                  <h3 class="card__title">{{ .LinkTitle }}</h3>
+                  <p class="card__body">{{ or .Description (.Summary | plainify) }}</p>
+                </a>
               {{- end }}
             </div>
-            <div class="model-select__result" aria-live="polite"></div>
-          </div>
+          {{- end }}
         {{- else }}
-          <p>暂无收录模型。在模型目录的 <code>_index.md</code> 里加 <code>model: true</code> 即可出现在这里。</p>
+          {{- $models := where site.Pages "Params.model" true }}
+          {{- with $models }}
+            {{- $specModels := slice }}
+            {{- range $m := . }}
+              {{- with $m.Params.specs }}
+                {{- $specModels = $specModels | append (dict "name" $m.LinkTitle "url" $m.RelPermalink "specs" .) }}
+              {{- end }}
+            {{- end }}
+            <div class="model-select" data-models='{{ $specModels | jsonify }}'>
+              <div class="grid grid-3">
+                {{- range $m := .ByTitle }}
+                  <div class="card-pick">
+                    <a class="card card--linked" href="{{ $m.RelPermalink }}">
+                      <h3 class="card__title">{{ $m.LinkTitle }}</h3>
+                      <p class="card__body">{{ or $m.Description ($m.Summary | plainify) }}</p>
+                      <p class="card__body">
+                        <span class="badge">{{ len $m.RegularPages }} 篇文章</span>
+                      </p>
+                    </a>
+                    {{- with $m.Params.specs }}
+                      <label class="card-pick__check" title="勾选两个模型进行对比（最多 2 个）">
+                        <input type="checkbox" data-model="{{ $m.RelPermalink }}"> 对比
+                      </label>
+                    {{- end }}
+                  </div>
+                {{- end }}
+              </div>
+              <div class="model-select__result" aria-live="polite"></div>
+            </div>
+          {{- else }}
+            <p>暂无收录模型。在模型目录的 <code>_index.md</code> 里加 <code>model: true</code> 即可出现在这里。</p>
+          {{- end }}
         {{- end }}
-      {{- end }}
+        {{- if ne .CurrentSection .FirstSection }}
+          <nav class="docs__pagination" aria-label="pagination">
+            {{- with .NextInSection }}
+              <a class="prev" href="{{ .RelPermalink }}">
+                <small>上一篇</small>
+                <span>{{ .LinkTitle }}</span>
+              </a>
+            {{- end }}
+            {{- with .PrevInSection }}
+              <a class="next" href="{{ .RelPermalink }}">
+                <small>下一篇</small>
+                <span>{{ .LinkTitle }}</span>
+              </a>
+            {{- end }}
+          </nav>
+        {{- end }}
+      </article>
+      <aside class="docs__toc" aria-label="本页目录">
+        {{- with .TableOfContents }}
+          <h2>本页目录</h2>
+          {{ . }}
+        {{- end }}
+      </aside>
     </div>
-  </section>
+  </div>
 {{ end }}

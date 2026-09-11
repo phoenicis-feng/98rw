@@ -1,0 +1,53 @@
+{{- /* 厂商树形侧边栏：按字母分组展示所有厂商 */ -}}
+{{- $letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" }}
+{{- $allVendors := sort (where (where (where site.Pages "Section" "vendors") "RelPermalink" "ne" "/vendors/") "Params.model" "!=" true) "LinkTitle" }}
+{{- $matched := slice }}
+
+<aside class="vendor-tree" aria-label="厂商导航">
+  <h3>厂商列表</h3>
+  <ul class="vendor-tree__list">
+    {{- range $letters }}
+      {{- $letter := . }}
+      {{- $matches := slice }}
+      {{- range $allVendors }}
+        {{- $firstChar := index .LinkTitle 0 | printf "%c" | upper }}
+        {{- if eq $firstChar $letter }}
+          {{- $matches = $matches | append . }}
+        {{- end }}
+      {{- end }}
+      {{- if $matches }}
+        {{- $matched = $matched | append $matches }}
+        <li class="vendor-tree__group">
+          <span class="vendor-tree__letter">{{ $letter }}</span>
+          <ul class="vendor-tree__items">
+            {{- range $matches }}
+              <li class="vendor-tree__item">
+                <a href="{{ .RelPermalink }}" class="vendor-tree__link">{{ .LinkTitle }}</a>
+              </li>
+            {{- end }}
+          </ul>
+        </li>
+      {{- end }}
+    {{- end }}
+    {{- /* 未匹配英文字母的厂商归入「其他」 */ -}}
+    {{- $others := slice }}
+    {{- range $allVendors }}
+      {{- $firstChar := index .LinkTitle 0 | printf "%c" | upper }}
+      {{- if not (in $letters $firstChar) }}
+        {{- $others = $others | append . }}
+      {{- end }}
+    {{- end }}
+    {{- if $others }}
+      <li class="vendor-tree__group">
+        <span class="vendor-tree__letter">其他</span>
+        <ul class="vendor-tree__items">
+          {{- range $others }}
+            <li class="vendor-tree__item">
+              <a href="{{ .RelPermalink }}" class="vendor-tree__link">{{ .LinkTitle }}</a>
+            </li>
+          {{- end }}
+        </ul>
+      </li>
+    {{- end }}
+  </ul>
+</aside>

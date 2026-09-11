@@ -1,0 +1,33 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <section class="section">
+    <div class="container">
+      {{- if not .Params.hero }}
+        <h1>{{ .Title }}</h1>
+      {{- end }}
+      {{ .Content }}
+      {{- $vendorPages := where .Pages "Params.model" "!=" true }}
+      {{- with $vendorPages }}
+        <div class="vendor-page">
+          {{- partial "vendor-tree.html" . }}
+          <div class="vendor-page__content">
+            <div class="grid grid-3">
+              {{- range .ByTitle }}
+                <a class="card card--linked" href="{{ .RelPermalink }}">
+                  <h3 class="card__title">{{ .LinkTitle }}</h3>
+                  <p class="card__body">{{ or .Description (.Summary | plainify) }}</p>
+                  {{- with .Params.specs }}
+                    <p class="card__body">
+                      <span class="badge">{{ .vendor }}</span>
+                      {{- with .region }}<span class="badge">{{ . }}</span>{{ end }}
+                    </p>
+                  {{- end }}
+                </a>
+              {{- end }}
+            </div>
+          </div>
+        </div>
+      {{- end }}
+    </div>
+  </section>
+{{ end }}

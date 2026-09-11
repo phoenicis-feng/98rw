@@ -1,0 +1,130 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <div class="container docs-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      <a href="{{ site.BaseUrl }}openrouter/">openrouter专题</a>
+      {{- range after 1 .Ancestors.Reverse }}
+        <span aria-hidden="true">/</span>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- end }}
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+
+    <article class="docs__content">
+      {{- if .Params.hero }}
+        {{ partial "hero-inline.html" . }}
+      {{- else }}
+        <h1>{{ .Title }}</h1>
+      {{- end }}
+
+      {{- /* 模型规格卡片 */ -}}
+      {{- with .Params.specs }}
+      <div class="model-specs-card">
+        <div class="model-specs-card__grid">
+          {{- if .vendor }}
+          <div class="spec-item">
+            <span class="spec-label">厂商</span>
+            <span class="spec-value">{{ .vendor }}</span>
+          </div>
+          {{- end }}
+          {{- if .category }}
+          <div class="spec-item">
+            <span class="spec-label">分类</span>
+            <span class="spec-value">{{ .category }}</span>
+          </div>
+          {{- end }}
+          {{- if .released }}
+          <div class="spec-item">
+            <span class="spec-label">发布时间</span>
+            <span class="spec-value">{{ .released }}</span>
+          </div>
+          {{- end }}
+          {{- if .context }}
+          <div class="spec-item">
+            <span class="spec-label">上下文窗口</span>
+            <span class="spec-value">{{ .context }}</span>
+          </div>
+          {{- end }}
+          {{- if .price_input }}
+          <div class="spec-item">
+            <span class="spec-label">输入价格</span>
+            <span class="spec-value">{{ .price_input }}</span>
+          </div>
+          {{- end }}
+          {{- if .price_output }}
+          <div class="spec-item">
+            <span class="spec-label">输出价格</span>
+            <span class="spec-value">{{ .price_output }}</span>
+          </div>
+          {{- end }}
+          {{- if .modalities }}
+          <div class="spec-item">
+            <span class="spec-label">模态</span>
+            <span class="spec-value">{{ .modalities }}</span>
+          </div>
+          {{- end }}
+          {{- if .thinking }}
+          <div class="spec-item">
+            <span class="spec-label">思考模式</span>
+            <span class="spec-value">{{ .thinking }}</span>
+          </div>
+          {{- end }}
+          {{- if .context_compaction }}
+          <div class="spec-item">
+            <span class="spec-label">上下文压缩</span>
+            <span class="spec-value">✅ 支持</span>
+          </div>
+          {{- end }}
+        </div>
+      </div>
+      {{- end }}
+
+      {{- /* 评分条 */ -}}
+      {{- with .Params.specs.scores }}
+      <div class="model-scores-bar">
+        {{- if .reasoning }}
+        <div class="score-bar">
+          <span class="score-bar__label">推理</span>
+          <div class="score-bar__track"><div class="score-bar__fill" style="width:{{ . }}%"></div></div>
+          <span class="score-bar__value">{{ . }}</span>
+        </div>
+        {{- end }}
+        {{- if .coding }}
+        <div class="score-bar">
+          <span class="score-bar__label">编码</span>
+          <div class="score-bar__track"><div class="score-bar__fill" style="width:{{ . }}%"></div></div>
+          <span class="score-bar__value">{{ . }}</span>
+        </div>
+        {{- end }}
+        {{- if .chinese }}
+        <div class="score-bar">
+          <span class="score-bar__label">中文</span>
+          <div class="score-bar__track"><div class="score-bar__fill" style="width:{{ . }}%"></div></div>
+          <span class="score-bar__value">{{ . }}</span>
+        </div>
+        {{- end }}
+        {{- if .longtext }}
+        <div class="score-bar">
+          <span class="score-bar__label">长文本</span>
+          <div class="score-bar__track"><div class="score-bar__fill" style="width:{{ . }}%"></div></div>
+          <span class="score-bar__value">{{ . }}</span>
+        </div>
+        {{- end }}
+      </div>
+      {{- end }}
+
+      {{- /* 页面内容 */ -}}
+      {{ .Content }}
+
+      {{- /* 返回链接 */ -}}
+      <nav class="docs__pagination" aria-label="pagination">
+        <a class="prev" href="{{ site.BaseUrl }}openrouter/">
+          <small>返回</small>
+          <span>← OpenRouter 模型列表</span>
+        </a>
+      </nav>
+    </article>
+  </div>
+{{ end }}

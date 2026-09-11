@@ -1,0 +1,138 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <div class="container docs-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+
+    <section class="rec-section">
+      {{- /* 所有模型页面 */ -}}
+      {{- $allModels := where site.Pages "Params.model" true -}}
+
+      {{- /* 分类 Tab */ -}}
+      <div class="rec-categories">
+        {{- range $index, $cat := .Params.categories }}
+          {{- $catId := $cat.slug }}
+          <button class="rec-tab{{ if eq $index 0 }} rec-tab--active{{ end }}" data-tab="{{ $catId }}">
+            <i class="mdi {{ $cat.icon }}"></i>
+            <span>{{ $cat.name }}</span>
+          </button>
+        {{- end }}
+      </div>
+
+      {{- /* 逐个分类渲染 */ -}}
+      {{- range $index, $cat := .Params.categories }}
+        {{- $catId := $cat.slug }}
+        {{- $catName := $cat.name }}
+        {{- $catDesc := $cat.description }}
+        {{- $catIcon := $cat.icon }}
+        {{- $modelSlugs := $cat.models }}
+
+        <div class="rec-category{{ if eq $index 0 }} rec-category--active{{ end }}" id="rec-{{ $catId }}" data-category>
+          <div class="rec-category__header">
+            <i class="mdi {{ $catIcon }} rec-category__icon"></i>
+            <div>
+              <h2 class="rec-category__title">{{ $catName }}</h2>
+              <p class="rec-category__desc">{{ $catDesc }}</p>
+            </div>
+            <div class="rec-sort">
+              <label for="sort-{{ $catId }}">排序：</label>
+              <select id="sort-{{ $catId }}" data-sort>
+                <option value="default">默认排序</option>
+                <option value="reasoning">按推理</option>
+                <option value="coding">按编码</option>
+                <option value="chinese">按中文</option>
+                <option value="longtext">按长文本</option>
+                <option value="price">按价格</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="rec-grid">
+            {{- $rank := 0 }}
+            {{- range $modelSlugs }}
+              {{- $rank = (add $rank 1) }}
+              {{- $model := site.GetPage (printf "/models/%s/" .) }}
+              {{- if $model }}
+                {{- $scores := $model.Params.specs.scores }}
+                {{- $specs := $model.Params.specs }}
+                <a href="{{ $model.RelPermalink }}" class="rec-card"
+                   data-reasoning="{{ $scores.reasoning | default 0 }}"
+                   data-coding="{{ $scores.coding | default 0 }}"
+                   data-chinese="{{ $scores.chinese | default 0 }}"
+                   data-longtext="{{ $scores.longtext | default 0 }}"
+                   data-price="{{ $specs.price_input }}">
+                  <div class="rec-card__rank">#{{ $rank }}</div>
+                  <div class="rec-card__info">
+                    <h3 class="rec-card__name">{{ $model.LinkTitle }}</h3>
+                    <p class="rec-card__vendor">{{ $specs.vendor }}</p>
+                  </div>
+                  <div class="rec-card__scores">
+                    {{- if $scores.reasoning }}
+                      <span class="rec-score rec-score--reasoning" title="推理">{{ $scores.reasoning }}</span>
+                    {{- end }}
+                    {{- if $scores.coding }}
+                      <span class="rec-score rec-score--coding" title="编码">{{ $scores.coding }}</span>
+                    {{- end }}
+                    {{- if $scores.chinese }}
+                      <span class="rec-score rec-score--chinese" title="中文">{{ $scores.chinese }}</span>
+                    {{- end }}
+                    {{- if $scores.longtext }}
+                      <span class="rec-score rec-score--longtext" title="长文本">{{ $scores.longtext }}</span>
+                    {{- end }}
+                  </div>
+                  <div class="rec-card__price">{{ $specs.price_input }} <small>入</small></div>
+                  {{- if $specs.context }}
+                    <div class="rec-card__context">{{ $specs.context }}</div>
+                  {{- end }}
+                  {{- if $specs.modalities }}
+                    <div class="rec-card__modalities">{{ $specs.modalities }}</div>
+                  {{- end }}
+                </a>
+              {{- end }}
+            {{- end }}
+          </div>
+
+          {{- /* Top 3 对比表 — pre-lookup models once */ -}}
+          {{- if ge (len $modelSlugs) 2 }}
+            {{- $compareSlugs := first 3 $modelSlugs }}
+            {{- $c0 := site.GetPage (printf "/models/%s/" (index $compareSlugs 0)) }}
+            {{- $c1 := site.GetPage (printf "/models/%s/" (index $compareSlugs 1)) }}
+            {{- $c2 := site.GetPage (printf "/models/%s/" (index $compareSlugs 2)) }}
+            {{- if $c0 }}
+              <div class="rec-comparison">
+                <h3 class="rec-comparison__title">TOP {{ if $c2 }}3{{ else }}2{{ end }} 对比</h3>
+                <div class="rec-comparison__table">
+                  <table>
+                    <thead>
+                      <tr><th>维度</th>
+                        <th>{{ $c0.LinkTitle }}</th>
+                        {{- if $c1 }}<th>{{ $c1.LinkTitle }}</th>{{ end }}
+                        {{- if $c2 }}<th>{{ $c2.LinkTitle }}</th>{{ end }}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{- if $c0.Params.specs.scores }}
+                      <tr><td class="rec-comparison__label">推理</td><td>{{ $c0.Params.specs.scores.reasoning }}</td>{{- if $c1 }}<td>{{ $c1.Params.specs.scores.reasoning }}</td>{{- end }}{{- if $c2 }}<td>{{ $c2.Params.specs.scores.reasoning }}</td>{{- end }}</tr>
+                      <tr><td class="rec-comparison__label">编码</td><td>{{ $c0.Params.specs.scores.coding }}</td>{{- if $c1 }}<td>{{ $c1.Params.specs.scores.coding }}</td>{{- end }}{{- if $c2 }}<td>{{ $c2.Params.specs.scores.coding }}</td>{{- end }}</tr>
+                      <tr><td class="rec-comparison__label">中文</td><td>{{ $c0.Params.specs.scores.chinese }}</td>{{- if $c1 }}<td>{{ $c1.Params.specs.scores.chinese }}</td>{{- end }}{{- if $c2 }}<td>{{ $c2.Params.specs.scores.chinese }}</td>{{- end }}</tr>
+                      <tr><td class="rec-comparison__label">长文本</td><td>{{ $c0.Params.specs.scores.longtext }}</td>{{- if $c1 }}<td>{{ $c1.Params.specs.scores.longtext }}</td>{{- end }}{{- if $c2 }}<td>{{ $c2.Params.specs.scores.longtext }}</td>{{- end }}</tr>
+                      {{- end }}
+                      <tr><td class="rec-comparison__label">输入价格</td><td>{{ $c0.Params.specs.price_input }}</td>{{- if $c1 }}<td>{{ $c1.Params.specs.price_input }}</td>{{- end }}{{- if $c2 }}<td>{{ $c2.Params.specs.price_input }}</td>{{- end }}</tr>
+                      <tr><td class="rec-comparison__label">上下文</td><td>{{ $c0.Params.specs.context }}</td>{{- if $c1 }}<td>{{ $c1.Params.specs.context }}</td>{{- end }}{{- if $c2 }}<td>{{ $c2.Params.specs.context }}</td>{{- end }}</tr>
+                      {{- if $c0.Params.specs.modalities }}
+                      <tr><td class="rec-comparison__label">模态</td><td>{{ $c0.Params.specs.modalities }}</td>{{- if $c1 }}<td>{{ $c1.Params.specs.modalities }}</td>{{- end }}{{- if $c2 }}<td>{{ $c2.Params.specs.modalities }}</td>{{- end }}</tr>
+                      {{- end }}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            {{- end }}
+          {{- end }}
+        </div>
+      {{- end }}
+    </section>
+  </div>
+{{ end }}

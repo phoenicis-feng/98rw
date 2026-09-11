@@ -1,0 +1,108 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <div class="container docs-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      {{- range after 1 .Ancestors.Reverse }}
+        <span aria-hidden="true">/</span>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- end }}
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+
+    {{- if .Content }}
+    <div class="openrouter-intro">
+      {{ .Content }}
+    </div>
+    {{- end }}
+
+    <section class="openrouter-section">
+      {{- /* 所有 model: true 且带 specs 的模型 */ -}}
+      {{- $allModels := where site.Pages "Params.model" true -}}
+      {{- $openrouterModels := where $allModels "Params.specs.vendor" "!=" "" }}
+
+      {{- /* 统计 */ -}}
+      <div class="openrouter-stats">
+        <span class="stat">{{ len $openrouterModels }} 个模型</span>
+      </div>
+
+      {{- /* 筛选栏 */ -}}
+      <div class="openrouter-toolbar">
+        <div class="openrouter-search">
+          <i class="mdi mdi-magnify"></i>
+          <input type="text" id="openrouter-search" placeholder="搜索模型名称或厂商..." aria-label="搜索模型">
+        </div>
+        <div class="openrouter-filters">
+          <select id="openrouter-vendor" data-filter="vendor" aria-label="按厂商筛选">
+            <option value="">全部厂商</option>
+            <option value="OpenAI">OpenAI (93)</option>
+            <option value="阿里 Qwen">阿里 Qwen (53)</option>
+            <option value="Google">Google (43)</option>
+            <option value="Anthropic">Anthropic (27)</option>
+            <option value="Mistral AI">Mistral AI (25)</option>
+            <option value="DeepSeek">DeepSeek (18)</option>
+            <option value="智谱 AI">智谱 AI (17)</option>
+            <option value="MiniMax">MiniMax (9)</option>
+            <option value="月之暗面">月之暗面 (8)</option>
+            <option value="Meta Llama">Meta Llama (8)</option>
+            <option value="腾讯">腾讯 (7)</option>
+            <option value="xAI">xAI (7)</option>
+            <option value="字节跳动">字节跳动 (6)</option>
+            <option value="NVIDIA">NVIDIA (10)</option>
+            <option value="Cohere">Cohere (5)</option>
+            <option value="Amazon">Amazon (5)</option>
+            <option value="Perplexity">Perplexity (5)</option>
+            <option value="Sakana AI">Sakana AI (4)</option>
+            <option value="IBM Granite">IBM Granite (2)</option>
+            <option value="Meta">Meta (7)</option>
+          </select>
+          <select id="openrouter-category" data-filter="category" aria-label="按分类筛选">
+            <option value="">全部分类</option>
+            <option value="国外">国外</option>
+            <option value="国内">国内</option>
+            <option value="开源">开源</option>
+            <option value="其他">其他</option>
+          </select>
+          <select id="openrouter-sort" data-sort aria-label="排序方式">
+            <option value="default">默认排序</option>
+            <option value="context">按上下文</option>
+            <option value="price_input">按价格（低→高）</option>
+            <option value="price_output">按输出价格</option>
+            <option value="name">按名称</option>
+            <option value="vendor">按厂商</option>
+          </select>
+        </div>
+      </div>
+
+      {{- /* 模型网格 */ -}}
+      <div class="openrouter-grid" id="openrouter-grid">
+        {{- range $index, $m := $openrouterModels }}
+          {{- $specs := $m.Params.specs }}
+          {{- if $specs }}
+          <a href="{{ $m.RelPermalink }}" class="openrouter-card"
+             data-name="{{ $m.LinkTitle }}"
+             data-vendor="{{ $specs.vendor }}"
+             data-category="{{ $specs.category }}"
+             data-context="{{ $specs.context }}"
+             data-price-input="{{ $specs.price_input }}"
+             data-price-output="{{ $specs.price_output }}">
+            <div class="openrouter-card__name">{{ $m.LinkTitle }}</div>
+            <div class="openrouter-card__vendor">{{ $specs.vendor }}</div>
+            <div class="openrouter-card__context">{{ $specs.context }}</div>
+            <div class="openrouter-card__price">
+              <span class="price-input">{{ $specs.price_input }}</span>
+              <span class="price-output">{{ $specs.price_output }}</span>
+            </div>
+          </a>
+          {{- end }}
+        {{- end }}
+      </div>
+
+      {{- /* 空状态 */ -}}
+      <div class="openrouter-empty" style="display:none;">
+        <p>未找到匹配的模型。</p>
+      </div>
+    </section>
+  </div>
+{{ end }}

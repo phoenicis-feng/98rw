@@ -38,22 +38,21 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     pageRef = "/"
     weight = 5
   [[menus.main]]
-    name = "模型榜单"
-    pageRef = "/rankings"
+    name = "应用场景"
+    pageRef = "/recommendations"
     weight = 10
   [[menus.main]]
-    name = "模型对比"
-    pageRef = "/compare"
+    name = "openrouter专题"
+    pageRef = "/openrouter"
     weight = 15
   [[menus.main]]
-    name = "深度评测"
-    pageRef = "/reviews"
+    name = "厂商列表"
+    pageRef = "/vendors"
     weight = 20
-  [[menus.main]]
-    name = "使用教程"
-    pageRef = "/tutorials"
-    weight = 30
 
 [taxonomies]
   category = 'categories'
   tag = 'tags'
+
+[markup.goldmark.extensions]
+  headingID = true

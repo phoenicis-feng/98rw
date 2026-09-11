@@ -153,3 +153,162 @@
     update();
   });
 })();
+
+/* ===== 模型推荐页面：分类 Tab 切换 ===== */
+(() => {
+  "use strict";
+  const recSection = document.querySelector(".rec-section");
+  if (!recSection) return;
+
+  const tabs = recSection.querySelectorAll(".rec-tab");
+  const categories = recSection.querySelectorAll("[data-category]");
+
+  function switchTab(tabId) {
+    tabs.forEach((t) => t.classList.remove("rec-tab--active"));
+    categories.forEach((c) => c.classList.remove("rec-category--active"));
+
+    const activeTab = recSection.querySelector(`.rec-tab[data-tab="${tabId}"]`);
+    const activeCat = recSection.querySelector(`[data-category][id="rec-${tabId}"]`);
+    if (activeTab) activeTab.classList.add("rec-tab--active");
+    if (activeCat) activeCat.classList.add("rec-category--active");
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => switchTab(tab.dataset.tab));
+  });
+
+  // 默认激活第一个
+  if (tabs.length > 0) switchTab(tabs[0].dataset.tab);
+})();
+
+/* ===== 模型推荐页面：卡片排序 ===== */
+(() => {
+  "use strict";
+  const recSection = document.querySelector(".rec-section");
+  if (!recSection) return;
+
+  // 从类似 "$5/M" 或 "¥2/M" 中提取数值
+  function parsePrice(str) {
+    if (!str) return 0;
+    const match = str.match(/[\d.]+/);
+    return match ? parseFloat(match[0]) : 0;
+  }
+
+  recSection.addEventListener("change", (e) => {
+    if (!e.target.matches("[data-sort]")) return;
+    const select = e.target;
+    const grid = select.closest(".rec-category").querySelector(".rec-grid");
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll(".rec-card"));
+    const sortBy = select.value;
+
+    cards.sort((a, b) => {
+      if (sortBy === "default") {
+        // 按原始 rank 顺序排列
+        const ra = parseInt(a.querySelector(".rec-card__rank")?.textContent?.replace("#", "") || "0");
+        const rb = parseInt(b.querySelector(".rec-card__rank")?.textContent?.replace("#", "") || "0");
+        return ra - rb;
+      }
+      const rawA = a.dataset[sortBy] || "0";
+      const rawB = b.dataset[sortBy] || "0";
+      const va = sortBy === "price" ? parsePrice(rawA) : (parseFloat(rawA) || 0);
+      const vb = sortBy === "price" ? parsePrice(rawB) : (parseFloat(rawB) || 0);
+      // 价格升序，其他降序
+      return sortBy === "price" ? va - vb : vb - va;
+    });
+
+    cards.forEach((card) => grid.appendChild(card));
+  });
+})();
+
+/* ===== OpenRouter 模型列表：搜索 + 筛选 + 排序 ===== */
+(() => {
+  "use strict";
+  const section = document.querySelector(".openrouter-section");
+  if (!section) return;
+
+  const searchInput = document.getElementById("openrouter-search");
+  const vendorSelect = document.getElementById("openrouter-vendor");
+  const categorySelect = document.getElementById("openrouter-category");
+  const sortSelect = document.getElementById("openrouter-sort");
+  const grid = document.getElementById("openrouter-grid");
+  const emptyState = document.querySelector(".openrouter-empty");
+
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll(".openrouter-card"));
+
+  function parsePrice(str) {
+    if (!str || str === "免费") return 0;
+    const match = str.match(/[\d.]+/);
+    return match ? parseFloat(match[0]) : 0;
+  }
+
+  function getContextNum(ctx) {
+    if (!ctx) return 0;
+    const match = ctx.match(/(\d+)/);
+    if (!match) return 0;
+    const num = parseFloat(match[1]);
+    if (ctx.includes("M")) return num * 1000000;
+    if (ctx.includes("K")) return num * 1000;
+    return num;
+  }
+
+  function filterAndSort() {
+    const q = (searchInput?.value || "").toLowerCase().trim();
+    const vendor = vendorSelect?.value || "";
+    const category = categorySelect?.value || "";
+    const sortBy = sortSelect?.value || "default";
+
+    let visible = 0;
+    cards.forEach((card) => {
+      const name = (card.dataset.name || "").toLowerCase();
+      const cardVendor = (card.dataset.vendor || "").toLowerCase();
+      const cardCat = (card.dataset.category || "").toLowerCase();
+
+      const matchesSearch = !q || name.includes(q) || cardVendor.includes(q);
+      const matchesVendor = !vendor || cardVendor === vendor.toLowerCase();
+      const matchesCategory = !category || cardCat === category.toLowerCase();
+
+      const show = matchesSearch && matchesVendor && matchesCategory;
+      card.style.display = show ? "" : "none";
+      if (show) visible++;
+    });
+
+    // 空状态
+    if (emptyState) emptyState.style.display = visible === 0 ? "block" : "none";
+
+    // 排序
+    const sorted = cards
+      .filter((c) => c.style.display !== "none")
+      .sort((a, b) => {
+        if (sortBy === "default") return 0;
+        if (sortBy === "context") {
+          return getContextNum(b.dataset.context) - getContextNum(a.dataset.context);
+        }
+        if (sortBy === "price_input") {
+          return parsePrice(a.dataset.priceInput) - parsePrice(b.dataset.priceInput);
+        }
+        if (sortBy === "price_output") {
+          return parsePrice(a.dataset.priceOutput) - parsePrice(b.dataset.priceOutput);
+        }
+        if (sortBy === "name") {
+          return a.dataset.name.localeCompare(b.dataset.name);
+        }
+        if (sortBy === "vendor") {
+          return a.dataset.vendor.localeCompare(b.dataset.vendor);
+        }
+        return 0;
+      });
+
+    sorted.forEach((card) => grid.appendChild(card));
+  }
+
+  searchInput?.addEventListener("input", filterAndSort);
+  vendorSelect?.addEventListener("change", filterAndSort);
+  categorySelect?.addEventListener("change", filterAndSort);
+  sortSelect?.addEventListener("change", filterAndSort);
+
+  // 初始执行
+  filterAndSort();
+})();
