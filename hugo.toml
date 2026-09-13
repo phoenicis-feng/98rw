@@ -2,7 +2,7 @@ baseURL = 'https://your-site.pages.dev/'
 # 生产环境改为真实域名，或在 Cloudflare Pages 设置自定义域名
 defaultContentLanguage = 'zh-cn'
 locale = 'zh-CN'
-title = 'Liftoff 站点'
+title = '聚模盒'
 # 使用 Liftoff 主题
 theme = 'liftoff'
 # 构建输出目录（Cloudflare Pages 的 Output directory 也填 public）
@@ -38,20 +38,20 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     pageRef = "/"
     weight = 5
   [[menus.main]]
+    name = "薅羊毛教程"
+    pageRef = "/haoyang"
+    weight = 10
+  [[menus.main]]
     name = "应用场景"
     pageRef = "/recommendations"
-    weight = 10
+    weight = 15
   [[menus.main]]
     name = "openrouter专题"
     pageRef = "/openrouter"
-    weight = 15
-  [[menus.main]]
-    name = "模型列表"
-    pageRef = "/models"
     weight = 20
   [[menus.main]]
-    name = "薅羊毛"
-    pageRef = "/haoyang"
+    name = "模型仓库"
+    pageRef = "/models"
     weight = 25
 
 [taxonomies]
