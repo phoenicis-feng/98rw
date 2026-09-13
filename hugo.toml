@@ -1,16 +1,11 @@
-baseURL = 'https://your-site.pages.dev/'
-# 生产环境改为真实域名，或在 Cloudflare Pages 设置自定义域名
+baseURL = 'https://www.jumohub.com/'
 defaultContentLanguage = 'zh-cn'
 locale = 'zh-CN'
 title = '聚模盒'
-# 使用 Liftoff 主题
 theme = 'liftoff'
-# 构建输出目录（Cloudflare Pages 的 Output directory 也填 public）
 publishDir = 'public'
-# 生成纯静态文件，适合 Cloudflare Pages
 disableKinds = ['RSS', 'taxonomy', 'term']
 
-# 构建设置
 [build]
   writeStats = false
   useResourceCacheWhenPossible = true
@@ -29,8 +24,43 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     renderer = { unsafe = true }
 
 [params]
-  description = "一个 Hugo + Liftoff + Cloudflare Pages 站点"
-  author = "作者"
+  description = "聚模盒 - 聚合最新AI模型的评测、对比与应用指南。涵盖OpenAI、Anthropic、Google DeepMind、Meta、DeepSeek等主流模型，提供选型建议与实战教程。"
+  author = "聚模盒"
+  ogImage = "https://www.jumohub.com/images/og-default.png"
+  twitterCard = "summary_large_image"
+  twitterSite = "@junmohuo"
+  keywords = [
+    "AI模型",
+    "大语言模型",
+    "LLM",
+    "模型评测",
+    "模型对比",
+    "模型选型",
+    "AI模型排行",
+    "免费API",
+    "白嫖模型",
+    "免费模型",
+    "模型薅羊毛",
+    "OpenAI",
+    "GPT",
+    "Claude",
+    "Gemini",
+    "DeepSeek",
+    "Llama",
+    "Qwen",
+    "ERNIE",
+    "Hunyuan",
+    "OpenRouter",
+    "模型API",
+    "API接入",
+    "AI教程",
+    "模型教程"
+  ]
+
+[minify]
+  disableXML = true
+  [minify.tdewolff.html]
+    keepWhitespace = false
 
 [menus]
   [[menus.main]]

@@ -2,7 +2,6 @@
   <div class="container docs-page">
     <nav class="docs__breadcrumb" aria-label="breadcrumb">
       <a href="{{ site.Home.RelPermalink }}">首页</a>
-      {{- /* 完整祖先链：深度评测 / 大语言模型 / Qwen-6 …（.Ancestors 由近及远，反转后跳过首页） */ -}}
       {{- range after 1 .Ancestors.Reverse }}
         <span aria-hidden="true">/</span>
         <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
@@ -21,7 +20,6 @@
     </header>
     <div class="docs docs--with-toc">
       <article class="docs__content">
-        {{- /* 模型规格卡片 */ -}}
         {{- with .Params.specs }}
         <div class="model-specs-card">
           <div class="model-specs-card__grid">
@@ -83,42 +81,23 @@
         </div>
         {{- end }}
 
-        {{- /* 评分条 */ -}}
-        {{- with .Params.specs.scores }}
-        <div class="model-scores-bar">
-          {{- if .reasoning }}
-          <div class="score-bar">
-            <span class="score-bar__label">推理</span>
-            <div class="score-bar__track"><div class="score-bar__fill" style="width:{{ . }}%"></div></div>
-            <span class="score-bar__value">{{ . }}</span>
-          </div>
-          {{- end }}
-          {{- if .coding }}
-          <div class="score-bar">
-            <span class="score-bar__label">编码</span>
-            <div class="score-bar__track"><div class="score-bar__fill" style="width:{{ . }}%"></div></div>
-            <span class="score-bar__value">{{ . }}</span>
-          </div>
-          {{- end }}
-          {{- if .chinese }}
-          <div class="score-bar">
-            <span class="score-bar__label">中文</span>
-            <div class="score-bar__track"><div class="score-bar__fill" style="width:{{ . }}%"></div></div>
-            <span class="score-bar__value">{{ . }}</span>
-          </div>
-          {{- end }}
-          {{- if .longtext }}
-          <div class="score-bar">
-            <span class="score-bar__label">长文本</span>
-            <div class="score-bar__track"><div class="score-bar__fill" style="width:{{ . }}%"></div></div>
-            <span class="score-bar__value">{{ . }}</span>
-          </div>
-          {{- end }}
-        </div>
-        {{- end }}
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "{{ .Title }}",
+          "description": "{{ .Description | default site.Params.description }}",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web",
+          "provider": {
+            "@type": "Organization",
+            "name": "{{ .Params.specs.vendor | default "未知厂商" }}"
+          },
+          "inLanguage": "{{ site.Language.Lang }}"
+        }
+        </script>
 
         {{ .Content }}
-        {{- /* .PrevInSection/.NextInSection 与直觉的阅读顺序相反，这里对调 */ -}}
         <nav class="docs__pagination" aria-label="pagination">
           {{- with .NextInSection }}
             <a class="prev" href="{{ .RelPermalink }}">
