@@ -1,7 +1,7 @@
 baseURL = 'https://www.jumohub.com/'
 defaultContentLanguage = 'zh-cn'
 locale = 'zh-CN'
-title = '聚模盒'
+title = '聚模盒 - AI模型评测、大语言模型对比、免费API、模型薅羊毛'
 theme = 'liftoff'
 publishDir = 'public'
 disableKinds = ['RSS', 'taxonomy', 'term']

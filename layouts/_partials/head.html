@@ -1,5 +1,21 @@
 {{- /* SEO 优化版 head */ -}}
-{{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) -}}
+{{- $title := "" -}}
+{{- if .IsHome -}}
+  {{- /* 首页：直接用 site title，已包含关键字 */ -}}
+  {{- $title = site.Title -}}
+{{- else if .IsSection -}}
+  {{- /* 栏目页：栏目关键字 + 站点名，避免栏目名重复 */ -}}
+  {{- $sectionTitle := dict -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "models" "AI模型库 | 模型对比") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "haoyang" "薅羊毛教程 | 免费API") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "openrouter" "OpenRouter模型专题") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "posts" "AI资讯") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "recommendations" "应用场景 | 模型选型") -}}
+  {{- $title = printf "%s - 聚模盒" (index $sectionTitle .Section) -}}
+{{- else -}}
+  {{- /* 内容页：文章/模型标题 - 聚模盒 | 栏目描述 */ -}}
+  {{- $title = printf "%s - 聚模盒 | AI模型评测与薅羊毛教程" .Title -}}
+{{- end -}}
 {{- $description := or .Description site.Params.description site.Params.Description "" -}}
 {{- $author := site.Params.author | default site.Title -}}
 {{- $ogImage := "" -}}
