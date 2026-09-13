@@ -1,6 +1,8 @@
 ---
 title: "OpenAI o3 Pro"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The o-series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o3-pro model uses more compute to think harder and provide consistently..."
 specs:
   vendor: "OpenAI"

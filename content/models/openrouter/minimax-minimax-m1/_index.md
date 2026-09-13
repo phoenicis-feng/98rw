@@ -1,6 +1,8 @@
 ---
 title: "MiniMax M1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "MiniMax-M1 is a large-scale, open-weight reasoning model designed for extended context and high-efficiency inference. It leverages a hybrid Mixture-of-Experts (MoE) architecture paired with a custom \""
 specs:
   vendor: "MiniMax"

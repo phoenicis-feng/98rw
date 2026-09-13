@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4 Turbo Preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023. **Note:** heavily rate limited by Open"
 specs:
   vendor: "OpenAI"

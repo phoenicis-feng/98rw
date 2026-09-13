@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Medium 3.1 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mistral Medium 3.1 is an updated version of Mistral Medium 3, which is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced opera"
 specs:
   vendor: "Mistral AI"

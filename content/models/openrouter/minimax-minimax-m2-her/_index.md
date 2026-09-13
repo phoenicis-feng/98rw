@@ -1,6 +1,8 @@
 ---
 title: "MiniMax M2-her"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "MiniMax M2-her is a dialogue-first large language model built for immersive roleplay, character-driven chat, and expressive multi-turn conversations. Designed to stay consistent in tone and personalit"
 specs:
   vendor: "MiniMax"

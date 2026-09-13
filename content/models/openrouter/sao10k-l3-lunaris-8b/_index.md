@@ -1,6 +1,8 @@
 ---
 title: "Sao10K Llama 3 8B Lunaris"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Lunaris 8B is a versatile generalist and roleplaying model based on Llama 3. It's a strategic merge of multiple models, designed to balance creativity with improved logic and general knowledge...."
 specs:
   vendor: "Sao10K"

@@ -1,6 +1,8 @@
 ---
 title: "Cognitivecomputations Uncensored"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “unc"
 specs:
   vendor: "Cognitivecomputations"

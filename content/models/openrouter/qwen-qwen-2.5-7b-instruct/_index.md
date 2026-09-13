@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen2.5 7B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and."
 specs:
   vendor: "阿里 Qwen"

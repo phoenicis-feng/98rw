@@ -1,6 +1,8 @@
 ---
 title: "Poolside Laguna XS 2.1 (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Laguna XS 2.1 is the latest coding agent model in the 33B-A3B category from [Poolside](https://poolside.ai/) and a step forward from their Laguna XS.2 model (released in April 2026). It combines..."
 specs:
   vendor: "Poolside"

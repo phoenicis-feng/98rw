@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 VL 8B Thinking"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-VL-8B-Thinking is the reasoning-optimized variant of the Qwen3-VL-8B multimodal model, designed for advanced visual and textual reasoning across complex scenes, documents, and temporal sequences"
 specs:
   vendor: "阿里 Qwen"

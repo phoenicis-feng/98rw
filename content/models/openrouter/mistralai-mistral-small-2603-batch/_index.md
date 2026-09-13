@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Small 4 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mistral Small 4 is the next major release in the Mistral Small family, unifying the capabilities of several flagship Mistral models into a single system. It combines strong reasoning from..."
 specs:
   vendor: "Mistral AI"

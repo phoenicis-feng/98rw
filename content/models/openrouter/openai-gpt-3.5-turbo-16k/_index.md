@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-3.5 Turbo 16k"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "This model offers four times the context length of gpt-3.5-turbo, allowing it to support approximately 20 pages of text in a single request at a higher cost. Training data: up..."
 specs:
   vendor: "OpenAI"

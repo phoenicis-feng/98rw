@@ -1,6 +1,8 @@
 ---
 title: "OpenRouter Body Builder (beta)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Transform your natural language requests into structured OpenRouter API request objects. Describe what you want to accomplish with AI models, and Body Builder will construct the appropriate API calls."
 specs:
   vendor: "OpenRouter"

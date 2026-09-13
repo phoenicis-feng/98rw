@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Opus 4.6 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Opus 4.6 is Anthropic’s strongest model for coding and long-running professional tasks. It is built for agents that operate across entire workflows rather than single prompts, making it especially eff"
 specs:
   vendor: "Anthropic"

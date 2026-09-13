@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 30B A3B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tas"
 specs:
   vendor: "阿里 Qwen"

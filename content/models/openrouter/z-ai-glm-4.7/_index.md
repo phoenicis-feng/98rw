@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 4.7"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GLM-4.7 is Z.ai’s latest flagship model, featuring upgrades in two key areas: enhanced programming capabilities and more stable multi-step reasoning/execution. It demonstrates significant improvements"
 specs:
   vendor: "智谱 AI"

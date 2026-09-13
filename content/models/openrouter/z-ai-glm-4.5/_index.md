@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 4.5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GLM-4.5 is our latest flagship foundation model, purpose-built for agent-based applications. It leverages a Mixture-of-Experts (MoE) architecture and supports a context length of up to 128k tokens. GL"
 specs:
   vendor: "智谱 AI"

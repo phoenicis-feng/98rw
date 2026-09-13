@@ -1,6 +1,8 @@
 ---
 title: "月之暗面 Kimi K2.6"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks"
 specs:
   vendor: "月之暗面"

@@ -1,6 +1,8 @@
 ---
 title: "Inclusion AI Ling 3.0 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agent"
 specs:
   vendor: "Inclusion AI"

@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4o-mini (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more a"
 specs:
   vendor: "OpenAI"

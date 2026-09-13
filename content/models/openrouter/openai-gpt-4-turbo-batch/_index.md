@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4 Turbo (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.
 
 Training data: up to December 2023."

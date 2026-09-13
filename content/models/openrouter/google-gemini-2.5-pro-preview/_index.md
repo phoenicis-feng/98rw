@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 2.5 Pro Preview 06-05"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through respo"
 specs:
   vendor: "Google"

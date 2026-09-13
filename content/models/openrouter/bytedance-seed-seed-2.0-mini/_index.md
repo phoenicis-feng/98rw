@@ -1,6 +1,8 @@
 ---
 title: "字节跳动 Seed-2.0-Mini"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Seed-2.0-mini targets latency-sensitive, high-concurrency, and cost-sensitive scenarios, emphasizing fast response and flexible inference deployment. It delivers performance comparable to ByteDance-Se"
 specs:
   vendor: "字节跳动"

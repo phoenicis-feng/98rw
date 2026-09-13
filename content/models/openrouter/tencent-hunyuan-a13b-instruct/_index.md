@@ -1,6 +1,8 @@
 ---
 title: "腾讯 Hunyuan A13B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Hunyuan-A13B is a 13B active parameter Mixture-of-Experts (MoE) language model developed by Tencent, with a total parameter count of 80B and support for reasoning via Chain-of-Thought. It offers compe"
 specs:
   vendor: "腾讯"

@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Coder 480B A35B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-con"
 specs:
   vendor: "阿里 Qwen"

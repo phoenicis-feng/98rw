@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "阿里云 发布的 Qwen3.7-Max 大语言模型。"
 specs:
+  popularity: 91
   vendor: "阿里云"
   category: "国内"
   released: "2026-03"

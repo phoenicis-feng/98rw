@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "Google DeepMind 发布的 Gemini 3.1 Pro 大语言模型。"
 specs:
+  popularity: 93
   vendor: "Google DeepMind"
   category: "国外"
   released: "2026-03"

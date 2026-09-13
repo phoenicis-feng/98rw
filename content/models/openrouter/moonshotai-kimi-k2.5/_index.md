@@ -1,6 +1,8 @@
 ---
 title: "月之暗面 Kimi K2.5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over appr"
 specs:
   vendor: "月之暗面"

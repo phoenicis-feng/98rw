@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Ministral 3 14B 2512"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The largest model in the Ministral 3 family, Ministral 3 14B offers frontier capabilities and performance comparable to its larger Mistral Small 3.2 24B counterpart. A powerful and efficient language."
 specs:
   vendor: "Mistral AI"

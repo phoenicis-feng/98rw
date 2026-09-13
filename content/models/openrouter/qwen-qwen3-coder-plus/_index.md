@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Coder Plus"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3 Coder Plus is Alibaba's proprietary version of the Open Source Qwen3 Coder 480B A35B. It is a powerful coding agent model specializing in autonomous programming via tool calling and..."
 specs:
   vendor: "阿里 Qwen"

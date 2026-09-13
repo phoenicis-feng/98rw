@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4.1 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-4.1 is a flagship large language model optimized for advanced instruction following, real-world software engineering, and long-context reasoning. It supports a 1 million token context window and o"
 specs:
   vendor: "OpenAI"

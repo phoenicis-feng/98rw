@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.7 Plus"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output, building on the series' text capabilities with a comprehensive upgrade to its..."
 specs:
   vendor: "阿里 Qwen"

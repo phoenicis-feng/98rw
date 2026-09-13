@@ -1,6 +1,8 @@
 ---
 title: "Thinking Machines Inkling"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic an"
 specs:
   vendor: "Thinking Machines"

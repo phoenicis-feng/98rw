@@ -144,10 +144,15 @@ def generate_frontmatter(model):
     # These are rough estimates for sorting purposes
     scores = generate_scores(context_length, prompt_price, completion_price)
 
+    from datetime import datetime
+    now_iso = datetime.now().isoformat() + "Z"
+
     frontmatter = f"""---
 title: "{title}"
 model: true
+date: {now_iso}
 description: "{desc}"
+reasoning: {scores['reasoning']}
 specs:
   vendor: "{vendor_name}"
   category: "{category}"
@@ -157,6 +162,7 @@ specs:
   price_output: "{price_output}"
   modalities: "{modality}"
   openrouter_id: "{model_id}"
+  openrouter_url: "https://openrouter.ai/models/{model_id}"
 
   scores:
     reasoning: {scores['reasoning']}

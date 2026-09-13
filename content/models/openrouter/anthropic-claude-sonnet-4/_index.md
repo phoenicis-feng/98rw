@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Sonnet 4"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Claude Sonnet 4 significantly enhances the capabilities of its predecessor, Sonnet 3.7, excelling in both coding and reasoning tasks with improved precision and controllability. Achieving state-of-the"
 specs:
   vendor: "Anthropic"

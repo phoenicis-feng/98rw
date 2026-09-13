@@ -1,6 +1,8 @@
 ---
 title: "MiniMax 01"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "MiniMax-01 is a combines MiniMax-Text-01 for text generation and MiniMax-VL-01 for image understanding. It has 456 billion parameters, with 45.9 billion parameters activated per inference, and can han"
 specs:
   vendor: "MiniMax"

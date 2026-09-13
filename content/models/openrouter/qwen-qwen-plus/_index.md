@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen-Plus"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen-Plus, based on the Qwen2.5 foundation model, is a 131K context model with a balanced performance, speed, and cost combination."
 specs:
   vendor: "阿里 Qwen"

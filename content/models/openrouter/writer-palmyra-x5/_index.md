@@ -1,6 +1,8 @@
 ---
 title: "Writer Palmyra X5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Palmyra X5 is Writer's most advanced model, purpose-built for building and scaling AI agents across the enterprise. It delivers industry-leading speed and efficiency on context windows up to 1 million"
 specs:
   vendor: "Writer"

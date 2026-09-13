@@ -1,6 +1,8 @@
 ---
 title: "Thedrummer Skyfall 36B V2"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Skyfall 36B v2 is an enhanced iteration of Mistral Small 2501, specifically fine-tuned for improved creativity, nuanced writing, role-playing, and coherent storytelling."
 specs:
   vendor: "Thedrummer"

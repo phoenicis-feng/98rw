@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Opus 4.5 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Claude Opus 4.5 is Anthropic’s frontier reasoning model optimized for complex software engineering, agentic workflows, and long-horizon computer use. It offers strong multimodal capabilities, competit"
 specs:
   vendor: "Anthropic"

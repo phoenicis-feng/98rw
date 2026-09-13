@@ -1,6 +1,8 @@
 ---
 title: "字节跳动 Seed-2.0-Lite"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Seed-2.0-Lite is a versatile, cost‑efficient enterprise workhorse that delivers strong multimodal and agent capabilities while offering noticeably lower latency, making it a practical default choice f"
 specs:
   vendor: "字节跳动"

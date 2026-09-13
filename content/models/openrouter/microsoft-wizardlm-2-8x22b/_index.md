@@ -1,6 +1,8 @@
 ---
 title: "Microsoft WizardLM-2 8x22B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "WizardLM-2 8x22B is Microsoft AI's most advanced Wizard model. It demonstrates highly competitive performance compared to leading proprietary models, and it consistently outperforms all existing state"
 specs:
   vendor: "Microsoft"

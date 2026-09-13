@@ -1,6 +1,8 @@
 ---
 title: "Morph V3 Large"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Morph's high-accuracy apply model for complex code edits. ~4,500 tokens/sec with 98% accuracy for precise code transformations. The model requires the prompt to be in the following format: <instructio"
 specs:
   vendor: "Morph"

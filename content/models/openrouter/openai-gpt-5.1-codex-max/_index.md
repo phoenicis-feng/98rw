@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.1-Codex-Max"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.1-Codex-Max is OpenAI’s latest agentic coding model, designed for long-running, high-context software development tasks. It is based on an updated version of the 5.1 reasoning stack and trained "
 specs:
   vendor: "OpenAI"

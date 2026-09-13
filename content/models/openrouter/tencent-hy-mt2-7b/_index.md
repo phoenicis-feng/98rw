@@ -1,6 +1,8 @@
 ---
 title: "腾讯 Hy-MT2-7B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Hy-MT2-7B is a 7B-parameter translation model from Tencent. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextu"
 specs:
   vendor: "腾讯"

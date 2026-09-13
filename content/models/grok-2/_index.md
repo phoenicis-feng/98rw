@@ -3,6 +3,7 @@ title: "Grok-2"
 model: true
 description: "xAI 发布的 Grok-2 大语言模型。"
 specs:
+  popularity: 72
   vendor: "xAI"
   category: "国外"
   released: "2024-08"

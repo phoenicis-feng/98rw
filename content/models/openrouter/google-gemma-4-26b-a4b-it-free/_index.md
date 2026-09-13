@@ -1,6 +1,8 @@
 ---
 title: "Google Gemma 4 26B A4B  (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B qual"
 specs:
   vendor: "Google"

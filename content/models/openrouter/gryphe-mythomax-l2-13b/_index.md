@@ -1,6 +1,8 @@
 ---
 title: "Gryphe MythoMax 13B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge"
 specs:
   vendor: "Gryphe"

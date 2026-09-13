@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.1-Codex"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.1-Codex is a specialized version of GPT-5.1 optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of c"
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "Microsoft Phi 4"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "[Microsoft Research](/microsoft) Phi-4 is designed to perform well in complex reasoning tasks and can operate efficiently in situations with limited memory or where quick responses are needed. At 14 b"
 specs:
   vendor: "Microsoft"

@@ -1,6 +1,8 @@
 ---
 title: "月之暗面 Kimi K2 0905"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Kimi K2 0905 is the September update of [Kimi K2 0711](moonshotai/kimi-k2). It is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters "
 specs:
   vendor: "月之暗面"

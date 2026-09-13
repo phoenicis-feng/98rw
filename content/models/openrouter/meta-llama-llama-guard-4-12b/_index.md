@@ -1,6 +1,8 @@
 ---
 title: "Meta Llama Llama Guard 4 12B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Llama Guard 4 is a Llama 4 Scout-derived multimodal pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM..."
 specs:
   vendor: "Meta Llama"

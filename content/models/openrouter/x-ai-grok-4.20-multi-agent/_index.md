@@ -1,6 +1,8 @@
 ---
 title: "xAI Grok 4.20 Multi-Agent"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Grok 4.20 Multi-Agent is a variant of SpaceXAI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and syn"
 specs:
   vendor: "xAI"

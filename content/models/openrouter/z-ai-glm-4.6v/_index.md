@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 4.6V"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GLM-4.6V is a large multimodal model designed for high-fidelity visual understanding and long-context reasoning across images, documents, and mixed media. It supports up to 128K tokens, processes comp"
 specs:
   vendor: "智谱 AI"

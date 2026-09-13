@@ -3,6 +3,7 @@ title: "Llama 4 Maverick"
 model: true
 description: "Meta 发布的 Llama 4 Maverick 大语言模型。"
 specs:
+  popularity: 75
   vendor: "Meta"
   category: "国外"
   released: "2025-04"

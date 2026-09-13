@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 235B A22B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-235B-A22B is a 235B parameter mixture-of-experts (MoE) model developed by Qwen, activating 22B parameters per forward pass. It supports seamless switching between a \"thinking\" mode for complex r"
 specs:
   vendor: "阿里 Qwen"

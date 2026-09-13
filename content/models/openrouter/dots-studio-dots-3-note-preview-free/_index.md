@@ -1,6 +1,8 @@
 ---
 title: "Dots-Studio Dots3-Note Preview (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is..."
 specs:
   vendor: "Dots-Studio"

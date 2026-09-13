@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V4 Flash 0423"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fa"
 specs:
   vendor: "DeepSeek"

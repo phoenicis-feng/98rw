@@ -1,6 +1,8 @@
 ---
 title: "MiniMax M2.1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "MiniMax-M2.1 is a lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. With only 10 billion activated parameters, it delivers"
 specs:
   vendor: "MiniMax"

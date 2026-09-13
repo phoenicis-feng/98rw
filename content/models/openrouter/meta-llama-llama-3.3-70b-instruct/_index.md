@@ -1,6 +1,8 @@
 ---
 title: "Meta Llama Llama 3.3 70B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model..."
 specs:
   vendor: "Meta Llama"

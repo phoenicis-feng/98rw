@@ -3,6 +3,7 @@ title: "Hunyuan 3D"
 model: true
 description: "腾讯 发布的 Hunyuan 3D 大语言模型。"
 specs:
+  popularity: 62
   vendor: "腾讯"
   category: "国内"
   released: "2025-08"

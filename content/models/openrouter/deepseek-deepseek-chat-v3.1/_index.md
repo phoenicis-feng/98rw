@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V3.1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase "
 specs:
   vendor: "DeepSeek"

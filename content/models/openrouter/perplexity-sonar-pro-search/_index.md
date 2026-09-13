@@ -1,6 +1,8 @@
 ---
 title: "Perplexity Sonar Pro Search"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Exclusively available on the OpenRouter API, Sonar Pro's new Pro Search mode is Perplexity's most advanced agentic search system. It is designed for deeper reasoning and analysis. Pricing is based..."
 specs:
   vendor: "Perplexity"

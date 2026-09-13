@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Haiku 4.5 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Claude Haiku 4.5 is Anthropic’s fastest and most efficient model, delivering near-frontier intelligence at a fraction of the cost and latency of larger Claude models. Matching Claude Sonnet 4’s perfor"
 specs:
   vendor: "Anthropic"

@@ -1,6 +1,8 @@
 ---
 title: "Amazon Nova Premier 1.0"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Amazon Nova Premier is the most capable of Amazon’s multimodal models for complex reasoning tasks and for use as the best teacher for distilling custom models."
 specs:
   vendor: "Amazon"

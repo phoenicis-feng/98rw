@@ -19,7 +19,7 @@
         {{- end }}
       </div>
     </header>
-    <div class="docs">
+    <div class="docs docs--with-toc">
       <article class="docs__content">
         {{- /* 模型规格卡片 */ -}}
         {{- with .Params.specs }}
@@ -136,7 +136,6 @@
       </article>
       <aside class="docs__toc" aria-label="本页目录">
         {{- with .TableOfContents }}
-          <h2>本页目录</h2>
           {{ . }}
         {{- end }}
       </aside>

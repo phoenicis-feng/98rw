@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V4.1 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "DeepSeek V4.1 Flash is a sparse mixture-of-experts model from DeepSeek, and the first built on the company's Causal Encoder-Decoder (CED) architecture. It activates 8B parameters on input and 16B on.."
 specs:
   vendor: "DeepSeek"

@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 4.7 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "As a 30B-class SOTA model, GLM-4.7-Flash offers a new option that balances performance and efficiency. It is further optimized for agentic coding use cases, strengthening coding capabilities, long-hor"
 specs:
   vendor: "智谱 AI"

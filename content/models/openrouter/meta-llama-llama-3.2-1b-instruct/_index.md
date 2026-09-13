@@ -1,6 +1,8 @@
 ---
 title: "Meta Llama Llama 3.2 1B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows "
 specs:
   vendor: "Meta Llama"

@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 5.3 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GLM-5.3-Flash is a native multimodal model from Z.ai. It is suited for efficient coding and long-horizon agent tasks. Its hybrid sparse and linear attention architecture maintains accurate long-contex"
 specs:
   vendor: "智谱 AI"

@@ -1,6 +1,8 @@
 ---
 title: "Cohere Command R7B (12-2024)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Command R7B (12-2024) is a small, fast update of the Command R+ model, delivered in December 2024. It excels at RAG, tool use, agents, and similar tasks requiring complex reasoning..."
 specs:
   vendor: "Cohere"

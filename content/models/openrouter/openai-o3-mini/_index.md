@@ -1,6 +1,8 @@
 ---
 title: "OpenAI o3 Mini"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "OpenAI o3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and coding. This model supports the `reasoning_effort` parameter, "
 specs:
   vendor: "OpenAI"

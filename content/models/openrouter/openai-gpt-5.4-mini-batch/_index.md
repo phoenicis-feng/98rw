@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.4 Mini (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.4 mini brings the core capabilities of GPT-5.4 to a faster, more efficient model optimized for high-throughput workloads. It supports text and image inputs with strong performance across reasoni"
 specs:
   vendor: "OpenAI"

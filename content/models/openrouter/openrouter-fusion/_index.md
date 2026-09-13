@@ -1,6 +1,8 @@
 ---
 title: "OpenRouter Fusion"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Fusion turns your prompt into a small multi-model deliberation. A panel of expert models (see below) analyzes your prompt in parallel with web search and web fetch enabled, then a..."
 specs:
   vendor: "OpenRouter"

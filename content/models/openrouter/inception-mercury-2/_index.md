@@ -1,6 +1,8 @@
 ---
 title: "Inception Mercury 2"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mercury 2 is an extremely fast reasoning LLM, and the first reasoning diffusion LLM (dLLM). Instead of generating tokens sequentially, Mercury 2 produces and refines multiple tokens in parallel, achie"
 specs:
   vendor: "Inception"

@@ -3,6 +3,7 @@ title: "Gemini 2.0 Flash"
 model: true
 description: "Google DeepMind 发布的 Gemini 2.0 Flash 大语言模型。"
 specs:
+  popularity: 80
   vendor: "Google DeepMind"
   category: "国外"
   released: "2025-02"

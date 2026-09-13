@@ -1,6 +1,8 @@
 ---
 title: "Bytedance UI-TARS 7B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "UI-TARS-1.5 is a multimodal vision-language agent optimized for GUI-based environments, including desktop interfaces, web browsers, mobile systems, and games. Built by ByteDance, it builds upon the UI"
 specs:
   vendor: "Bytedance"

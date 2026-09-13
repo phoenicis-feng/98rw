@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.5 Plus 2026-04-20"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.5 Plus (April 2026) is a large-scale multimodal language model from Alibaba. It accepts text, image, and video input and produces text output, with a 1M token context window. This..."
 specs:
   vendor: "阿里 Qwen"

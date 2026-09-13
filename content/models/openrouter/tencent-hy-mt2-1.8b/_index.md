@@ -1,6 +1,8 @@
 ---
 title: "腾讯 Hy-MT2-1.8B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Hy-MT2-1.8B is a compact 1.8B-parameter translation model from Tencent. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-bas"
 specs:
   vendor: "腾讯"

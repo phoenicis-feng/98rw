@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.1 Flash Lite (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.1 Flash Lite is Google’s GA high-efficiency multimodal model optimized for low-latency, high-volume workloads. It supports text, image, video, audio, and PDF inputs, and is designed for light"
 specs:
   vendor: "Google"

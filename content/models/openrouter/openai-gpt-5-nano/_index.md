@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5 Nano"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5-Nano is the smallest and fastest variant in the GPT-5 system, optimized for developer tools, rapid interactions, and ultra-low latency environments. While limited in reasoning depth compared to "
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "Cohere Command R (08-2024)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "command-r-08-2024 is an update of the [Command R](/models/cohere/command-r) with improved performance for multilingual retrieval-augmented generation (RAG) and tool use. More broadly, it is better at "
 specs:
   vendor: "Cohere"

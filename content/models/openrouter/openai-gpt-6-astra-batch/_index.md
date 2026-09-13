@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-6 Astra (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-6 Astra is OpenAI's flagship model for demanding end-to-end work. It is suited for advanced analysis, software engineering, deep research, scientific work, and document creation, with particular s"
 specs:
   vendor: "OpenAI"

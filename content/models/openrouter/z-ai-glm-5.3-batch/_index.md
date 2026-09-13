@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 5.3 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GLM-5.3 is a large-scale reasoning model from Z.ai, built for complex software engineering and long-horizon agent tasks. It supports text input and output with a 1M-token context window, and improves."
 specs:
   vendor: "智谱 AI"

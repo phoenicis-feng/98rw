@@ -1,6 +1,8 @@
 ---
 title: "OpenAI gpt-oss-safeguard-20b"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "gpt-oss-safeguard-20b is a safety reasoning model from OpenAI built upon gpt-oss-20b. This open-weight, 21B-parameter Mixture-of-Experts (MoE) model offers lower latency for safety tasks like content "
 specs:
   vendor: "OpenAI"

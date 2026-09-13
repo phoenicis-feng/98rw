@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.6 Terra"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-5.6 Terra is a balanced model in OpenAI's GPT-5.6 series, positioned between the flagship Sol tier and the cost-efficient Luna tier. It is suited for everyday coding, reasoning, and agentic..."
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "OpenAI o4 Mini (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining strong multimodal and agentic capabilities. It supports tool use and demonst"
 specs:
   vendor: "OpenAI"

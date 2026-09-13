@@ -3,6 +3,7 @@ title: "o3"
 model: true
 description: "OpenAI 发布的 o3 大语言模型。"
 specs:
+  popularity: 88
   vendor: "OpenAI"
   category: "国外"
   released: "2025-04"

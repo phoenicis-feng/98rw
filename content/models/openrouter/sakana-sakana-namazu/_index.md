@@ -1,6 +1,8 @@
 ---
 title: "Sakana AI Sakana Namazu"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Sakana Namazu is a Japanese-specialized reasoning model from Sakana AI, based on Kimi K2.6 with additional training for Japanese language and business contexts. It is suited for Japanese instruction f"
 specs:
   vendor: "Sakana AI"

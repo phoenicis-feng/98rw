@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek R1 Distill Llama 70B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The mo"
 specs:
   vendor: "DeepSeek"

@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V4 Pro 0423"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "DeepSeek V4 Pro is a large-scale Mixture-of-Experts model from DeepSeek with 1.6T total parameters and 49B activated parameters, supporting a 1M-token context window. It is designed for advanced reaso"
 specs:
   vendor: "DeepSeek"

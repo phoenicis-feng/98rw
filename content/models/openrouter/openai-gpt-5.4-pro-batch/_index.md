@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.4 Pro (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-5.4 Pro is OpenAI's most advanced model, building on GPT-5.4's unified architecture with enhanced reasoning capabilities for complex, high-stakes tasks. It features a 1M+ token context window (922"
 specs:
   vendor: "OpenAI"

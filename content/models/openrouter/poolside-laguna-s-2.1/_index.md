@@ -1,6 +1,8 @@
 ---
 title: "Poolside Laguna S 2.1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Laguna S 2.1 is the latest coding agent model from [Poolside](<https://poolside.ai/>). Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and.."
 specs:
   vendor: "Poolside"

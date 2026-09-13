@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek R1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "DeepSeek R1 is here: Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass...."
 specs:
   vendor: "DeepSeek"

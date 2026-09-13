@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "腾讯 发布的 Hunyuan 2.0 大语言模型。"
 specs:
+  popularity: 83
   vendor: "腾讯"
   category: "国内"
   released: "2025-12"

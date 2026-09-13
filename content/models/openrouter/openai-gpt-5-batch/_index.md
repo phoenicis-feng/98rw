@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5 is OpenAI’s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction f"
 specs:
   vendor: "OpenAI"

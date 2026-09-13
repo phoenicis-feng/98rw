@@ -1,6 +1,8 @@
 ---
 title: "Google Lyria 3 Clip Preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "30 second duration clips are priced at $0.04 per clip. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate..."
 specs:
   vendor: "Google"

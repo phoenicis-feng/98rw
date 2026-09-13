@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.2 Chat"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.2 Chat (AKA Instant) is the fast, lightweight member of the 5.2 family, optimized for low-latency chat while retaining strong general intelligence. It uses adaptive reasoning to selectively “thi"
 specs:
   vendor: "OpenAI"

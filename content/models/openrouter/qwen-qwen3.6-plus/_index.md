@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.6 Plus"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen 3.6 Plus builds on a hybrid architecture that combines efficient linear attention with sparse mixture-of-experts routing, enabling strong scalability and high-performance inference. Compared to t"
 specs:
   vendor: "阿里 Qwen"

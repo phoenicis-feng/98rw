@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.5 Flash (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.5 Flash is Google's high-efficiency multimodal model, bringing near-Pro level coding and reasoning at Flash-tier cost and speed. It is highly optimized for coding proficiency and parallel age"
 specs:
   vendor: "Google"

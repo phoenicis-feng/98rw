@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V3 0324"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team. It succeeds the [DeepSeek V3](/deepseek/deepseek-chat-v3) mod"
 specs:
   vendor: "DeepSeek"

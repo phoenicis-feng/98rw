@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.8 27B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thin"
 specs:
   vendor: "阿里 Qwen"

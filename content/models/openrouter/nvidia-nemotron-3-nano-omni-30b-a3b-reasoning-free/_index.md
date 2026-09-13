@@ -1,6 +1,8 @@
 ---
 title: "NVIDIA Nemotron 3 Nano Omni (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "NVIDIA Nemotron™ 3 Nano Omni is a 30B-A3B open multimodal model designed to function as a perception and context sub-agent in enterprise agent systems. It accepts text, image, video, and..."
 specs:
   vendor: "NVIDIA"

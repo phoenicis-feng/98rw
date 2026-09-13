@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "Anthropic 旗舰推理模型，200K 上下文，扩展思考 + 并行工具调用，复杂多步推理与长时程 Agent 任务。"
 specs:
+  popularity: 90
   vendor: "Anthropic"
   category: "国外"
   released: "2025-05"

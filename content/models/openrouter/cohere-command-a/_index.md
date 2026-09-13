@@ -1,6 +1,8 @@
 ---
 title: "Cohere Command A"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Command A is an open-weights 111B parameter model with a 256k context window focused on delivering great performance across agentic, multilingual, and coding use cases. Compared to other leading propr"
 specs:
   vendor: "Cohere"

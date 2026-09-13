@@ -1,6 +1,8 @@
 ---
 title: "Meta Muse Glimmer 30B (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Muse Glimmer 30B is a dense, open-weight multimodal model from Meta Superintelligence Labs, distilled from Muse Spark and optimized for autonomous agents on consumer hardware. It is suited for long-ho"
 specs:
   vendor: "Meta"

@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Sonnet 4.6"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Sonnet 4.6 is Anthropic's most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work. It excels at iterative development, complex codebase navigation, "
 specs:
   vendor: "Anthropic"

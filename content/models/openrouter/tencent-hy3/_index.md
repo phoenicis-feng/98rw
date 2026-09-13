@@ -1,6 +1,8 @@
 ---
 title: "腾讯 Hy3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Hy3 is a 295B-parameter Mixture-of-Experts model from Tencent (21B active, 192 experts with top-8 routing) built for reasoning, agentic workflows, and real-world production use. It supports a configur"
 specs:
   vendor: "腾讯"

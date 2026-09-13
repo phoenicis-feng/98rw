@@ -1,6 +1,8 @@
 ---
 title: "Meta Llama Llama 3.2 3B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with "
 specs:
   vendor: "Meta Llama"

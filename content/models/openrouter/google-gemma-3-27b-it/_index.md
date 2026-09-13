@@ -1,6 +1,8 @@
 ---
 title: "Google Gemma 3 27B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, "
 specs:
   vendor: "Google"

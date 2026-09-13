@@ -1,6 +1,8 @@
 ---
 title: "Mancer Weaver (alpha)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "An attempt to recreate Claude-style verbosity, but don't expect the same level of coherence or memory. Meant for use in roleplay/narrative situations."
 specs:
   vendor: "Mancer"

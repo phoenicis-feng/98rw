@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.6 Luna Pro (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-5.6 Luna Pro is the same underlying model as [GPT-5.6 Luna](https://openrouter.ai/openai/gpt-5.6-luna), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.
 
 Le"

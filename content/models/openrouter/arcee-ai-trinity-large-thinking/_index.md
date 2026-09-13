@@ -1,6 +1,8 @@
 ---
 title: "Arcee-Ai Trinity Large Thinking"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video: https://you"
 specs:
   vendor: "Arcee-Ai"

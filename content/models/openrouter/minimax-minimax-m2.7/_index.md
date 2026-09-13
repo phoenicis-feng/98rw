@@ -1,6 +1,8 @@
 ---
 title: "MiniMax M2.7"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates "
 specs:
   vendor: "MiniMax"

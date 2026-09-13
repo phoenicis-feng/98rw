@@ -3,6 +3,7 @@ title: "Qwen3-Max"
 model: true
 description: "阿里云 发布的 Qwen3-Max 大语言模型。"
 specs:
+  popularity: 85
   vendor: "阿里云"
   category: "国内"
   released: "2025-04"

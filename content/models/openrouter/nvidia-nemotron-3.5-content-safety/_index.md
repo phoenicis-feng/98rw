@@ -1,6 +1,8 @@
 ---
 title: "NVIDIA Nemotron 3.5 Content Safety"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "NVIDIA Nemotron 3.5 Content Safety is a compact 4B-parameter multimodal guardrail model from NVIDIA, fine-tuned from Google Gemma-3-4B. It moderates both inputs to and responses from LLMs and VLMs, ac"
 specs:
   vendor: "NVIDIA"

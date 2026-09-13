@@ -1,6 +1,8 @@
 ---
 title: "OpenRouter Pareto Code Router"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "The Pareto Router maintains a tiered shortlist of strong coding models, ranked by [Artificial Analysis](https://artificialanalysis.ai/) coding percentiles. Set min_coding_score between 0 and 1 on the "
 specs:
   vendor: "OpenRouter"

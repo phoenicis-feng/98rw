@@ -1,6 +1,8 @@
 ---
 title: "NVIDIA Nemotron 3 Nano 30B A3B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems. The model is fully..."
 specs:
   vendor: "NVIDIA"

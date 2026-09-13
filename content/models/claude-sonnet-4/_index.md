@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "Anthropic 平衡性能与成本的默认推荐模型，200K 上下文 + 1M(Vertex)，SWE-bench 72.7%，免费层可用，AA Agentic Index 第12名。"
 specs:
+  popularity: 87
   vendor: "Anthropic"
   category: "国外"
   released: "2025-05"

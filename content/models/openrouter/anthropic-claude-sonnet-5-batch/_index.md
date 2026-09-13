@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Sonnet 5 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels ("
 specs:
   vendor: "Anthropic"

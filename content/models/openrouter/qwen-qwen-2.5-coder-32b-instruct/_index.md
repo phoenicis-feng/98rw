@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen2.5 Coder 32B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen). Qwen2.5-Coder brings the following improvements upon CodeQwen1.5: - Significantly improveme"
 specs:
   vendor: "阿里 Qwen"

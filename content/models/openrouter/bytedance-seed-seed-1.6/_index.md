@@ -1,6 +1,8 @@
 ---
 title: "字节跳动 Seed 1.6"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Seed 1.6 is a general-purpose model released by the ByteDance Seed team. It incorporates multimodal capabilities and adaptive deep thinking with a 256K context window."
 specs:
   vendor: "字节跳动"

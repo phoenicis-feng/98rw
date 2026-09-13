@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.7 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.7 Flash is a vision-language reasoning model from Alibaba. It is suited for multimodal agents, visual coding, search, and computer interaction, with strengths in object recognition, spatial unde"
 specs:
   vendor: "阿里 Qwen"

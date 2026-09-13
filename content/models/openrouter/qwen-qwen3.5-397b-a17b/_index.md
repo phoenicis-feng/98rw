@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.5 397B A17B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher infere"
 specs:
   vendor: "阿里 Qwen"

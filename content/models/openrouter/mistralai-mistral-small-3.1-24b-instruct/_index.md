@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Small 3.1 24B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mistral Small 3.1 24B Instruct is an upgraded variant of Mistral Small 3 (2501), featuring 24 billion parameters with advanced multimodal capabilities. It provides state-of-the-art performance in text"
 specs:
   vendor: "Mistral AI"

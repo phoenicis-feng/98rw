@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "DeepSeek 发布的开源推理模型，以强化学习训练闻名，在国际数学和编程基准测试中表现卓越。"
 specs:
+  popularity: 89
   vendor: "DeepSeek"
   category: "开源"
   released: "2025-01"

@@ -1,6 +1,8 @@
 ---
 title: "Google Nano Banana (Gemini 2.5 Flash Image)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Gemini 2.5 Flash Image, a.k.a. \"Nano Banana,\" is now generally available. It is a state of the art image generation model with contextual understanding. It is capable of image generation,..."
 specs:
   vendor: "Google"

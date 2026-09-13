@@ -1,6 +1,8 @@
 ---
 title: "NVIDIA Nemotron 3.5 Lightning"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "NVIDIA Nemotron 3.5 Lightning is an open mixture-of-experts model from NVIDIA, with 3B active parameters out of 30B total. It is suited for high-throughput agentic workloads and specialized tasks that"
 specs:
   vendor: "NVIDIA"

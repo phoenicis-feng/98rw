@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Medium 3.5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mistral Medium 3.5 is a dense 128B instruction-following model from Mistral AI. It supports text and image inputs with text output, and is designed for agentic workflows, coding, and complex..."
 specs:
   vendor: "Mistral AI"

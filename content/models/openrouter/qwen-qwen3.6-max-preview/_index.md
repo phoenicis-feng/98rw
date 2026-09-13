@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.6 Max Preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3.6-Max-Preview is a proprietary frontier model from Alibaba Cloud built on a sparse mixture-of-experts architecture with approximately 1 trillion total parameters. It is optimized for agentic cod"
 specs:
   vendor: "阿里 Qwen"

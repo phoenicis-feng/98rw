@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "OpenAI 发布的 GPT-5.2 大语言模型。"
 specs:
+  popularity: 96
   vendor: "OpenAI"
   category: "国外"
   released: "2026-02"

@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 30B A3B Thinking 2507"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking m"
 specs:
   vendor: "阿里 Qwen"

@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.2 Pro (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.2 Pro is OpenAI’s most advanced model, offering major improvements in agentic coding and long context performance over GPT-5 Pro. It is optimized for complex tasks that require step-by-step reas"
 specs:
   vendor: "OpenAI"

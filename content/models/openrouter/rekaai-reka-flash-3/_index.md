@@ -1,6 +1,8 @@
 ---
 title: "Reka AI Reka Flash 3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "Reka Flash 3 is a general-purpose, instruction-tuned large language model with 21 billion parameters, developed by Reka. It excels at general chat, coding tasks, instruction-following, and function ca"
 specs:
   vendor: "Reka AI"

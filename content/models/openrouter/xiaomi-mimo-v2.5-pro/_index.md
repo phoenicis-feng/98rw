@@ -1,6 +1,8 @@
 ---
 title: "Xiaomi MiMo-V2.5-Pro"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as C"
 specs:
   vendor: "Xiaomi"

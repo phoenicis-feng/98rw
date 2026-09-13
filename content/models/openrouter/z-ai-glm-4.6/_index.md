@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 4.6"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex."
 specs:
   vendor: "智谱 AI"

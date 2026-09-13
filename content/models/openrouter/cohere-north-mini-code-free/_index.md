@@ -1,6 +1,8 @@
 ---
 title: "Cohere North Mini Code (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimized..."
 specs:
   vendor: "Cohere"

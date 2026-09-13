@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4.1 Mini (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-4.1 Mini is a mid-sized model delivering performance competitive with GPT-4o at substantially lower latency and cost. It retains a 1 million token context window and scores 45.1% on hard..."
 specs:
   vendor: "OpenAI"

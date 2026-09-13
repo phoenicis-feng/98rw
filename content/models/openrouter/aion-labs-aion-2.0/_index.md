@@ -1,6 +1,8 @@
 ---
 title: "Aion-Labs Aion-2.0"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Aion-2.0 is a variant of DeepSeek V3.2 optimized for immersive roleplaying and storytelling. It is particularly strong at introducing tension, crises, and conflict into stories, making narratives feel"
 specs:
   vendor: "Aion-Labs"

@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V3.1 Terminus"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language cons"
 specs:
   vendor: "DeepSeek"

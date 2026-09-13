@@ -1,6 +1,8 @@
 ---
 title: "Thedrummer UnslopNemo 12B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "UnslopNemo v4.1 is the latest addition from the creator of Rocinante, designed for adventure writing and role-play scenarios."
 specs:
   vendor: "Thedrummer"

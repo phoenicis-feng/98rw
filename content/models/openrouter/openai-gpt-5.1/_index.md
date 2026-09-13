@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.1 is the latest frontier-grade model in the GPT-5 series, offering stronger general-purpose reasoning, improved instruction adherence, and a more natural conversational style compared to GPT-5. "
 specs:
   vendor: "OpenAI"

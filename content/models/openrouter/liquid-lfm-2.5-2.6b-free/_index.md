@@ -1,6 +1,8 @@
 ---
 title: "Liquid LFM2.5-2.6B (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or..."
 specs:
   vendor: "Liquid"

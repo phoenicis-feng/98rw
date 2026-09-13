@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Opus 4.8 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Claude Opus 4.8 is Anthropic's most capable generally available model in the Opus family. It supports text, image, and file inputs with text output, with reasoning support and a 1M-token..."
 specs:
   vendor: "Anthropic"

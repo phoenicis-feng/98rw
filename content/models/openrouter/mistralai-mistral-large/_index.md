@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Large"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "This is Mistral AI's flagship model, Mistral Large 2 (version `mistral-large-2407`). It's a proprietary weights-available model and excels at reasoning, code, JSON, chat, and more. Read the launch ann"
 specs:
   vendor: "Mistral AI"

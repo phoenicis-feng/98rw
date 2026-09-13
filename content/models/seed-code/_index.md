@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "字节跳动 发布的 Seed-Code 大语言模型。"
 specs:
+  popularity: 70
   vendor: "字节跳动"
   category: "国内"
   released: "2025-11"

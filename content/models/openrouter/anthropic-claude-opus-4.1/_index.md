@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Opus 4.1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Claude Opus 4.1 is an updated version of Anthropic’s flagship model, offering improved performance in coding, reasoning, and agentic tasks. It achieves 74.5% on SWE-bench Verified and shows notable ga"
 specs:
   vendor: "Anthropic"

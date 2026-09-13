@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 4.5V"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "GLM-4.5V is a vision-language foundation model for multimodal agent applications. Built on a Mixture-of-Experts (MoE) architecture with 106B parameters and 12B activated parameters, it achieves state-"
 specs:
   vendor: "智谱 AI"

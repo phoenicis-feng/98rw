@@ -1,6 +1,8 @@
 ---
 title: "xAI Grok 4.20"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Grok 4.20 is a reasoning model from SpaceXAI with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, de"
 specs:
   vendor: "xAI"

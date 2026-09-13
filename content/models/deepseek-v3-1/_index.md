@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "DeepSeek 发布的 V3.1 系列大语言模型，通用语言理解、代码生成和多轮对话能力出色。"
 specs:
+  popularity: 91
   vendor: "DeepSeek"
   category: "开源"
   released: "2025-08"

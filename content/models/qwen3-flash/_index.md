@@ -3,6 +3,7 @@ title: "Qwen3-Flash"
 model: true
 description: "阿里云 发布的 Qwen3-Flash 大语言模型。"
 specs:
+  popularity: 82
   vendor: "阿里云"
   category: "国内"
   released: "2025-05"

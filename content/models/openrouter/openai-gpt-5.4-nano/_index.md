@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.4 Nano"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.4 nano is the most lightweight and cost-efficient variant of the GPT-5.4 family, optimized for speed-critical and high-volume tasks. It supports text and image inputs and is designed for low-lat"
 specs:
   vendor: "OpenAI"

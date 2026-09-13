@@ -1,6 +1,8 @@
 ---
 title: "Sao10K Llama 3.1 Euryale 70B v2.2"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Euryale L3.1 70B v2.2 is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k). It is the successor of [Euryale L3 70B v2.1](/models/sao10k/l3-euryale-70b)."
 specs:
   vendor: "Sao10K"

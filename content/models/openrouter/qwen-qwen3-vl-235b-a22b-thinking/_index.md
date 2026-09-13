@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 VL 235B A22B Thinking"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-VL-235B-A22B Thinking is a multimodal model that unifies strong text generation with visual understanding across images and video. The Thinking model is optimized for multimodal reasoning in STE"
 specs:
   vendor: "阿里 Qwen"

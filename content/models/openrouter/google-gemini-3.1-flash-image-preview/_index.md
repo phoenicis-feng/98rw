@@ -1,6 +1,8 @@
 ---
 title: "Google Nano Banana 2 (Gemini 3.1 Flash Image Preview)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "Gemini 3.1 Flash Image Preview, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines..."
 specs:
   vendor: "Google"

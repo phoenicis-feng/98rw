@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Opus 4"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Claude Opus 4 is benchmarked as the world’s best coding model, at time of release, bringing sustained performance on complex, long-running tasks and agent workflows. It sets new benchmarks in..."
 specs:
   vendor: "Anthropic"

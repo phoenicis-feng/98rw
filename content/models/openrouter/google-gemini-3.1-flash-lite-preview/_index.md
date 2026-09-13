@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.1 Flash Lite Preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.1 Flash Lite Preview is Google's high-efficiency model optimized for high-volume use cases. It outperforms Gemini 2.5 Flash Lite on overall quality and approaches Gemini 2.5 Flash performance"
 specs:
   vendor: "Google"

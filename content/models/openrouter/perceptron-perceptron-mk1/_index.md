@@ -1,6 +1,8 @@
 ---
 title: "Perceptron Mk1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Perceptron Mk1 (Mark One) is Perceptron's highest-quality vision-language model for video and embodied reasoning.** It accepts image and video inputs paired with natural language queries, and produces"
 specs:
   vendor: "Perceptron"

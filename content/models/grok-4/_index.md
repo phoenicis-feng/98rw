@@ -3,6 +3,7 @@ title: "Grok-4"
 model: true
 description: "xAI 发布的 Grok-4 大语言模型。"
 specs:
+  popularity: 88
   vendor: "xAI"
   category: "国外"
   released: "2025-07"

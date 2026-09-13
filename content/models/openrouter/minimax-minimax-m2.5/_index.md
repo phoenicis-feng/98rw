@@ -1,6 +1,8 @@
 ---
 title: "MiniMax M2.5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise o"
 specs:
   vendor: "MiniMax"

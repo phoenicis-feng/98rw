@@ -16,7 +16,14 @@
       {{- if .Params.hero }}
         {{ partial "hero-inline.html" . }}
       {{- else }}
-        <h1>{{ .Title }}</h1>
+        <h1>
+          {{ .Title }}
+          {{- with .Params.specs.openrouter_id }}
+            <a href="https://openrouter.ai/models/{{ . }}" target="_blank" rel="noopener" class="model-repo-link" title="在 OpenRouter 上查看">
+              <i class="mdi mdi-open-in-new"></i>
+            </a>
+          {{- end }}
+        </h1>
       {{- end }}
 
       {{- /* 模型规格卡片 */ -}}
@@ -118,12 +125,25 @@
       {{- /* 页面内容 */ -}}
       {{ .Content }}
 
-      {{- /* 返回链接 */ -}}
+      {{- /* 来源链接 */ -}}
       <nav class="docs__pagination" aria-label="pagination">
-        <a class="prev" href="{{ site.BaseUrl }}openrouter/">
-          <small>返回</small>
-          <span>← OpenRouter 模型列表</span>
+        {{- with .PrevInSection }}
+        <a class="prev" href="{{ .RelPermalink }}">
+          <small>上一篇</small>
+          <span>{{ .LinkTitle }}</span>
         </a>
+        {{- end }}
+        {{- with .NextInSection }}
+        <a class="next" href="{{ .RelPermalink }}">
+          <small>下一篇</small>
+          <span>{{ .LinkTitle }}</span>
+        </a>
+        {{- end }}
+        {{- with .Params.specs.openrouter_id }}
+        <a class="repo" href="https://openrouter.ai/models/{{ . }}" target="_blank" rel="noopener">
+          在 OpenRouter 上查看模型 →
+        </a>
+        {{- end }}
       </nav>
     </article>
   </div>

@@ -1,0 +1,47 @@
+# 模型库品牌筛选项：把各种 vendor 字符串归并到一个品牌下。
+# id 用于 JS 筛选，vendors 是模型 front matter specs.vendor 的取值列表。
+- id: chatgpt
+  name: ChatGPT
+  vendors: [OpenAI]
+- id: claude
+  name: Claude
+  vendors: [Anthropic]
+- id: gemini
+  name: Gemini
+  vendors: [Google, Google DeepMind]
+- id: deepseek
+  name: DeepSeek
+  vendors: [DeepSeek]
+- id: qwen
+  name: 通义千问
+  vendors: [阿里 Qwen, 阿里云]
+- id: grok
+  name: Grok
+  vendors: [xAI]
+- id: kimi
+  name: Kimi
+  vendors: [月之暗面]
+- id: glm
+  name: 智谱 GLM
+  vendors: [智谱 AI]
+- id: doubao
+  name: 豆包
+  vendors: [字节跳动, Bytedance]
+- id: minimax
+  name: MiniMax
+  vendors: [MiniMax]
+- id: ernie
+  name: 文心 ERNIE
+  vendors: [百度, Baidu]
+- id: cohere
+  name: Cohere
+  vendors: [Cohere]
+- id: stepfun
+  name: 阶跃星辰
+  vendors: [Stepfun]
+- id: tencent
+  name: 腾讯混元
+  vendors: [腾讯]
+- id: llama
+  name: Llama
+  vendors: [Meta, Meta Llama]

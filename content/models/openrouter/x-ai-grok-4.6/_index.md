@@ -1,6 +1,8 @@
 ---
 title: "xAI Grok 4.6"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM."
 specs:
   vendor: "xAI"

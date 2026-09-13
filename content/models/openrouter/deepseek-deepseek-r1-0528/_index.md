@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek R1 0528"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "May 28th update to the [original DeepSeek R1](/deepseek/deepseek-r1) Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in siz"
 specs:
   vendor: "DeepSeek"

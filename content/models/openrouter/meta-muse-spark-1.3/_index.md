@@ -1,6 +1,8 @@
 ---
 title: "Meta Muse Spark 1.3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Muse Spark 1.3 is a multimodal reasoning model from Meta for long-running agentic, multi-agent, and coding workflows. It is designed to keep track of information across extended tasks, work through..."
 specs:
   vendor: "Meta"

@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5 Mini (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5 Mini is a compact version of GPT-5, designed to handle lighter-weight reasoning tasks. It provides the same instruction-following and safety-tuning benefits as GPT-5, but with reduced latency an"
 specs:
   vendor: "OpenAI"

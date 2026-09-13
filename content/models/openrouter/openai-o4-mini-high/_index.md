@@ -1,6 +1,8 @@
 ---
 title: "OpenAI o4 Mini High"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "OpenAI o4-mini-high is the same model as [o4-mini](/openai/o4-mini) with reasoning_effort set to high. OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient p"
 specs:
   vendor: "OpenAI"

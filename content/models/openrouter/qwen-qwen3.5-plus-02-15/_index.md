@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.5 Plus 2026-02-15"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "The Qwen3.5 native vision-language series Plus models are built on a hybrid architecture that integrates linear attention mechanisms with sparse mixture-of-experts models, achieving higher inference e"
 specs:
   vendor: "阿里 Qwen"

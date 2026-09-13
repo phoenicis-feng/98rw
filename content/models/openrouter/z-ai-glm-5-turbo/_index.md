@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 5 Turbo"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GLM-5 Turbo is a new model from Z.ai designed for fast inference and strong performance in agent-driven environments such as OpenClaw scenarios. It is deeply optimized for real-world agent workflows.."
 specs:
   vendor: "智谱 AI"

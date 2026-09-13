@@ -46,9 +46,13 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     pageRef = "/openrouter"
     weight = 15
   [[menus.main]]
-    name = "厂商列表"
-    pageRef = "/vendors"
+    name = "模型列表"
+    pageRef = "/models"
     weight = 20
+  [[menus.main]]
+    name = "薅羊毛"
+    pageRef = "/haoyang"
+    weight = 25
 
 [taxonomies]
   category = 'categories'

@@ -1,6 +1,8 @@
 ---
 title: "Meta Muse Spark 1.2 Contributor"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Muse Spark 1.2 contributor tier is a reasoning model from Meta designed for developers who want to start building at an even lower cost. It’s meaningfully cheaper than Muse Spark..."
 specs:
   vendor: "Meta"

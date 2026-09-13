@@ -1,6 +1,8 @@
 ---
 title: "OpenAI o3 Mini High"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "OpenAI o3-mini-high is the same model as [o3-mini](/openai/o3-mini) with reasoning_effort set to high. o3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excel"
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "Cohere Command R+ (08-2024)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "command-r-plus-08-2024 is an update of the [Command R+](/models/cohere/command-r-plus) with roughly 50% higher throughput and 25% lower latencies as compared to the previous Command R+ version, while "
 specs:
   vendor: "Cohere"

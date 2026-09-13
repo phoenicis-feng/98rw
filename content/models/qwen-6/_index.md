@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "阿里云第六代大语言模型，中文场景表现突出。"
 specs:
+  popularity: 95
   vendor: "阿里云"
   category: "国内"
   released: "2026-08"

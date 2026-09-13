@@ -1,6 +1,8 @@
 ---
 title: "MiniMax M3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,..."
 specs:
   vendor: "MiniMax"

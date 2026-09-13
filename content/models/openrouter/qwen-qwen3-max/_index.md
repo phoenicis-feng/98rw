@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Max"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-Max is an updated release built on the Qwen3 series, offering major improvements in reasoning, instruction following, multilingual support, and long-tail knowledge coverage compared to the Janua"
 specs:
   vendor: "阿里 Qwen"

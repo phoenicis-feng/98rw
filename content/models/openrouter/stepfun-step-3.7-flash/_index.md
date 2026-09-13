@@ -1,6 +1,8 @@
 ---
 title: "Stepfun Step 3.7 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Step 3.7 Flash is StepFun's latest high-efficiency multimodal Mixture-of-Experts model. It pairs a 196B-parameter language backbone with a vision encoder for native image and video understanding, acti"
 specs:
   vendor: "Stepfun"

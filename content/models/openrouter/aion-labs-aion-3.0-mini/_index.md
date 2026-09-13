@@ -1,6 +1,8 @@
 ---
 title: "Aion-Labs Aion-3.0-Mini"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Aion-3.0 Mini is a multi-model roleplaying and storytelling system from AionLabs, built on the DeepSeek family of models. It uses a collaborative generation process in which multiple specialized model"
 specs:
   vendor: "Aion-Labs"

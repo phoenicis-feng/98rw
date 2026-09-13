@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Small 3.2 24B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release"
 specs:
   vendor: "Mistral AI"

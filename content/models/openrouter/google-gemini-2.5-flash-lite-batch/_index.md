@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 2.5 Flash Lite (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better"
 specs:
   vendor: "Google"

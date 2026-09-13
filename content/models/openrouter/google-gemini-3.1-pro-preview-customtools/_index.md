@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.1 Pro Preview Custom Tools"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.1 Pro Preview Custom Tools is a variant of Gemini 3.1 Pro that improves tool selection behavior by preventing overuse of a general bash tool when more efficient third-party..."
 specs:
   vendor: "Google"

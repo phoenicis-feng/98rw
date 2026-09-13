@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 5.1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work "
 specs:
   vendor: "智谱 AI"

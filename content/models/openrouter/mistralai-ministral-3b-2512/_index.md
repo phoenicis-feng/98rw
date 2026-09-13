@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Ministral 3 3B 2512"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The smallest model in the Ministral 3 family, Ministral 3 3B is a powerful, efficient tiny language model with vision capabilities."
 specs:
   vendor: "Mistral AI"

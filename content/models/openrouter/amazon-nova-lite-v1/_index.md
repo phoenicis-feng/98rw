@@ -1,6 +1,8 @@
 ---
 title: "Amazon Nova Lite 1.0"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Amazon Nova Lite 1.0 is a very low-cost multimodal model from Amazon that focused on fast processing of image, video, and text inputs to generate text output. Amazon Nova Lite..."
 specs:
   vendor: "Amazon"

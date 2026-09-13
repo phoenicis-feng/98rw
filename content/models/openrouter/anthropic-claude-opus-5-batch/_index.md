@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Opus 5 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Claude Opus 5 is Anthropic’s flagship model for demanding reasoning, coding, and long-horizon agentic work. It is particularly strong at end-to-end software tasks, code review and bug finding, visual "
 specs:
   vendor: "Anthropic"

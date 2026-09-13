@@ -3,6 +3,7 @@ title: "Muse Spark"
 model: true
 description: "Meta 发布的 Muse Spark 大语言模型。"
 specs:
+  popularity: 72
   vendor: "Meta"
   category: "国外"
   released: "2026-04"

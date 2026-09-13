@@ -1,6 +1,8 @@
 ---
 title: "腾讯 Hy-MT2-30B-A3B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Hy-MT2-30B-A3B is Tencent's flagship translation model in the Hy-MT2 family. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimite"
 specs:
   vendor: "腾讯"

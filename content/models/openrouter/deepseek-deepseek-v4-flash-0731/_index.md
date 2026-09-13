@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V4 Flash 0731"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workfl"
 specs:
   vendor: "DeepSeek"

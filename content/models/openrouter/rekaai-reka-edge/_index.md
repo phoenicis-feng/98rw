@@ -1,6 +1,8 @@
 ---
 title: "Reka AI Reka Edge"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Reka Edge is an extremely efficient 7B multimodal vision-language model that accepts image/video+text inputs and generates text outputs. This model is optimized specifically to deliver industry-leadin"
 specs:
   vendor: "Reka AI"

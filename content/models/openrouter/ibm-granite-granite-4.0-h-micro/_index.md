@@ -1,6 +1,8 @@
 ---
 title: "IBM Granite Granite 4.0 Micro"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Granite-4.0-H-Micro is a 3B parameter from the Granite 4 family of models. These models are the latest in a series of models released by IBM. They are fine-tuned for long..."
 specs:
   vendor: "IBM Granite"

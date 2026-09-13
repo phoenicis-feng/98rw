@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5 Image"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "[GPT-5](https://openrouter.ai/openai/gpt-5) Image combines OpenAI's GPT-5 model with state-of-the-art image generation capabilities. It offers major improvements in reasoning, code quality, and user e"
 specs:
   vendor: "OpenAI"

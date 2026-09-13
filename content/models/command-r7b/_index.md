@@ -3,6 +3,7 @@ title: "Command R7B"
 model: true
 description: "Cohere 发布的 Command R7B 大语言模型。"
 specs:
+  popularity: 55
   vendor: "Cohere"
   category: "国外"
   released: "2025-03"

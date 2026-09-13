@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.6 Flash (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.6 Flash is a high-efficiency model from Google for coding, agentic workflows, and web and app development. It is designed to produce polished outputs with fewer unnecessary edits and..."
 specs:
   vendor: "Google"

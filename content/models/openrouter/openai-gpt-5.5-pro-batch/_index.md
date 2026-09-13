@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.5 Pro (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-5.5 Pro is OpenAI’s high-capability model optimized for deep reasoning and accuracy on complex, high-stakes workloads. It features a 1M+ token context window (922K input, 128K output) with support"
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "Google Nano Banana Pro (Gemini 3 Pro Image Preview)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "Nano Banana Pro is Google’s most advanced image-generation and editing model, built on Gemini 3 Pro. It extends the original Nano Banana with significantly improved multimodal reasoning, real-world gr"
 specs:
   vendor: "Google"

@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V4 Pro 0813"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "DeepSeek V4 Pro 0813 is a large-scale mixture-of-experts model from DeepSeek. This is the GA release of DeepSeek V4 Pro."
 specs:
   vendor: "DeepSeek"

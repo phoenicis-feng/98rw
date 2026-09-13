@@ -1,6 +1,8 @@
 ---
 title: "OpenAI o1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The latest and strongest model family from OpenAI, o1 is designed to spend more time thinking before responding. The o1 model series is trained with large-scale reinforcement learning to reason..."
 specs:
   vendor: "OpenAI"

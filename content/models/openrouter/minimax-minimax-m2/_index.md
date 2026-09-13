@@ -1,6 +1,8 @@
 ---
 title: "MiniMax M2"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier"
 specs:
   vendor: "MiniMax"

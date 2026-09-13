@@ -1,6 +1,8 @@
 ---
 title: "Nousresearch Hermes 3 70B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Hermes 3 is a generalist language model with many improvements over [Hermes 2](/models/nousresearch/nous-hermes-2-mistral-7b-dpo), including advanced agentic capabilities, much better roleplaying, rea"
 specs:
   vendor: "Nousresearch"

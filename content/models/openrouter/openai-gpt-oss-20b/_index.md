@@ -1,6 +1,8 @@
 ---
 title: "OpenAI gpt-oss-20b"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimiz"
 specs:
   vendor: "OpenAI"

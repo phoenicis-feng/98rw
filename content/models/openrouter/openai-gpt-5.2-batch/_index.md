@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.2 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.2 is the latest frontier-grade model in the GPT-5 series, offering stronger agentic and long context perfomance compared to GPT-5.1. It uses adaptive reasoning to allocate computation dynamicall"
 specs:
   vendor: "OpenAI"

@@ -3,6 +3,7 @@ title: "Aya 23-35B"
 model: true
 description: "Cohere 发布的 Aya 23-35B 大语言模型。"
 specs:
+  popularity: 52
   vendor: "Cohere"
   category: "国外"
   released: "2025-05"

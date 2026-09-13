@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4o (2024-08-06)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The 2024-08-06 version of GPT-4o offers improved performance in structured outputs, with the ability to supply a JSON schema in the respone_format. Read more [here](https://openai.com/index/introducin"
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Fable 5.1 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Claude Fable 5.1 improves on Claude Fable 5 across the board, with the biggest gains in agentic coding, long-running agentic workflows, and knowledge work: long code refactors, front-end and visual..."
 specs:
   vendor: "Anthropic"

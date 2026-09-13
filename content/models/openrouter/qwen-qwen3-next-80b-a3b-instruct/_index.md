@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Next 80B A3B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code "
 specs:
   vendor: "阿里 Qwen"

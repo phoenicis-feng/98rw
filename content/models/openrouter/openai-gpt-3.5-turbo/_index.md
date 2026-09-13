@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-3.5 Turbo"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.
 
 Training data up to Sep 2021."

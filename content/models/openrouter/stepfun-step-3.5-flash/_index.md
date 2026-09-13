@@ -1,6 +1,8 @@
 ---
 title: "Stepfun Step 3.5 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token...."
 specs:
   vendor: "Stepfun"

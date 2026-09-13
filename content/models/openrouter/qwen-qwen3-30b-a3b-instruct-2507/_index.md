@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 30B A3B Instruct 2507"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-30B-A3B-Instruct-2507 is a 30.5B-parameter mixture-of-experts language model from Qwen, with 3.3B active parameters per inference. It operates in non-thinking mode and is designed for high-quali"
 specs:
   vendor: "阿里 Qwen"

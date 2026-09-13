@@ -1,6 +1,8 @@
 ---
 title: "Xiaomi MiMo-V2.5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and v"
 specs:
   vendor: "Xiaomi"

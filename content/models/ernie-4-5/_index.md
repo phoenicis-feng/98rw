@@ -3,6 +3,7 @@ title: "ERNIE 4.5"
 model: true
 description: "百度 发布的 ERNIE 4.5 大语言模型。"
 specs:
+  popularity: 80
   vendor: "百度"
   category: "国内"
   released: "2025-03"

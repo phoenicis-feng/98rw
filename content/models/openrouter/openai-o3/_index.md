@@ -1,6 +1,8 @@
 ---
 title: "OpenAI o3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "o3 is a well-rounded and powerful model across domains. It sets a new standard for math, science, coding, and visual reasoning tasks. It also excels at technical writing and instruction-following...."
 specs:
   vendor: "OpenAI"

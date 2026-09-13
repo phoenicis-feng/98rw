@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.8 Max (0902)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.8 Max 0902 is an updated snapshot of Qwen3.8 Max from Alibaba's Qwen team. It is a 2.4-trillion-parameter mixture-of-experts model that accepts text, image, and video input and returns text,..."
 specs:
   vendor: "阿里 Qwen"

@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Opus 4.7"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Opus 4.7 is the next generation of Anthropic's Opus family, built for long-running, asynchronous agents. Building on the coding and agentic strengths of Opus 4.6, it delivers stronger performance on.."
 specs:
   vendor: "Anthropic"

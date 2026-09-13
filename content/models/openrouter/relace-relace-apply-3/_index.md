@@ -1,6 +1,8 @@
 ---
 title: "Relace Apply 3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Relace Apply 3 is a specialized code-patching LLM that merges AI-suggested edits straight into your source files. It can apply updates from GPT-4o, Claude, and others into your files at..."
 specs:
   vendor: "Relace"

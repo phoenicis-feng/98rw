@@ -1,6 +1,8 @@
 ---
 title: "Anthracite-Org Magnum v4 72B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet(https://openrouter.ai/anthropic/claude-3.5-sonnet) and Opus(https://openrouter.ai/anthrop"
 specs:
   vendor: "Anthracite-Org"

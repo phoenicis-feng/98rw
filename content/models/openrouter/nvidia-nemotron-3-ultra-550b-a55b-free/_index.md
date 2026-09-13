@@ -1,6 +1,8 @@
 ---
 title: "NVIDIA Nemotron 3 Ultra (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts ar"
 specs:
   vendor: "NVIDIA"

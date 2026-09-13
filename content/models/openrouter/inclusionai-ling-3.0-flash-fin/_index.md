@@ -1,6 +1,8 @@
 ---
 title: "Inclusion AI Ling 3.0 Flash Fin"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment..."
 specs:
   vendor: "Inclusion AI"

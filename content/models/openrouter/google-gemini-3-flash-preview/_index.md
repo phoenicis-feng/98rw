@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3 Flash Preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3 Flash Preview is a high speed, high value thinking model designed for agentic workflows, multi turn chat, and coding assistance. It delivers near Pro level reasoning and tool..."
 specs:
   vendor: "Google"

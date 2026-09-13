@@ -1,6 +1,8 @@
 ---
 title: "NVIDIA Nemotron 3 Super (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mam"
 specs:
   vendor: "NVIDIA"

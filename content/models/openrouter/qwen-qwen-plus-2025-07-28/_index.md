@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen Plus 0728"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen Plus 0728, based on the Qwen3 foundation model, is a 1 million context hybrid reasoning model with a balanced performance, speed, and cost combination."
 specs:
   vendor: "阿里 Qwen"

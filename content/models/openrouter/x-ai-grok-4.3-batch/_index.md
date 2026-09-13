@@ -1,6 +1,8 @@
 ---
 title: "xAI Grok 4.3 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Grok 4.3 is a reasoning model from SpaceXAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factua"
 specs:
   vendor: "xAI"

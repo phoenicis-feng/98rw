@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V3.2"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fin"
 specs:
   vendor: "DeepSeek"

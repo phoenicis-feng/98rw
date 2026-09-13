@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Voxtral Small 24B 2507"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Voxtral Small is an enhancement of Mistral Small 3, incorporating state-of-the-art audio input capabilities while retaining best-in-class text performance. It excels at speech transcription, translati"
 specs:
   vendor: "Mistral AI"

@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT Chat Latest"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT Chat Latest points to OpenAI's stable API alias `chat-latest` that always resolves to the latest Instant chat model used in ChatGPT. As OpenAI rolls out new Instant model updates..."
 specs:
   vendor: "OpenAI"

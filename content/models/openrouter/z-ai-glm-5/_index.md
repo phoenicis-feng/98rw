@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GLM-5 is Z.ai’s flagship open-source foundation model engineered for complex systems design and long-horizon agent workflows. Built for expert developers, it delivers production-grade performance on l"
 specs:
   vendor: "智谱 AI"

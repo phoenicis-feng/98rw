@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 14B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode f"
 specs:
   vendor: "阿里 Qwen"

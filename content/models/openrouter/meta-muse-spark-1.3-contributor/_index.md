@@ -1,6 +1,8 @@
 ---
 title: "Meta Muse Spark 1.3 Contributor"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Muse Spark 1.3 Contributor is the cost-efficient contributor tier of Meta’s multimodal reasoning model for experimentation, learning, and early-stage agentic, multi-agent, and coding workflows. It is "
 specs:
   vendor: "Meta"

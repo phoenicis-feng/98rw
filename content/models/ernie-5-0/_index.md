@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "百度 发布的 ERNIE 5.0 大语言模型。"
 specs:
+  popularity: 84
   vendor: "百度"
   category: "国内"
   released: "2025-09"

@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.8 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.8 Flash is a multimodal reasoning model from Alibaba. It is suited for coding assistance, agentic workflows, visual understanding, document and codebase analysis, desktop interaction, chart anal"
 specs:
   vendor: "阿里 Qwen"

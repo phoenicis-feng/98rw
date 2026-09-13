@@ -1,6 +1,8 @@
 ---
 title: "Google Lyria 3 Pro Preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Full-length songs are priced at $0.08 per song. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate high-quality, 48kHz..."
 specs:
   vendor: "Google"

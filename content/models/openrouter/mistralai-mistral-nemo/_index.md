@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Nemo"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "A 12B parameter model with a 128k token context length built by Mistral in collaboration with NVIDIA. The model is multilingual, supporting English, French, German, Spanish, Italian, Portuguese, Chine"
 specs:
   vendor: "Mistral AI"

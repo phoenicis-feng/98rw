@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Large 3 2512"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mistral Large 3 2512 is Mistral’s most capable model to date, featuring a sparse mixture-of-experts architecture with 41B active parameters (675B total), and released under the Apache 2.0 license."
 specs:
   vendor: "Mistral AI"

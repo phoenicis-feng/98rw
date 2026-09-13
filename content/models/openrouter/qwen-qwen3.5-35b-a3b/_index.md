@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.5-35B-A3B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The Qwen3.5 Series 35B-A3B is a native vision-language model designed with a hybrid architecture that integrates linear attention mechanisms and a sparse mixture-of-experts model, achieving higher inf"
 specs:
   vendor: "阿里 Qwen"

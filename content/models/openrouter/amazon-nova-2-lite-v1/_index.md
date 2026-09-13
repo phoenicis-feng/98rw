@@ -1,6 +1,8 @@
 ---
 title: "Amazon Nova 2 Lite"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Nova 2 Lite is a fast, cost-effective reasoning model for everyday workloads that can process text, images, and videos to generate text. Nova 2 Lite demonstrates standout capabilities in processing..."
 specs:
   vendor: "Amazon"

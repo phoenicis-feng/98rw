@@ -1,6 +1,8 @@
 ---
 title: "OpenRouter Auto Router"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "The Auto Router automatically selects the best model for your prompt, powered by the wisdom of the market. It routes you based on what the OpenRouter community collectively spends on..."
 specs:
   vendor: "OpenRouter"

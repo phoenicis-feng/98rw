@@ -1,6 +1,8 @@
 ---
 title: "字节跳动 Seed 1.6 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Seed 1.6 Flash is an ultra-fast multimodal deep thinking model by ByteDance Seed, supporting both text and visual understanding. It features a 256k context window and can generate outputs of..."
 specs:
   vendor: "字节跳动"

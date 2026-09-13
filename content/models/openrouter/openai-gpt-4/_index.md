@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "OpenAI's flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and adva"
 specs:
   vendor: "OpenAI"

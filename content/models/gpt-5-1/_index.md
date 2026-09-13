@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "OpenAI 发布的 GPT-5.1 大语言模型。"
 specs:
+  popularity: 94
   vendor: "OpenAI"
   category: "国外"
   released: "2025-12"

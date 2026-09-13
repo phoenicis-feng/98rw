@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT Audio Mini"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "A cost-efficient version of GPT Audio. The new snapshot features an upgraded decoder for more natural sounding voices and maintains better voice consistency. Input is priced at $0.60 per million..."
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "xAI Grok 4.5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Grok 4.5 is a model from SpaceXAI with frontier performance on coding, knowledge work, and STEM."
 specs:
   vendor: "xAI"

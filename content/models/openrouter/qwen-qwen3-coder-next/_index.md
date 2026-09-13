@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Coder Next"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-Coder-Next is an open-weight causal language model optimized for coding agents and local development workflows. It uses a sparse MoE design with 80B total parameters and only 3B activated per..."
 specs:
   vendor: "阿里 Qwen"

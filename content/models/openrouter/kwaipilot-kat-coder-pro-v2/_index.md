@@ -1,6 +1,8 @@
 ---
 title: "Kwaipilot KAT-Coder-Pro V2"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "KAT-Coder-Pro V2 is the latest high-performance model in KwaiKAT’s KAT-Coder series, designed for complex enterprise-grade software engineering and SaaS integration. It builds on the agentic coding st"
 specs:
   vendor: "Kwaipilot"

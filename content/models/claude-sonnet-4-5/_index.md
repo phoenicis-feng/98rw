@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "Anthropic 最强 Agent 编码模型，30+ 小时持续自主编码，OSWorld 61.4%，SWE-bench 77.2%，与 Sonnet 4 同价但能力大幅提升。"
 specs:
+  popularity: 93
   vendor: "Anthropic"
   category: "国外"
   released: "2025-09"

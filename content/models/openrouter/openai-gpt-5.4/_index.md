@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.4"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-5.4 is OpenAI’s latest frontier model, unifying the Codex and GPT lines into a single system. It features a 1M+ token context window (922K input, 128K output) with support for..."
 specs:
   vendor: "OpenAI"

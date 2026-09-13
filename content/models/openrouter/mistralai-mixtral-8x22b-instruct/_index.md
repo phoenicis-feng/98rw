@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mixtral 8x22B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "Mistral's official instruct fine-tuned version of [Mixtral 8x22B](/models/mistralai/mixtral-8x22b). It uses 39B active parameters out of 141B, offering unparalleled cost efficiency for its size. Its s"
 specs:
   vendor: "Mistral AI"

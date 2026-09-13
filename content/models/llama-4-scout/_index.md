@@ -3,6 +3,7 @@ title: "Llama 4 Scout"
 model: true
 description: "Meta 发布的 Llama 4 Scout 大语言模型。"
 specs:
+  popularity: 72
   vendor: "Meta"
   category: "国外"
   released: "2025-04"

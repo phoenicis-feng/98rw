@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 2.5 Flash (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 2.5 Flash is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in \"thinking\" capabilities, en"
 specs:
   vendor: "Google"

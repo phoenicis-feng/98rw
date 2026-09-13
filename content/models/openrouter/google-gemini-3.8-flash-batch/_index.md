@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.8 Flash (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.8 Flash is Google's most intelligent Flash model with significant gains from 3.7 Flash across software engineering, agentic tasks, and multi-step reasoning."
 specs:
   vendor: "Google"

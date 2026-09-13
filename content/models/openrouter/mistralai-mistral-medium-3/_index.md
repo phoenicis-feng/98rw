@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Medium 3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mistral Medium 3 is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning"
 specs:
   vendor: "Mistral AI"

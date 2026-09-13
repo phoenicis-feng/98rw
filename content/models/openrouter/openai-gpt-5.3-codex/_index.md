@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.3-Codex"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.3-Codex is OpenAI’s most advanced agentic coding model, combining the frontier software engineering performance of GPT-5.2-Codex with the broader reasoning and professional knowledge capabilitie"
 specs:
   vendor: "OpenAI"

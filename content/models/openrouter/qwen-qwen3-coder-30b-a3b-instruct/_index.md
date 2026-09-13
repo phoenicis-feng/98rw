@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Coder 30B A3B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-Coder-30B-A3B-Instruct is a 30.5B parameter Mixture-of-Experts (MoE) model with 128 experts (8 active per forward pass), designed for advanced code generation, repository-scale understanding, an"
 specs:
   vendor: "阿里 Qwen"

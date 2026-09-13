@@ -1,6 +1,8 @@
 ---
 title: "月之暗面 Kimi K2.7 Code"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of"
 specs:
   vendor: "月之暗面"

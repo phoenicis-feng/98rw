@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 VL 30B A3B Thinking"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-VL-30B-A3B-Thinking is a multimodal model that unifies strong text generation with visual understanding for images and videos. Its Thinking variant enhances reasoning in STEM, math, and complex "
 specs:
   vendor: "阿里 Qwen"

@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.6 Sol (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-5.6 Sol is the flagship model in OpenAI's GPT-5.6 series. It is suited for complex reasoning, coding, and agentic workflows, and is particularly strong at command-line and multi-step coding tasks."
 specs:
   vendor: "OpenAI"

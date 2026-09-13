@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 8B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode f"
 specs:
   vendor: "阿里 Qwen"

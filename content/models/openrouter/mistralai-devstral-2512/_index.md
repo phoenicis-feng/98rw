@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Devstral 2 2512"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window. Devstral 2 supports ex"
 specs:
   vendor: "Mistral AI"

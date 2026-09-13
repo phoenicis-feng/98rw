@@ -75,37 +75,23 @@
   font-weight: 700;
 }
 
-/* ===== /models/ 勾选对比 ===== */
+/* ===== /models/ 模型卡片 ===== */
+/* 固定 3 列（窄屏 2 列、手机 1 列） */
+.model-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1080px) {
+  .model-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .model-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
 .card-pick {
   position: relative;
   height: 100%;
-}
-
-.card-pick__check {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.7rem;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.6rem;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  background: var(--color-bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.card-pick__check:has(input:checked) {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-
-.card-pick:has(input:checked) .card {
-  outline: 2px solid var(--color-accent);
-  outline-offset: -2px;
 }
 
 /* ===== 厂商树形侧边栏 ===== */
@@ -202,9 +188,10 @@
   align-items: start;
 }
 
-/* 厂商页：3 列（树形 + 内容 + TOC）；模型页：2 列（内容 + TOC） */
+/* 模型页：2 列（内容 + TOC） */
 .page--models .docs-page .docs {
-  grid-template-columns: minmax(0, 1fr) 220px;
+  grid-column: 1;
+  grid-template-columns: minmax(0, 1fr);
 }
 .page--models .docs-page .docs__content {
   grid-column: 1;
@@ -214,6 +201,48 @@
   grid-column: 2;
   position: sticky;
   top: calc(var(--header-height) + var(--space-4));
+}
+/* 模型详情页保留右侧 TOC：显式两列 */
+.page--models .docs-page .docs--with-toc {
+  grid-template-columns: minmax(0, 1fr) 220px;
+}
+
+/* 薅羊毛教程页：2列布局（内容 + TOC），不需要 vendor-tree 侧边栏 */
+.page--haoyang .docs-page .docs {
+  grid-template-columns: minmax(0, 1fr) 220px;
+}
+.page--haoyang .docs-page .docs__content {
+  grid-column: 1;
+}
+.page--haoyang .docs-page .docs__toc {
+  grid-column: 2;
+}
+
+/* 教程目录编号 (TOC numbering) */
+.page--haoyang .docs__toc ul {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: toc-section;
+  margin: 0;
+}
+.page--haoyang .docs__toc li {
+  counter-increment: toc-section;
+  margin: 0.35rem 0;
+}
+.page--haoyang .docs__toc li::before {
+  content: counter(toc-section) "、";
+  color: var(--color-text-muted);
+  font-size: 0.85em;
+  display: inline-block;
+  width: 1.5em;
+  margin-right: 0.25em;
+}
+.page--haoyang .docs__toc li ul {
+  counter-reset: toc-section;
+  padding-left: 1.5em;
+}
+.page--haoyang .docs__toc li ul li::before {
+  content: counter(toc-section) "、";
 }
 
 @media (max-width: 1080px) {
@@ -230,37 +259,6 @@
   grid-column: 3;
   position: sticky;
   top: calc(var(--header-height) + var(--space-4));
-}
-
-/* 已勾满 2 个：未选中的勾选框禁用 */
-.card-pick__check:has(input:disabled) {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.model-select__result {
-  margin-top: 2.5rem;
-  overflow-x: auto;
-}
-
-/* 勾选后跳转到 /compare/ 的按钮 */
-.model-select__go {
-  display: inline-block;
-  padding: 0.7rem 1.5rem;
-  border-radius: 999px;
-  background: var(--color-accent);
-  color: var(--color-bg);
-  font-weight: 700;
-  text-decoration: none;
-  transition: background 0.15s ease;
-}
-
-.model-select__go:hover {
-  background: var(--color-accent-strong);
-}
-
-[data-theme="light"] .model-select__go {
-  color: #fff;
 }
 
 /* ============================================
@@ -343,7 +341,7 @@
   margin: 0;
 }
 
-/* 排序下拉 */
+/* 排序按钮组 */
 .rec-sort {
   display: flex;
   align-items: center;
@@ -351,10 +349,47 @@
   margin-left: auto;
 }
 
-.rec-sort label {
+.rec-sort__label {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   white-space: nowrap;
+}
+
+.rec-sort__buttons {
+  display: flex;
+  gap: 2px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.rec-sort-btn {
+  padding: var(--space-1) var(--space-3);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.rec-sort-btn:hover {
+  color: var(--color-accent);
+  background: var(--color-bg-surface);
+}
+
+.rec-sort-btn--active {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.rec-sort-btn--active:hover {
+  color: #fff;
+  background: var(--color-accent-strong);
 }
 
 .rec-sort select {
@@ -486,135 +521,63 @@
   width: fit-content;
 }
 
-/* openrouter 专题卡片 */
-.openrouter-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
-}
-
-.openrouter-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  padding: var(--space-4);
-  background-color: var(--color-bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  text-decoration: none;
-  color: var(--color-text);
-  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
-  position: relative;
-}
-
-.openrouter-card:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-decoration: none;
-  color: var(--color-text);
-}
-
-.openrouter-card__name {
-  font-size: var(--text-base);
-  font-weight: 600;
-  margin: 0;
-  color: var(--color-text);
-}
-
-.openrouter-card__vendor {
-  font-size: var(--text-sm);
-  color: var(--color-text-dim);
-  margin: 0;
-}
-
-.openrouter-card__context {
-  font-size: var(--text-xs);
-  color: var(--color-text-dim);
-  margin: 0;
-}
-
-/* 对比表格 */
+/* ===== 推荐页：TOP N 对比表（JS 动态生成） ===== */
 .rec-comparison {
-  margin-top: var(--space-6);
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-5);
 }
 
 .rec-comparison__title {
-  font-size: var(--text-base);
-  margin: 0 0 var(--space-4);
-  color: var(--color-text);
+  font-size: var(--text-md);
+  font-weight: 700;
+  margin: 0 0 var(--space-2);
 }
 
 .rec-comparison__table {
   overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
 }
 
 .rec-comparison__table table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--text-sm);
+  min-width: 720px; /* 6 列过宽时出现横向滚动 */
 }
 
 .rec-comparison__table th,
 .rec-comparison__table td {
-  padding: var(--space-2) var(--space-3);
-  text-align: center;
+  padding: 8px 12px;
+  font-size: var(--text-xs);
   border-bottom: 1px solid var(--color-border);
-  vertical-align: middle;
-}
-
-.rec-comparison__table th {
-  font-weight: 600;
-  color: var(--color-text);
-  background: var(--color-bg-surface);
-}
-
-.rec-comparison__label {
   text-align: left;
-  font-weight: 500;
-  color: var(--color-text-dim);
   white-space: nowrap;
 }
 
-.rec-comparison__table td:not(.rec-comparison__label) {
-  white-space: nowrap;
+.rec-comparison__table thead th {
+  background: var(--color-bg-surface);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.rec-comparison__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.rec-comparison__table .rec-comparison__label {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
   font-weight: 600;
-  position: relative;
-  padding-right: 1rem;
 }
 
-/* 为对比表中的每个模型值添加分隔 */
-.rec-comparison__table tbody tr td:not(.rec-comparison__label):not(:last-child)::after {
-  content: "│";
-  position: absolute;
-  right: 0.35rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--color-text-dim);
-  font-weight: 300;
-  font-size: 0.9em;
+.rec-comparison__table--empty {
+  display: none;
 }
 
-/* 移动端适配 */
-@media (max-width: 768px) {
-  .rec-grid {
-    grid-template-columns: 1fr;
-  }
+/* ============================================
+   OpenRouter 专题页面
+   ============================================ */
 
-  .rec-categories {
-    gap: var(--space-1);
-  }
-
-  .rec-tab {
-    padding: var(--space-1) var(--space-3);
-    font-size: var(--text-xs);
-  }
-}
-
-/* ===== OpenRouter 专题页面 ===== */
+/* 统计 */
 .openrouter-stats {
   display: flex;
   gap: var(--space-4);
@@ -630,6 +593,115 @@
   border: 1px solid var(--color-border);
 }
 
+/* Tab 栏 - 复用主题 .tabs 样式 */
+.tabs__label .openrouter-tab__count {
+  font-size: var(--text-xs);
+  opacity: 0.6;
+  margin-left: var(--space-1);
+}
+
+/* 模型表格 */
+.openrouter-table-wrapper {
+  margin-bottom: var(--space-5);
+  overflow-x: auto;
+}
+
+.openrouter-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.openrouter-table th {
+   background: var(--color-bg-surface);
+   padding: var(--space-3);
+   text-align: left;
+   font-weight: 600;
+   font-size: var(--text-sm);
+   color: var(--color-text-muted);
+   border-bottom: 1px solid var(--color-border);
+ }
+
+ .openrouter-table th[class*="sort-"] {
+   position: relative;
+   padding-right: 18px;
+ }
+
+ .openrouter-table th.sort-asc::after {
+   content: " ▲";
+   font-size: 10px;
+   position: absolute;
+   right: 4px;
+ }
+
+ .openrouter-table th.sort-desc::after {
+   content: " ▼";
+   font-size: 10px;
+   position: absolute;
+   right: 4px;
+ }
+
+ .openrouter-table td.model-name-cell {
+   max-width: 260px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+ }
+
+ .openrouter-table td {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.openrouter-table tr:last-child td {
+  border-bottom: none;
+}
+
+.openrouter-table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+.openrouter-table .price {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.openrouter-table .free-label {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: var(--text-xs);
+  background: rgba(124, 199, 134, 0.15);
+  color: #7cc89e;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.openrouter-table .openrouter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: all 0.15s ease;
+}
+
+.openrouter-table .openrouter-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-bg);
+}
+
+/* 工具栏 */
 .openrouter-toolbar {
   display: flex;
   gap: var(--space-3);
@@ -674,77 +746,115 @@
   flex-wrap: wrap;
 }
 
-.openrouter-filters select {
-  padding: 0.5rem 0.7rem;
-  border-radius: 8px;
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
   border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.checkbox-label:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.checkbox-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-label .checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg-surface);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.checkbox-label input[type="checkbox"]:checked ~ span {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* 免费标签 */
+.free-label {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: var(--text-xs);
+  background: rgba(124, 199, 134, 0.15);
+  color: #7cc89e;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+/* 分页 */
+.openrouter-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  padding: var(--space-3) 0;
+}
+
+.openrouter-page-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   background: var(--color-bg-surface);
   color: var(--color-text);
   font: inherit;
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-.openrouter-filters select:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-/* 模型网格 */
-.openrouter-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-4);
-}
-
-.openrouter-card {
-  display: block;
-  padding: var(--space-4);
-  background: var(--color-bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  text-decoration: none;
-  color: var(--color-text);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.openrouter-card:hover {
+.openrouter-page-btn:hover:not(:disabled) {
   border-color: var(--color-accent);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.openrouter-card__name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: var(--space-1);
   color: var(--color-accent);
 }
 
-.openrouter-card__vendor {
+.openrouter-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#openrouter-page-info {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
-  margin-bottom: var(--space-1);
 }
 
-.openrouter-card__context {
-  font-size: var(--text-sm);
-  color: var(--color-text-dim);
-  margin-bottom: var(--space-2);
-}
-
-.openrouter-card__price {
-  display: flex;
-  gap: var(--space-3);
-  font-size: var(--text-sm);
-}
-
-.price-input {
-  color: var(--color-accent);
-}
-
-.price-output {
-  color: var(--color-text-muted);
-}
-
+/* 空状态 */
 .openrouter-empty {
   text-align: center;
   padding: var(--space-8);
@@ -843,17 +953,13 @@
     flex-direction: column;
   }
 
-  .openrouter-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .model-specs-card__grid {
-    grid-template-columns: 1fr;
-  }
-
   .openrouter-stats {
     flex-direction: column;
     gap: var(--space-2);
+  }
+
+  .openrouter-pagination {
+    flex-wrap: wrap;
   }
 }
 
@@ -862,4 +968,246 @@
   .openrouter-toolbar {
     display: none;
   }
+
+  .openrouter-pagination {
+    display: none;
+  }
+}
+
+/* ============================================
+   首页榜单（最新榜单 + 最有人气榜单）
+   ============================================ */
+.home-leaderboards {
+  padding-block: var(--space-7) var(--space-8);
+  scroll-margin-top: calc(var(--header-height) + var(--space-4));
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+.home-leaderboards .section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.home-leaderboards__heading {
+  margin: 0;
+  font-size: var(--text-xl);
+  color: var(--color-text);
+}
+
+/* 两个榜单并排（一行） */
+.home-leaderboards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+@media (max-width: 880px) {
+  .home-leaderboards__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.leaderboard {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  min-width: 0;
+}
+
+.leaderboard__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.leaderboard__title {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--color-text);
+}
+
+.leaderboard__title i {
+  color: var(--color-accent);
+  font-size: var(--text-base);
+}
+
+.leaderboard__subtitle {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-dim);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* 排名表：用 grid 行，保证两榜列宽一致且不会折成竖排 */
+.leaderboard__table {
+  display: grid;
+  font-size: var(--text-sm);
+}
+
+.leaderboard__row {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) 8rem;
+  gap: var(--space-2) var(--space-3);
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.leaderboard__row:last-child {
+  border-bottom: none;
+}
+
+.leaderboard__row--head {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.leaderboard__row:hover {
+  background: var(--color-bg-inset);
+}
+
+.leaderboard__cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+/* 列占位（两榜用同一网格模板，字段上下自动对齐） */
+.leaderboard__col-rank {
+  justify-content: center;
+}
+
+.leaderboard__col-model {
+  flex: 1;
+  min-width: 0;
+}
+
+.leaderboard__col-value {
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+/* 名次 */
+.leaderboard__rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  background: var(--color-bg-inset);
+}
+
+/* 模型名 + 厂商（保持一行） */
+.leaderboard__name {
+  white-space: nowrap;
+}
+
+.leaderboard__name a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.leaderboard__name a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.leaderboard__name .badge {
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+/* 发布时间 */
+.leaderboard__released {
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 人气：进度条 + 分值 */
+.leaderboard__bar {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  height: 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-inset);
+  overflow: hidden;
+}
+
+.leaderboard__bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+}
+
+.leaderboard__score {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== /models/ 品牌筛选 ===== */
+.model-brand-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.model-brand-btn {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.model-brand-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.model-brand-btn--active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+[data-theme="light"] .model-brand-btn--active {
+  color: #fff;
+}
+
+/* 品牌筛选按钮右侧的模型数徽标 */
+.model-brand-btn__count {
+  margin-left: var(--space-1);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-muted, rgba(127, 127, 127, 0.18));
+  font-size: var(--text-xs, 0.75rem);
+  line-height: 1.4;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.model-brand-btn--active .model-brand-btn__count {
+  background: rgba(255, 255, 255, 0.22);
+  opacity: 1;
 }

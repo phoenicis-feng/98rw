@@ -1,6 +1,8 @@
 ---
 title: "Nex AGI Nex-N2.5-Mini (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file..."
 specs:
   vendor: "Nex AGI"

@@ -1,6 +1,8 @@
 ---
 title: "OpenRouter Auto Router (Beta)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Auto Router (Beta) is a task-aware router from OpenRouter. It classifies each request, then routes it the [most popular model](/rankings#task-spend) for that task based on aggregate spend, filtered by"
 specs:
   vendor: "OpenRouter"

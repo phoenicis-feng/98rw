@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.7 Max"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.7-Max is the flagship model in Alibaba's Qwen3.7 series. It supports text input and output and is designed for agent-centric workloads, with particular strengths in coding, office and productivi"
 specs:
   vendor: "阿里 Qwen"

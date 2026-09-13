@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.6 Luna (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-5.6 Luna is a fast, cost-efficient model in OpenAI's GPT-5.6 series. It is suited for high-volume, latency-sensitive tasks such as chat, classification, and lightweight agentic workflows, providin"
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "OpenRouter Free Models Router"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The simplest way to get free inference. openrouter/free is a router that selects free models at random from the models available on OpenRouter. The router smartly filters for models that..."
 specs:
   vendor: "OpenRouter"

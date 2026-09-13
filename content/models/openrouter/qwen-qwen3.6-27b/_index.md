@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.6 27B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs.."
 specs:
   vendor: "阿里 Qwen"

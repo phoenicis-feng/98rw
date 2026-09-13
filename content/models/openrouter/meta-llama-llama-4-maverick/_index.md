@@ -1,6 +1,8 @@
 ---
 title: "Meta Llama Llama 4 Maverick"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Llama 4 Maverick 17B Instruct (128E) is a high-capacity multimodal language model from Meta, built on a mixture-of-experts (MoE) architecture with 128 experts and 17 billion active parameters per forw"
 specs:
   vendor: "Meta Llama"

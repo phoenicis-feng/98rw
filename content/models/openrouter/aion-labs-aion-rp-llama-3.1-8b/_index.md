@@ -1,6 +1,8 @@
 ---
 title: "Aion-Labs Aion-RP 1.0 (8B)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Aion-RP-Llama-3.1-8B ranks the highest in the character evaluation portion of the RPBench-Auto benchmark, a roleplaying-specific variant of Arena-Hard-Auto, where LLMs evaluate each other’s responses."
 specs:
   vendor: "Aion-Labs"

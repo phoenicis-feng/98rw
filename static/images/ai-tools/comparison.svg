@@ -1,0 +1,67 @@
+<svg width="760" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="760" height="400" fill="white" rx="12"/>
+
+  <text x="380" y="35" text-anchor="middle" font-size="18" font-weight="600" fill="#1a1a1a">
+    四大工具對比總覽
+  </text>
+
+  <!-- Table header -->
+  <rect x="0" y="55" width="760" height="40" fill="#f3f4f6"/>
+  <text x="80" y="80" text-anchor="middle" font-size="13" font-weight="600" fill="#374159">工具</text>
+  <text x="240" y="80" text-anchor="middle" font-size="13" font-weight="600" fill="#374159">類型</text>
+  <text x="420" y="80" text-anchor="middle" font-size="13" font-weight="600" fill="#374159">安裝方式</text>
+  <text x="600" y="80" text-anchor="middle" font-size="13" font-weight="600" fill="#374159">免費額度</text>
+
+  <!-- Row 1: Gemini -->
+  <rect x="0" y="95" width="760" height="45" fill="white"/>
+  <rect x="0" y="95" width="760" height="45" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="80" y="122" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a1a">Gemini</text>
+  <text x="240" y="122" text-anchor="middle" font-size="12" fill="#4b5563">Web CLI 混合</text>
+  <text x="420" y="122" text-anchor="middle" font-size="12" fill="#4b5563">npm install -g</text>
+  <text x="600" y="122" text-anchor="middle" font-size="12" fill="#059669">每日 1000 請求</text>
+
+  <!-- Row 2: OpenCode -->
+  <rect x="0" y="140" width="760" height="45" fill="white"/>
+  <rect x="0" y="140" width="760" height="45" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="80" y="167" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a1a">OpenCode</text>
+  <text x="240" y="167" text-anchor="middle" font-size="12" fill="#4b5563">CLI 編碼助手</text>
+  <text x="420" y="167" text-anchor="middle" font-size="12" fill="#4b5563">npm / mise</text>
+  <text x="600" y="167" text-anchor="middle" font-size="12" fill="#059669">內建免費模型</text>
+
+  <!-- Row 3: Cline -->
+  <rect x="0" y="185" width="760" height="45" fill="white"/>
+  <rect x="0" y="185" width="760" height="45" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="80" y="212" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a1a">Cline</text>
+  <text x="240" y="212" text-anchor="middle" font-size="12" fill="#4b5563">VSCode 插件</text>
+  <text x="420" y="212" text-anchor="middle" font-size="12" fill="#4b5563">VSCode 擴展</text>
+  <text x="600" y="212" text-anchor="middle" font-size="12" fill="#0e7490">OpenRouter 對接</text>
+
+  <!-- Row 4: OpenRouter -->
+  <rect x="0" y="230" width="760" height="45" fill="white"/>
+  <rect x="0" y="230" width="760" height="45" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="80" y="257" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a1a">OpenRouter</text>
+  <text x="240" y="257" text-anchor="middle" font-size="12" fill="#4b5563">API 平台</text>
+  <text x="420" y="257" text-anchor="middle" font-size="12" fill="#4b5563">註冊線上</text>
+  <text x="600" y="257" text-anchor="middle" font-size="12" fill="#059669">400+ 免費模型</text>
+
+  <!-- Footer note -->
+  <text x="380" y="320" text-anchor="middle" font-size="11" fill="#9ca3af">
+    ✅ = 已驗證免費 / ⚠️ = 需依賴第三方對接 / 💰 = 付費後才無限制
+  </text>
+
+  <!-- Legend badges -->
+  <circle cx="180" cy="345" r="5" fill="#059669"/>
+  <text x="190" y="350" font-size="11" fill="#059669">原生免費</text>
+
+  <circle cx="330" cy="345" r="5" fill="#0e7490"/>
+  <text x="340" y="350" font-size="11" fill="#0e7490">對接取得</text>
+
+  <circle cx="470" cy="345" r="5" fill="#dc2626"/>
+  <text x="480" y="350" font-size="11" fill="#dc2626">付費限制</text>
+</svg>

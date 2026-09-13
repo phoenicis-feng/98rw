@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Saba"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Mistral Saba is a 24B-parameter language model specifically designed for the Middle East and South Asia, delivering accurate and contextually relevant responses while maintaining efficient performance"
 specs:
   vendor: "Mistral AI"

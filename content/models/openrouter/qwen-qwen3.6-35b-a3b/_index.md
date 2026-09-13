@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.6 35B A3B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3.6-35B-A3B is an open-weight multimodal model from Alibaba Cloud with 35 billion total parameters and 3 billion active parameters per token. It uses a hybrid sparse mixture-of-experts architectur"
 specs:
   vendor: "阿里 Qwen"

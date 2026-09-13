@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.5 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "GPT-5.5 is OpenAI’s frontier model designed for complex professional workloads, building on GPT-5.4 with stronger reasoning, higher reliability, and improved token efficiency on hard tasks. It feature"
 specs:
   vendor: "OpenAI"

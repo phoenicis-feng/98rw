@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 5V Turbo"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GLM-5V-Turbo is Z.ai’s first native multimodal agent foundation model, built for vision-based coding and agent-driven tasks. It natively handles image, video, and text inputs, excels at long-horizon p"
 specs:
   vendor: "智谱 AI"

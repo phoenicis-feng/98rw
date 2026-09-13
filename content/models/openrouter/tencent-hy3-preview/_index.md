@@ -1,6 +1,8 @@
 ---
 title: "腾讯 Hy3 preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes"
 specs:
   vendor: "腾讯"

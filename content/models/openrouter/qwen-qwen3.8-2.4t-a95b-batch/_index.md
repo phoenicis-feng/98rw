@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.8 2.4T A95B (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion tot"
 specs:
   vendor: "阿里 Qwen"

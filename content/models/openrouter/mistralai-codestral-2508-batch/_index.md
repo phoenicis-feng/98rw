@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Codestral 2508 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mistral's cutting-edge language model for coding released end of July 2025. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test genera"
 specs:
   vendor: "Mistral AI"

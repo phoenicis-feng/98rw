@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.5 Flash Lite"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.5 Flash Lite is a high-efficiency model from Google with upgraded agentic capabilities. It is suited for subagents that execute focused tasks within complex, multi-agent workflows."
 specs:
   vendor: "Google"

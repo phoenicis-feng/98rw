@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen2.5 VL 72B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images."
 specs:
   vendor: "阿里 Qwen"

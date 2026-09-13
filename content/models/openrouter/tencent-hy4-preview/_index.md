@@ -1,6 +1,8 @@
 ---
 title: "腾讯 Hy4 preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Tencent: Hy4 preview is a mixture-of-experts model from Tencent, with 49B active parameters out of 770B total. It is designed for coding agents, complex tool-use workflows, and productivity tasks that"
 specs:
   vendor: "腾讯"

@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 32B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-32B is a dense 32.8B parameter causal language model from the Qwen3 series, optimized for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode "
 specs:
   vendor: "阿里 Qwen"

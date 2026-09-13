@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.1-Codex-Mini"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5.1-Codex-Mini is a smaller and faster version of GPT-5.1-Codex"
 specs:
   vendor: "OpenAI"

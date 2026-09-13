@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 235B A22B Thinking 2507"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass"
 specs:
   vendor: "阿里 Qwen"

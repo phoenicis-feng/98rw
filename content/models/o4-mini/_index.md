@@ -3,6 +3,7 @@ title: "o4-mini"
 model: true
 description: "OpenAI 发布的 o4-mini 大语言模型。"
 specs:
+  popularity: 84
   vendor: "OpenAI"
   category: "国外"
   released: "2025-04"

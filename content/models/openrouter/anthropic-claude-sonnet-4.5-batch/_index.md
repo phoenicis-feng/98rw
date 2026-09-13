@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Sonnet 4.5 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Claude Sonnet 4.5 is Anthropic’s most advanced Sonnet model to date, optimized for real-world agents and coding workflows. It delivers state-of-the-art performance on coding benchmarks such as SWE-ben"
 specs:
   vendor: "Anthropic"

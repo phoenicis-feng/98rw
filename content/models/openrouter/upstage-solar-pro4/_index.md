@@ -1,6 +1,8 @@
 ---
 title: "Upstage Solar Pro 4"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Solar Pro 4 is Upstage's cost-efficient large language model, featuring a 524K context window. It is built for long-horizon tasks and agentic workflows, with strong capabilities in office productivity"
 specs:
   vendor: "Upstage"

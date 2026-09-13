@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4.1 Nano (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "For tasks that demand low latency, GPT‑4.1 nano is the fastest and cheapest model in the GPT-4.1 series. It delivers exceptional performance at a small size with its 1 million..."
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "Amazon Nova Pro 1.0"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Amazon Nova Pro 1.0 is a capable multimodal model from Amazon focused on providing a combination of accuracy, speed, and cost for a wide range of tasks. As of December..."
 specs:
   vendor: "Amazon"

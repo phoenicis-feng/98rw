@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "Anthropic 最强推理与编码模型，Artificial Analysis 智商指数 70 排名全球第二，66% 降价，SWE-bench 76.7%，首创上下文压缩实现无限长对话。"
 specs:
+  popularity: 95
   vendor: "Anthropic"
   category: "国外"
   released: "2025-11"

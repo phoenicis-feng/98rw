@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "Anthropic 最快最经济的模型，$1/M 输入 / $5/M 输出，SWE-bench 73.3%，零工具调用失败，ASL-2 安全级别，200K 上下文。"
 specs:
+  popularity: 85
   vendor: "Anthropic"
   category: "国外"
   released: "2025-10"

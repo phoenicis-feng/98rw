@@ -1,6 +1,8 @@
 ---
 title: "Relace Search"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The relace-search model uses 4-12 `view_file` and `grep` tools in parallel to explore a codebase and return relevant files to the user request. In contrast to RAG, relace-search performs agentic..."
 specs:
   vendor: "Relace"

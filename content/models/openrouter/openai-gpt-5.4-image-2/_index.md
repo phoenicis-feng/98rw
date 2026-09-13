@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5.4 Image 2"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "[GPT-5.4](https://openrouter.ai/openai/gpt-5.4) Image 2 combines OpenAI's GPT-5.4 model with state-of-the-art image generation capabilities from GPT Image 2. It enables rich multimodal workflows, allo"
 specs:
   vendor: "OpenAI"

@@ -1,6 +1,8 @@
 ---
 title: "字节跳动 Seed-2.0-Code"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Seed 2.0 Code is a model from ByteDance Seed optimized for agentic coding. It is suited for frontend development, multilingual programming tasks, and coding-agent workflows in tools such as Claude..."
 specs:
   vendor: "字节跳动"

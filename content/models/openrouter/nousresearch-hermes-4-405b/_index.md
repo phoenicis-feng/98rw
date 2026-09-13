@@ -1,6 +1,8 @@
 ---
 title: "Nousresearch Hermes 4 405B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Hermes 4 is a large-scale reasoning model built on Meta-Llama-3.1-405B and released by Nous Research. It introduces a hybrid reasoning mode, where the model can choose to deliberate internally with..."
 specs:
   vendor: "Nousresearch"

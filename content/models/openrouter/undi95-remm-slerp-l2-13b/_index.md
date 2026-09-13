@@ -1,6 +1,8 @@
 ---
 title: "Undi95 ReMM SLERP 13B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "A recreation trial of the original MythoMax-L2-B13 but with updated models. #merge"
 specs:
   vendor: "Undi95"

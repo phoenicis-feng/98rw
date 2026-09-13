@@ -3,6 +3,7 @@ title: "Command R+"
 model: true
 description: "Cohere 发布的 Command R+ 大语言模型。"
 specs:
+  popularity: 60
   vendor: "Cohere"
   category: "国外"
   released: "2025-02"

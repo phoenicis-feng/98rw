@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-5 Image Mini"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GPT-5 Image Mini combines OpenAI's advanced language capabilities, powered by [GPT-5 Mini](https://openrouter.ai/openai/gpt-5-mini), with GPT Image 1 Mini for efficient image generation. This natively"
 specs:
   vendor: "OpenAI"

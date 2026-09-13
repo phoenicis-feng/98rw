@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-4o (2024-11-20)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The 2024-11-20 version of GPT-4o offers a leveled-up creative writing ability with more natural, engaging, and tailored writing to improve relevance & readability. It’s also better at working with upl"
 specs:
   vendor: "OpenAI"

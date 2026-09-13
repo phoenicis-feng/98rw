@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.6 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3.6 Flash is a fast, efficient language model from Alibaba's Qwen 3.6 series. It supports text, image, and video input with a 1M token context window. Tiered pricing kicks in..."
 specs:
   vendor: "阿里 Qwen"

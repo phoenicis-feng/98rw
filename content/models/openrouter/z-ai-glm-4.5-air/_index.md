@@ -1,6 +1,8 @@
 ---
 title: "智谱 AI GLM 4.5 Air"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but wit"
 specs:
   vendor: "智谱 AI"

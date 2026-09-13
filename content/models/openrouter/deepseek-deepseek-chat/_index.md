@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "DeepSeek-V3 is the latest model from the DeepSeek team, building upon the instruction following and coding abilities of the previous versions. Pre-trained on nearly 15 trillion tokens, the reported ev"
 specs:
   vendor: "DeepSeek"

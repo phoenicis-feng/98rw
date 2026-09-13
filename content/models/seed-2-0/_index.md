@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "字节跳动 发布的 Seed 2.0 大语言模型。"
 specs:
+  popularity: 76
   vendor: "字节跳动"
   category: "国内"
   released: "2025-12"

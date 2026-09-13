@@ -1,6 +1,8 @@
 ---
 title: "Perplexity Sonar Deep Research"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Sonar Deep Research is a research-focused model designed for multi-step retrieval, synthesis, and reasoning across complex topics. It autonomously searches, reads, and evaluates sources, refining its "
 specs:
   vendor: "Perplexity"

@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.5-27B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The Qwen3.5 27B native vision-language Dense model incorporates a linear attention mechanism, delivering fast response times while balancing inference speed and performance. Its overall capabilities a"
 specs:
   vendor: "阿里 Qwen"

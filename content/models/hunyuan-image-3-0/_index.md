@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "腾讯 发布的 HunyuanImage 3.0 大语言模型。"
 specs:
+  popularity: 66
   vendor: "腾讯"
   category: "国内"
   released: "2025-09"

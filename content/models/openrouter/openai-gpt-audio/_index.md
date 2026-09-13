@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT Audio"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The gpt-audio model is OpenAI's first generally available audio model. The new snapshot features an upgraded decoder for more natural sounding voices and maintains better voice consistency. Audio is p"
 specs:
   vendor: "OpenAI"

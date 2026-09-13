@@ -1,6 +1,8 @@
 ---
 title: "字节跳动 Seed 2.1 Turbo"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Seed 2.1 Turbo is a multimodal model from ByteDance Seed for coding and long-horizon agent workflows. It is suited for end-to-end software delivery, multi-step task execution, and understanding visual"
 specs:
   vendor: "字节跳动"

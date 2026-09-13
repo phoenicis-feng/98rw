@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Coder Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Qwen3 Coder Flash is Alibaba's fast and cost efficient version of their proprietary Qwen3 Coder Plus. It is a powerful coding agent model specializing in autonomous programming via tool calling..."
 specs:
   vendor: "阿里 Qwen"

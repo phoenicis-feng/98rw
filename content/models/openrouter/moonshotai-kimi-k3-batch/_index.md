@@ -1,6 +1,8 @@
 ---
 title: "月之暗面 Kimi K3 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at."
 specs:
   vendor: "月之暗面"

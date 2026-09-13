@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.7 Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.7 Flash is a multimodal model from Google for fast agentic workflows, coding, and complex multi-step reasoning. It is designed for tasks that require responsive performance and reliable multi"
 specs:
   vendor: "Google"

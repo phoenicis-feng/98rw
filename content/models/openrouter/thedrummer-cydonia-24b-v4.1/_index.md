@@ -1,6 +1,8 @@
 ---
 title: "Thedrummer Cydonia 24B V4.1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Uncensored and creative writing model based on Mistral Small 3.2 24B with good recall, prompt adherence, and intelligence."
 specs:
   vendor: "Thedrummer"

@@ -1,6 +1,8 @@
 ---
 title: "Google Gemini 3.1 Pro Preview"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Gemini 3.1 Pro Preview is Google’s frontier reasoning model, delivering enhanced software engineering performance, improved agentic reliability, and more efficient token usage across complex workflows"
 specs:
   vendor: "Google"

@@ -1,6 +1,8 @@
 ---
 title: "Kwaipilot KAT-Coder-Pro V2.5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "KAT-Coder-Pro V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make..."
 specs:
   vendor: "Kwaipilot"

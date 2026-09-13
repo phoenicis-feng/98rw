@@ -1,6 +1,8 @@
 ---
 title: "Meta Muse Spark 1.2"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Muse Spark 1.2 is a reasoning model from Meta, designed for complex agentic tasks. It accepts text, images, video, audio, and PDF documents, returns text, and offers a 1M-token context..."
 specs:
   vendor: "Meta"

@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Next 80B A3B Thinking"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code s"
 specs:
   vendor: "阿里 Qwen"

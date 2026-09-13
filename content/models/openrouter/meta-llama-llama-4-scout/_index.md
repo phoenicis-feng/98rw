@@ -1,6 +1,8 @@
 ---
 title: "Meta Llama Llama 4 Scout"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input..."
 specs:
   vendor: "Meta Llama"

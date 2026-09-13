@@ -1,6 +1,8 @@
 ---
 title: "xAI Grok Build 0.1"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Grok Build 0.1 is SpaceXAI’s fast coding model trained specifically for agentic software engineering workflows. It supports text and image inputs with text output, and is optimized for interactive cod"
 specs:
   vendor: "xAI"

@@ -1,6 +1,8 @@
 ---
 title: "OpenAI o1-pro"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "The o1 series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o1-pro model uses more compute to think harder and provide..."
 specs:
   vendor: "OpenAI"

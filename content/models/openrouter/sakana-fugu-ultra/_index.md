@@ -1,6 +1,8 @@
 ---
 title: "Sakana AI Fugu Ultra"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Fugu Ultra is the higher-performance model in Sakana AI's Fugu family. Rather than a single monolithic model, Fugu is a learned multi-agent orchestration system: a language model trained to route..."
 specs:
   vendor: "Sakana AI"

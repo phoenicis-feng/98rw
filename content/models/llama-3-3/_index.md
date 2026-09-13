@@ -3,6 +3,7 @@ title: "Llama 3.3"
 model: true
 description: "Meta 发布的 Llama 3.3 大语言模型。"
 specs:
+  popularity: 74
   vendor: "Meta"
   category: "国外"
   released: "2024-12"

@@ -1,6 +1,8 @@
 ---
 title: "Amazon Nova Micro 1.0"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Amazon Nova Micro 1.0 is a text-only model that delivers the lowest latency responses in the Amazon Nova family of models at a very low cost. With a context length..."
 specs:
   vendor: "Amazon"

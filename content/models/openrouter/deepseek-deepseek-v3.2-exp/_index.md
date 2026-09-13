@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V3.2 Exp"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "DeepSeek-V3.2-Exp is an experimental large language model released by DeepSeek as an intermediate step between V3.1 and future architectures. It introduces DeepSeek Sparse Attention (DSA), a fine-grai"
 specs:
   vendor: "DeepSeek"

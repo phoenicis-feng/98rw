@@ -3,6 +3,7 @@ title: "ERNIE X1"
 model: true
 description: "百度 发布的 ERNIE X1 大语言模型。"
 specs:
+  popularity: 76
   vendor: "百度"
   category: "国内"
   released: "2025-06"

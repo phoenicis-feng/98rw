@@ -1,6 +1,8 @@
 ---
 title: "Inclusion AI Ling 3.0 Flash VL (free)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Ling 3.0 Flash VL builds on Ling 3.0 Flash (124B total / 5.5B active MoE from InclusionAI), further strengthening its language capabilities while adding native visual perception and advanced visual..."
 specs:
   vendor: "Inclusion AI"

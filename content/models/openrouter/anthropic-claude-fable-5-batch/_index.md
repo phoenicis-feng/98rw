@@ -1,6 +1,8 @@
 ---
 title: "Anthropic Claude Fable 5 (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "Claude Fable 5 is a Mythos-class model from Anthropic, built for autonomous knowledge work and coding. It supports text, image, and file inputs with text output, with reasoning support and..."
 specs:
   vendor: "Anthropic"

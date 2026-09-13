@@ -1,6 +1,8 @@
 ---
 title: "Morph V3 Fast"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 75
 description: "Morph's fastest apply model for code edits. ~10,500 tokens/sec with 96% accuracy for rapid code transformations. The model requires the prompt to be in the following format: <instruction>{instruction}"
 specs:
   vendor: "Morph"

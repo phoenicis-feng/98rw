@@ -1,6 +1,8 @@
 ---
 title: "月之暗面 Kimi K2 Thinking"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Kimi K2 Thinking is Moonshot AI’s most advanced open reasoning model to date, extending the K2 series into agentic, long-horizon reasoning. Built on the trillion-parameter Mixture-of-Experts (MoE) arc"
 specs:
   vendor: "月之暗面"

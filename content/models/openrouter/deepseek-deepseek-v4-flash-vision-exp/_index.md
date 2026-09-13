@@ -1,6 +1,8 @@
 ---
 title: "DeepSeek V4 Flash Vision Exp"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "DeepSeek V4 Flash Vision Exp is an experimental vision-enabled version of [DeepSeek V4 Flash 0731](https://openrouter.ai/deepseek/deepseek-v4-flash-0731) from DeepSeek, adding image understanding whil"
 specs:
   vendor: "DeepSeek"

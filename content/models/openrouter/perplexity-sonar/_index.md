@@ -1,6 +1,8 @@
 ---
 title: "Perplexity Sonar"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Sonar is lightweight, affordable, fast, and simple to use — now featuring citations and the ability to customize sources. It is designed for companies seeking to integrate lightweight question-and-ans"
 specs:
   vendor: "Perplexity"

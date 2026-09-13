@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 VL 235B A22B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language"
 specs:
   vendor: "阿里 Qwen"

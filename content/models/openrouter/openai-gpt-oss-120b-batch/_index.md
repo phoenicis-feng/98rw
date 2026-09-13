@@ -1,6 +1,8 @@
 ---
 title: "OpenAI gpt-oss-120b (batch)"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B par"
 specs:
   vendor: "OpenAI"

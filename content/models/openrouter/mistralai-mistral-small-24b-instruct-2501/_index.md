@@ -1,6 +1,8 @@
 ---
 title: "Mistral AI Mistral Small 3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "Mistral Small 3 is a 24B-parameter language model optimized for low-latency performance across common AI tasks. Released under the Apache 2.0 license, it features both pre-trained and instruction-tune"
 specs:
   vendor: "Mistral AI"

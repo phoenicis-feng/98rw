@@ -1,6 +1,8 @@
 ---
 title: "Inception Mercury 2.5"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Mercury 2.5 is the fastest reasoning LLM, and the latest diffusion LLM (dLLM) from Inception. Instead of generating tokens sequentially, Mercury 2.5 produces and refines multiple tokens in parallel, a"
 specs:
   vendor: "Inception"

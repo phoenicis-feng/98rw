@@ -1,6 +1,8 @@
 ---
 title: "Upstage Solar Pro 3"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Solar Pro 3 is Upstage's powerful Mixture-of-Experts (MoE) language model. With 102B total parameters and 12B active parameters per forward pass, it delivers exceptional performance while maintaining "
 specs:
   vendor: "Upstage"

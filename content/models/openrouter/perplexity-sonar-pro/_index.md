@@ -1,6 +1,8 @@
 ---
 title: "Perplexity Sonar Pro"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Note: Sonar Pro pricing includes Perplexity search pricing. See [details here](https://docs.perplexity.ai/guides/pricing#detailed-pricing-breakdown-for-sonar-reasoning-pro-and-sonar-pro) For enterpris"
 specs:
   vendor: "Perplexity"

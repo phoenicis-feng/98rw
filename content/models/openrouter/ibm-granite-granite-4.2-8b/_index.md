@@ -1,6 +1,8 @@
 ---
 title: "IBM Granite Granite 4.2 8B"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Granite 4.2 8B is a dense reasoning model from IBM. It is suited for mathematics, code generation, multilingual dialogue, and agentic workflows that need multi-step reasoning. It supports full, low-ef"
 specs:
   vendor: "IBM Granite"

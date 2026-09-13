@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3.5-Flash"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 85
 description: "The Qwen3.5 native vision-language Flash models are built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference effic"
 specs:
   vendor: "阿里 Qwen"

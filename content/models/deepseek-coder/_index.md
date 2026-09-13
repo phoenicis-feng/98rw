@@ -4,6 +4,7 @@ model: true
 toc: true
 description: "DeepSeek 发布的编程专用大语言模型，代码生成、调试和代码审查能力出色。"
 specs:
+  popularity: 83
   vendor: "DeepSeek"
   category: "开源"
   released: "2025-03"

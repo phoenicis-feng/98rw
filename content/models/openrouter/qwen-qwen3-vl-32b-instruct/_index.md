@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 VL 32B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-VL-32B-Instruct is a large-scale multimodal vision-language model designed for high-precision understanding and reasoning across text, images, and video. With 32 billion parameters, it combines "
 specs:
   vendor: "阿里 Qwen"

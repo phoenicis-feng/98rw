@@ -1,6 +1,8 @@
 ---
 title: "OpenAI GPT-3.5 Turbo Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 70
 description: "This model is a variant of GPT-3.5 Turbo tuned for instructional prompts and omitting chat-related optimizations. Training data: up to Sep 2021."
 specs:
   vendor: "OpenAI"

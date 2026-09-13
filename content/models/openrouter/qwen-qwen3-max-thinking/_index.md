@@ -1,6 +1,8 @@
 ---
 title: "阿里 Qwen Qwen3 Max Thinking"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Qwen3-Max-Thinking is the flagship reasoning model in the Qwen3 series, designed for high-stakes cognitive tasks that require deep, multi-step reasoning. By significantly scaling model capacity and re"
 specs:
   vendor: "阿里 Qwen"

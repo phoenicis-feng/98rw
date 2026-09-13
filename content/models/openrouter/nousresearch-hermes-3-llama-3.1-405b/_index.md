@@ -1,6 +1,8 @@
 ---
 title: "Nousresearch Hermes 3 405B Instruct"
 model: true
+date: 2026-09-12T00:00:00Z
+reasoning: 80
 description: "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coheren"
 specs:
   vendor: "Nousresearch"

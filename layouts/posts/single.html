@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <article class="article">
+    <header class="article__header">
+      <h1 class="article__title">{{ .Title }}</h1>
+      <div class="article__meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format ":date_long" }}</time>
+        {{- with .Params.author }}<span>{{ . }}</span>{{ end }}
+        {{- with .ReadingTime }}<span>{{ i18n "reading_time" (dict "Count" .) }}</span>{{ end }}
+        {{- with .Params.tags }}
+          <div class="article__tags" style="margin-top: 8px;">
+            {{- range . }}
+              <span class="badge">{{ . }}</span>
+            {{- end }}
+          </div>
+        {{- end }}
+      </div>
+      {{- with .Params.description }}
+        <p class="article__summary">{{ . }}</p>
+      {{- end }}
+    </header>
+    <div class="docs">
+      <div class="docs__content article__body">
+        {{ .Content }}
+        {{- /* Reference links at the end */}}
+        {{- with .Params.references }}
+          <section class="references">
+            <h2>参考来源</h2>
+            <ul class="references__list">
+              {{- range . }}
+                <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{- if .date }} <time>{{ .date }}</time>{{- end }}</li>
+              {{- end }}
+            </ul>
+          </section>
+        {{- end }}
+      </div>
+      <aside class="docs__toc" aria-label="目录">
+        {{- with .TableOfContents }}
+          <h2>目录</h2>
+          {{ . }}
+        {{- end }}
+      </aside>
+    </div>
+  </article>
+{{ end }}
