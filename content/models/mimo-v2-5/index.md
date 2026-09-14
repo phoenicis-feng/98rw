@@ -4,7 +4,9 @@ model: true
 description: "小米发布的 MiMo-V2.5 大语言模型：综合评分 55，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "小米"
+  series: "MiMo V2.5"
   category: "闭源专有"
+  context: "1M"
   released: "2026-04"
   speed: "52 tokens/秒"
   ttft: "45.64 秒"

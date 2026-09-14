@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen 3.6 Max (preview) 大语言模型：综合评分 55，闭源专有，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen 3.6 Max"
   category: "闭源专有"
+  context: "256K"
   released: "2026-04"
   scores:
     overall: {score: 55, rank: 42}

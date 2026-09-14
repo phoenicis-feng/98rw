@@ -4,7 +4,9 @@ model: true
 description: "智谱 AI发布的 GLM-5.2 大语言模型：综合评分 67，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "智谱 AI"
+  series: "GLM"
   category: "开源权重"
+  context: "1M"
   released: "2026-06"
   price_input: "$1.4/M"
   price_output: "$4.4/M"
@@ -37,9 +39,10 @@ similar:
   - slug: "gpt-5-medium"
     name: "GPT-5 (medium)"
     score: 67
-  - slug: "apodex-1-1"
-    name: "Apodex 1.1"
-    score: 68
+  - slug: "muse-spark-1-2"
+    name: "Muse Spark 1.2"
+    score: 69
+    price: "$4.25/M"
 same_creator:
   - slug: "glm-5-3"
     name: "GLM-5.3"

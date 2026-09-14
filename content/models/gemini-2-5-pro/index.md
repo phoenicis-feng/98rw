@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemini 2.5 Pro 大语言模型：综合评分 51，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemini 2.5 Pro"
   category: "闭源专有"
+  context: "1M"
   released: "2025-03"
   price_input: "$1.25/M"
   price_output: "$10/M"
@@ -30,15 +32,16 @@ similar:
     name: "Mistral Small 4"
     score: 51
     price: "$0.6/M"
-  - slug: "mellum2-12b-a2-5b-thinking"
-    name: "Mellum2-12B-A2.5B-Thinking"
-    score: 52
   - slug: "mai-thinking-1"
     name: "MAI-Thinking-1"
     score: 50
   - slug: "o4-mini-high"
     name: "o4-mini (high)"
     score: 50
+  - slug: "gemma-4-31b"
+    name: "Gemma 4 31B"
+    score: 51
+    price: "免费"
 same_creator:
   - slug: "gemini-3-8-flash"
     name: "Gemini 3.8 Flash"

@@ -4,7 +4,9 @@ model: true
 description: "Liquid AI发布的 LFM2.5-230M 大语言模型：综合评分 34，开源权重，上下文 32K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Liquid AI"
+  series: "LFM2.5"
   category: "开源权重"
+  context: "32K"
   released: "2026-06"
   price_input: "免费"
   price_output: "免费"
@@ -16,17 +18,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "ornith-1-5-9b"
-    name: "Ornith-1.5-9B"
-    score: 34
-    price: "免费"
-  - slug: "ornith-1-0-9b"
-    name: "Ornith-1.0-9B"
-    score: 35
-    price: "免费"
-  - slug: "laguna-m-1"
-    name: "Laguna M.1"
-    score: 34
   - slug: "granite-4-0-350m"
     name: "Granite-4.0-350M"
     score: 36
@@ -34,6 +25,18 @@ similar:
   - slug: "granite-4-0-h-350m"
     name: "Granite-4.0-H-350M"
     score: 36
+    price: "免费"
+  - slug: "granite-4-0-h-1b"
+    name: "Granite-4.0-H-1B"
+    score: 37
+    price: "免费"
+  - slug: "gemma-3-27b"
+    name: "Gemma 3 27B"
+    score: 37
+    price: "免费"
+  - slug: "granite-4-0-1b"
+    name: "Granite-4.0-1B"
+    score: 37
     price: "免费"
 same_creator:
   - slug: "lfm2-5-2-6b"

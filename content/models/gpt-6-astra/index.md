@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-6 Astra 大语言模型：综合评分 82，闭源专有，上下文 1.05M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT 6 Astra"
   category: "闭源专有"
+  context: "1.05M"
   released: "2026-09"
   price_input: "$10/M"
   price_output: "$50/M"

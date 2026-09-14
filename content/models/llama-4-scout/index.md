@@ -4,7 +4,9 @@ model: true
 description: "Meta发布的 Llama 4 Scout 大语言模型：综合评分 42，开源权重，上下文 10M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Meta"
+  series: "Llama 4 Scout"
   category: "开源权重"
+  context: "10M"
   released: "2026-02"
   price_input: "免费"
   price_output: "免费"
@@ -37,9 +39,10 @@ similar:
     name: "Qwen3 235B 2507 (Reasoning)"
     score: 43
     price: "免费"
-  - slug: "mellum2-12b-a2-5b-instruct"
-    name: "Mellum2-12B-A2.5B-Instruct"
-    score: 42
+  - slug: "qwen3-5-35b-a3b"
+    name: "Qwen3.5-35B-A3B"
+    score: 44
+    price: "免费"
 same_creator:
   - slug: "muse-spark-1-1"
     name: "Muse Spark 1.1"

@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude Opus 4.5 大语言模型：综合评分 53，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude Opus"
   category: "闭源专有"
+  context: "200K"
   released: "2025-11"
   price_input: "$5/M"
   price_output: "$25/M"
@@ -35,13 +37,13 @@ similar:
     name: "Claude 4 Sonnet"
     score: 52
     price: "$15/M"
-  - slug: "mercury-2-5"
-    name: "Mercury 2.5"
-    score: 53
-    price: "$0.15/M"
   - slug: "qwen3-max"
     name: "Qwen3 Max"
     score: 54
+  - slug: "ling-3-0-tiny"
+    name: "Ling 3.0 Tiny"
+    score: 53
+    price: "免费"
 same_creator:
   - slug: "claude-mythos-5"
     name: "Claude Mythos 5"

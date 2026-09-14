@@ -4,7 +4,9 @@ model: true
 description: "H Company发布的 Holo3-122B-A10B 大语言模型：综合评分 67，闭源专有，上下文 64K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "H Company"
+  series: "Holo3"
   category: "闭源专有"
+  context: "64K"
   released: "2026-03"
   price_input: "$0.4/M"
   price_output: "$3/M"
@@ -29,9 +31,10 @@ similar:
     name: "GLM-5.2"
     score: 67
     price: "$4.4/M"
-  - slug: "apodex-1-1"
-    name: "Apodex 1.1"
-    score: 68
+  - slug: "gemini-3-flash"
+    name: "Gemini 3 Flash"
+    score: 65
+    price: "$3/M"
 same_creator:
   - slug: "holo3-35b-a3b"
     name: "Holo3-35B-A3B"

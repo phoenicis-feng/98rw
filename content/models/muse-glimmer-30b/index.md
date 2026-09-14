@@ -4,7 +4,9 @@ model: true
 description: "Meta发布的 Muse Glimmer 30B 大语言模型：综合评分 55，开源权重，上下文 131K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Meta"
+  series: "Muse Glimmer"
   category: "开源权重"
+  context: "131K"
   released: "2026-08"
   price_input: "免费"
   price_output: "免费"

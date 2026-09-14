@@ -4,7 +4,9 @@ model: true
 description: "Meta发布的 Muse Spark 1.2 大语言模型：综合评分 69，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Meta"
+  series: "Muse Spark"
   category: "闭源专有"
+  context: "1M"
   released: "2026-08"
   price_input: "$1.25/M"
   price_output: "$4.25/M"
@@ -31,13 +33,14 @@ similar:
   - slug: "sakana-fugu"
     name: "Sakana Fugu"
     score: 69
-  - slug: "apodex-1-1"
-    name: "Apodex 1.1"
-    score: 68
   - slug: "qwen3-8-27b"
     name: "Qwen3.8-27B"
     score: 69
     price: "免费"
+  - slug: "glm-5-2"
+    name: "GLM-5.2"
+    score: 67
+    price: "$4.4/M"
 same_creator:
   - slug: "muse-spark-1-1"
     name: "Muse Spark 1.1"

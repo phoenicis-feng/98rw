@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude Sonnet 4.5 大语言模型：综合评分 45，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude Sonnet"
   category: "闭源专有"
+  context: "200K"
   released: "2025-09"
   price_input: "$3/M"
   price_output: "$15/M"
@@ -30,14 +32,14 @@ similar:
     name: "Mistral Medium 3"
     score: 45
     price: "$2/M"
-  - slug: "zaya1-74b-preview"
-    name: "ZAYA1-74B-Preview"
-    score: 45
-    price: "免费"
   - slug: "claude-haiku-4-5"
     name: "Claude Haiku 4.5"
     score: 44
     price: "$5/M"
+  - slug: "o3-mini"
+    name: "o3-mini"
+    score: 46
+    price: "$4.4/M"
 same_creator:
   - slug: "claude-mythos-5"
     name: "Claude Mythos 5"

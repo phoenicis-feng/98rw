@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.5 397B 大语言模型：综合评分 50，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.5"
   category: "开源权重"
+  context: "128K"
   released: "2026-02"
   price_input: "$0.6/M"
   price_output: "$3.6/M"

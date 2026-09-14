@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.5 Pro 大语言模型：综合评分 72，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT 5.5 Pro"
   category: "闭源专有"
+  context: "1M"
   released: "2026-04"
   price_input: "$30/M"
   price_output: "$180/M"

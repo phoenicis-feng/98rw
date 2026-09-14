@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.4 mini 大语言模型：综合评分 60，闭源专有，上下文 400K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT"
   category: "闭源专有"
+  context: "400K"
   released: "2026-03"
   price_input: "$0.75/M"
   price_output: "$4.5/M"
@@ -31,10 +33,6 @@ similar:
     name: "GLM-5.1"
     score: 60
     price: "$4.4/M"
-  - slug: "inkling"
-    name: "Inkling"
-    score: 60
-    price: "$4.68/M"
   - slug: "mimo-v2-omni"
     name: "MiMo-V2-Omni"
     score: 60
@@ -42,6 +40,9 @@ similar:
     name: "Mistral Medium 3.5 128B"
     score: 60
     price: "$7.5/M"
+  - slug: "qwen3-6-plus"
+    name: "Qwen3.6 Plus"
+    score: 59
 same_creator:
   - slug: "gpt-6-astra"
     name: "GPT-6 Astra"

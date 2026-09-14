@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.1 大语言模型：综合评分 66，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT"
   category: "闭源专有"
+  context: "200K"
   released: "2025-11"
   price_input: "$1.25/M"
   price_output: "$10/M"
@@ -30,15 +32,16 @@ similar:
     name: "GPT-5.1-Codex"
     score: 65
     price: "$10/M"
-  - slug: "swe-1-7"
-    name: "SWE-1.7"
-    score: 66
   - slug: "gemini-3-1-pro"
     name: "Gemini 3.1 Pro"
     score: 67
     price: "$12/M"
   - slug: "deepseek-v4-1-flash"
     name: "DeepSeek V4.1 Flash"
+    score: 66
+    price: "$1.2/M"
+  - slug: "gpt-5-6-luna"
+    name: "GPT-5.6 Luna"
     score: 66
     price: "$1.2/M"
 same_creator:

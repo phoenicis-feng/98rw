@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.6-35B-A3B 大语言模型：综合评分 47，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.6"
   category: "开源权重"
+  context: "262K"
   released: "2026-04"
   speed: "129 tokens/秒"
   ttft: "43.90 秒"
@@ -36,10 +38,9 @@ similar:
     name: "Nemotron 3 Nano Omni 30B A3B"
     score: 46
     price: "免费"
-  - slug: "ornith-1-5-35b-a3b"
-    name: "Ornith-1.5-35B-A3B"
+  - slug: "mistral-large-2"
+    name: "Mistral Large 2"
     score: 48
-    price: "免费"
 same_creator:
   - slug: "qwen3-8-max"
     name: "Qwen3.8 Max"

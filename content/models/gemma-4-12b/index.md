@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemma 4 12B 大语言模型：综合评分 47，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemma"
   category: "开源权重"
+  context: "256K"
   released: "2026-06"
   scores:
     overall: {score: 47, rank: 155}
@@ -32,10 +34,9 @@ similar:
     name: "Nemotron 3 Nano Omni 30B A3B"
     score: 46
     price: "免费"
-  - slug: "ornith-1-5-35b-a3b"
-    name: "Ornith-1.5-35B-A3B"
+  - slug: "mistral-large-2"
+    name: "Mistral Large 2"
     score: 48
-    price: "免费"
 same_creator:
   - slug: "gemini-3-8-flash"
     name: "Gemini 3.8 Flash"

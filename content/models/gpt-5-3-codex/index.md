@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.3 Codex 大语言模型：综合评分 68，闭源专有，上下文 400K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT 5.3 Codex"
   category: "闭源专有"
+  context: "400K"
   released: "2026-02"
   price_input: "$1.75/M"
   price_output: "$14/M"
@@ -26,9 +28,6 @@ similar:
     name: "GPT-5.2-Codex"
     score: 69
     price: "$14/M"
-  - slug: "apodex-1-1"
-    name: "Apodex 1.1"
-    score: 68
   - slug: "gemini-3-1-pro"
     name: "Gemini 3.1 Pro"
     score: 67
@@ -40,6 +39,9 @@ similar:
   - slug: "qwen3-7-plus"
     name: "Qwen3.7 Plus"
     score: 67
+  - slug: "sakana-fugu"
+    name: "Sakana Fugu"
+    score: 69
 same_creator:
   - slug: "gpt-6-astra"
     name: "GPT-6 Astra"

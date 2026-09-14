@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude 4.1 Opus 大语言模型：综合评分 56，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude 4.1 Opus"
   category: "闭源专有"
+  context: "200K"
   released: "2025-08"
   price_input: "$15/M"
   price_output: "$75/M"
@@ -20,22 +22,20 @@ similar:
   - slug: "ling-3-0-flash-fp8"
     name: "Ling 3.0 Flash FP8"
     score: 56
-  - slug: "composer-2-5"
-    name: "Composer 2.5"
-    score: 56
-    price: "$2.5/M"
   - slug: "deepseek-r1"
     name: "DeepSeek-R1"
     score: 56
     price: "$2.19/M"
-  - slug: "inkling-small"
-    name: "Inkling-Small"
+  - slug: "deepseek-v3-2"
+    name: "DeepSeek V3.2"
     score: 56
-    price: "$1.44/M"
-  - slug: "step-3-7-flash"
-    name: "Step 3.7 Flash"
-    score: 56
-    price: "$1.15/M"
+    price: "$0.42/M"
+  - slug: "muse-spark"
+    name: "Muse Spark"
+    score: 55
+  - slug: "ling-3-0-flash"
+    name: "Ling 3.0 Flash"
+    score: 55
 same_creator:
   - slug: "claude-mythos-5"
     name: "Claude Mythos 5"

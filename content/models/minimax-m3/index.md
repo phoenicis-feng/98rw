@@ -4,7 +4,9 @@ model: true
 description: "MiniMax发布的 MiniMax M3 大语言模型：综合评分 61，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "MiniMax"
+  series: "MiniMax M3"
   category: "开源权重"
+  context: "1M"
   released: "2026-06"
   price_input: "$0.3/M"
   price_output: "$1.2/M"

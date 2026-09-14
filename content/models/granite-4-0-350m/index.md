@@ -4,7 +4,9 @@ model: true
 description: "IBM发布的 Granite-4.0-350M 大语言模型：综合评分 36，开源权重，上下文 32K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "IBM"
+  series: "Granite"
   category: "开源权重"
+  context: "32K"
   released: "2025-10"
   price_input: "免费"
   price_output: "免费"

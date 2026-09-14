@@ -4,7 +4,9 @@ model: true
 description: "小米发布的 MiMo-V2-Flash 大语言模型：综合评分 50，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "小米"
+  series: "MiMo V2 Flash"
   category: "开源权重"
+  context: "256K"
   released: "2026-03"
   price_input: "免费"
   price_output: "免费"

@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemini 3 Pro Deep Think 大语言模型：综合评分 43，闭源专有，上下文 2M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemini 3 Pro Deep Think"
   category: "闭源专有"
+  context: "2M"
   released: "2026-02"
   scores:
     overall: {score: 43, rank: 65}

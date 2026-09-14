@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.6-27B 大语言模型：综合评分 54，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.6"
   category: "开源权重"
+  context: "262K"
   released: "2026-04"
   price_input: "免费"
   price_output: "免费"
@@ -38,10 +40,10 @@ similar:
   - slug: "qwen3-max"
     name: "Qwen3 Max"
     score: 54
-  - slug: "mercury-2-5"
-    name: "Mercury 2.5"
-    score: 53
-    price: "$0.15/M"
+  - slug: "deepseek-v3-1-reasoning"
+    name: "DeepSeek V3.1 (Reasoning)"
+    score: 56
+    price: "免费"
 same_creator:
   - slug: "qwen3-8-max"
     name: "Qwen3.8 Max"

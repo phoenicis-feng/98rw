@@ -4,7 +4,9 @@ model: true
 description: "小米发布的 MiMo-V2-Omni 大语言模型：综合评分 60，闭源专有，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "小米"
+  series: "MiMo V2 Omni"
   category: "闭源专有"
+  context: "262K"
   released: "2026-03"
   scores:
     overall: {score: 60, rank: 68}
@@ -16,10 +18,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "inkling"
-    name: "Inkling"
-    score: 60
-    price: "$4.68/M"
   - slug: "kimi-2-6"
     name: "Kimi K2.6"
     score: 60
@@ -36,6 +34,10 @@ similar:
     name: "Mistral Medium 3.5 128B"
     score: 60
     price: "$7.5/M"
+  - slug: "qwen3-8-flash-next"
+    name: "Qwen3.8-Flash-Next"
+    score: 60
+    price: "免费"
 same_creator:
   - slug: "mimo-v2-pro"
     name: "MiMo-V2-Pro"

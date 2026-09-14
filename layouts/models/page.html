@@ -10,7 +10,10 @@
       <span aria-current="page">{{ .Title }}</span>
     </nav>
     <header class="docs__header">
-      <h1>{{ .Title }}</h1>
+      <div class="model-title-row">
+        <h1>{{ .Title }}</h1>
+        <a class="btn btn--ghost btn--sm model-compare-cta" href="/compare/?model={{ .File.ContentBaseName }}" title="在模型对比页中对比该模型">对比</a>
+      </div>
       {{- $specs := .Params.specs }}
       {{- with $specs }}
       <p class="model-subtitle">

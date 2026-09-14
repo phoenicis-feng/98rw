@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-4o mini 大语言模型：综合评分 39，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT 4o"
   category: "闭源专有"
+  context: "128K"
   released: "2024-07"
   price_input: "$0.15/M"
   price_output: "$0.6/M"
@@ -18,22 +20,23 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "solar-pro-2"
-    name: "Solar Pro 2"
-    score: 39
   - slug: "gpt-4-1-nano"
     name: "GPT-4.1 nano"
     score: 38
     price: "$0.4/M"
-  - slug: "nova-pro"
-    name: "Nova Pro"
-    score: 40
-  - slug: "minicpm5-1b"
-    name: "MiniCPM5-1B"
-    score: 40
   - slug: "qwen3-omni-30b-a3b-instruct"
     name: "Qwen3-Omni-30B-A3B-Instruct"
     score: 38
+  - slug: "lfm2-5-2-6b"
+    name: "LFM2.5-2.6B"
+    score: 39
+    price: "免费"
+  - slug: "grok-3-beta"
+    name: "Grok 3 [Beta]"
+    score: 41
+  - slug: "ling-2-6-flash"
+    name: "Ling 2.6 Flash"
+    score: 41
 same_creator:
   - slug: "gpt-6-astra"
     name: "GPT-6 Astra"

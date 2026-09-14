@@ -4,7 +4,9 @@ model: true
 description: "月之暗面发布的 Kimi K2.5 (Reasoning) 大语言模型：综合评分 54，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "月之暗面"
+  series: "Kimi K2.5"
   category: "闭源专有"
+  context: "128K"
   released: "2026-02"
   price_input: "$0.6/M"
   price_output: "$3/M"
@@ -33,10 +35,10 @@ similar:
     name: "Kimi K2"
     score: 53
     price: "$2.5/M"
-  - slug: "composer-2"
-    name: "Composer 2"
+  - slug: "kimi-k2-7-code"
+    name: "Kimi K2.7 Code"
     score: 55
-    price: "$2.5/M"
+    price: "$4/M"
 same_creator:
   - slug: "kimi-k3"
     name: "Kimi K3"

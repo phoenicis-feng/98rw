@@ -4,7 +4,9 @@ model: true
 description: "蚂蚁集团 InclusionAI发布的 Ling 2.6 Flash 大语言模型：综合评分 41，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "蚂蚁集团 InclusionAI"
+  series: "Ling 2.6 Flash"
   category: "开源权重"
+  context: "262K"
   released: "2026-04"
   speed: "104 tokens/秒"
   ttft: "1.07 秒"
@@ -25,9 +27,6 @@ similar:
   - slug: "grok-3-beta"
     name: "Grok 3 [Beta]"
     score: 41
-  - slug: "mellum2-12b-a2-5b-instruct"
-    name: "Mellum2-12B-A2.5B-Instruct"
-    score: 42
   - slug: "llama-4-scout"
     name: "Llama 4 Scout"
     score: 42
@@ -36,6 +35,10 @@ similar:
     name: "GPT-4.1 mini"
     score: 42
     price: "$1.6/M"
+  - slug: "qwen3-5-flash"
+    name: "Qwen3.5 Flash"
+    score: 42
+    price: "$0.4/M"
 same_creator:
   - slug: "ling-3-0-flash-vl"
     name: "Ling 3.0 Flash VL"

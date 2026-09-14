@@ -4,7 +4,9 @@ model: true
 description: "xAI发布的 Grok 4.5 大语言模型：综合评分 69，闭源专有，上下文 500K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "xAI"
+  series: "Grok"
   category: "闭源专有"
+  context: "500K"
   released: "2026-07"
   price_input: "$2/M"
   price_output: "$6/M"
@@ -38,9 +40,10 @@ similar:
     name: "GPT-5.2-Codex"
     score: 69
     price: "$14/M"
-  - slug: "apodex-1-1"
-    name: "Apodex 1.1"
-    score: 68
+  - slug: "qwen3-8-27b"
+    name: "Qwen3.8-27B"
+    score: 69
+    price: "免费"
 same_creator:
   - slug: "grok-4-6"
     name: "Grok 4.6"

@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemma 3 27B 大语言模型：综合评分 37，开源权重，上下文 32K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemma"
   category: "开源权重"
+  context: "32K"
   released: "2025-03"
   price_input: "免费"
   price_output: "免费"

@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5 (medium) 大语言模型：综合评分 67，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT"
   category: "闭源专有"
+  context: "128K"
   released: "2025-08"
   speed: "83 tokens/秒"
   ttft: "36.28 秒"

@@ -4,7 +4,9 @@ model: true
 description: "月之暗面发布的 Kimi K2.7 Code 大语言模型：综合评分 55，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "月之暗面"
+  series: "Kimi K2.7 Code"
   category: "开源权重"
+  context: "256K"
   released: "2026-06"
   price_input: "$0.95/M"
   price_output: "$4/M"
@@ -21,14 +23,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "interfaze-beta"
-    name: "Interfaze Beta"
-    score: 55
-    price: "$3.5/M"
-  - slug: "composer-2"
-    name: "Composer 2"
-    score: 55
-    price: "$2.5/M"
   - slug: "muse-spark"
     name: "Muse Spark"
     score: 55
@@ -38,6 +32,13 @@ similar:
   - slug: "mimo-v2-5"
     name: "MiMo-V2.5"
     score: 55
+  - slug: "qwen3-6-max-preview"
+    name: "Qwen 3.6 Max (preview)"
+    score: 55
+  - slug: "gemini-3-1-flash-lite"
+    name: "Gemini 3.1 Flash-Lite"
+    score: 55
+    price: "$1.5/M"
 same_creator:
   - slug: "kimi-k3"
     name: "Kimi K3"

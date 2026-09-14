@@ -1,0 +1,62 @@
+{{ define "main" }}
+  {{- /* ===== 模型对比页：厂商 → 系列 → 模型 三级级联选择 ===== */ -}}
+  {{- /* 数据来源：模型详情页 front matter（specs），构建时内嵌为 JSON */ -}}
+  {{- $models := slice -}}
+  {{- range $p := where site.RegularPages "Section" "models" -}}
+    {{- with $p.Params.specs -}}
+      {{- $scores := dict -}}
+      {{- with .scores -}}
+        {{- range $k, $v := . -}}
+          {{- with $v.score }}{{ $scores = merge $scores (dict $k .) }}{{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $models = $models | append (dict
+        "id" $p.LinkTitle
+        "slug" $p.File.ContentBaseName
+        "url" $p.RelPermalink
+        "vendor" .vendor
+        "series" .series
+        "scores" $scores
+        "input" .price_input
+        "output" .price_output
+        "speed" .speed
+        "ttft" .ttft
+        "ctx" .context
+        "scen" .use_cases
+        "source" .category
+        "released" .released
+      ) -}}
+    {{- end -}}
+  {{- end -}}
+
+  <section class="section">
+    <div class="container compare-page" id="model-compare">
+      <nav class="docs__breadcrumb" aria-label="breadcrumb">
+        <a href="{{ site.Home.RelPermalink }}">首页</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ .Title }}</span>
+      </nav>
+
+      <h1 class="compare-page__title">{{ .Title }}</h1>
+      <p class="compare-page__lead">选择两个模型，对比综合与维度评分、速度、上下文窗口、价格和使用场景。优势项会高亮显示。</p>
+
+      <div class="model-compare__pickers">
+        <div class="model-compare__pick">
+          <span class="model-compare__pick-label">模型 A</span>
+          <select data-pick="a-vendor" aria-label="选择厂商 A"></select>
+          <select data-pick="a-series" aria-label="选择系列 A"></select>
+          <select data-pick="a-model" aria-label="选择模型 A"></select>
+        </div>
+        <button type="button" class="model-compare__swap" data-swap aria-label="交换模型 A 和 B">⇄</button>
+        <div class="model-compare__pick">
+          <span class="model-compare__pick-label">模型 B</span>
+          <select data-pick="b-vendor" aria-label="选择厂商 B"></select>
+          <select data-pick="b-series" aria-label="选择系列 B"></select>
+          <select data-pick="b-model" aria-label="选择模型 B"></select>
+        </div>
+      </div>
+
+      <div class="model-compare__result" aria-live="polite" data-models='{{ $models | jsonify }}'></div>
+    </div>
+  </section>
+{{ end }}

@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.6 Plus 大语言模型：综合评分 59，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.6 Plus"
   category: "闭源专有"
+  context: "1M"
   released: "2026-04"
   speed: "56 tokens/秒"
   ttft: "101.16 秒"
@@ -34,14 +36,14 @@ similar:
   - slug: "grok-4-1-fast-reasoning"
     name: "Grok 4.1 Fast (Reasoning)"
     score: 59
-  - slug: "quasar-438b"
-    name: "Quasar 438B"
-    score: 59
-    price: "$1.8/M"
-  - slug: "inkling"
-    name: "Inkling"
+  - slug: "kimi-2-6"
+    name: "Kimi K2.6"
     score: 60
-    price: "$4.68/M"
+    price: "$4/M"
+  - slug: "glm-5-1"
+    name: "GLM-5.1"
+    score: 60
+    price: "$4.4/M"
 same_creator:
   - slug: "qwen3-8-max"
     name: "Qwen3.8 Max"

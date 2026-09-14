@@ -4,7 +4,9 @@ model: true
 description: "智谱 AI发布的 GLM-5.3 大语言模型：综合评分 64，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "智谱 AI"
+  series: "GLM"
   category: "开源权重"
+  context: "1M"
   released: "2026-08"
   price_input: "免费"
   price_output: "免费"
@@ -29,18 +31,16 @@ similar:
     name: "Hy3"
     score: 64
     price: "免费"
-  - slug: "ornith-1-0-397b"
-    name: "Ornith-1.0-397B"
-    score: 64
-    price: "免费"
-  - slug: "dots3-note-preview"
-    name: "dots3-note Preview"
-    score: 66
-    price: "免费"
   - slug: "ling-3-0-flash-vl"
     name: "Ling 3.0 Flash VL"
     score: 62
     price: "免费"
+  - slug: "claude-4-1-opus-thinking"
+    name: "Claude 4.1 Opus Thinking"
+    score: 63
+  - slug: "mimo-v2-5-pro"
+    name: "MiMo-V2.5-Pro"
+    score: 62
 same_creator:
   - slug: "glm-5-2"
     name: "GLM-5.2"

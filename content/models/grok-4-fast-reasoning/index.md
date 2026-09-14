@@ -4,7 +4,9 @@ model: true
 description: "xAI发布的 Grok 4 Fast (Reasoning) 大语言模型：综合评分 58，闭源专有，上下文 2M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "xAI"
+  series: "Grok 4 Fast"
   category: "闭源专有"
+  context: "2M"
   released: "2025-09"
   scores:
     overall: {score: 58, rank: 111}
@@ -16,13 +18,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "zaya1-8b"
-    name: "ZAYA1-8B"
-    score: 58
-    price: "免费"
-  - slug: "exaone-4-0-32b"
-    name: "Exaone 4.0 32B"
-    score: 58
   - slug: "claude-sonnet-4-6"
     name: "Claude Sonnet 4.6"
     score: 59
@@ -34,6 +29,13 @@ similar:
     name: "GPT-OSS 120B"
     score: 57
     price: "免费"
+  - slug: "claude-opus-4-7"
+    name: "Claude Opus 4.7"
+    score: 59
+    price: "$25/M"
+  - slug: "grok-4-1-fast-reasoning"
+    name: "Grok 4.1 Fast (Reasoning)"
+    score: 59
 same_creator:
   - slug: "grok-4-6"
     name: "Grok 4.6"

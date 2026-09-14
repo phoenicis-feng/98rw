@@ -271,7 +271,14 @@
   .repo-stats__name { display: none; }
 }
 
+/* Desktop: the drawer wrapper is transparent to layout so nav and actions
+   remain flex items of .site-header__inner. */
+.site-header__drawer {
+  display: contents;
+}
+
 @media (max-width: 880px) {
+  .site-header__drawer,
   .site-header__nav,
   .site-header__actions {
     display: none;
@@ -281,24 +288,44 @@
     display: inline-flex;
   }
 
-  .site-header[data-menu-open="true"] .site-header__nav,
-  .site-header[data-menu-open="true"] .site-header__actions {
+  /* One single dropdown panel: nav links stacked above the action icons,
+     so the theme toggle can never overlap the menu. */
+  .site-header[data-menu-open="true"] .site-header__drawer {
     display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-2);
     padding: var(--space-4);
     background-color: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
     box-shadow: var(--shadow-md);
   }
 
+  .site-header[data-menu-open="true"] .site-header__nav,
+  .site-header[data-menu-open="true"] .site-header__actions {
+    display: flex;
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-1);
+    /* 重置桌面端的 margin-left: auto，让链接占满面板宽度 */
+    margin-left: 0;
+  }
+
   .site-header[data-menu-open="true"] .site-header__nav ul {
     flex-direction: column;
     gap: var(--space-1);
+  }
+
+  .site-header[data-menu-open="true"] .site-header__actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-3);
   }
 }

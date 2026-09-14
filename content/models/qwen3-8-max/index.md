@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.8 Max 大语言模型：综合评分 77，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.8 Max"
   category: "开源权重"
+  context: "1M"
   released: "2026-08"
   speed: "38 tokens/秒"
   ttft: "55.38 秒"

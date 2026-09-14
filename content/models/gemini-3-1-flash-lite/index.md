@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemini 3.1 Flash-Lite 大语言模型：综合评分 55，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemini 3.1 Flash"
   category: "闭源专有"
+  context: "1M"
   released: "2026-03"
   price_input: "$0.25/M"
   price_output: "$1.5/M"
@@ -23,10 +25,6 @@ similar:
     name: "MiniMax M2.7"
     score: 55
     price: "$1.2/M"
-  - slug: "celeris-1"
-    name: "Celeris-1"
-    score: 55
-    price: "$0.7/M"
   - slug: "muse-spark"
     name: "Muse Spark"
     score: 55
@@ -35,6 +33,9 @@ similar:
     score: 55
   - slug: "mimo-v2-5"
     name: "MiMo-V2.5"
+    score: 55
+  - slug: "qwen3-6-max-preview"
+    name: "Qwen 3.6 Max (preview)"
     score: 55
 same_creator:
   - slug: "gemini-3-8-flash"

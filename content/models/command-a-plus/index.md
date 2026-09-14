@@ -4,7 +4,9 @@ model: true
 description: "Cohere发布的 Command A+ 大语言模型：综合评分 46，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Cohere"
+  series: "Command A+"
   category: "开源权重"
+  context: "128K"
   released: "2026-05"
   price_input: "$2.5/M"
   price_output: "$10/M"
@@ -32,14 +34,13 @@ similar:
     name: "DeepSeek V3"
     score: 46
     price: "$1.1/M"
-  - slug: "pokee-isaac-28b"
-    name: "Pokee-Isaac 28B"
-    score: 46
-    price: "$1/M"
   - slug: "claude-sonnet-4-5"
     name: "Claude Sonnet 4.5"
     score: 45
     price: "$15/M"
+  - slug: "qwen3-6-35b-a3b"
+    name: "Qwen3.6-35B-A3B"
+    score: 47
 same_creator:
   - slug: "cohere-transcribe-03-2026"
     name: "Cohere Transcribe 03-2026"

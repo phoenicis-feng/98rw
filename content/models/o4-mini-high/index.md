@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 o4-mini (high) 大语言模型：综合评分 50，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "o4"
   category: "闭源专有"
+  context: "200K"
   released: "2025-04"
   speed: "136 tokens/秒"
   ttft: "23.39 秒"

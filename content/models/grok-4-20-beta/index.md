@@ -4,7 +4,9 @@ model: true
 description: "xAI发布的 Grok 4.20 大语言模型：综合评分 41，闭源专有，上下文 2M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "xAI"
+  series: "Grok"
   category: "闭源专有"
+  context: "2M"
   released: "2026-03"
   price_input: "$2/M"
   price_output: "$6/M"
@@ -27,15 +29,18 @@ similar:
   - slug: "ling-2-6-flash"
     name: "Ling 2.6 Flash"
     score: 41
-  - slug: "mellum2-12b-a2-5b-instruct"
-    name: "Mellum2-12B-A2.5B-Instruct"
+  - slug: "gpt-4-1-mini"
+    name: "GPT-4.1 mini"
     score: 42
-  - slug: "nova-pro"
-    name: "Nova Pro"
-    score: 40
-  - slug: "minicpm5-1b"
-    name: "MiniCPM5-1B"
-    score: 40
+    price: "$1.6/M"
+  - slug: "claude-3-haiku"
+    name: "Claude 3 Haiku"
+    score: 42
+    price: "$1.25/M"
+  - slug: "qwen3-5-flash"
+    name: "Qwen3.5 Flash"
+    score: 42
+    price: "$0.4/M"
 same_creator:
   - slug: "grok-4-6"
     name: "Grok 4.6"

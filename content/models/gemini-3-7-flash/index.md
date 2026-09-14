@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemini 3.7 Flash 大语言模型：综合评分 73，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemini 3.7 Flash"
   category: "闭源专有"
+  context: "1M"
   released: "2026-08"
   price_input: "$0.75/M"
   price_output: "$3.75/M"

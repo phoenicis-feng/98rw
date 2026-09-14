@@ -1,69 +1,94 @@
 {{ define "main" }}
-  {{ partial "hero.html" . }}
+  {{- /* 数据来源：模型详情页 front matter（specs），不读 data 下未提交的 json。
+         厂商/系列总数在此统计，用于替换 hero 副标题占位符。 */ -}}
+  {{- $hfModels := where site.RegularPages "Section" "models" -}}
+  {{- $modelCount := len $hfModels -}}
+  {{- $vendorSet := dict -}}
+  {{- $seriesSet := dict -}}
+  {{- range $hfModels -}}
+    {{- with .Params.specs -}}
+      {{- $vendorSet = merge $vendorSet (dict (.vendor | default "其他") true) -}}
+      {{- $seriesSet = merge $seriesSet (dict (printf "%s|%s" (.vendor | default "其他") (.series | default "其他")) true) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $vendorCount := len $vendorSet -}}
+  {{- $seriesCount := len $seriesSet -}}
+  {{- with .Params.hero }}
+    {{- $subtitle := replace .subtitle "{vendorCount}" (printf "%d" $vendorCount) }}
+    {{- $subtitle = replace $subtitle "{seriesCount}" (printf "%d" $seriesCount) }}
+    {{- $subtitle = replace $subtitle "{modelCount}" (printf "%d" $modelCount) }}
+    {{- /* 重建 hero 参数：dict 的键区分大小写，titleAccent 必须显式保留 */ -}}
+    {{- $hero := dict "subtitle" $subtitle }}
+    {{- with .title }}{{ $hero = merge $hero (dict "title" .) }}{{ end }}
+    {{- with .titleAccent }}{{ $hero = merge $hero (dict "titleAccent" .) }}{{ end }}
+    {{- partial "hero.html" (dict "Params" (dict "hero" $hero)) }}
+  {{- end }}
   <section class="section">
     <div class="container">
+      <nav class="docs__breadcrumb" aria-label="breadcrumb">
+        <a href="{{ site.Home.RelPermalink }}">首页</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ .Title }}</span>
+      </nav>
       {{- if not .Params.hero }}
         <h1>{{ .Title }}</h1>
       {{- end }}
       {{ .Content }}
 
-      {{- /* ===== Hugging Face 热门模型（厂商 → 系列级联筛选，样式同 recommendations） ===== */ -}}
-      {{- $data := hugo.Data.hf_top_vendors_by_series }}
-      {{- $vendors := $data.vendors | default (slice) }}
-      {{- if $vendors }}
+      {{- /* ===== 模型库（厂商 → 系列级联筛选，样式同 recommendations） ===== */ -}}
+      {{- if gt $modelCount 0 }}
         <div class="hf-models-section" id="hf-models">
           <div class="rec-filters hf-filters">
             <div class="rec-filter">
               <span class="rec-filter__label">厂商：</span>
               <div class="rec-filter__options" id="hf-vendor-filter" data-hf-vendor-filter>
-                <button type="button" class="rec-filter-btn rec-filter-btn--active" data-hf-vendor="all">全部</button>
-                {{- range $vi, $vendor := $vendors }}
-                <button type="button" class="rec-filter-btn" data-hf-vendor="{{ $vi }}">{{ $vendor.name }}</button>
-                {{- end }}
+                {{- /* 厂商药丸由 JS 按模型数降序生成（含计数） */ -}}
               </div>
             </div>
-            <div class="rec-filter rec-filter--series">
+            <div class="rec-filter rec-filter--series" id="hf-series-row" hidden>
               <span class="rec-filter__label">系列：</span>
               <div class="rec-filter__options" id="hf-series-filter" data-hf-series-filter>
-                {{- /* 系列按钮由 JS 按当前厂商动态生成 */ -}}
+                {{- /* 系列按钮由 JS 按当前厂商动态生成；选中厂商前不显示 */ -}}
               </div>
             </div>
-          </div>
-
-          <!-- 搜索（当前范围内过滤） -->
-          <div class="hf-search-row">
-            <input type="search" id="hf-search" class="hf-search" placeholder="搜索模型 ID / 任务 / 场景…" aria-label="搜索模型">
           </div>
 
           <p class="hf-count" id="hf-count"></p>
 
           <!-- 模型表 -->
           <div class="hf-table-wrap">
-            <table class="hf-table" data-task-labels='{{ jsonify (dict "text-generation" "文本生成" "chat" "对话" "image-text-to-text" "图文理解" "visual-question-answering" "视觉问答" "any-to-any" "全模态" "robotics" "机器人" "automatic-speech-recognition" "语音识别" "translation" "翻译" "text-to-image" "文生图" "feature-extraction" "特征提取" "image-to-3d" "图生3D" "sentence-similarity" "句子相似度" "time-series-forecasting" "时序预测" "image-to-image" "图像变换" "fill-mask" "完形填空" "audio-text-to-text" "语音文本理解" "image-to-video" "图生视频" "text-to-video" "文生视频" "zero-shot-image-classification" "零样本图像分类" "text-to-speech" "语音合成" "text-ranking" "文本排序" "visual-document-retrieval" "视觉文档检索" "other" "其他" "image-feature-extraction" "图像特征提取" "depth-estimation" "深度估计" "audio-to-audio" "音频处理" "unconditional-image-generation" "图像生成" "token-classification" "词元分类" "text-to-audio" "文生音频" "text-classification" "文本分类" "object-detection" "目标检测" "image-to-text" "图像转文本" "video-text-to-text" "视频文本理解" "tabular-classification" "表格分类" "reinforcement-learning" "强化学习" "image-text-to-image" "图文生图" "voice-activity-detection" "语音活动检测" "video-classification" "视频分类" "text-to-3d" "文生3D" "image-text-to-video" "图文生视频" "image-segmentation" "图像分割" "graph-ml" "图学习" "question-answering" "问答" "summarization" "摘要" "conversational" "对话") }}'>
+            <table class="hf-table">
               <thead>
                 <tr>
                   <th>#</th>
                   <th>模型</th>
-                  <th>任务类型</th>
-                  <th>场景</th>
-                  <th>更新时间</th>
+                  <th class="hf-table__scenario">场景</th>
+                  <th class="rec-table__col-score">评分</th>
+                  <th class="rec-table__col-price">输入价格</th>
+                  <th class="rec-table__col-price">输出价格</th>
+                  <th class="rec-table__col-context">速度</th>
+                  <th class="hf-table__time">更新时间</th>
                 </tr>
               </thead>
               <tbody id="hf-model-tbody">
-                {{- range $vi, $vendor := $vendors }}
-                  {{- range $series := $vendor.series }}
-                    {{- range $model := $series.models }}
-                      {{- $scenarios := $model.scenarios | default (slice) }}
-                      <tr data-hf-model data-hf-vendor="{{ $vi }}" data-hf-series="{{ $series.name }}" data-search="{{ $model.id }} {{ $model.task_type | default $model.pipeline_tag }} {{ delimit $scenarios " " }}" style="display:none">
-                        <td class="hf-table__rank">–</td>
-                        <td class="hf-table__name"><code>{{ $model.id }}</code></td>
-                        <td class="hf-table__task">{{ with $model.task_type | default $model.pipeline_tag }}<span class="rec-scenario-tag">{{ . }}</span>{{ else }}—{{ end }}</td>
-                        <td class="hf-table__scenario">{{ with $scenarios }}{{ range . }}<span class="rec-scenario-tag">{{ . }}</span>{{ end }}{{ else }}—{{ end }}</td>
-                        <td class="hf-table__time">{{ with $model.lastModified }}{{ time.Format "2006-01-02" . }}{{ else }}—{{ end }}</td>
-                      </tr>
-                    {{- end }}
-                  {{- end }}
-                {{- end }}
+                {{- range $p := $hfModels -}}
+                  {{- with $p.Params.specs -}}
+                    {{- $score := "—" -}}
+                    {{- with .scores }}{{ with .overall }}{{ with .score }}{{ $score = . }}{{ end }}{{ end }}{{ end -}}
+                    <tr data-hf-model data-hf-vendor="{{ .vendor | default "其他" }}" data-hf-series="{{ .series | default "其他" }}" style="display:none">
+                      <td class="hf-table__rank">–</td>
+                      <td class="hf-table__name"><a href="{{ $p.RelPermalink }}"><code>{{ $p.LinkTitle }}</code></a></td>
+                      <td class="hf-table__scenario" data-field="scenario">
+                        {{- with .use_cases }}{{ range . }}<span class="rec-scenario-tag">{{ . }}</span>{{ end }}{{ else }}—{{ end }}
+                      </td>
+                      <td class="rec-table__col-score" data-field="score">{{ $score }}</td>
+                      <td class="rec-table__col-price" data-field="input">{{ .price_input | default "—" }}</td>
+                      <td class="rec-table__col-price" data-field="output">{{ .price_output | default "—" }}</td>
+                      <td class="rec-table__col-context" data-field="speed">{{ .speed | default "—" }}</td>
+                      <td class="hf-table__time" data-field="time">{{ .released | default "—" }}</td>
+                    </tr>
+                  {{- end -}}
+                {{- end -}}
               </tbody>
             </table>
           </div>

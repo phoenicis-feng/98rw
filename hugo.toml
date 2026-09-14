@@ -91,6 +91,10 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     pageRef = "/leaderboards/free"
     weight = 20
   [[menus.main]]
+    name = "模型对比"
+    pageRef = "/compare"
+    weight = 22
+  [[menus.main]]
     name = "应用场景"
     pageRef = "/recommendations"
     weight = 25

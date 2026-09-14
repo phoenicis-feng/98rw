@@ -4,7 +4,9 @@ model: true
 description: "智谱 AI发布的 GLM-5-Turbo 大语言模型：综合评分 63，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "智谱 AI"
+  series: "GLM"
   category: "闭源专有"
+  context: "200K"
   released: "2026-03"
   price_input: "$1.2/M"
   price_output: "$4/M"

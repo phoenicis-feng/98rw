@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemini 3 Flash 大语言模型：综合评分 65，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemini 3 Flash"
   category: "闭源专有"
+  context: "1M"
   released: "2025-12"
   price_input: "$0.5/M"
   price_output: "$3/M"
@@ -22,9 +24,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "swe-1-7"
-    name: "SWE-1.7"
-    score: 66
   - slug: "holo3-122b-a10b"
     name: "Holo3-122B-A10B"
     score: 67
@@ -41,6 +40,10 @@ similar:
     name: "DeepSeek V4 Pro 0813"
     score: 64
     price: "$0.87/M"
+  - slug: "glm-5-turbo"
+    name: "GLM-5-Turbo"
+    score: 63
+    price: "$4/M"
 same_creator:
   - slug: "gemini-3-8-flash"
     name: "Gemini 3.8 Flash"

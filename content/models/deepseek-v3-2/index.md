@@ -4,7 +4,9 @@ model: true
 description: "深度求索发布的 DeepSeek V3.2 大语言模型：综合评分 56，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"
+  series: "DeepSeek V3.2"
   category: "开源权重"
+  context: "128K"
   released: "2025-12"
   price_input: "$0.28/M"
   price_output: "$0.42/M"
@@ -24,22 +26,19 @@ similar:
   - slug: "ling-3-0-flash-fp8"
     name: "Ling 3.0 Flash FP8"
     score: 56
-  - slug: "laguna-s-2-1"
-    name: "Laguna S 2.1"
-    score: 56
-    price: "$0.2/M"
-  - slug: "celeris-1"
-    name: "Celeris-1"
-    score: 55
-    price: "$0.7/M"
   - slug: "deepseek-v4-flash-0731"
     name: "DeepSeek V4 Flash 0731"
     score: 55
     price: "$0.28/M"
-  - slug: "step-3-7-flash"
-    name: "Step 3.7 Flash"
-    score: 56
-    price: "$1.15/M"
+  - slug: "muse-spark"
+    name: "Muse Spark"
+    score: 55
+  - slug: "ling-3-0-flash"
+    name: "Ling 3.0 Flash"
+    score: 55
+  - slug: "mimo-v2-5"
+    name: "MiMo-V2.5"
+    score: 55
 same_creator:
   - slug: "deepseek-v4-1-flash"
     name: "DeepSeek V4.1 Flash"

@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude Opus 5 大语言模型：综合评分 84，闭源专有，上下文 未公布。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude Opus"
   category: "闭源专有"
+  context: "未公布"
   released: "2026-07"
   price_input: "$5/M"
   price_output: "$25/M"

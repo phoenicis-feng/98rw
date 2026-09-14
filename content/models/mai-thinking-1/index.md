@@ -4,7 +4,9 @@ model: true
 description: "微软发布的 MAI-Thinking-1 大语言模型：综合评分 50，闭源专有，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "微软"
+  series: "MAI"
   category: "闭源专有"
+  context: "256K"
   released: "2026-06"
   scores:
     overall: {score: 50, rank: 107}

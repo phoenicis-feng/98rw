@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.5-122B-A10B 大语言模型：综合评分 49，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.5"
   category: "开源权重"
+  context: "262K"
   released: "2026-03"
   price_input: "免费"
   price_output: "免费"
@@ -28,21 +30,21 @@ similar:
     name: "Nemotron 3 Ultra"
     score: 49
     price: "免费"
-  - slug: "a-x-k2"
-    name: "A.X K2"
-    score: 49
-    price: "免费"
-  - slug: "soofi-s-30b-a3b"
-    name: "Soofi S 30B-A3B"
-    score: 49
-    price: "免费"
-  - slug: "ornith-1-0-35b"
-    name: "Ornith-1.0-35B"
-    score: 49
-    price: "免费"
   - slug: "qwen3-5-27b"
     name: "Qwen3.5-27B"
     score: 50
+    price: "免费"
+  - slug: "granite-4-2-30b"
+    name: "Granite 4.2 30B"
+    score: 50
+    price: "免费"
+  - slug: "mimo-v2-flash"
+    name: "MiMo-V2-Flash"
+    score: 50
+    price: "免费"
+  - slug: "gemma-4-31b"
+    name: "Gemma 4 31B"
+    score: 51
     price: "免费"
 same_creator:
   - slug: "qwen3-8-max"

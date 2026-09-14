@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude Haiku 4.5 大语言模型：综合评分 44，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude Haiku"
   category: "闭源专有"
+  context: "200K"
   released: "2025-10"
   price_input: "$1/M"
   price_output: "$5/M"
@@ -27,14 +29,14 @@ similar:
     name: "Qwen3.5-35B-A3B"
     score: 44
     price: "免费"
-  - slug: "minicpm5-2b"
-    name: "MiniCPM5-2B"
-    score: 44
-    price: "免费"
   - slug: "o3-mini"
     name: "o3-mini"
     score: 46
     price: "$4.4/M"
+  - slug: "mistral-medium-3"
+    name: "Mistral Medium 3"
+    score: 45
+    price: "$2/M"
 same_creator:
   - slug: "claude-mythos-5"
     name: "Claude Mythos 5"

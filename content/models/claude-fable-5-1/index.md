@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude Fable 5.1 大语言模型：综合评分 77，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude Fable"
   category: "闭源专有"
+  context: "1M"
   released: "2026-09"
   price_input: "$10/M"
   price_output: "$50/M"

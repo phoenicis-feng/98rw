@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.4 大语言模型：综合评分 63，闭源专有，上下文 1.05M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT"
   category: "闭源专有"
+  context: "1.05M"
   released: "2026-03"
   price_input: "$2.5/M"
   price_output: "$15/M"

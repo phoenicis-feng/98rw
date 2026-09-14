@@ -4,7 +4,9 @@ model: true
 description: "深度求索发布的 DeepSeek V3.1 大语言模型：综合评分 52，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"
+  series: "DeepSeek V3.1"
   category: "开源权重"
+  context: "128K"
   released: "2025-08"
   price_input: "免费"
   price_output: "免费"

@@ -4,7 +4,9 @@ model: true
 description: "英伟达发布的 Nemotron 3 Nano Omni 30B A3B 大语言模型：综合评分 46，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "英伟达"
+  series: "Nemotron 3 Nano Omni"
   category: "开源权重"
+  context: "256K"
   released: "2026-04"
   price_input: "免费"
   price_output: "免费"
@@ -29,18 +31,16 @@ similar:
     name: "Granite 4.2 8B"
     score: 47
     price: "免费"
-  - slug: "zaya1-74b-preview"
-    name: "ZAYA1-74B-Preview"
-    score: 45
-    price: "免费"
   - slug: "qwen3-5-35b-a3b"
     name: "Qwen3.5-35B-A3B"
     score: 44
     price: "免费"
-  - slug: "ornith-1-5-35b-a3b"
-    name: "Ornith-1.5-35B-A3B"
-    score: 48
-    price: "免费"
+  - slug: "qwen3-6-35b-a3b"
+    name: "Qwen3.6-35B-A3B"
+    score: 47
+  - slug: "gemma-4-12b"
+    name: "Gemma 4 12B"
+    score: 47
 same_creator:
   - slug: "nemotron-3-ultra"
     name: "Nemotron 3 Ultra"

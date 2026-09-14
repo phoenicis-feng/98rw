@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.7 Plus 大语言模型：综合评分 67，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.7 Plus"
   category: "闭源专有"
+  context: "1M"
   released: "2026-06"
   speed: "58 tokens/秒"
   ttft: "36.90 秒"

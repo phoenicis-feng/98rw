@@ -4,7 +4,9 @@ model: true
 description: "Meta发布的 Muse Spark 1.1 大语言模型：综合评分 72，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Meta"
+  series: "Muse Spark"
   category: "闭源专有"
+  context: "1M"
   released: "2026-07"
   speed: "217 tokens/秒"
   ttft: "12.12 秒"

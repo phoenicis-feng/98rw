@@ -4,7 +4,9 @@ model: true
 description: "Mistral AI发布的 Mistral Large 2 大语言模型：综合评分 48，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Mistral AI"
+  series: "Mistral Large"
   category: "闭源专有"
+  context: "128K"
   released: "2024-07"
   speed: "38 tokens/秒"
   ttft: "1.45 秒"
@@ -16,10 +18,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "ornith-1-5-35b-a3b"
-    name: "Ornith-1.5-35B-A3B"
-    score: 48
-    price: "免费"
   - slug: "mistral-large-3"
     name: "Mistral Large 3"
     score: 48
@@ -36,6 +34,10 @@ similar:
     name: "GPT-5.4 nano"
     score: 49
     price: "$1.25/M"
+  - slug: "kimi-k2-5"
+    name: "Kimi K2.5"
+    score: 49
+    price: "$3/M"
 same_creator:
   - slug: "mistral-medium-3-5-128b"
     name: "Mistral Medium 3.5 128B"

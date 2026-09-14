@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude 4 Sonnet 大语言模型：综合评分 52，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude 4 Sonnet"
   category: "闭源专有"
+  context: "200K"
   released: "2025-05"
   price_input: "$3/M"
   price_output: "$15/M"
@@ -21,9 +23,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "mellum2-12b-a2-5b-thinking"
-    name: "Mellum2-12B-A2.5B-Thinking"
-    score: 52
   - slug: "gpt-5-2"
     name: "GPT-5.2"
     score: 51
@@ -36,10 +35,13 @@ similar:
     name: "Gemini 2.5 Pro"
     score: 51
     price: "$10/M"
-  - slug: "trinity-large-thinking"
-    name: "Trinity-Large-Thinking"
+  - slug: "agents-a1"
+    name: "Agents-A1"
+    score: 53
+  - slug: "deepseek-v3-1"
+    name: "DeepSeek V3.1"
     score: 52
-    price: "$0.9/M"
+    price: "免费"
 same_creator:
   - slug: "claude-mythos-5"
     name: "Claude Mythos 5"

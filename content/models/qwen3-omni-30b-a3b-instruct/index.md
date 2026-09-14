@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3-Omni-30B-A3B-Instruct 大语言模型：综合评分 38，开源权重，上下文 N/A。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3 Omni"
   category: "开源权重"
+  context: "N/A"
   released: "2025-09"
   speed: "96 tokens/秒"
   ttft: "1.86 秒"
@@ -34,8 +36,8 @@ similar:
     name: "GPT-4o mini"
     score: 39
     price: "$0.6/M"
-  - slug: "sarvam-105b"
-    name: "Sarvam 105B"
+  - slug: "lfm2-5-2-6b"
+    name: "LFM2.5-2.6B"
     score: 39
     price: "免费"
 same_creator:

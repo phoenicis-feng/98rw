@@ -4,7 +4,9 @@ model: true
 description: "英伟达发布的 Nemotron 3 Ultra 大语言模型：综合评分 49，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "英伟达"
+  series: "Nemotron 3 Ultra"
   category: "开源权重"
+  context: "1M"
   released: "2026-06"
   price_input: "免费"
   price_output: "免费"
@@ -25,21 +27,21 @@ similar:
     name: "Qwen3.5-122B-A10B"
     score: 49
     price: "免费"
-  - slug: "a-x-k2"
-    name: "A.X K2"
-    score: 49
-    price: "免费"
-  - slug: "soofi-s-30b-a3b"
-    name: "Soofi S 30B-A3B"
-    score: 49
-    price: "免费"
-  - slug: "ornith-1-0-35b"
-    name: "Ornith-1.0-35B"
-    score: 49
-    price: "免费"
   - slug: "qwen3-5-27b"
     name: "Qwen3.5-27B"
     score: 50
+    price: "免费"
+  - slug: "granite-4-2-30b"
+    name: "Granite 4.2 30B"
+    score: 50
+    price: "免费"
+  - slug: "mimo-v2-flash"
+    name: "MiMo-V2-Flash"
+    score: 50
+    price: "免费"
+  - slug: "gemma-4-31b"
+    name: "Gemma 4 31B"
+    score: 51
     price: "免费"
 same_creator:
   - slug: "nemotron-3-nano-omni-30b-a3b"

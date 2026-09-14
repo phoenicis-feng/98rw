@@ -4,7 +4,9 @@ model: true
 description: "Sakana AI发布的 Sakana Fugu-Ultra 大语言模型：综合评分 77，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Sakana AI"
+  series: "Sakana Fugu Ultra"
   category: "闭源专有"
+  context: "1M"
   released: "2026-06"
   scores:
     overall: {score: 77}

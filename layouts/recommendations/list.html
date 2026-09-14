@@ -23,15 +23,6 @@
             {{- end }}
           </div>
         </div>
-        <div class="rec-filter rec-filter--modality">
-          <span class="rec-filter__label">类型：</span>
-          <div class="rec-filter__options" data-modality-filter>
-            <button class="rec-filter-btn rec-filter-btn--active" data-category="all">全部</button>
-            {{- range slice "闭源专有" "开源权重" "待确认" }}
-            <button class="rec-filter-btn" data-category="{{ . }}">{{ . }}</button>
-            {{- end }}
-          </div>
-        </div>
       </div>
 
       <div class="rec-table-wrap">
@@ -40,7 +31,6 @@
             <tr>
               <th class="rec-table__col-model rec-th-sortable" data-sort-key="name">模型</th>
               <th class="rec-table__col-scene">场景</th>
-              <th class="rec-table__col-type rec-th-sortable" data-sort-key="category">类型</th>
               <th class="rec-table__col-score rec-th-sortable" data-sort-key="overall">综合</th>
               <th class="rec-table__col-score rec-th-sortable" data-sort-key="agentic">智能体</th>
               <th class="rec-table__col-score rec-th-sortable" data-sort-key="coding">编程</th>
@@ -71,10 +61,9 @@
                    data-price-input="{{ $specs.price_input }}"
                    data-price-output="{{ $specs.price_output }}"
                    data-speed="{{ $specs.speed }}"
-                   data-category="{{ $specs.category | default "待确认" }}"
                    data-scenario="{{ $sceneText | default "其他" }}">
                   <td class="rec-table__col-model">
-                    <a href="{{ $model.RelPermalink }}" class="rec-row__name">{{ $model.LinkTitle }}</a>
+                    <a href="{{ $model.RelPermalink }}" class="rec-row__name" title="{{ $model.LinkTitle }}">{{ $model.LinkTitle }}</a>
                     <span class="rec-row__vendor">{{ $specs.vendor }}</span>
                   </td>
                   <td class="rec-table__col-scene">
@@ -82,7 +71,6 @@
                       {{- if lt $i 2 }}<span class="rec-scenario-tag">{{ $scene }}</span>{{- end }}
                     {{- end }}
                   </td>
-                  <td class="rec-table__col-type">{{ $specs.category | default "待确认" }}</td>
                   <td class="rec-table__col-score">{{ with $scores.overall }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>
                   <td class="rec-table__col-score">{{ with $scores.agentic }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>
                   <td class="rec-table__col-score">{{ with $scores.coding }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>

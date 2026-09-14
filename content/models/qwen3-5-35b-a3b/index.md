@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.5-35B-A3B 大语言模型：综合评分 44，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.5"
   category: "开源权重"
+  context: "262K"
   released: "2026-03"
   price_input: "免费"
   price_output: "免费"
@@ -23,17 +25,9 @@ specs:
   use_cases:
     - "对话助手"
 similar:
-  - slug: "minicpm5-2b"
-    name: "MiniCPM5-2B"
-    score: 44
-    price: "免费"
   - slug: "glm-4-7"
     name: "GLM-4.7"
     score: 43
-    price: "免费"
-  - slug: "zaya1-74b-preview"
-    name: "ZAYA1-74B-Preview"
-    score: 45
     price: "免费"
   - slug: "gemma-4-e4b"
     name: "Gemma 4 E4B"
@@ -42,6 +36,14 @@ similar:
   - slug: "granite-4-2-3b"
     name: "Granite 4.2 3B"
     score: 43
+    price: "免费"
+  - slug: "qwen3-235b-2507-reasoning"
+    name: "Qwen3 235B 2507 (Reasoning)"
+    score: 43
+    price: "免费"
+  - slug: "nemotron-3-nano-omni-30b-a3b"
+    name: "Nemotron 3 Nano Omni 30B A3B"
+    score: 46
     price: "免费"
 same_creator:
   - slug: "qwen3-8-max"

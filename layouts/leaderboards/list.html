@@ -13,7 +13,19 @@
       {{- $allPages := where site.Pages "Section" "leaderboards" -}}
       {{- /* 直接筛选，排除以 _ 开头的文件 (如 _index.md) */ -}}
       {{- $lbPages := where $allPages "File.BaseFileName" "!=" "_" -}}
-      {{- $sortedLb := sort $lbPages "Title" "asc" -}}
+      {{- /* 固定展示顺序：未列入的榜单（知识榜、低价榜）按标题排在其后 */ -}}
+      {{- $lbOrder := slice "overall" "speed" "cat_reasoning" "cat_coding" "value" "cat_agentic" "free" "cat_multilingual" "cat_multimodalGrounded" "open_source" -}}
+      {{- $sortedLb := slice -}}
+      {{- range $lbOrder -}}
+        {{- range where $lbPages "File.BaseFileName" . -}}
+          {{- $sortedLb = $sortedLb | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- range sort $lbPages "Title" "asc" -}}
+        {{- if not (in $lbOrder .File.BaseFileName) -}}
+          {{- $sortedLb = $sortedLb | append . -}}
+        {{- end -}}
+      {{- end -}}
       {{- $contentDir := "content" -}}
 
       <div class="leaderboard-2col">
@@ -32,6 +44,9 @@
                 <h3 class="leaderboard-panel__title"><a href="/leaderboards/{{ $key }}/">{{ .Title }}</a></h3>
                 <div class="leaderboard-panel__table">
                   <table>
+                    <thead>
+                      <tr><th>排名</th><th>模型</th><th>评分</th></tr>
+                    </thead>
                     <tbody>
                       {{- /* 使用 readFile 读取原始 markdown 表格 */ -}}
                       {{- $rawContent := readFile (printf "%s/leaderboards/%s.md" $contentDir $key) -}}
@@ -43,6 +58,8 @@
                           {{- $tbodyLines = $tbodyLines | append $tline -}}
                         {{- end -}}
                       {{- end -}}
+                      {{- /* 第一条是 markdown 表头行，剔除 */ -}}
+                      {{- $tbodyLines = after 1 $tbodyLines -}}
                       {{- $top10 := first 10 $tbodyLines -}}
                       {{- range $tline := $top10 -}}
                         {{- $cells := split $tline "|" -}}
@@ -76,7 +93,9 @@
                         {{- end -}}
                         <tr>
                           <td>{{ $rank }}</td>
-                          <td>{{ $modelName }}</td>
+                          <td>
+                            {{- if $modelUrl }}<a href="{{ $modelUrl }}">{{ $modelName }}</a>{{ else }}{{ $modelName }}{{ end }}
+                          </td>
                           <td>{{ $scoreCell }}</td>
                         </tr>
                       {{- end -}}

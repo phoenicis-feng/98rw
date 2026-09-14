@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude 3.5 Sonnet 大语言模型：综合评分 40，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude 3.5 Sonnet"
   category: "闭源专有"
+  context: "200K"
   released: "2024-06"
   price_input: "$3/M"
   price_output: "$15/M"
@@ -15,21 +17,23 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "nova-pro"
-    name: "Nova Pro"
-    score: 40
-  - slug: "minicpm5-1b"
-    name: "MiniCPM5-1B"
-    score: 40
   - slug: "grok-3-beta"
     name: "Grok 3 [Beta]"
     score: 41
   - slug: "ling-2-6-flash"
     name: "Ling 2.6 Flash"
     score: 41
-  - slug: "solar-pro-2"
-    name: "Solar Pro 2"
+  - slug: "grok-4-20-beta"
+    name: "Grok 4.20"
+    score: 41
+    price: "$6/M"
+  - slug: "gpt-4o-mini"
+    name: "GPT-4o mini"
     score: 39
+    price: "$0.6/M"
+  - slug: "qwen3-omni-30b-a3b-instruct"
+    name: "Qwen3-Omni-30B-A3B-Instruct"
+    score: 38
 same_creator:
   - slug: "claude-mythos-5"
     name: "Claude Mythos 5"

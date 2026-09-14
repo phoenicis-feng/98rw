@@ -4,7 +4,9 @@ model: true
 description: "Mistral AI发布的 Mistral Medium 3.5 128B 大语言模型：综合评分 60，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Mistral AI"
+  series: "Mistral Medium"
   category: "开源权重"
+  context: "256K"
   released: "2026-04"
   price_input: "$1.5/M"
   price_output: "$7.5/M"
@@ -20,10 +22,6 @@ specs:
   use_cases:
     - "对话助手"
 similar:
-  - slug: "inkling"
-    name: "Inkling"
-    score: 60
-    price: "$4.68/M"
   - slug: "glm-5-1"
     name: "GLM-5.1"
     score: 60
@@ -39,6 +37,9 @@ similar:
   - slug: "mimo-v2-omni"
     name: "MiMo-V2-Omni"
     score: 60
+  - slug: "qwen3-6-plus"
+    name: "Qwen3.6 Plus"
+    score: 59
 same_creator:
   - slug: "mistral-small-4"
     name: "Mistral Small 4"

@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude 3 Haiku 大语言模型：综合评分 42，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude 3 Haiku"
   category: "闭源专有"
+  context: "200K"
   released: "2024-03"
   price_input: "$0.25/M"
   price_output: "$1.25/M"
@@ -24,9 +26,6 @@ similar:
     name: "GPT-4.1 mini"
     score: 42
     price: "$1.6/M"
-  - slug: "mellum2-12b-a2-5b-instruct"
-    name: "Mellum2-12B-A2.5B-Instruct"
-    score: 42
   - slug: "qwen3-5-flash"
     name: "Qwen3.5 Flash"
     score: 42
@@ -36,6 +35,9 @@ similar:
     score: 43
   - slug: "grok-3-beta"
     name: "Grok 3 [Beta]"
+    score: 41
+  - slug: "ling-2-6-flash"
+    name: "Ling 2.6 Flash"
     score: 41
 same_creator:
   - slug: "claude-mythos-5"

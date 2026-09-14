@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3 235B 2507 (Reasoning) 大语言模型：综合评分 43，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3"
   category: "开源权重"
+  context: "128K"
   released: "2025-07"
   price_input: "免费"
   price_output: "免费"
@@ -31,9 +33,9 @@ similar:
     name: "Qwen3.5-35B-A3B"
     score: 44
     price: "免费"
-  - slug: "minicpm5-2b"
-    name: "MiniCPM5-2B"
-    score: 44
+  - slug: "llama-4-scout"
+    name: "Llama 4 Scout"
+    score: 42
     price: "免费"
 same_creator:
   - slug: "qwen3-8-max"

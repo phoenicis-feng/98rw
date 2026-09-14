@@ -5,9 +5,8 @@
 */ -}}
 {{- $maxItems := 10 -}}
 {{- $contentDir := "content" -}}
-<section class="home-leaderboards" aria-label="大模型排行榜">
+<section class="home-leaderboards" aria-label="排行榜">
   <div class="section-head">
-    <h2 class="home-leaderboards__heading">大模型排行榜</h2>
     <a class="btn btn--ghost btn--sm" href="{{ relLangURL "/leaderboards/" }}">查看全部排行榜</a>
   </div>
   <div class="home-leaderboards__grid">
@@ -22,11 +21,17 @@
         {{- $overallContent := readFile (printf "%s/leaderboards/overall.md" $contentDir) -}}
         {{- $tLines := split $overallContent "\n" -}}
         {{- $count := 0 -}}
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
         {{- range $ti, $tline := $tLines -}}
           {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}
             {{- $cells := split $tline "|" -}}
             {{- $rank := trim (index $cells 1) " " -}}
             {{- $modelCell := trim (index $cells 2) " " -}}
+            {{- $vendorCell := trim (index $cells 3) " " -}}
             {{- $scoreCell := trim (index $cells 4) " " -}}
             {{- $modelName := "" -}}
             {{- $modelSlug := "" -}}
@@ -53,6 +58,7 @@
               <span class="leaderboard__cell leaderboard__rank">{{ $rank }}</span>
               <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
                 {{- if $modelSlug -}}<a href="{{ $modelSlug }}">{{ $modelName }}</a>{{- else -}}{{ $modelName }}{{- end -}}
+                {{- with $vendorCell }}<span class="badge">{{ . }}</span>{{ end }}
               </span>
               <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ $scoreCell }}</span>
             </div>
@@ -72,11 +78,17 @@
         {{- $priceContent := readFile (printf "%s/leaderboards/price.md" $contentDir) -}}
         {{- $tLines := split $priceContent "\n" -}}
         {{- $count := 0 -}}
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
         {{- range $ti, $tline := $tLines -}}
           {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}
             {{- $cells := split $tline "|" -}}
             {{- $rank := trim (index $cells 1) " " -}}
             {{- $modelCell := trim (index $cells 2) " " -}}
+            {{- $vendorCell := trim (index $cells 3) " " -}}
             {{- $scoreCell := trim (index $cells 4) " " -}}
             {{- $modelName := "" -}}
             {{- $modelSlug := "" -}}
@@ -103,6 +115,7 @@
               <span class="leaderboard__cell leaderboard__rank">{{ $rank }}</span>
               <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
                 {{- if $modelSlug -}}<a href="{{ $modelSlug }}">{{ $modelName }}</a>{{- else -}}{{ $modelName }}{{- end -}}
+                {{- with $vendorCell }}<span class="badge">{{ . }}</span>{{ end }}
               </span>
               <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ $scoreCell }}</span>
             </div>
@@ -122,11 +135,17 @@
         {{- $freeContent := readFile (printf "%s/leaderboards/free.md" $contentDir) -}}
         {{- $tLines := split $freeContent "\n" -}}
         {{- $count := 0 -}}
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
         {{- range $ti, $tline := $tLines -}}
           {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}
             {{- $cells := split $tline "|" -}}
             {{- $rank := trim (index $cells 1) " " -}}
             {{- $modelCell := trim (index $cells 2) " " -}}
+            {{- $vendorCell := trim (index $cells 3) " " -}}
             {{- $scoreCell := trim (index $cells 4) " " -}}
             {{- $modelName := "" -}}
             {{- $modelSlug := "" -}}
@@ -153,6 +172,7 @@
               <span class="leaderboard__cell leaderboard__rank">{{ $rank }}</span>
               <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
                 {{- if $modelSlug -}}<a href="{{ $modelSlug }}">{{ $modelName }}</a>{{- else -}}{{ $modelName }}{{- end -}}
+                {{- with $vendorCell }}<span class="badge">{{ . }}</span>{{ end }}
               </span>
               <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ $scoreCell }}</span>
             </div>

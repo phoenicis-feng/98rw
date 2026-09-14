@@ -4,7 +4,9 @@ model: true
 description: "阿里通义发布的 Qwen3.5 Flash 大语言模型：综合评分 42，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
+  series: "Qwen3.5 Flash"
   category: "闭源专有"
+  context: "1M"
   released: "2026-03"
   price_input: "$0.1/M"
   price_output: "$0.4/M"
@@ -15,9 +17,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "mellum2-12b-a2-5b-instruct"
-    name: "Mellum2-12B-A2.5B-Instruct"
-    score: 42
   - slug: "grok-4-1-fast"
     name: "Grok 4.1 Fast"
     score: 43
@@ -31,6 +30,10 @@ similar:
   - slug: "ling-2-6-flash"
     name: "Ling 2.6 Flash"
     score: 41
+  - slug: "llama-4-scout"
+    name: "Llama 4 Scout"
+    score: 42
+    price: "免费"
 same_creator:
   - slug: "qwen3-8-max"
     name: "Qwen3.8 Max"

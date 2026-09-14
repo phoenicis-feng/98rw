@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.2 大语言模型：综合评分 51，闭源专有，上下文 400K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT"
   category: "闭源专有"
+  context: "400K"
   released: "2025-12"
   price_input: "$1.75/M"
   price_output: "$14/M"
@@ -35,11 +37,11 @@ similar:
     name: "Mistral Small 4"
     score: 51
     price: "$0.6/M"
-  - slug: "mellum2-12b-a2-5b-thinking"
-    name: "Mellum2-12B-A2.5B-Thinking"
-    score: 52
   - slug: "mai-thinking-1"
     name: "MAI-Thinking-1"
+    score: 50
+  - slug: "o4-mini-high"
+    name: "o4-mini (high)"
     score: 50
 same_creator:
   - slug: "gpt-6-astra"

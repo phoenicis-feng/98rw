@@ -4,7 +4,9 @@ model: true
 description: "月之暗面发布的 Kimi K3 大语言模型：综合评分 80，待确认，上下文 1.05M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "月之暗面"
+  series: "Kimi K3"
   category: "待确认"
+  context: "1.05M"
   released: "2026-07"
   price_input: "$3/M"
   price_output: "$15/M"

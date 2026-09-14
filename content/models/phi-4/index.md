@@ -4,7 +4,9 @@ model: true
 description: "微软发布的 Phi-4 大语言模型：综合评分 37，开源权重，上下文 16K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "微软"
+  series: "Phi"
   category: "开源权重"
+  context: "16K"
   released: "2025-01"
   price_input: "免费"
   price_output: "免费"

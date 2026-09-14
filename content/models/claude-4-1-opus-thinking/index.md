@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude 4.1 Opus Thinking 大语言模型：综合评分 63，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude 4.1 Opus"
   category: "闭源专有"
+  context: "200K"
   released: "2025-08"
   speed: "29 tokens/秒"
   ttft: "15.00 秒"

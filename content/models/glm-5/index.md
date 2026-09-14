@@ -4,7 +4,9 @@ model: true
 description: "智谱 AI发布的 GLM-5 大语言模型：综合评分 54，开源权重，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "智谱 AI"
+  series: "GLM"
   category: "开源权重"
+  context: "200K"
   released: "2026-03"
   price_input: "$1/M"
   price_output: "$3.2/M"
@@ -38,10 +40,10 @@ similar:
     name: "Kimi K2.7 Code"
     score: 55
     price: "$4/M"
-  - slug: "interfaze-beta"
-    name: "Interfaze Beta"
-    score: 55
-    price: "$3.5/M"
+  - slug: "kimi-k2"
+    name: "Kimi K2"
+    score: 53
+    price: "$2.5/M"
 same_creator:
   - slug: "glm-5-2"
     name: "GLM-5.2"

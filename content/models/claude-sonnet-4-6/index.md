@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude Sonnet 4.6 大语言模型：综合评分 59，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude Sonnet"
   category: "闭源专有"
+  context: "200K"
   released: "2026-02"
   price_input: "$3/M"
   price_output: "$15/M"
@@ -33,14 +35,13 @@ similar:
     name: "Claude Opus 4.7"
     score: 59
     price: "$25/M"
-  - slug: "quasar-438b"
-    name: "Quasar 438B"
-    score: 59
-    price: "$1.8/M"
   - slug: "mistral-medium-3-5-128b"
     name: "Mistral Medium 3.5 128B"
     score: 60
     price: "$7.5/M"
+  - slug: "mimo-v2-omni"
+    name: "MiMo-V2-Omni"
+    score: 60
 same_creator:
   - slug: "claude-mythos-5"
     name: "Claude Mythos 5"

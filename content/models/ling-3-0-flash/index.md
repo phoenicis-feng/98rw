@@ -4,7 +4,9 @@ model: true
 description: "蚂蚁集团 InclusionAI发布的 Ling 3.0 Flash 大语言模型：综合评分 55，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "蚂蚁集团 InclusionAI"
+  series: "Ling 3.0 Flash"
   category: "开源权重"
+  context: "262K"
   released: "2026-07"
   speed: "293 tokens/秒"
   ttft: "9.35 秒"

@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.1-Codex 大语言模型：综合评分 65，闭源专有，上下文 400K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT 5.1 Codex"
   category: "闭源专有"
+  context: "400K"
   released: "2025-10"
   price_input: "$1.25/M"
   price_output: "$10/M"
@@ -30,13 +32,14 @@ similar:
     name: "Gemini 3 Flash"
     score: 65
     price: "$3/M"
-  - slug: "swe-1-7"
-    name: "SWE-1.7"
-    score: 66
   - slug: "o3"
     name: "o3"
     score: 63
     price: "$8/M"
+  - slug: "gemini-3-1-pro"
+    name: "Gemini 3.1 Pro"
+    score: 67
+    price: "$12/M"
 same_creator:
   - slug: "gpt-6-astra"
     name: "GPT-6 Astra"

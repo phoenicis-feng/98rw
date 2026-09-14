@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemini 1.5 Pro 大语言模型：综合评分 48，闭源专有，上下文 2M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemini 1.5 Pro"
   category: "闭源专有"
+  context: "2M"
   released: "2024-02"
   price_input: "$1.25/M"
   price_output: "$5/M"

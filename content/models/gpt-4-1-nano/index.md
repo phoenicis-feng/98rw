@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-4.1 nano 大语言模型：综合评分 38，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT"
   category: "闭源专有"
+  context: "1M"
   released: "2025-04"
   price_input: "$0.1/M"
   price_output: "$0.4/M"
@@ -28,9 +30,6 @@ similar:
     name: "GPT-4o mini"
     score: 39
     price: "$0.6/M"
-  - slug: "solar-pro-2"
-    name: "Solar Pro 2"
-    score: 39
   - slug: "deepseek-r1-distill-qwen-32b"
     name: "DeepSeek R1 Distill Qwen 32B"
     score: 38
@@ -38,6 +37,10 @@ similar:
   - slug: "gemma-4-e2b"
     name: "Gemma 4 E2B"
     score: 38
+    price: "免费"
+  - slug: "lfm2-5-2-6b"
+    name: "LFM2.5-2.6B"
+    score: 39
     price: "免费"
 same_creator:
   - slug: "gpt-6-astra"

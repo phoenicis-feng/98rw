@@ -312,7 +312,6 @@
   // 当前排序状态：{ key, dir }，dir 为 'asc' 或 'desc'
   let sortState = { key: "overall", dir: "desc" };
   let currentScene = "all";
-  let currentCategory = "all";
 
   function parsePrice(str) {
     if (!str) return 0;
@@ -335,10 +334,6 @@
     if (currentScene !== "all") {
       const scenario = row.dataset.scenario || "其他";
       if (!scenario.split("/").map((v) => v.trim()).includes(currentScene)) return false;
-    }
-    if (currentCategory !== "all") {
-      const category = row.dataset.category || "待确认";
-      if (category !== currentCategory) return false;
     }
     return true;
   }
@@ -364,8 +359,6 @@
       case "multimodal":
       case "knowledge":
         return parseFloat(row.dataset[key] || "0");
-      case "category":
-        return (row.dataset.category || "").toLowerCase();
       default:
         return row.dataset[key] || "";
     }
@@ -420,7 +413,7 @@
     updateHeaderHighlight();
   }
 
-  // 事件委托：表头排序 / 场景筛选 / 类型筛选
+  // 事件委托：表头排序 / 场景筛选
   recSection.addEventListener("click", (e) => {
     // 表头排序
     const th = e.target.closest(".rec-th-sortable");
@@ -445,15 +438,6 @@
       apply();
       return;
     }
-    // 类型筛选
-    const categoryBtn = e.target.closest("[data-category]");
-    if (categoryBtn) {
-      currentCategory = categoryBtn.dataset.category;
-      recSection.querySelectorAll("[data-category]").forEach((b) => b.classList.remove("rec-filter-btn--active"));
-      categoryBtn.classList.add("rec-filter-btn--active");
-      apply();
-      return;
-    }
   });
 
   // 初始化
@@ -472,16 +456,11 @@
   if (!section) return;
 
   const vendorFilterEl = document.getElementById("hf-vendor-filter");
+  const seriesRowEl = document.getElementById("hf-series-row");
   const seriesFilterEl = document.getElementById("hf-series-filter");
   const tbody = document.getElementById("hf-model-tbody");
   const countEl = document.getElementById("hf-count");
   const paginationEl = document.getElementById("hf-pagination");
-  const searchInput = document.getElementById("hf-search");
-
-  // 任务类型中文标签（服务端注入的 JSON，键为 HF pipeline_tag）
-  const tableEl = tbody.closest("table");
-  let TASK_LABELS = {};
-  try { TASK_LABELS = JSON.parse(tableEl.dataset.taskLabels || "{}"); } catch { TASK_LABELS = {}; }
 
   // 相对时间：把 "YYYY-MM-DD HH:mm:ss" 渲染为「x天/月前」，超过一年显示日期
   function relTime(s) {
@@ -500,15 +479,11 @@
   const models = allRows.map((r) => ({
     el: r,
     vendor: r.dataset.hfVendor,
-    series: r.dataset.hfSeries,
-    search: (r.dataset.search || "").toLowerCase()
+    series: r.dataset.hfSeries
   }));
 
-  // 任务类型列：英文键 → 中文标签；更新时间列：绝对时间 → 相对时间
+  // 更新时间列：绝对时间 → 相对时间
   allRows.forEach((r) => {
-    const taskTd = r.querySelector(".hf-table__task");
-    const tag = taskTd && taskTd.querySelector(".rec-scenario-tag");
-    if (tag && TASK_LABELS[tag.textContent.trim()]) tag.textContent = TASK_LABELS[tag.textContent.trim()];
     const timeTd = r.querySelector(".hf-table__time");
     if (timeTd) {
       const label = relTime(timeTd.textContent.trim());
@@ -516,16 +491,7 @@
     }
   });
 
-  // 分组：厂商索引 -> {series: Map(系列名 -> 数量)}
-  const vendorMap = new Map();
-  models.forEach((m) => {
-    if (!vendorMap.has(m.vendor)) vendorMap.set(m.vendor, { series: new Map() });
-    const v = vendorMap.get(m.vendor);
-    v.series.set(m.series, (v.series.get(m.series) || 0) + 1);
-  });
-
-  const PAGE_SIZES = [30, 50, 100];
-  const state = { vendor: "all", series: "all", search: "", page: 1, pageSize: 50 };
+  const state = { vendor: "all", series: "all", page: 1, pageSize: 20 };
 
   function fmt(n) { return n.toLocaleString("en-US"); }
 
@@ -537,8 +503,9 @@
     section.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  /* ---------- 系列筛选按钮：随厂商级联刷新 ---------- */
+  /* ---------- 系列筛选按钮：随厂商级联刷新，选中厂商前整行隐藏 ---------- */
   function renderSeriesFilter() {
+    seriesRowEl.hidden = state.vendor === "all";
     const counts = new Map(); // 系列名 -> 模型数（受当前厂商范围约束）
     models.forEach((m) => {
       if (state.vendor === "all" || m.vendor === state.vendor) {
@@ -563,10 +530,6 @@
     let list = models;
     if (state.vendor !== "all") list = list.filter((m) => m.vendor === state.vendor);
     if (state.series !== "all") list = list.filter((m) => m.series === state.series);
-    if (state.search) {
-      const q = state.search.toLowerCase();
-      list = list.filter((m) => m.search.indexOf(q) !== -1);
-    }
     return list;
   }
 
@@ -591,12 +554,11 @@
       const div = document.createElement("p");
       div.id = "hf-empty";
       div.className = "hf-index__meta";
-      div.textContent = "没有匹配的模型，换个筛选条件或关键词试试。";
+      div.textContent = "没有匹配的模型，换个厂商或系列试试。";
       tableAnchor().insertBefore(div, tableAnchor().firstChild);
     }
 
-    countEl.textContent = "共 " + fmt(total) + " 个模型" +
-      (totalPages > 1 ? " \u00b7 第 " + state.page + " / " + totalPages + " 页" : "");
+    countEl.textContent = "共 " + fmt(total) + " 个模型";
 
     renderPagination(totalPages);
   }
@@ -605,47 +567,135 @@
     return tbody.closest(".hf-table-wrap").parentNode;
   }
 
-  /* ---------- 渲染：分页控件 ---------- */
+  /* ---------- 渲染：分页控件（结构与主题 pagination.html 保持一致） ----------
+     页数多时固定布局：首尾各 4 页 + 当前页，其余用 …，条数恒定不增长。 */
   function renderPagination(totalPages) {
     if (totalPages <= 1) {
       paginationEl.innerHTML = "";
       return;
     }
-    let html = '<button type="button" class="hf-page-btn" data-page="prev"' + (state.page === 1 ? " disabled" : "") + '>\u2039 上一页</button>';
-    const pages = [];
-    const addPage = (p) => { if (pages.indexOf(p) === -1) pages.push(p); };
-    const pushRange = (a, b) => { for (let i = a; i <= b; i++) addPage(i); };
-    if (totalPages <= 7) {
-      pushRange(1, totalPages);
+    const step = (label, target, disabled) => disabled
+      ? '<span class="pagination__step" aria-disabled="true">' + label + '</span>'
+      : '<button type="button" class="pagination__step" data-page="' + target + '">' + label + '</button>';
+    const pageItem = (p) => '<li>' + (p === state.page
+      ? '<span class="pagination__page" aria-current="page">' + p + '</span>'
+      : '<button type="button" class="pagination__page" data-page="' + p + '">' + p + '</button>') + '</li>';
+
+    let html = '<nav class="pagination" aria-label="分页">';
+    html += step("上一页", "prev", state.page === 1);
+    html += '<ol class="pagination__pages">';
+    if (totalPages <= 10) {
+      for (let p = 1; p <= totalPages; p++) html += pageItem(p);
     } else {
-      addPage(1);
-      if (state.page > 3) pages.push("\u2026");
-      pushRange(Math.max(2, state.page - 1), Math.min(totalPages - 1, state.page + 1));
-      if (state.page < totalPages - 2) pages.push("\u2026");
-      addPage(totalPages);
-    }
-    pages.forEach((p) => {
-      if (p === "\u2026") {
-        html += '<span class="hf-page-ellipsis">\u2026</span>';
-      } else {
-        html += '<button type="button" class="hf-page-btn' + (p === state.page ? " hf-page-btn--active" : "") + '" data-page="' + p + '">' + p + '</button>';
+      const headEnd = 4;
+      const tailStart = totalPages - 3;
+      for (let p = 1; p <= headEnd; p++) html += pageItem(p);
+      if (state.page > headEnd && state.page < tailStart) {
+        html += '<li><span class="pagination__ellipsis">…</span></li>';
+        html += pageItem(state.page);
       }
-    });
-    html += '<button type="button" class="hf-page-btn" data-page="next"' + (state.page === totalPages ? " disabled" : "") + '>下一页 \u203a</button>';
-    html += '<span class="hf-page-size">每页 <select id="hf-page-size">' +
-      PAGE_SIZES.map((s) => '<option value="' + s + '"' + (s === state.pageSize ? " selected" : "") + '>' + s + '</option>').join("") +
-      '</select> 条</span>';
+      html += '<li><span class="pagination__ellipsis">…</span></li>';
+      for (let p = tailStart; p <= totalPages; p++) html += pageItem(p);
+    }
+    html += '</ol>';
+    html += step("下一页", "next", state.page === totalPages);
+    html += '</nav>';
     paginationEl.innerHTML = html;
   }
 
+  /* ---------- 厂商筛选按钮：按模型数降序生成（含计数） ---------- */
+  function renderVendorFilter() {
+    const counts = new Map();
+    models.forEach((m) => counts.set(m.vendor, (counts.get(m.vendor) || 0) + 1));
+    const sorted = Array.from(counts.entries()).sort((x, y) => y[1] - x[1]);
+    let html = '<button type="button" class="rec-filter-btn' + (state.vendor === "all" ? " rec-filter-btn--active" : "") + '" data-hf-vendor="all">全部</button>';
+    sorted.forEach(([v, c]) => {
+      html += '<button type="button" class="rec-filter-btn' + (state.vendor === v ? " rec-filter-btn--active" : "") + '" data-hf-vendor="' + esc(v) + '">' + esc(v) +
+        ' <span class="hf-filter-count">' + fmt(c) + '</span></button>';
+    });
+    vendorFilterEl.innerHTML = html;
+  }
+
   function render() {
+    renderVendorFilter();
     renderSeriesFilter();
     renderTable();
   }
 
-  /* ---------- 事件：厂商 / 系列级联 ---------- */
+  /* ---------- 模态：点击行查看模型详情 ---------- */
+  const modal = document.createElement("div");
+  modal.className = "hf-modal";
+  modal.hidden = true;
+  modal.innerHTML =
+    '<div class="hf-modal__overlay" data-hf-close></div>' +
+    '<div class="hf-modal__card" role="dialog" aria-modal="true" aria-label="模型详情">' +
+    '<button type="button" class="hf-modal__close" data-hf-close aria-label="关闭">&times;</button>' +
+    '<h3 class="hf-modal__title"></h3>' +
+    '<p class="hf-modal__meta"></p>' +
+    '<dl class="hf-modal__grid">' +
+    '<dt>评分</dt><dd data-field="score"></dd>' +
+    '<dt>场景</dt><dd data-field="scenario"></dd>' +
+    '<dt>输入价格</dt><dd data-field="input"></dd>' +
+    '<dt>输出价格</dt><dd data-field="output"></dd>' +
+    '<dt>速度</dt><dd data-field="speed"></dd>' +
+    '<dt>更新时间</dt><dd data-field="time"></dd>' +
+    '</dl>' +
+    '<a class="hf-modal__link" href="#" hidden>查看详情页 →</a>' +
+    '</div>';
+  document.body.appendChild(modal);
+
+  function openModal(row) {
+    const vendorPill = vendorFilterEl.querySelector('button[data-hf-vendor="' + row.dataset.hfVendor + '"]');
+    modal.querySelector(".hf-modal__title").textContent = row.querySelector(".hf-table__name code")?.textContent || "";
+    modal.querySelector(".hf-modal__meta").textContent =
+      (vendorPill ? vendorPill.textContent.trim() : "") + " · " + row.dataset.hfSeries;
+    ["score", "scenario", "input", "output", "speed", "time"].forEach((f) => {
+      const cell = row.querySelector('[data-field="' + f + '"]');
+      const target = modal.querySelector('[data-field="' + f + '"]');
+      if (!target) return;
+      if (f === "scenario" && cell) {
+        // 场景列是多个标签，拼成顿号分隔的文本
+        const tags = Array.from(cell.querySelectorAll(".rec-scenario-tag")).map((t) => t.textContent.trim());
+        target.textContent = tags.length ? tags.join("、") : cell.textContent.trim();
+      } else {
+        target.textContent = cell ? cell.textContent.trim() : "—";
+      }
+    });
+    const link = modal.querySelector(".hf-modal__link");
+    const detailLink = row.querySelector(".hf-table__name a");
+    if (detailLink) {
+      link.href = detailLink.href;
+      link.hidden = false;
+    } else {
+      link.hidden = true;
+    }
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  modal.addEventListener("click", (e) => {
+    if (e.target.closest("[data-hf-close]")) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.hidden) closeModal();
+  });
+
+  /* ---------- 事件：厂商 / 系列级联 / 行模态 ---------- */
   section.addEventListener("click", (e) => {
-    const vendorBtn = e.target.closest("[data-hf-vendor]");
+    // 点击行打开详情模态（模型名链接保持原有跳转）。
+    // 注意行自身也带 data-hf-vendor/series 属性，必须先于筛选项判断。
+    const row = e.target.closest("tr[data-hf-model]");
+    if (row && !e.target.closest("a")) {
+      openModal(row);
+      return;
+    }
+    const vendorBtn = e.target.closest("button[data-hf-vendor]");
     if (vendorBtn) {
       state.vendor = vendorBtn.dataset.hfVendor;
       state.series = "all";
@@ -655,7 +705,7 @@
       render();
       return;
     }
-    const seriesBtn = e.target.closest("[data-hf-series]");
+    const seriesBtn = e.target.closest("button[data-hf-series]");
     if (seriesBtn) {
       state.series = seriesBtn.dataset.hfSeries;
       state.page = 1;
@@ -677,24 +727,226 @@
     }
   });
 
-  paginationEl.addEventListener("change", (e) => {
-    if (e.target.id === "hf-page-size") {
-      state.pageSize = parseInt(e.target.value, 10) || 50;
-      state.page = 1;
-      renderTable();
-    }
-  });
-
-  let searchTimer = null;
-  searchInput.addEventListener("input", () => {
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => {
-      state.search = searchInput.value.trim();
-      state.page = 1;
-      renderTable();
-    }, 200);
-  });
+  // 默认视图按综合评分降序（评分缺失的排后面），并重排 DOM 行
+  const scoreOf = (m) => {
+    const cell = m.el.querySelector('[data-field="score"]');
+    const n = cell ? parseFloat(cell.textContent) : NaN;
+    return isNaN(n) ? -1 : n;
+  };
+  models.sort((x, y) => scoreOf(y) - scoreOf(x));
+  models.forEach((m) => tbody.appendChild(m.el));
 
   // 初始渲染
+  render();
+})();
+
+/* ============================================
+   模型对比页：厂商 → 系列 → 模型 三级级联 + 多维度对比
+   数据来自模型详情页 front matter（构建时内嵌为 JSON）
+   ============================================ */
+(function () {
+  "use strict";
+
+  const root = document.getElementById("model-compare");
+  const resultEl = root && root.querySelector(".model-compare__result");
+  if (!root || !resultEl) return;
+
+  // 由扁平模型列表重建 厂商 → 系列 → 模型 树
+  let vendors;
+  try {
+    const flat = JSON.parse(resultEl.dataset.models);
+    const vMap = new Map();
+    flat.forEach(function (m) {
+      if (!vMap.has(m.vendor)) vMap.set(m.vendor, { name: m.vendor, series: new Map() });
+      const v = vMap.get(m.vendor);
+      if (!v.series.has(m.series)) v.series.set(m.series, []);
+      v.series.get(m.series).push(m);
+    });
+    vendors = Array.from(vMap.values()).map(function (v) {
+      return {
+        name: v.name,
+        series: Array.from(v.series.entries()).map(function (e) {
+          return { name: e[0], models: e[1] };
+        })
+      };
+    });
+  } catch (e) { return; }
+  if (!vendors || !vendors.length) return;
+
+  function el(s) { return root.querySelector(s); }
+  const sel = {
+    aVendor: el('[data-pick="a-vendor"]'),
+    aSeries: el('[data-pick="a-series"]'),
+    aModel: el('[data-pick="a-model"]'),
+    bVendor: el('[data-pick="b-vendor"]'),
+    bSeries: el('[data-pick="b-series"]'),
+    bModel: el('[data-pick="b-model"]')
+  };
+
+  // 详情页 front matter 里价格/速度等是展示字符串，数值需解析后才能比较
+  function numOf(v) {
+    if (v === null || v === undefined) return null;
+    const m = String(v).match(/-?\d+(\.\d+)?/);
+    return m ? parseFloat(m[0]) : null;
+  }
+  function priceNum(v) { return typeof v === "string" && v.indexOf("免费") !== -1 ? 0 : numOf(v); }
+  function ctxNum(v) {
+    if (!v) return null;
+    const m = String(v).match(/([\d.]+)\s*([KM])?/i);
+    if (!m) return null;
+    let n = parseFloat(m[1]);
+    if (m[2] && m[2].toUpperCase() === "M") n *= 1e6;
+    else if (m[2] && m[2].toUpperCase() === "K") n *= 1e3;
+    return n;
+  }
+  function valueOf(m) {
+    const s = m.scores && m.scores.overall !== undefined ? numOf(m.scores.overall) : null;
+    const out = priceNum(m.output);
+    if (s === null || !out) return null;
+    return Math.round((s / out) * 10) / 10;
+  }
+  const disp = (v) => (v === null || v === undefined || v === "" ? "—" : v);
+  function fmtScen(v) { return v && v.length ? v.join("、") : "—"; }
+
+  function setOptions(select, options, value) {
+    select.innerHTML = options.map((o) => '<option value="' + o.v + '">' + o.label + "</option>").join("");
+    if (value !== undefined) select.value = value;
+  }
+  function fillVendor(w) { setOptions(sel[w + "Vendor"], vendors.map((v, i) => ({ v: i, label: v.name }))); }
+  function fillSeries(w) {
+    const v = vendors[+sel[w + "Vendor"].value];
+    setOptions(sel[w + "Series"], v.series.map((s, i) => ({ v: i, label: s.name })));
+  }
+  function fillModel(w) {
+    const v = vendors[+sel[w + "Vendor"].value];
+    const s = v.series[+sel[w + "Series"].value];
+    setOptions(sel[w + "Model"], s.models.map((m, i) => ({ v: i, label: m.id })));
+  }
+  function currentModel(w) {
+    const v = vendors[+sel[w + "Vendor"].value];
+    const s = v.series[+sel[w + "Series"].value];
+    return s.models[+sel[w + "Model"].value];
+  }
+  function setModel(w, vi, si, mi) {
+    sel[w + "Vendor"].value = vi;
+    fillSeries(w);
+    sel[w + "Series"].value = si;
+    fillModel(w);
+    sel[w + "Model"].value = mi;
+  }
+
+  // 对比行：num 数值用于判定胜负，disp 展示文案；better=high/low 表示谁优
+  function rows(a, b) {
+    const cat = (k) => [numOf(a.scores[k]), numOf(b.scores[k])];
+    const mk = (label, num, d, better, bar) => ({ label, num, disp: d, better, bar });
+    return [
+      mk("综合评分", cat("overall"), null, "high", true),
+      mk("已验证评分", cat("verified"), null, "high", true),
+      mk("场景", null, [fmtScen(a.scen), fmtScen(b.scen)], null, false),
+      mk("智能体", cat("agentic"), null, "high", true),
+      mk("编程", cat("coding"), null, "high", true),
+      mk("推理", cat("reasoning"), null, "high", true),
+      mk("多模态", cat("multimodal"), null, "high", true),
+      mk("知识", cat("knowledge"), null, "high", true),
+      mk("速度", [numOf(a.speed), numOf(b.speed)], [disp(a.speed), disp(b.speed)], "high", false),
+      mk("首字延迟 TTFT", [numOf(a.ttft), numOf(b.ttft)], [disp(a.ttft), disp(b.ttft)], "low", false),
+      mk("上下文窗口", [ctxNum(a.ctx), ctxNum(b.ctx)], [disp(a.ctx), disp(b.ctx)], "high", false),
+      mk("输入价格", [priceNum(a.input), priceNum(b.input)], [disp(a.input), disp(b.input)], "low", false),
+      mk("输出价格", [priceNum(a.output), priceNum(b.output)], [disp(a.output), disp(b.output)], "low", false),
+      mk("性价比（分/$）", [valueOf(a), valueOf(b)], [disp(valueOf(a)), disp(valueOf(b))], "high", false),
+      mk("开源 / 闭源", null, [disp(a.source), disp(b.source)], null, false),
+      mk("发布时间", null, [disp(a.released), disp(b.released)], null, false)
+    ];
+  }
+
+  function winnerClass(row, idx) {
+    if (!row.better || !row.num) return "";
+    const x = row.num[0], y = row.num[1];
+    if (x === null || x === undefined || y === null || y === undefined || x === y) return "";
+    const aWins = row.better === "high" ? x > y : x < y;
+    return (idx === 0) === aWins ? " model-compare__win" : " model-compare__lose";
+  }
+
+  function barHtml(n) {
+    if (n === null || n === undefined) return "";
+    const w = Math.max(0, Math.min(100, n));
+    return '<span class="model-compare__bar"><i style="width:' + w + '%"></i></span>';
+  }
+
+  function modelTitle(m, which) {
+    const link = m.url ? '<a href="' + m.url + '">' + m.id + "</a>" : m.id;
+    return "<strong>" + link + "</strong><small>" + m.vendor + " · " + m.series + " · " + which + "</small>";
+  }
+
+  function render() {
+    const a = currentModel("a");
+    const b = currentModel("b");
+    let body = "";
+    rows(a, b).forEach((row) => {
+      const d0 = row.disp ? disp(row.disp[0]) : disp(row.num ? row.num[0] : null);
+      const d1 = row.disp ? disp(row.disp[1]) : disp(row.num ? row.num[1] : null);
+      const barA = row.bar ? barHtml(row.num ? row.num[0] : null) : "";
+      const barB = row.bar ? barHtml(row.num ? row.num[1] : null) : "";
+      body +=
+        "<tr>" +
+        '<th scope="row">' + row.label + "</th>" +
+        '<td class="' + winnerClass(row, 0).trim() + '">' + d0 + barA + "</td>" +
+        '<td class="' + winnerClass(row, 1).trim() + '">' + d1 + barB + "</td>" +
+        "</tr>";
+    });
+    resultEl.innerHTML =
+      '<table class="model-compare__table hf-table">' +
+      "<thead><tr>" +
+      "<th>指标</th>" +
+      "<th>" + modelTitle(a, "A") + "</th>" +
+      "<th>" + modelTitle(b, "B") + "</th>" +
+      "</tr></thead><tbody>" + body + "</tbody></table>";
+  }
+
+  // 初始化：填充厂商下拉，默认选综合评分最高的两个模型（不同厂商优先）
+  fillVendor("a"); fillVendor("b");
+  const sorted = [];
+  vendors.forEach(function (v, vi) {
+    v.series.forEach(function (s, si) {
+      s.models.forEach(function (m, mi) {
+        m._vi = vi; m._si = si; m._mi = mi;
+        sorted.push(m);
+      });
+    });
+  });
+  sorted.sort(function (x, y) {
+    const sx = x.scores && x.scores.overall !== undefined ? x.scores.overall : 0;
+    const sy = y.scores && y.scores.overall !== undefined ? y.scores.overall : 0;
+    return sy - sx;
+  });
+  // 支持 /compare/?model=<slug>：把指定模型预选为 A
+  const urlSlug = new URLSearchParams(location.search).get("model");
+  const first = (urlSlug && sorted.find(function (m) { return m.slug === urlSlug; })) || sorted[0];
+  const second = sorted.find(function (m) { return m._vi !== first._vi; }) || sorted[1] || first;
+  setModel("a", first._vi, first._si, first._mi);
+  setModel("b", second._vi, second._si, second._mi);
+
+  // 级联：厂商 → 系列 → 模型
+  ["a", "b"].forEach(function (w) {
+    sel[w + "Vendor"].addEventListener("change", function () {
+      fillSeries(w);
+      fillModel(w);
+      render();
+    });
+    sel[w + "Series"].addEventListener("change", function () {
+      fillModel(w);
+      render();
+    });
+    sel[w + "Model"].addEventListener("change", render);
+  });
+
+  // 交换 A / B
+  root.querySelector("[data-swap]").addEventListener("click", function () {
+    const av = sel.aVendor.value, as = sel.aSeries.value, am = sel.aModel.value;
+    setModel("a", +sel.bVendor.value, +sel.bSeries.value, +sel.bModel.value);
+    setModel("b", +av, +as, +am);
+    render();
+  });
+
   render();
 })();

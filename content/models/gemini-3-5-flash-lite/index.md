@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemini 3.5 Flash-Lite 大语言模型：综合评分 57，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemini 3.5 Flash"
   category: "闭源专有"
+  context: "1M"
   released: "2026-07"
   price_input: "$0.3/M"
   price_output: "$2.5/M"
@@ -22,24 +24,24 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "k-exaone"
-    name: "K-Exaone"
-    score: 57
   - slug: "deepseek-r1"
     name: "DeepSeek-R1"
     score: 56
     price: "$2.19/M"
-  - slug: "composer-2-5"
-    name: "Composer 2.5"
-    score: 56
-    price: "$2.5/M"
-  - slug: "inkling-small"
-    name: "Inkling-Small"
-    score: 56
-    price: "$1.44/M"
-  - slug: "exaone-4-0-32b"
-    name: "Exaone 4.0 32B"
+  - slug: "grok-4-fast-reasoning"
+    name: "Grok 4 Fast (Reasoning)"
     score: 58
+  - slug: "ling-3-0-flash-fp8"
+    name: "Ling 3.0 Flash FP8"
+    score: 56
+  - slug: "gpt-oss-120b"
+    name: "GPT-OSS 120B"
+    score: 57
+    price: "免费"
+  - slug: "deepseek-v3-2"
+    name: "DeepSeek V3.2"
+    score: 56
+    price: "$0.42/M"
 same_creator:
   - slug: "gemini-3-8-flash"
     name: "Gemini 3.8 Flash"

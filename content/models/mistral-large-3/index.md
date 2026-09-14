@@ -4,7 +4,9 @@ model: true
 description: "Mistral AI发布的 Mistral Large 3 大语言模型：综合评分 48，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Mistral AI"
+  series: "Mistral Large"
   category: "闭源专有"
+  context: "128K"
   released: "2025-12"
   price_input: "$0.5/M"
   price_output: "$1.5/M"

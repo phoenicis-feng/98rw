@@ -4,7 +4,9 @@ model: true
 description: "深度求索发布的 DeepSeek V3 大语言模型：综合评分 46，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"
+  series: "DeepSeek V3"
   category: "开源权重"
+  context: "128K"
   released: "2024-12"
   price_input: "$0.27/M"
   price_output: "$1.1/M"
@@ -18,10 +20,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "pokee-isaac-28b"
-    name: "Pokee-Isaac 28B"
-    score: 46
-    price: "$1/M"
   - slug: "qwen3-6-35b-a3b"
     name: "Qwen3.6-35B-A3B"
     score: 47
@@ -33,6 +31,10 @@ similar:
     score: 45
   - slug: "nemotron-3-nano-omni-30b-a3b"
     name: "Nemotron 3 Nano Omni 30B A3B"
+    score: 46
+    price: "免费"
+  - slug: "hy3-preview"
+    name: "Hy3 Preview"
     score: 46
     price: "免费"
 same_creator:

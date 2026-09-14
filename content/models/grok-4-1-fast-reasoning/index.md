@@ -4,7 +4,9 @@ model: true
 description: "xAI发布的 Grok 4.1 Fast (Reasoning) 大语言模型：综合评分 59，闭源专有，上下文 2M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "xAI"
+  series: "Grok 4.1 Fast"
   category: "闭源专有"
+  context: "2M"
   released: "2025-11"
   scores:
     overall: {score: 59, rank: 92}
@@ -27,14 +29,14 @@ similar:
     name: "Claude Opus 4.7"
     score: 59
     price: "$25/M"
-  - slug: "quasar-438b"
-    name: "Quasar 438B"
-    score: 59
-    price: "$1.8/M"
-  - slug: "inkling"
-    name: "Inkling"
+  - slug: "kimi-2-6"
+    name: "Kimi K2.6"
     score: 60
-    price: "$4.68/M"
+    price: "$4/M"
+  - slug: "glm-5-1"
+    name: "GLM-5.1"
+    score: 60
+    price: "$4.4/M"
 same_creator:
   - slug: "grok-4-6"
     name: "Grok 4.6"

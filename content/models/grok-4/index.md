@@ -4,7 +4,9 @@ model: true
 description: "xAI发布的 Grok 4 大语言模型：综合评分 61，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "xAI"
+  series: "Grok"
   category: "闭源专有"
+  context: "128K"
   released: "2025-07"
   speed: "54 tokens/秒"
   ttft: "15.60 秒"

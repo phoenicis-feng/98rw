@@ -4,7 +4,9 @@ model: true
 description: "深度求索发布的 DeepSeek V4 Flash 0731 大语言模型：综合评分 55，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"
+  series: "DeepSeek V4 Flash"
   category: "闭源专有"
+  context: "1M"
   released: "2026-07"
   price_input: "$0.14/M"
   price_output: "$0.28/M"
@@ -33,10 +35,10 @@ similar:
   - slug: "qwen3-6-max-preview"
     name: "Qwen 3.6 Max (preview)"
     score: 55
-  - slug: "laguna-s-2-1"
-    name: "Laguna S 2.1"
-    score: 56
-    price: "$0.2/M"
+  - slug: "muse-glimmer-30b"
+    name: "Muse Glimmer 30B"
+    score: 55
+    price: "免费"
 same_creator:
   - slug: "deepseek-v4-1-flash"
     name: "DeepSeek V4.1 Flash"

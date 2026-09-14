@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 o3-mini 大语言模型：综合评分 46，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "o3"
   category: "闭源专有"
+  context: "200K"
   released: "2025-01"
   price_input: "$1.1/M"
   price_output: "$4.4/M"
@@ -22,10 +24,6 @@ similar:
     name: "DeepSeek V3"
     score: 46
     price: "$1.1/M"
-  - slug: "pokee-isaac-28b"
-    name: "Pokee-Isaac 28B"
-    score: 46
-    price: "$1/M"
   - slug: "qwen3-6-35b-a3b"
     name: "Qwen3.6-35B-A3B"
     score: 47
@@ -35,6 +33,10 @@ similar:
   - slug: "glm-4-6"
     name: "GLM-4.6"
     score: 45
+  - slug: "nemotron-3-nano-omni-30b-a3b"
+    name: "Nemotron 3 Nano Omni 30B A3B"
+    score: 46
+    price: "免费"
 same_creator:
   - slug: "gpt-6-astra"
     name: "GPT-6 Astra"

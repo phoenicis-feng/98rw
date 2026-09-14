@@ -1,12 +1,11 @@
 ---
-title: "多模态排行榜"
+title: "多模态榜"
 model: false
-count: 47
-description: "大模型多模态排行榜：图像理解、视觉定位等多模态基准加权得分"
-keywords: ["大模型排行榜", "多模态排行榜", "视觉理解", "多模态"]
+count: 45
+description: "图像理解、视觉定位等多模态基准加权得分"
 ---
 
-<!-- 榜单: 多模态榜 (47个模型) -->
+<!-- 榜单: 多模态榜 (45个模型) -->
 
 | 排名 | 模型 | 厂商 | 评分 | 输入价格 | 输出价格 | 速度 | TTFT |
 |------|------|------|------|----------|----------|------|------ |
@@ -38,22 +37,20 @@ keywords: ["大模型排行榜", "多模态排行榜", "视觉理解", "多模�
 | 26 | [MiniMax M3](/models/minimax-m3/) | MiniMax | 61.55 | $0.3/M | $1.2/M | — | 24.76秒 |
 | 27 | [GPT-5.4 mini](/models/gpt-5-4-mini/) | OpenAI | 61.11 | $0.75/M | $4.5/M | — | 3.85秒 |
 | 28 | [Qwen3.6 Plus](/models/qwen3-6-plus/) | 阿里通义 | 60.40 | — | — | — | 101.16秒 |
-| 29 | [Inkling](/models/inkling/) | Thinking Machines | 60.28 | $1.87/M | $4.68/M | — | 29.14秒 |
-| 30 | [Grok 4.3](/models/grok-4-3/) | xAI | 59.73 | $1.25/M | $2.5/M | — | 20.43秒 |
-| 31 | [GPT-5.4 nano](/models/gpt-5-4-nano/) | OpenAI | 59.57 | $0.2/M | $1.25/M | — | 3.64秒 |
-| 32 | [Inkling-Small](/models/inkling-small/) | Thinking Machines | 59.25 | $0.58/M | $1.44/M | — | — |
-| 33 | [Gemini 3.5 Flash-Lite](/models/gemini-3-5-flash-lite/) | 谷歌 | 58.99 | $0.3/M | $2.5/M | — | 8.01秒 |
-| 34 | [Claude Opus 4.5](/models/claude-opus-4-5/) | Anthropic | 58.41 | $5/M | $25/M | — | 1.33秒 |
-| 35 | [MiMo-V2.5](/models/mimo-v2-5/) | 小米 | 57.85 | — | — | — | 45.64秒 |
-| 36 | [Qwen3.8-Flash-Next](/models/qwen3-8-flash-next/) | 阿里通义 | 56.84 | $0/M | $0/M | — | 40.00秒 |
-| 37 | [Qwen3.5-122B-A10B](/models/qwen3-5-122b-a10b/) | 阿里通义 | 56.37 | $0/M | $0/M | — | 18.10秒 |
-| 38 | [Gemma 4 26B A4B](/models/gemma-4-26b-a4b/) | 谷歌 | 55.09 | $0/M | $0/M | — | — |
-| 39 | [Qwen3.5 397B](/models/qwen3-5-397b/) | 阿里通义 | 54.70 | $0.6/M | $3.6/M | — | 42.70秒 |
-| 40 | [Kimi K2.5](/models/kimi-k2-5/) | 月之暗面 | 54.01 | $0.6/M | $3/M | — | 38.77秒 |
-| 41 | [Gemma 4 31B](/models/gemma-4-31b/) | 谷歌 | 52.56 | $0/M | $0/M | — | 50.33秒 |
-| 42 | [Qwen3.6-27B](/models/qwen3-6-27b/) | 阿里通义 | 47.69 | $0/M | $0/M | — | 105.50秒 |
-| 43 | [Muse Glimmer 30B](/models/muse-glimmer-30b/) | Meta | 44.82 | $0/M | $0/M | — | — |
-| 44 | [Qwen3.6-35B-A3B](/models/qwen3-6-35b-a3b/) | 阿里通义 | 43.82 | — | — | — | 43.90秒 |
-| 45 | [Gemma 4 12B](/models/gemma-4-12b/) | 谷歌 | 42.72 | — | — | — | — |
-| 46 | [Command A+](/models/command-a-plus/) | Cohere | 42.58 | $2.5/M | $10/M | — | 8.89秒 |
-| 47 | [Nemotron 3 Nano Omni 30B A3B](/models/nemotron-3-nano-omni-30b-a3b/) | 英伟达 | 40.60 | $0/M | $0/M | — | 7.25秒 |
+| 29 | [Grok 4.3](/models/grok-4-3/) | xAI | 59.73 | $1.25/M | $2.5/M | — | 20.43秒 |
+| 30 | [GPT-5.4 nano](/models/gpt-5-4-nano/) | OpenAI | 59.57 | $0.2/M | $1.25/M | — | 3.64秒 |
+| 31 | [Gemini 3.5 Flash-Lite](/models/gemini-3-5-flash-lite/) | 谷歌 | 58.99 | $0.3/M | $2.5/M | — | 8.01秒 |
+| 32 | [Claude Opus 4.5](/models/claude-opus-4-5/) | Anthropic | 58.41 | $5/M | $25/M | — | 1.33秒 |
+| 33 | [MiMo-V2.5](/models/mimo-v2-5/) | 小米 | 57.85 | — | — | — | 45.64秒 |
+| 34 | [Qwen3.8-Flash-Next](/models/qwen3-8-flash-next/) | 阿里通义 | 56.84 | $0/M | $0/M | — | 40.00秒 |
+| 35 | [Qwen3.5-122B-A10B](/models/qwen3-5-122b-a10b/) | 阿里通义 | 56.37 | $0/M | $0/M | — | 18.10秒 |
+| 36 | [Gemma 4 26B A4B](/models/gemma-4-26b-a4b/) | 谷歌 | 55.09 | $0/M | $0/M | — | — |
+| 37 | [Qwen3.5 397B](/models/qwen3-5-397b/) | 阿里通义 | 54.70 | $0.6/M | $3.6/M | — | 42.70秒 |
+| 38 | [Kimi K2.5](/models/kimi-k2-5/) | 月之暗面 | 54.01 | $0.6/M | $3/M | — | 38.77秒 |
+| 39 | [Gemma 4 31B](/models/gemma-4-31b/) | 谷歌 | 52.56 | $0/M | $0/M | — | 50.33秒 |
+| 40 | [Qwen3.6-27B](/models/qwen3-6-27b/) | 阿里通义 | 47.69 | $0/M | $0/M | — | 105.50秒 |
+| 41 | [Muse Glimmer 30B](/models/muse-glimmer-30b/) | Meta | 44.82 | $0/M | $0/M | — | — |
+| 42 | [Qwen3.6-35B-A3B](/models/qwen3-6-35b-a3b/) | 阿里通义 | 43.82 | — | — | — | 43.90秒 |
+| 43 | [Gemma 4 12B](/models/gemma-4-12b/) | 谷歌 | 42.72 | — | — | — | — |
+| 44 | [Command A+](/models/command-a-plus/) | Cohere | 42.58 | $2.5/M | $10/M | — | 8.89秒 |
+| 45 | [Nemotron 3 Nano Omni 30B A3B](/models/nemotron-3-nano-omni-30b-a3b/) | 英伟达 | 40.60 | $0/M | $0/M | — | 7.25秒 |

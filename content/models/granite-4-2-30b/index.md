@@ -4,7 +4,9 @@ model: true
 description: "IBM发布的 Granite 4.2 30B 大语言模型：综合评分 50，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "IBM"
+  series: "Granite"
   category: "开源权重"
+  context: "128K"
   released: "2026-08"
   price_input: "免费"
   price_output: "免费"

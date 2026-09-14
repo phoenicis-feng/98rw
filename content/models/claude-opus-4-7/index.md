@@ -4,7 +4,9 @@ model: true
 description: "Anthropic发布的 Claude Opus 4.7 大语言模型：综合评分 59，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"
+  series: "Claude Opus"
   category: "闭源专有"
+  context: "1M"
   released: "2026-04"
   price_input: "$5/M"
   price_output: "$25/M"
@@ -31,14 +33,13 @@ similar:
   - slug: "grok-4-1-fast-reasoning"
     name: "Grok 4.1 Fast (Reasoning)"
     score: 59
-  - slug: "quasar-438b"
-    name: "Quasar 438B"
-    score: 59
-    price: "$1.8/M"
   - slug: "claude-opus-4-7-adaptive"
     name: "Claude Opus 4.7 (Adaptive)"
     score: 61
     price: "$25/M"
+  - slug: "mimo-v2-omni"
+    name: "MiMo-V2-Omni"
+    score: 60
 same_creator:
   - slug: "claude-mythos-5"
     name: "Claude Mythos 5"

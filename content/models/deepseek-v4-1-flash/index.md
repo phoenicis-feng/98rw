@@ -4,7 +4,9 @@ model: true
 description: "深度求索发布的 DeepSeek V4.1 Flash 大语言模型：综合评分 66，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"
+  series: "DeepSeek V4.1 Flash"
   category: "开源权重"
+  context: "1M"
   released: "2026-09"
   price_input: "$0.3/M"
   price_output: "$1.2/M"
@@ -25,9 +27,6 @@ similar:
     name: "GPT-5.6 Luna"
     score: 66
     price: "$1.2/M"
-  - slug: "swe-1-7"
-    name: "SWE-1.7"
-    score: 66
   - slug: "qwen3-7-plus"
     name: "Qwen3.7 Plus"
     score: 67
@@ -37,6 +36,10 @@ similar:
   - slug: "gpt-5-medium"
     name: "GPT-5 (medium)"
     score: 67
+  - slug: "deepseek-v4-pro-0813"
+    name: "DeepSeek V4 Pro 0813"
+    score: 64
+    price: "$0.87/M"
 same_creator:
   - slug: "deepseek-v4-pro-0813"
     name: "DeepSeek V4 Pro 0813"

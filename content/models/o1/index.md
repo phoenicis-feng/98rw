@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 o1 大语言模型：综合评分 61，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "o1"
   category: "闭源专有"
+  context: "200K"
   released: "2024-12"
   price_input: "$15/M"
   price_output: "$60/M"

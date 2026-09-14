@@ -4,7 +4,9 @@ model: true
 description: "月之暗面发布的 Kimi K2.5 大语言模型：综合评分 49，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "月之暗面"
+  series: "Kimi K2.5"
   category: "开源权重"
+  context: "256K"
   released: "2026-02"
   price_input: "$0.6/M"
   price_output: "$3/M"

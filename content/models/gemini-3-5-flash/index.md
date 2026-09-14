@@ -4,7 +4,9 @@ model: true
 description: "谷歌发布的 Gemini 3.5 Flash 大语言模型：综合评分 66，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"
+  series: "Gemini 3.5 Flash"
   category: "闭源专有"
+  context: "1M"
   released: "2026-05"
   price_input: "$1.5/M"
   price_output: "$9/M"
@@ -29,9 +31,6 @@ similar:
     name: "GPT-5.1"
     score: 66
     price: "$10/M"
-  - slug: "swe-1-7"
-    name: "SWE-1.7"
-    score: 66
   - slug: "gpt-5-1-codex"
     name: "GPT-5.1-Codex"
     score: 65
@@ -42,6 +41,10 @@ similar:
     price: "$12/M"
   - slug: "deepseek-v4-1-flash"
     name: "DeepSeek V4.1 Flash"
+    score: 66
+    price: "$1.2/M"
+  - slug: "gpt-5-6-luna"
+    name: "GPT-5.6 Luna"
     score: 66
     price: "$1.2/M"
 same_creator:

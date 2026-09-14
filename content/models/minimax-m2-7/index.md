@@ -4,7 +4,9 @@ model: true
 description: "MiniMax发布的 MiniMax M2.7 大语言模型：综合评分 55，开源权重，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "MiniMax"
+  series: "MiniMax M2.7"
   category: "开源权重"
+  context: "200K"
   released: "2026-03"
   price_input: "$0.3/M"
   price_output: "$1.2/M"
@@ -25,10 +27,6 @@ similar:
     name: "Gemini 3.1 Flash-Lite"
     score: 55
     price: "$1.5/M"
-  - slug: "celeris-1"
-    name: "Celeris-1"
-    score: 55
-    price: "$0.7/M"
   - slug: "muse-spark"
     name: "Muse Spark"
     score: 55
@@ -37,6 +35,9 @@ similar:
     score: 55
   - slug: "mimo-v2-5"
     name: "MiMo-V2.5"
+    score: 55
+  - slug: "qwen3-6-max-preview"
+    name: "Qwen 3.6 Max (preview)"
     score: 55
 same_creator:
   - slug: "minimax-m3"

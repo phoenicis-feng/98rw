@@ -15,19 +15,21 @@ switcher, theme toggle, mobile menu toggle.
   {{ partial "icon.html" "mdi:menu" }}
 </button>
 
-<nav class="site-header__nav" id="site-nav" aria-label="{{ i18n "main_navigation" | default "Main" }}">
-  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-</nav>
+<div class="site-header__drawer">
+  <nav class="site-header__nav" id="site-nav" aria-label="{{ i18n "main_navigation" | default "Main" }}">
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+  </nav>
 
-<div class="site-header__actions">
-  {{ partial "repo-stats.html" . }}
-  {{ partial "social-icons.html" . }}
-  {{ partial "lang-switcher.html" . }}
+  <div class="site-header__actions">
+    {{ partial "repo-stats.html" . }}
+    {{ partial "social-icons.html" . }}
+    {{ partial "lang-switcher.html" . }}
 
-  <button class="site-header__theme-toggle" type="button"
-    aria-label="{{ i18n "toggle_theme" | default "Toggle theme" }}"
-    data-action="toggle-theme">
-    <span data-theme-icon="dark">{{ partial "icon.html" "mdi:weather-night" }}</span>
-    <span data-theme-icon="light">{{ partial "icon.html" "mdi:weather-sunny" }}</span>
-  </button>
+    <button class="site-header__theme-toggle" type="button"
+      aria-label="{{ i18n "toggle_theme" | default "Toggle theme" }}"
+      data-action="toggle-theme">
+      <span data-theme-icon="dark">{{ partial "icon.html" "mdi:weather-night" }}</span>
+      <span data-theme-icon="light">{{ partial "icon.html" "mdi:weather-sunny" }}</span>
+    </button>
+  </div>
 </div>

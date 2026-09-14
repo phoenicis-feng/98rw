@@ -4,7 +4,9 @@ model: true
 description: "xAI发布的 Grok Code Fast 1 大语言模型：综合评分 54，闭源专有，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "xAI"
+  series: "Grok Code Fast"
   category: "闭源专有"
+  context: "256K"
   released: "2025-08"
   price_input: "$0.2/M"
   price_output: "$1.5/M"
@@ -30,12 +32,11 @@ similar:
     name: "MiniMax M2.7"
     score: 55
     price: "$1.2/M"
-  - slug: "celeris-1"
-    name: "Celeris-1"
-    score: 55
-    price: "$0.7/M"
   - slug: "muse-spark"
     name: "Muse Spark"
+    score: 55
+  - slug: "ling-3-0-flash"
+    name: "Ling 3.0 Flash"
     score: 55
 same_creator:
   - slug: "grok-4-6"

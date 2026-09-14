@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.2-Codex 大语言模型：综合评分 69，闭源专有，上下文 400K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT 5.2 Codex"
   category: "闭源专有"
+  context: "400K"
   released: "2025-12"
   price_input: "$1.75/M"
   price_output: "$14/M"

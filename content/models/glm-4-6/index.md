@@ -4,7 +4,9 @@ model: true
 description: "智谱 AI发布的 GLM-4.6 大语言模型：综合评分 45，开源权重，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "智谱 AI"
+  series: "GLM"
   category: "开源权重"
+  context: "200K"
   released: "2025-09"
   speed: "41 tokens/秒"
   ttft: "3.57 秒"
@@ -22,10 +24,6 @@ similar:
     name: "Claude Sonnet 4.5"
     score: 45
     price: "$15/M"
-  - slug: "zaya1-74b-preview"
-    name: "ZAYA1-74B-Preview"
-    score: 45
-    price: "免费"
   - slug: "mistral-medium-3"
     name: "Mistral Medium 3"
     score: 45
@@ -38,6 +36,10 @@ similar:
     name: "Qwen3.5-35B-A3B"
     score: 44
     price: "免费"
+  - slug: "command-a-plus"
+    name: "Command A+"
+    score: 46
+    price: "$10/M"
 same_creator:
   - slug: "glm-5-2"
     name: "GLM-5.2"

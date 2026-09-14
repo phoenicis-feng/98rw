@@ -4,7 +4,9 @@ model: true
 description: "智谱 AI发布的 GLM-5.1 大语言模型：综合评分 60，开源权重，上下文 203K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "智谱 AI"
+  series: "GLM"
   category: "开源权重"
+  context: "203K"
   released: "2026-04"
   price_input: "$1.4/M"
   price_output: "$4.4/M"
@@ -26,10 +28,6 @@ similar:
     name: "GPT-5.4 mini"
     score: 60
     price: "$4.5/M"
-  - slug: "inkling"
-    name: "Inkling"
-    score: 60
-    price: "$4.68/M"
   - slug: "kimi-2-6"
     name: "Kimi K2.6"
     score: 60
@@ -41,6 +39,9 @@ similar:
     name: "Mistral Medium 3.5 128B"
     score: 60
     price: "$7.5/M"
+  - slug: "qwen3-6-plus"
+    name: "Qwen3.6 Plus"
+    score: 59
 same_creator:
   - slug: "glm-5-2"
     name: "GLM-5.2"

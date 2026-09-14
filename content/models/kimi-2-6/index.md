@@ -4,7 +4,9 @@ model: true
 description: "月之暗面发布的 Kimi K2.6 大语言模型：综合评分 60，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "月之暗面"
+  series: "Kimi K2.6"
   category: "开源权重"
+  context: "256K"
   released: "2026-04"
   price_input: "$0.95/M"
   price_output: "$4/M"
@@ -29,10 +31,6 @@ similar:
     name: "GLM-5.1"
     score: 60
     price: "$4.4/M"
-  - slug: "inkling"
-    name: "Inkling"
-    score: 60
-    price: "$4.68/M"
   - slug: "mimo-v2-omni"
     name: "MiMo-V2-Omni"
     score: 60
@@ -40,6 +38,9 @@ similar:
     name: "Mistral Medium 3.5 128B"
     score: 60
     price: "$7.5/M"
+  - slug: "qwen3-6-plus"
+    name: "Qwen3.6 Plus"
+    score: 59
 same_creator:
   - slug: "kimi-k3"
     name: "Kimi K3"

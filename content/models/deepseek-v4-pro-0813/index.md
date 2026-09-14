@@ -4,7 +4,9 @@ model: true
 description: "深度求索发布的 DeepSeek V4 Pro 0813 大语言模型：综合评分 64，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"
+  series: "DeepSeek V4 Pro"
   category: "闭源专有"
+  context: "1M"
   released: "2026-08"
   price_input: "$0.435/M"
   price_output: "$0.87/M"
@@ -37,10 +39,10 @@ similar:
     name: "Hy3"
     score: 64
     price: "免费"
-  - slug: "ornith-1-0-397b"
-    name: "Ornith-1.0-397B"
-    score: 64
-    price: "免费"
+  - slug: "gpt-5-6-luna"
+    name: "GPT-5.6 Luna"
+    score: 66
+    price: "$1.2/M"
 same_creator:
   - slug: "deepseek-v4-1-flash"
     name: "DeepSeek V4.1 Flash"

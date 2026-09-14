@@ -4,7 +4,9 @@ model: true
 description: "Mistral AI发布的 Mistral Medium 3 大语言模型：综合评分 45，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Mistral AI"
+  series: "Mistral Medium"
   category: "闭源专有"
+  context: "128K"
   released: "2026-02"
   price_input: "$0.4/M"
   price_output: "$2/M"
@@ -27,17 +29,15 @@ similar:
     name: "DeepSeek V3"
     score: 46
     price: "$1.1/M"
-  - slug: "zaya1-74b-preview"
-    name: "ZAYA1-74B-Preview"
-    score: 45
-    price: "免费"
-  - slug: "pokee-isaac-28b"
-    name: "Pokee-Isaac 28B"
-    score: 46
-    price: "$1/M"
   - slug: "qwen3-6-35b-a3b"
     name: "Qwen3.6-35B-A3B"
     score: 47
+  - slug: "gemma-4-12b"
+    name: "Gemma 4 12B"
+    score: 47
+  - slug: "gemini-3-pro-deep-think"
+    name: "Gemini 3 Pro Deep Think"
+    score: 43
 same_creator:
   - slug: "mistral-medium-3-5-128b"
     name: "Mistral Medium 3.5 128B"

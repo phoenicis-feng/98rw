@@ -4,7 +4,9 @@ model: true
 description: "xAI发布的 Grok 4.6 大语言模型：综合评分 72，闭源专有，上下文 500K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "xAI"
+  series: "Grok"
   category: "闭源专有"
+  context: "500K"
   released: "2026-08"
   price_input: "$2/M"
   price_output: "$6/M"

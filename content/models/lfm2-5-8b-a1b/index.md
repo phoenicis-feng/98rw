@@ -4,7 +4,9 @@ model: true
 description: "Liquid AI发布的 LFM2.5-8B-A1B 大语言模型：综合评分 37，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Liquid AI"
+  series: "LFM2.5"
   category: "开源权重"
+  context: "128K"
   released: "2026-05"
   price_input: "免费"
   price_output: "免费"

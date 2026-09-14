@@ -4,7 +4,9 @@ model: true
 description: "OpenAI发布的 GPT-5.6 Luna 大语言模型：综合评分 66，闭源专有，上下文 1.05M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"
+  series: "GPT 5.6 Luna"
   category: "闭源专有"
+  context: "1.05M"
   released: "2026-07"
   price_input: "$0.2/M"
   price_output: "$1.2/M"
@@ -26,9 +28,6 @@ similar:
     name: "DeepSeek V4.1 Flash"
     score: 66
     price: "$1.2/M"
-  - slug: "swe-1-7"
-    name: "SWE-1.7"
-    score: 66
   - slug: "qwen3-7-plus"
     name: "Qwen3.7 Plus"
     score: 67
@@ -38,6 +37,10 @@ similar:
   - slug: "gpt-5-medium"
     name: "GPT-5 (medium)"
     score: 67
+  - slug: "deepseek-v4-pro-0813"
+    name: "DeepSeek V4 Pro 0813"
+    score: 64
+    price: "$0.87/M"
 same_creator:
   - slug: "gpt-6-astra"
     name: "GPT-6 Astra"

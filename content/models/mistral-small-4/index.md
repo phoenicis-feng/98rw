@@ -4,7 +4,9 @@ model: true
 description: "Mistral AI发布的 Mistral Small 4 大语言模型：综合评分 51，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Mistral AI"
+  series: "Mistral Small"
   category: "开源权重"
+  context: "256K"
   released: "2026-02"
   price_input: "$0.15/M"
   price_output: "$0.6/M"
@@ -20,13 +22,6 @@ specs:
   use_cases:
     - "通用对话"
 similar:
-  - slug: "solar-pro-3"
-    name: "Solar Pro 3"
-    score: 52
-    price: "$0.6/M"
-  - slug: "mellum2-12b-a2-5b-thinking"
-    name: "Mellum2-12B-A2.5B-Thinking"
-    score: 52
   - slug: "mai-thinking-1"
     name: "MAI-Thinking-1"
     score: 50
@@ -35,6 +30,14 @@ similar:
     score: 50
   - slug: "gemma-4-31b"
     name: "Gemma 4 31B"
+    score: 51
+    price: "免费"
+  - slug: "llama-4-maverick"
+    name: "Llama 4 Maverick"
+    score: 51
+    price: "免费"
+  - slug: "qwen3-235b-2507"
+    name: "Qwen3 235B 2507"
     score: 51
     price: "免费"
 same_creator:
