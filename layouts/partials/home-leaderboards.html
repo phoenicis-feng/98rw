@@ -5,17 +5,17 @@
 */ -}}
 {{- $maxItems := 10 -}}
 {{- $contentDir := "content" -}}
-<section class="home-leaderboards" aria-label="模型榜单">
+<section class="home-leaderboards" aria-label="大模型排行榜">
   <div class="section-head">
-    <h2 class="home-leaderboards__heading">模型榜单</h2>
-    <a class="btn btn--ghost btn--sm" href="{{ relLangURL "/leaderboards/" }}">查看全部榜单</a>
+    <h2 class="home-leaderboards__heading">大模型排行榜</h2>
+    <a class="btn btn--ghost btn--sm" href="{{ relLangURL "/leaderboards/" }}">查看全部排行榜</a>
   </div>
   <div class="home-leaderboards__grid">
 
     {{- /* 综合评分榜 */ -}}
     <article class="leaderboard">
       <header class="leaderboard__head">
-        <h3 class="leaderboard__title"><i class="mdi mdi-trophy" aria-hidden="true"></i>综合评分榜</h3>
+        <h3 class="leaderboard__title"><i class="mdi mdi-trophy" aria-hidden="true"></i>综合排行榜</h3>
         <p class="leaderboard__subtitle">按综合评分排序</p>
       </header>
       <div class="leaderboard__table">
@@ -115,7 +115,7 @@
     {{- /* 免费模型榜 */ -}}
     <article class="leaderboard">
       <header class="leaderboard__head">
-        <h3 class="leaderboard__title"><i class="mdi mdi-star" aria-hidden="true"></i>免费模型榜</h3>
+        <h3 class="leaderboard__title"><i class="mdi mdi-star" aria-hidden="true"></i>免费排行榜</h3>
         <p class="leaderboard__subtitle">免费可用模型</p>
       </header>
       <div class="leaderboard__table">
@@ -165,7 +165,7 @@
     {{- /* 最新榜单 */ -}}
     <article class="leaderboard">
       <header class="leaderboard__head">
-        <h3 class="leaderboard__title"><i class="mdi mdi-update" aria-hidden="true"></i>最新榜单</h3>
+        <h3 class="leaderboard__title"><i class="mdi mdi-update" aria-hidden="true"></i>最新排行榜</h3>
         <p class="leaderboard__subtitle">按发布时间排序</p>
       </header>
       <div class="leaderboard__table">

@@ -1,8 +1,9 @@
 ---
-title: "响应延迟榜"
+title: "响应延迟排行榜"
 model: false
 count: 138
-description: "首 Token 延迟（秒，越小越快），来源 Artificial Analysis"
+description: "大模型响应延迟排行榜：首Token延迟排名（秒，越小越快），来源 Artificial Analysis"
+keywords: ["大模型排行榜", "响应延迟", "TTFT", "模型速度"]
 ---
 
 <!-- 榜单: 响应延迟榜 (138个模型) -->

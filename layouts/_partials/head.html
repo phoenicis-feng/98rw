@@ -1,21 +1,22 @@
 {{- /* SEO 优化版 head */ -}}
 {{- $title := "" -}}
+{{- $seoPrefix := "聚模盒 | 大模型排行榜 | 大模型榜单" -}}
 {{- if .IsHome -}}
-  {{- /* 首页：直接用 site title，已包含关键字 */ -}}
-  {{- $title = site.Title -}}
+  {{- /* 首页：站点名 + 核心关键字 */ -}}
+  {{- $title = printf "%s | 大模型排行榜 | 大模型榜单 | 大模型评测 | 大模型评分" site.Title -}}
 {{- else if .IsSection -}}
-  {{- /* 栏目页：栏目关键字 + 站点名，避免栏目名重复 */ -}}
+  {{- /* 栏目页：聚模盒 | 大模型排行榜 | 大模型榜单 | 栏目名 */ -}}
   {{- $sectionTitle := dict -}}
-  {{- $sectionTitle = merge $sectionTitle (dict "models" "AI模型库 | 模型对比") -}}
-  {{- $sectionTitle = merge $sectionTitle (dict "haoyang" "薅羊毛教程 | 免费API") -}}
-  {{- $sectionTitle = merge $sectionTitle (dict "openrouter" "OpenRouter模型专题") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "models" "模型仓库") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "haoyang" "免费攻略") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "openrouter" "OpenRouter专题") -}}
   {{- $sectionTitle = merge $sectionTitle (dict "posts" "AI资讯") -}}
-  {{- $sectionTitle = merge $sectionTitle (dict "recommendations" "应用场景 | 模型选型") -}}
-  {{- $sectionTitle = merge $sectionTitle (dict "leaderboards" "榜单 | 聚模盒") -}}
-  {{- $title = printf "%s - 聚模盒" (index $sectionTitle .Section) -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "recommendations" "应用场景") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "leaderboards" "排行榜") -}}
+  {{- $title = printf "%s | %s" $seoPrefix (index $sectionTitle .Section) -}}
 {{- else -}}
-  {{- /* 内容页：文章/模型标题 - 聚模盒 | 栏目描述 */ -}}
-  {{- $title = printf "%s - 聚模盒 | AI模型评测与薅羊毛教程" .Title -}}
+  {{- /* 内容页：聚模盒 | 大模型排行榜 | 大模型榜单 | 页面标题 */ -}}
+  {{- $title = printf "%s | %s" $seoPrefix .Title -}}
 {{- end -}}
 {{- $description := or .Description site.Params.description site.Params.Description "" -}}
 {{- $author := site.Params.author | default site.Title -}}

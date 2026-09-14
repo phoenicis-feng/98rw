@@ -1,8 +1,9 @@
 ---
-title: "速度榜"
+title: "速度排行榜"
 model: false
 count: 138
-description: "模型输出吞吐量（tokens/秒），来源 Artificial Analysis"
+description: "大模型速度排行榜：模型输出吞吐量排名（tokens/秒），来源 Artificial Analysis"
+keywords: ["大模型排行榜", "速度排行榜", "模型速度", "吞吐量"]
 ---
 
 <!-- 榜单: 速度榜 (138个模型) -->

@@ -24,7 +24,7 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     renderer = { unsafe = true }
 
 [params]
-  description = "聚模盒 - 聚合最新AI模型的评测、对比与应用指南。涵盖OpenAI、Anthropic、Google DeepMind、Meta、DeepSeek等主流模型，提供选型建议与实战教程。"
+  description = "聚模盒 - 大模型排行榜与大模型评测平台，聚合最新AI大模型评分、榜单、推荐与对比。涵盖OpenAI、Anthropic、Google DeepMind、Meta、DeepSeek等主流模型，提供免费模型榜单、选型建议与实战教程。"
   author = "聚模盒"
   ogImage = "https://www.jumohub.com/images/og-default.png"
   logo = "images/logo.png"
@@ -34,6 +34,12 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     "AI模型",
     "大语言模型",
     "LLM",
+    "大模型排行榜",
+    "大模型榜单",
+    "大模型免费榜单",
+    "大模型推荐",
+    "大模型评测",
+    "大模型评分",
     "模型评测",
     "模型对比",
     "模型选型",
@@ -73,25 +79,29 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     pageRef = "/"
     weight = 5
   [[menus.main]]
-    name = "免费攻略"
-    pageRef = "/haoyang"
+    name = "排行榜"
+    pageRef = "/leaderboards"
     weight = 10
+  [[menus.main]]
+    name = "综合排行榜"
+    pageRef = "/leaderboards/overall"
+    weight = 15
+  [[menus.main]]
+    name = "免费排行榜"
+    pageRef = "/leaderboards/free"
+    weight = 20
   [[menus.main]]
     name = "应用场景"
     pageRef = "/recommendations"
-    weight = 15
-  [[menus.main]]
-    name = "openrouter专题"
-    pageRef = "/openrouter"
-    weight = 20
+    weight = 25
   [[menus.main]]
     name = "模型仓库"
     pageRef = "/models"
-    weight = 25
-  [[menus.main]]
-    name = "榜单"
-    pageRef = "/leaderboards"
     weight = 30
+  [[menus.main]]
+    name = "免费攻略"
+    pageRef = "/haoyang"
+    weight = 35
 
 [taxonomies]
   category = 'categories'

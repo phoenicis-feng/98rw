@@ -1,8 +1,9 @@
 ---
-title: "综合评分榜"
+title: "综合排行榜"
 model: false
 count: 228
-description: "基于多基准加权综合评分的总排名（数据源 benchlm.ai）"
+description: "大模型综合排行榜：基于多基准加权综合评分的AI大模型总排名，覆盖GPT、Claude、Gemini、DeepSeek等主流大语言模型（数据源 benchlm.ai）"
+keywords: ["大模型排行榜", "大模型榜单", "大模型评测", "大模型评分", "AI模型排行", "综合评分"]
 ---
 
 <!-- 榜单: 综合评分榜 (228个模型) -->

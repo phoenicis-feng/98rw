@@ -6,7 +6,7 @@ hero:
   subtitle: "一站式 AI 模型评测、对比与实战指南"
   highlights:
     - icon: "mdi:trophy"
-      label: "榜单实时"
+      label: "排行榜实时"
     - icon: "mdi:magnify"
       label: "多维评测"
     - icon: "mdi:school"

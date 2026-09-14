@@ -1,8 +1,9 @@
 ---
-title: "免费模型榜"
+title: "免费排行榜"
 model: false
 count: 128
-description: "官方 API 免费可用的模型，按综合评分排序"
+description: "大模型免费排行榜：官方API免费可用的大模型排名，按综合评分排序。覆盖Qwen、GLM、DeepSeek、GPT-OSS等免费大语言模型"
+keywords: ["大模型免费榜单", "免费模型", "免费API", "白嫖模型", "大模型排行榜", "大模型推荐"]
 ---
 
 <!-- 榜单: 免费模型榜 (128个模型) -->

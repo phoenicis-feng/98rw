@@ -1,8 +1,9 @@
 ---
-title: "低价榜"
+title: "低价排行榜"
 model: false
 count: 280
-description: "输入+输出合计 API 价格（美元/百万 tokens，越小越便宜）"
+description: "大模型低价排行榜：输入+输出合计API价格排名（美元/百万tokens，越小越便宜）"
+keywords: ["大模型排行榜", "低价排行榜", "模型价格", "API价格"]
 ---
 
 <!-- 榜单: 低价榜 (280个模型) -->
