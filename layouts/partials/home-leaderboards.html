@@ -1,14 +1,10 @@
 {{- /*
 首页榜单：综合评分榜 + 低价榜 + 免费模型榜 + 最新榜单。
-数据来源：site.Data.jumo_leaderboards。
+数据来源：从 content/leaderboards/*.md 页面读取原始 markdown 表格。
 每个榜单最多显示 10 个。
 */ -}}
 {{- $maxItems := 10 -}}
-{{- $lbData := site.Data.jumo_leaderboards }}
-{{- $lb := index $lbData "leaderboards" }}
-{{- $overall := index (where $lb "key" "overall") 0 }}
-{{- $price := index (where $lb "key" "price") 0 }}
-{{- $free := index (where $lb "key" "free") 0 }}
+{{- $contentDir := "content" -}}
 <section class="home-leaderboards" aria-label="模型榜单">
   <div class="section-head">
     <h2 class="home-leaderboards__heading">模型榜单</h2>
@@ -23,20 +19,45 @@
         <p class="leaderboard__subtitle">按综合评分排序</p>
       </header>
       <div class="leaderboard__table">
-        <div class="leaderboard__row leaderboard__row--head">
-          <span class="leaderboard__cell leaderboard__col-rank">#</span>
-          <span class="leaderboard__cell leaderboard__col-model">模型</span>
-          <span class="leaderboard__cell leaderboard__col-value">评分</span>
-        </div>
-        {{- range $i, $row := first $maxItems $overall.rows }}
-          <div class="leaderboard__row">
-            <span class="leaderboard__cell leaderboard__rank">{{ .rank }}</span>
-            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
-              <a href="/models/{{ .slug }}/">{{ .name }}</a>
-              {{- with .creatorZh }}<span class="badge">{{ . }}</span>{{ end }}
-            </span>
-            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ .score }}</span>
-          </div>
+        {{- $overallContent := readFile (printf "%s/leaderboards/overall.md" $contentDir) -}}
+        {{- $tLines := split $overallContent "\n" -}}
+        {{- $count := 0 -}}
+        {{- range $ti, $tline := $tLines -}}
+          {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}
+            {{- $cells := split $tline "|" -}}
+            {{- $rank := trim (index $cells 1) " " -}}
+            {{- $modelCell := trim (index $cells 2) " " -}}
+            {{- $scoreCell := trim (index $cells 4) " " -}}
+            {{- $modelName := "" -}}
+            {{- $modelSlug := "" -}}
+            {{- if hasPrefix $modelCell "[" -}}
+              {{- $cleanModel := replace $modelCell "[" "" -}}
+              {{- $cleanModel = replace $cleanModel "]" "" -}}
+              {{- $cleanModel = trim $cleanModel " " -}}
+              {{- $urlMatch := findRE `\(([^)]+)\)` $cleanModel -}}
+              {{- if $urlMatch -}}
+                {{- $matched := index $urlMatch 0 -}}
+                {{- $slugPath := replace $matched ")" "" -}}
+                {{- $slugPath = replace $slugPath "(" "" -}}
+                {{- $slugPath = trim $slugPath " " -}}
+                {{- $urlParts := split $slugPath "/" -}}
+                {{- if gt (len $urlParts) 2 -}}{{- $modelSlug = $slugPath -}}{{- end -}}
+                {{- $urlPattern := printf "(%s)" $slugPath -}}
+                {{- $modelName = replace $cleanModel $urlPattern "" -}}
+                {{- $modelName = trim $modelName " " -}}
+              {{- end -}}
+            {{- else -}}
+              {{- $modelName = $modelCell -}}
+            {{- end -}}
+            <div class="leaderboard__row">
+              <span class="leaderboard__cell leaderboard__rank">{{ $rank }}</span>
+              <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+                {{- if $modelSlug -}}<a href="{{ $modelSlug }}">{{ $modelName }}</a>{{- else -}}{{ $modelName }}{{- end -}}
+              </span>
+              <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ $scoreCell }}</span>
+            </div>
+            {{- $count = add $count 1 -}}
+          {{- end -}}
         {{- end }}
       </div>
     </article>
@@ -48,20 +69,45 @@
         <p class="leaderboard__subtitle">按价格从低到高</p>
       </header>
       <div class="leaderboard__table">
-        <div class="leaderboard__row leaderboard__row--head">
-          <span class="leaderboard__cell leaderboard__col-rank">#</span>
-          <span class="leaderboard__cell leaderboard__col-model">模型</span>
-          <span class="leaderboard__cell leaderboard__col-value">评分</span>
-        </div>
-        {{- range $i, $row := first $maxItems $price.rows }}
-          <div class="leaderboard__row">
-            <span class="leaderboard__cell leaderboard__rank">{{ .rank }}</span>
-            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
-              <a href="/models/{{ .slug }}/">{{ .name }}</a>
-              {{- with .creatorZh }}<span class="badge">{{ . }}</span>{{ end }}
-            </span>
-            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ .score }}</span>
-          </div>
+        {{- $priceContent := readFile (printf "%s/leaderboards/price.md" $contentDir) -}}
+        {{- $tLines := split $priceContent "\n" -}}
+        {{- $count := 0 -}}
+        {{- range $ti, $tline := $tLines -}}
+          {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}
+            {{- $cells := split $tline "|" -}}
+            {{- $rank := trim (index $cells 1) " " -}}
+            {{- $modelCell := trim (index $cells 2) " " -}}
+            {{- $scoreCell := trim (index $cells 4) " " -}}
+            {{- $modelName := "" -}}
+            {{- $modelSlug := "" -}}
+            {{- if hasPrefix $modelCell "[" -}}
+              {{- $cleanModel := replace $modelCell "[" "" -}}
+              {{- $cleanModel = replace $cleanModel "]" "" -}}
+              {{- $cleanModel = trim $cleanModel " " -}}
+              {{- $urlMatch := findRE `\(([^)]+)\)` $cleanModel -}}
+              {{- if $urlMatch -}}
+                {{- $matched := index $urlMatch 0 -}}
+                {{- $slugPath := replace $matched ")" "" -}}
+                {{- $slugPath = replace $slugPath "(" "" -}}
+                {{- $slugPath = trim $slugPath " " -}}
+                {{- $urlParts := split $slugPath "/" -}}
+                {{- if gt (len $urlParts) 2 -}}{{- $modelSlug = $slugPath -}}{{- end -}}
+                {{- $urlPattern := printf "(%s)" $slugPath -}}
+                {{- $modelName = replace $cleanModel $urlPattern "" -}}
+                {{- $modelName = trim $modelName " " -}}
+              {{- end -}}
+            {{- else -}}
+              {{- $modelName = $modelCell -}}
+            {{- end -}}
+            <div class="leaderboard__row">
+              <span class="leaderboard__cell leaderboard__rank">{{ $rank }}</span>
+              <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+                {{- if $modelSlug -}}<a href="{{ $modelSlug }}">{{ $modelName }}</a>{{- else -}}{{ $modelName }}{{- end -}}
+              </span>
+              <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ $scoreCell }}</span>
+            </div>
+            {{- $count = add $count 1 -}}
+          {{- end -}}
         {{- end }}
       </div>
     </article>
@@ -73,20 +119,45 @@
         <p class="leaderboard__subtitle">免费可用模型</p>
       </header>
       <div class="leaderboard__table">
-        <div class="leaderboard__row leaderboard__row--head">
-          <span class="leaderboard__cell leaderboard__col-rank">#</span>
-          <span class="leaderboard__cell leaderboard__col-model">模型</span>
-          <span class="leaderboard__cell leaderboard__col-value">评分</span>
-        </div>
-        {{- range $i, $row := first $maxItems $free.rows }}
-          <div class="leaderboard__row">
-            <span class="leaderboard__cell leaderboard__rank">{{ .rank }}</span>
-            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
-              <a href="/models/{{ .slug }}/">{{ .name }}</a>
-              {{- with .creatorZh }}<span class="badge">{{ . }}</span>{{ end }}
-            </span>
-            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ .score }}</span>
-          </div>
+        {{- $freeContent := readFile (printf "%s/leaderboards/free.md" $contentDir) -}}
+        {{- $tLines := split $freeContent "\n" -}}
+        {{- $count := 0 -}}
+        {{- range $ti, $tline := $tLines -}}
+          {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}
+            {{- $cells := split $tline "|" -}}
+            {{- $rank := trim (index $cells 1) " " -}}
+            {{- $modelCell := trim (index $cells 2) " " -}}
+            {{- $scoreCell := trim (index $cells 4) " " -}}
+            {{- $modelName := "" -}}
+            {{- $modelSlug := "" -}}
+            {{- if hasPrefix $modelCell "[" -}}
+              {{- $cleanModel := replace $modelCell "[" "" -}}
+              {{- $cleanModel = replace $cleanModel "]" "" -}}
+              {{- $cleanModel = trim $cleanModel " " -}}
+              {{- $urlMatch := findRE `\(([^)]+)\)` $cleanModel -}}
+              {{- if $urlMatch -}}
+                {{- $matched := index $urlMatch 0 -}}
+                {{- $slugPath := replace $matched ")" "" -}}
+                {{- $slugPath = replace $slugPath "(" "" -}}
+                {{- $slugPath = trim $slugPath " " -}}
+                {{- $urlParts := split $slugPath "/" -}}
+                {{- if gt (len $urlParts) 2 -}}{{- $modelSlug = $slugPath -}}{{- end -}}
+                {{- $urlPattern := printf "(%s)" $slugPath -}}
+                {{- $modelName = replace $cleanModel $urlPattern "" -}}
+                {{- $modelName = trim $modelName " " -}}
+              {{- end -}}
+            {{- else -}}
+              {{- $modelName = $modelCell -}}
+            {{- end -}}
+            <div class="leaderboard__row">
+              <span class="leaderboard__cell leaderboard__rank">{{ $rank }}</span>
+              <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+                {{- if $modelSlug -}}<a href="{{ $modelSlug }}">{{ $modelName }}</a>{{- else -}}{{ $modelName }}{{- end -}}
+              </span>
+              <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ $scoreCell }}</span>
+            </div>
+            {{- $count = add $count 1 -}}
+          {{- end -}}
         {{- end }}
       </div>
     </article>

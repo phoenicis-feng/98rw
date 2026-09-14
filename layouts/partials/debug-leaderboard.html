@@ -1,0 +1,21 @@
+{{- $page := .Site.GetPage "/leaderboards/overall/" -}}
+{{- if $page -}}
+页面: {{ $page.Title }}
+Content长度: {{ len $page.Content }}
+{{- $content := $page.Content -}}
+{{- $lines := split $content "\n" -}}
+行数: {{ len $lines }}
+{{- $dataLines := slice -}}
+{{- range $i, $line := $lines -}}
+  {{- if hasPrefix $line "| " -}}
+    {{- $dataLines = $dataLines | append $line -}}
+  {{- end -}}
+{{- end -}}
+数据行数: {{ len $dataLines }}
+前3行:
+{{- range first 3 $dataLines -}}
+  {{ . }}
+{{- end -}}
+{{- else -}}
+页面未找到
+{{- end -}}

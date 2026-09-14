@@ -1,0 +1,6 @@
+{{- $p := .Site.GetPage "/leaderboards/overall/" -}}
+{{- if $p -}}
+RawContent 长度: {{ len $p.RawContent }}
+{{- else -}}
+页面未找到
+{{- end -}}
