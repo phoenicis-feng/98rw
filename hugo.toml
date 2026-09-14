@@ -1,7 +1,7 @@
 baseURL = 'https://www.jumohub.com/'
 defaultContentLanguage = 'zh-cn'
 locale = 'zh-CN'
-title = '聚模盒 - AI模型评测、大语言模型对比、免费API、模型薅羊毛'
+title = '聚模盒'
 theme = 'liftoff'
 publishDir = 'public'
 disableKinds = ['RSS', 'taxonomy', 'term']
@@ -27,6 +27,7 @@ disableKinds = ['RSS', 'taxonomy', 'term']
   description = "聚模盒 - 聚合最新AI模型的评测、对比与应用指南。涵盖OpenAI、Anthropic、Google DeepMind、Meta、DeepSeek等主流模型，提供选型建议与实战教程。"
   author = "聚模盒"
   ogImage = "https://www.jumohub.com/images/og-default.png"
+  logo = "images/logo.png"
   twitterCard = "summary_large_image"
   twitterSite = "@junmohuo"
   keywords = [
@@ -56,6 +57,10 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     "AI教程",
     "模型教程"
   ]
+  [[params.social]]
+    icon = "mdi:email"
+    name = "Email"
+    url = "mailto:phillfeng@gmail.com"
 
 [minify]
   disableXML = true
@@ -68,7 +73,7 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     pageRef = "/"
     weight = 5
   [[menus.main]]
-    name = "薅羊毛教程"
+    name = "免费攻略"
     pageRef = "/haoyang"
     weight = 10
   [[menus.main]]
@@ -83,6 +88,10 @@ disableKinds = ['RSS', 'taxonomy', 'term']
     name = "模型仓库"
     pageRef = "/models"
     weight = 25
+  [[menus.main]]
+    name = "榜单"
+    pageRef = "/leaderboards"
+    weight = 30
 
 [taxonomies]
   category = 'categories'

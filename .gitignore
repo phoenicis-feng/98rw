@@ -7,3 +7,8 @@ node_modules/
 .DS_Store
 *.json
 content/.obsidian/
+__pycache__/
+*.pyc
+data/
+scripts/
+script/

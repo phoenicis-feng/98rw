@@ -2,7 +2,7 @@
 title: "模型推荐"
 description: "根据你的使用场景，推荐最适合的 AI 模型。覆盖推理、编码、Agent、写作、翻译、长文本、多模态等全场景。"
 hero:
-  title: "选对模型，少走弯路"
+  titleAccent: 选好模型，省钱省心省时间
   subtitle: "每个场景都有最优解。按场景推荐，覆盖 70+ 模型的真实表现。"
   highlights:
     - icon: "mdi:magnify-search"
@@ -12,30 +12,6 @@ hero:
     - icon: "mdi:speedometer"
       label: "实时性能数据"
 categories:
-  - name: "最强推理"
-    slug: "strongest-reasoning"
-    icon: "mdi:brain"
-    description: "复杂逻辑推理、数学证明、科学分析、极限推理挑战"
-    models:
-      - "claude-opus-4-5"
-      - "gemini-3-1-deep-think"
-      - "gpt-5-2"
-      - "o3"
-      - "gpt-5-1"
-    pool:
-      - "deepseek-r1"
-      - "qwen3-8-max"
-      - "claude-opus-4"
-      - "gemini-3-1-pro"
-      - "qwen3-7-max"
-      - "gemini-3-pro"
-      - "ernie-5-1"
-      - "qwen3-max"
-      - "seed-2-0"
-      - "claude-sonnet-4-5"
-      - "o4-mini"
-      - "grok-4"
-      - "doubao-2-0"
   - name: "编码开发"
     slug: "coding"
     icon: "mdi:code-braces"

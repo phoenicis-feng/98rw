@@ -7,108 +7,97 @@
       <span aria-current="page">{{ .Title }}</span>
     </nav>
 
-    <section class="rec-section">
-      {{- /* 所有模型页面 */ -}}
-      {{- $allModels := where site.Pages "Params.model" true -}}
+    {{- /* 直接使用当前 /models/ 下的模型数据，避免推荐页依赖旧 slug 与旧字段 */ -}}
+    {{- $allModels := where site.RegularPages "Section" "models" }}
+    {{- $allModels = where $allModels "Params.model" true }}
+    {{- $allModels = sort $allModels "Params.specs.scores.overall.score" "desc" }}
 
-      {{- /* 分类 Tab */ -}}
-      <div class="rec-categories">
-        {{- range $index, $cat := .Params.categories }}
-          {{- $catId := $cat.slug }}
-          <button class="rec-tab{{ if eq $index 0 }} rec-tab--active{{ end }}" data-tab="{{ $catId }}">
-            <i class="mdi {{ $cat.icon }}"></i>
-            <span>{{ $cat.name }}</span>
-          </button>
-        {{- end }}
+    <section class="rec-section">
+      <div class="rec-filters">
+        <div class="rec-filter rec-filter--scene">
+          <span class="rec-filter__label">场景：</span>
+          <div class="rec-filter__options" data-scene-filter>
+            <button class="rec-filter-btn rec-filter-btn--active" data-scene="all">全部</button>
+            {{- range slice "对话助手" "通用对话" "知识问答" "复杂推理" "编程开发" "智能体自动化" "数学解题" "图像理解" "多语言翻译" }}
+            <button class="rec-filter-btn" data-scene="{{ . }}">{{ . }}</button>
+            {{- end }}
+          </div>
+        </div>
+        <div class="rec-filter rec-filter--modality">
+          <span class="rec-filter__label">类型：</span>
+          <div class="rec-filter__options" data-modality-filter>
+            <button class="rec-filter-btn rec-filter-btn--active" data-category="all">全部</button>
+            {{- range slice "闭源专有" "开源权重" "待确认" }}
+            <button class="rec-filter-btn" data-category="{{ . }}">{{ . }}</button>
+            {{- end }}
+          </div>
+        </div>
       </div>
 
-      {{- /* 逐个分类渲染 */ -}}
-      {{- range $index, $cat := .Params.categories }}
-        {{- $catId := $cat.slug }}
-        {{- $catName := $cat.name }}
-        {{- $catDesc := $cat.description }}
-        {{- $catIcon := $cat.icon }}
-        {{- $modelSlugs := $cat.models }}
-        {{- /* 完整候选池 = models（展示级）+ pool（候补池），去重 */ -}}
-        {{- $pool := $cat.pool | default (slice) }}
-        {{- $allCandidates := $modelSlugs }}
-        {{- range $pool }}
-          {{- if not (in $allCandidates .) }}
-            {{- $allCandidates = ($allCandidates | append .) }}
-          {{- end }}
-        {{- end }}
-
-        <div class="rec-category{{ if eq $index 0 }} rec-category--active{{ end }}" id="rec-{{ $catId }}" data-category>
-          <div class="rec-category__header">
-            <i class="mdi {{ $catIcon }} rec-category__icon"></i>
-            <div>
-              <h2 class="rec-category__title">{{ $catName }}</h2>
-              <p class="rec-category__desc">{{ $catDesc }}</p>
-            </div>
-            <div class="rec-sort">
-              <span class="rec-sort__label">排序：</span>
-              <div class="rec-sort__buttons">
-                <button class="rec-sort-btn" data-sort="price">最便宜</button>
-                <button class="rec-sort-btn" data-sort="strongest">最强</button>
-                <button class="rec-sort-btn rec-sort-btn--active" data-sort="comprehensive">综合</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="rec-grid" data-limit="6">
-            {{- $rank := 0 }}
-            {{- range $allCandidates }}
-              {{- $rank = (add $rank 1) }}
-              {{- $model := site.GetPage (printf "/models/%s/" .) }}
+      <div class="rec-table-wrap">
+        <table class="rec-table" data-limit="6">
+          <thead>
+            <tr>
+              <th class="rec-table__col-model rec-th-sortable" data-sort-key="name">模型</th>
+              <th class="rec-table__col-scene">场景</th>
+              <th class="rec-table__col-type rec-th-sortable" data-sort-key="category">类型</th>
+              <th class="rec-table__col-score rec-th-sortable" data-sort-key="overall">综合</th>
+              <th class="rec-table__col-score rec-th-sortable" data-sort-key="agentic">智能体</th>
+              <th class="rec-table__col-score rec-th-sortable" data-sort-key="coding">编程</th>
+              <th class="rec-table__col-score rec-th-sortable" data-sort-key="reasoning">推理</th>
+              <th class="rec-table__col-score rec-th-sortable" data-sort-key="multimodal">多模态</th>
+              <th class="rec-table__col-score rec-th-sortable" data-sort-key="knowledge">知识</th>
+              <th class="rec-table__col-price rec-th-sortable" data-sort-key="price_input">输入</th>
+              <th class="rec-table__col-price rec-th-sortable" data-sort-key="price_output">输出</th>
+              <th class="rec-table__col-context rec-th-sortable" data-sort-key="speed">速度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{- range $model := $allModels }}
               {{- if $model }}
                 {{- $scores := $model.Params.specs.scores }}
                 {{- $specs := $model.Params.specs }}
-                <a href="{{ $model.RelPermalink }}" class="rec-card"
-                   data-reasoning="{{ $scores.reasoning | default 0 }}"
-                   data-coding="{{ $scores.coding | default 0 }}"
-                   data-chinese="{{ $scores.chinese | default 0 }}"
-                   data-longtext="{{ $scores.longtext | default 0 }}"
-                   data-price="{{ $specs.price_input }}"
-                   data-context="{{ $specs.context }}"
-                   data-modalities="{{ $specs.modalities }}">
-                  <div class="rec-card__rank">#{{ $rank }}</div>
-                  <div class="rec-card__info">
-                    <h3 class="rec-card__name">{{ $model.LinkTitle }}</h3>
-                    <p class="rec-card__vendor">{{ $specs.vendor }}</p>
-                  </div>
-                  <div class="rec-card__scores">
-                    {{- if $scores.reasoning }}
-                      <span class="rec-score rec-score--reasoning" title="推理">{{ $scores.reasoning }}</span>
+                {{- $scenes := slice -}}
+                {{- with $specs.best_use }}{{- $scenes = $scenes | append . -}}{{- end -}}
+                {{- range $specs.use_cases }}{{- if not (in $scenes .) }}{{- $scenes = $scenes | append . -}}{{- end }}{{- end -}}
+                {{- $sceneText := delimit $scenes " / " -}}
+                <tr class="rec-row"
+                   data-overall="{{ $scores.overall.score | default 0 }}"
+                   data-agentic="{{ $scores.agentic.score | default 0 }}"
+                   data-coding="{{ $scores.coding.score | default 0 }}"
+                   data-reasoning="{{ $scores.reasoning.score | default 0 }}"
+                   data-multimodal="{{ $scores.multimodal.score | default 0 }}"
+                   data-knowledge="{{ $scores.knowledge.score | default 0 }}"
+                   data-price-input="{{ $specs.price_input }}"
+                   data-price-output="{{ $specs.price_output }}"
+                   data-speed="{{ $specs.speed }}"
+                   data-category="{{ $specs.category | default "待确认" }}"
+                   data-scenario="{{ $sceneText | default "其他" }}">
+                  <td class="rec-table__col-model">
+                    <a href="{{ $model.RelPermalink }}" class="rec-row__name">{{ $model.LinkTitle }}</a>
+                    <span class="rec-row__vendor">{{ $specs.vendor }}</span>
+                  </td>
+                  <td class="rec-table__col-scene">
+                    {{- range $i, $scene := $scenes }}
+                      {{- if lt $i 2 }}<span class="rec-scenario-tag">{{ $scene }}</span>{{- end }}
                     {{- end }}
-                    {{- if $scores.coding }}
-                      <span class="rec-score rec-score--coding" title="编码">{{ $scores.coding }}</span>
-                    {{- end }}
-                    {{- if $scores.chinese }}
-                      <span class="rec-score rec-score--chinese" title="中文">{{ $scores.chinese }}</span>
-                    {{- end }}
-                    {{- if $scores.longtext }}
-                      <span class="rec-score rec-score--longtext" title="长文本">{{ $scores.longtext }}</span>
-                    {{- end }}
-                  </div>
-                  <div class="rec-card__price">{{ $specs.price_input }} <small>入</small></div>
-                  {{- if $specs.context }}
-                    <div class="rec-card__context">{{ $specs.context }}</div>
-                  {{- end }}
-                  {{- if $specs.modalities }}
-                    <div class="rec-card__modalities">{{ $specs.modalities }}</div>
-                  {{- end }}
-                </a>
+                  </td>
+                  <td class="rec-table__col-type">{{ $specs.category | default "待确认" }}</td>
+                  <td class="rec-table__col-score">{{ with $scores.overall }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>
+                  <td class="rec-table__col-score">{{ with $scores.agentic }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>
+                  <td class="rec-table__col-score">{{ with $scores.coding }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>
+                  <td class="rec-table__col-score">{{ with $scores.reasoning }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>
+                  <td class="rec-table__col-score">{{ with $scores.multimodal }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>
+                  <td class="rec-table__col-score">{{ with $scores.knowledge }}{{ .score | default "—" }}{{ else }}—{{ end }}</td>
+                  <td class="rec-table__col-price">{{ $specs.price_input | default "—" }}</td>
+                  <td class="rec-table__col-price">{{ $specs.price_output | default "—" }}</td>
+                  <td class="rec-table__col-context">{{ $specs.speed | default "—" }}</td>
+                </tr>
               {{- end }}
             {{- end }}
-          </div>
-
-          {{- /* 对比表 — 由 JS 根据当前展示的卡片动态生成 */ -}}
-          <div class="rec-comparison" data-comparison>
-            <h3 class="rec-comparison__title">TOP 对比</h3>
-            <div class="rec-comparison__table rec-comparison__table--empty"></div>
-          </div>
-        </div>
-      {{- end }}
+          </tbody>
+        </table>
+      </div>
     </section>
   </div>
 {{ end }}

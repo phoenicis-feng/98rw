@@ -1,0 +1,13 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <div class="container docs-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+    <div class="leaderboard-table-wrap">
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}

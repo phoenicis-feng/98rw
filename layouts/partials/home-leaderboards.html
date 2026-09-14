@@ -1,31 +1,95 @@
 {{- /*
-首页榜单：最新榜单 + 最有人气榜单。
-只统计顶层精选模型（content/models/<slug>/，排除 openrouter 子目录下的批量型号）。
-最新榜单按 specs.released 降序；人气榜单按 specs.popularity 降序。
-每个榜单最多显示 10 个；如需调整，改下面 $maxItems。
+首页榜单：综合评分榜 + 低价榜 + 免费模型榜 + 最新榜单。
+数据来源：site.Data.jumo_leaderboards。
+每个榜单最多显示 10 个。
 */ -}}
 {{- $maxItems := 10 -}}
-{{- $rows := slice -}}
-{{- range $m := where site.Pages "Params.model" true -}}
-  {{- $segs := split $m.Path "/" -}}
-  {{- if and (not (in $segs "openrouter")) (not (in $segs "_index")) $m.Params.specs -}}
-    {{- $rows = $rows | append (dict
-      "name"  $m.LinkTitle
-      "url"   $m.RelPermalink
-      "vendor" $m.Params.specs.vendor
-      "released" ($m.Params.specs.released | default "")
-      "popularity" ($m.Params.specs.popularity | int | default 0)
-    ) -}}
-  {{- end -}}
-{{- end -}}
-{{- $latest := sort $rows "released" "desc" -}}
-{{- $popular := sort $rows "popularity" "desc" -}}
+{{- $lbData := site.Data.jumo_leaderboards }}
+{{- $lb := index $lbData "leaderboards" }}
+{{- $overall := index (where $lb "key" "overall") 0 }}
+{{- $price := index (where $lb "key" "price") 0 }}
+{{- $free := index (where $lb "key" "free") 0 }}
 <section class="home-leaderboards" aria-label="模型榜单">
   <div class="section-head">
     <h2 class="home-leaderboards__heading">模型榜单</h2>
-    <a class="btn btn--ghost btn--sm" href="{{ relLangURL "/models/" }}">查看全部模型</a>
+    <a class="btn btn--ghost btn--sm" href="{{ relLangURL "/leaderboards/" }}">查看全部榜单</a>
   </div>
   <div class="home-leaderboards__grid">
+
+    {{- /* 综合评分榜 */ -}}
+    <article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-trophy" aria-hidden="true"></i>综合评分榜</h3>
+        <p class="leaderboard__subtitle">按综合评分排序</p>
+      </header>
+      <div class="leaderboard__table">
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
+        {{- range $i, $row := first $maxItems $overall.rows }}
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">{{ .rank }}</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/{{ .slug }}/">{{ .name }}</a>
+              {{- with .creatorZh }}<span class="badge">{{ . }}</span>{{ end }}
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ .score }}</span>
+          </div>
+        {{- end }}
+      </div>
+    </article>
+
+    {{- /* 低价榜 */ -}}
+    <article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-coins" aria-hidden="true"></i>低价榜</h3>
+        <p class="leaderboard__subtitle">按价格从低到高</p>
+      </header>
+      <div class="leaderboard__table">
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
+        {{- range $i, $row := first $maxItems $price.rows }}
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">{{ .rank }}</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/{{ .slug }}/">{{ .name }}</a>
+              {{- with .creatorZh }}<span class="badge">{{ . }}</span>{{ end }}
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ .score }}</span>
+          </div>
+        {{- end }}
+      </div>
+    </article>
+
+    {{- /* 免费模型榜 */ -}}
+    <article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-star" aria-hidden="true"></i>免费模型榜</h3>
+        <p class="leaderboard__subtitle">免费可用模型</p>
+      </header>
+      <div class="leaderboard__table">
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
+        {{- range $i, $row := first $maxItems $free.rows }}
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">{{ .rank }}</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/{{ .slug }}/">{{ .name }}</a>
+              {{- with .creatorZh }}<span class="badge">{{ . }}</span>{{ end }}
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ .score }}</span>
+          </div>
+        {{- end }}
+      </div>
+    </article>
 
     {{- /* 最新榜单 */ -}}
     <article class="leaderboard">
@@ -39,7 +103,20 @@
           <span class="leaderboard__cell leaderboard__col-model">模型</span>
           <span class="leaderboard__cell leaderboard__col-value">发布时间</span>
         </div>
-        {{- range $i, $row := first $maxItems $latest }}
+        {{- $latestRows := slice -}}
+        {{- range $m := where site.Pages "Params.model" true }}
+          {{- $segs := split $m.Path "/" -}}
+          {{- if and (not (in $segs "openrouter")) (not (in $segs "_index")) $m.Params.specs.released }}
+            {{- $latestRows = $latestRows | append (dict
+              "name"  $m.LinkTitle
+              "url"   $m.RelPermalink
+              "vendor" $m.Params.specs.vendor
+              "released" ($m.Params.specs.released | default "")
+            ) -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $latestSorted := sort $latestRows "released" "desc" }}
+        {{- range $i, $row := first $maxItems $latestSorted }}
           <div class="leaderboard__row">
             <span class="leaderboard__cell leaderboard__rank">{{ add $i 1 }}</span>
             <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
@@ -47,37 +124,6 @@
               {{- with $row.vendor }}<span class="badge">{{ . }}</span>{{ end }}
             </span>
             <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="{{ $row.released }}">{{ $row.released }}</time>
-          </div>
-        {{- end }}
-      </div>
-    </article>
-
-    {{- /* 最有人气榜单 */ -}}
-    <article class="leaderboard">
-      <header class="leaderboard__head">
-        <h3 class="leaderboard__title"><i class="mdi mdi-fire" aria-hidden="true"></i>最有人气榜单</h3>
-        <p class="leaderboard__subtitle">按人气热度排序</p>
-      </header>
-      <div class="leaderboard__table">
-        <div class="leaderboard__row leaderboard__row--head">
-          <span class="leaderboard__cell leaderboard__col-rank">#</span>
-          <span class="leaderboard__cell leaderboard__col-model">模型</span>
-          <span class="leaderboard__cell leaderboard__col-value">人气</span>
-        </div>
-        {{- range $i, $row := first $maxItems $popular }}
-          {{- $pop := $row.popularity | int -}}
-          {{- /* 人气越高 hue 越低（偏红/暖），越低 hue 越高（偏绿/冷）：越大越显眼 */ -}}
-          {{- $hue := sub 140 (div (mul $pop 7) 5) -}}
-          <div class="leaderboard__row">
-            <span class="leaderboard__cell leaderboard__rank">{{ add $i 1 }}</span>
-            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
-              <a href="{{ $row.url }}">{{ $row.name }}</a>
-              {{- with $row.vendor }}<span class="badge">{{ . }}</span>{{ end }}
-            </span>
-            <span class="leaderboard__cell leaderboard__col-value leaderboard__popularity">
-              <span class="leaderboard__bar" aria-hidden="true"><span class="leaderboard__bar-fill" style="width:{{ $pop }}%;background:hsl({{ $hue }},85%,50%)"></span></span>
-              <span class="leaderboard__score">{{ $pop }}</span>
-            </span>
           </div>
         {{- end }}
       </div>

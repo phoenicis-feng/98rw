@@ -1,20 +1,15 @@
 ---
 title: "首页"
 hero:
-  title: "AI 模型"
-  titleAccent: "指南站"
-  subtitle: "模型榜单 · 深度评测 · 使用教程"
+  title: "聚模盒"
+  titleAccent: "大模型的聚能站"
+  subtitle: "一站式 AI 模型评测、对比与实战指南"
   highlights:
     - icon: "mdi:trophy"
-      label: "榜单"
+      label: "榜单实时"
     - icon: "mdi:magnify"
-      label: "评测"
+      label: "多维评测"
     - icon: "mdi:school"
-      label: "教程"
-  primary:
-    label: "查看模型榜单"
-    url: "/rankings/"
-  secondary:
-    label: "深度评测"
-    url: "/reviews/"
+      label: "实战教程"
+
 ---

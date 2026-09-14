@@ -1,0 +1,492 @@
+<!DOCTYPE html><html lang="zh-cn" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+<meta name="baidu-site-verification" content="codeva-obY9Qm8pkC" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>白嫖 Google Gemini 的 Flash 模型 - 聚模盒 | AI模型评测与薅羊毛教程</title>
+
+
+  <link rel="stylesheet" href="/css/fonts.min.4c1fa68d0ca8d13b2c7f7b7f4911c01c66ba9f0d1a4f7b192dd58965ac072907.css" integrity="sha256-TB&#43;mjQyo0Tssf3t/SRHAHGa6nw0aT3sZLdWJZawHKQc=" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/main.6226521278eeb52f1a053e710ba5fccf257282393b907f7a530dd8392d95c80b.css" integrity="sha256-YiZSEnjutS8aBT5xC6X8zyVygjk7kH96Uw3YOS2VyAs=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/custom.min.612b1a715520a9115bea367201b13404c7b6aa7cbaa9e1f06738734376fe3d3d.css" integrity="sha256-YSsacVUgqRFb6jZyAbE0BMe2qny6qeHwZzhzQ3b&#43;PT0=" crossorigin="anonymous">
+
+
+<meta name="description" content="零成本使用 Google Gemini 2.5 Flash 模型完整指南：免费配额、速率限制、API Key 获取、升级路径与 7 大省钱策略。2025 年 12 月配额削减后，开发者最需要的实操手册。">
+<meta name="author" content="聚模盒">
+<meta name="copyright" content="聚模盒">
+<meta name="language" content="zh-cn">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="AI模型, 大语言模型, LLM, 模型评测, 模型对比, 模型选型, AI模型排行, 免费API, 白嫖模型, 免费模型, 模型薅羊毛, OpenAI, GPT, Claude, Gemini, DeepSeek, Llama, Qwen, ERNIE, Hunyuan, OpenRouter, 模型API, API接入, AI教程, 模型教程">
+<link rel="canonical" href="https://www.jumohub.com/haoyang/gemini-tutorial/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="白嫖 Google Gemini 的 Flash 模型 - 聚模盒 | AI模型评测与薅羊毛教程">
+<meta property="og:url" content="https://www.jumohub.com/haoyang/gemini-tutorial/">
+<meta property="og:site_name" content="聚模盒">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:description" content="零成本使用 Google Gemini 2.5 Flash 模型完整指南：免费配额、速率限制、API Key 获取、升级路径与 7 大省钱策略。2025 年 12 月配额削减后，开发者最需要的实操手册。">
+<meta property="og:image" content="https://www.jumohub.com/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="聚模盒">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="白嫖 Google Gemini 的 Flash 模型 - 聚模盒 | AI模型评测与薅羊毛教程">
+<meta name="twitter:description" content="零成本使用 Google Gemini 2.5 Flash 模型完整指南：免费配额、速率限制、API Key 获取、升级路径与 7 大省钱策略。2025 年 12 月配额削减后，开发者最需要的实操手册。">
+<meta name="twitter:image" content="https://www.jumohub.com/images/og-default.png">
+<meta name="twitter:site" content="@junmohuo">
+<meta name="twitter:creator" content="聚模盒">
+
+
+<link rel="icon" href="/favicon.svg" type="image/svg&#43;xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+        <script src="/js/main.8624fbd09e3efbc73b1071a4b46135f09370e07a13094f17792988ac37bee977.js" integrity="sha256-hiT70J4&#43;&#43;8c7EHGktGE18JNw4HoTCU8XeSmIrDe&#43;6Xc=" crossorigin="anonymous" defer></script>
+        <script src="/js/custom.7948bda9daa57a2b83582ce73ca9f05b1c9d68a1e0c69ad367b64ee2286c203e.js" integrity="sha256-eUi9qdqleiuDWCznPKnwWxydaKHgxprTZ7ZO4ihsID4=" crossorigin="anonymous" defer></script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</head>
+<body class="page page--haoyang">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" data-menu-open="false">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="/">
+  <img class="site-header__brand-mark" src="/images/logo.png" alt="聚模盒">
+  <span>聚模盒</span>
+</a>
+
+<button class="site-header__menu-toggle" type="button"
+  aria-expanded="false"
+  aria-controls="site-nav"
+  aria-label="Open menu"
+  data-action="toggle-menu">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+</button>
+
+<nav class="site-header__nav" id="site-nav" aria-label="Main">
+  
+  <ul>
+    <li>
+      <a href="/">首页</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/haoyang/">免费攻略</a>
+    </li>
+    <li>
+      <a href="/recommendations/">应用场景</a>
+    </li>
+    <li>
+      <a href="/openrouter/">openrouter专题</a>
+    </li>
+    <li>
+      <a href="/models/">模型仓库</a>
+    </li>
+    <li>
+      <a href="/leaderboards/">榜单</a>
+    </li>
+  </ul>
+
+</nav>
+
+<div class="site-header__actions">
+  
+
+  
+  <ul class="social-icons" aria-label="Social"><li>
+        <a href="mailto:phillfeng@gmail.com" rel="noopener me" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>
+        </a>
+      </li>
+  </ul>
+
+  
+
+
+  <button class="site-header__theme-toggle" type="button"
+    aria-label="Toggle theme"
+    data-action="toggle-theme">
+    <span data-theme-icon="dark"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m17.75 4.09l-2.53 1.94l.91 3.06l-2.63-1.81l-2.63 1.81l.91-3.06l-2.53-1.94L12.44 4l1.06-3l1.06 3zm3.5 6.91l-1.64 1.25l.59 1.98l-1.7-1.17l-1.7 1.17l.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85c-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14c.4-.4.82-.76 1.27-1.08c.75-.53 1.93.36 1.85 1.19c-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82c-2.81 3.14-2.7 7.96.31 10.98c3.02 3.01 7.84 3.12 10.98.31"/></svg></span>
+    <span data-theme-icon="light"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0-7l2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10l1.76-3.77a7.13 7.13 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10l-4.14.36c.59-.51 1.12-1.14 1.54-1.86c.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44c.82 0 1.63-.17 2.37-.44z"/></svg></span>
+  </button>
+</div>
+
+    </div>
+  </header>
+  <main id="main-content">
+    
+  <div class="container docs-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="/">首页</a>
+        <span aria-hidden="true">/</span>
+        <a href="/haoyang/">免费攻略</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">白嫖 Google Gemini 的 Flash 模型</span>
+    </nav>
+    <header class="docs__header">
+      <h1>白嫖 Google Gemini 的 Flash 模型</h1>
+      <div class="docs__meta"><span>阅读约 3 分钟</span>
+          <time datetime="2026-09-13">发布于 2026-09-13</time>
+      </div>
+    </header>
+    <div class="docs">
+      <article class="docs__content">
+        <p>Google Gemini API 是目前最慷慨的免费 AI API 之一——<strong>无需信用卡、无过期时限</strong>，即可使用 Gemini 2.5 Flash 等前沿模型，并享有 <strong>100 万 token 上下文窗口</strong>。2025 年 12 月，Google 在没有任何预警的情况下大幅削减了所有免费模型的速率限制，导致数千名开发者的工作流一夜瘫痪。本指南整合了截至 2026 年 9 月的最新信息，帮你从零开始&quot;白嫖&quot; Gemini Flash。</p>
+<hr>
+<h2 id="核心速览">核心速览</h2>
+<table>
+	<thead>
+			<tr>
+					<th>模型</th>
+					<th>RPM</th>
+					<th>RPD</th>
+					<th>TPM</th>
+					<th>上下文窗口</th>
+					<th>状态</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Gemini 2.5 Flash</strong></td>
+					<td>10</td>
+					<td>250</td>
+					<td>250,000</td>
+					<td>100 万 tokens</td>
+					<td>稳定版</td>
+			</tr>
+			<tr>
+					<td>Gemini 2.5 Pro</td>
+					<td>5</td>
+					<td>100</td>
+					<td>250,000</td>
+					<td>100 万 tokens</td>
+					<td>稳定版</td>
+			</tr>
+			<tr>
+					<td>Gemini 2.5 Flash-Lite</td>
+					<td>15</td>
+					<td>1,000</td>
+					<td>250,000</td>
+					<td>100 万 tokens</td>
+					<td>稳定版</td>
+			</tr>
+			<tr>
+					<td>Gemini 3 Flash Preview</td>
+					<td>有限</td>
+					<td>有限</td>
+					<td>有限</td>
+					<td>100 万 tokens</td>
+					<td>预览版</td>
+			</tr>
+			<tr>
+					<td>Gemini 3.1 Flash-Lite Preview</td>
+					<td>有限</td>
+					<td>有限</td>
+					<td>有限</td>
+					<td>100 万 tokens</td>
+					<td>预览版</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote><p>⚠️ <strong>实际容量可能低于官方数字</strong>。高峰时段 Gemini 2.5 Flash 在官方 RPD 250 的限制下实际只能完成约 20 次请求。Google 官方也承认&quot;指定的速率限制不作保证，实际容量可能有所变化&quot;。</p>
+</blockquote><hr>
+<h2 id="5-分钟获取免费-api-key">5 分钟获取免费 API Key</h2>
+<ol>
+<li>访问 <a href="https://aistudio.google.com" rel="noopener">Google AI Studio</a>
+ 并登录 Google 账号</li>
+<li>左侧边栏进入 <strong>API Keys</strong> → 点击 <strong>Create API Key</strong></li>
+<li>Google 会自动创建（或让你选择）一个 Google Cloud 项目，Key 立即生效</li>
+</ol>
+<p><strong>快速验证：</strong></p>
+<div class="codeblock">
+  <div class="codeblock__head">
+    <span class="codeblock__lang">bash</span>
+    <button type="button" class="codeblock__copy" data-action="copy-code" aria-label="Copy">Copy</button>
+  </div>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=YOUR_API_KEY&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{&#34;contents&#34;:[{&#34;parts&#34;:[{&#34;text&#34;:&#34;Explain rate limits in one sentence&#34;}]}]}&#39;</span></span></span></code></pre></div>
+</div>
+<p><strong>Key 管理注意点：</strong></p>
+<ul>
+<li>每个 Cloud 项目最多 5 个 API Key，一个结算账号最多 10 个项目</li>
+<li>在同一项目中创建多个 Key <strong>不会叠加配额</strong>（限制在项目级别）</li>
+<li>需要更高总吞吐量时，需使用不同的 Cloud 项目</li>
+</ul>
+<hr>
+<h2 id="2025-年-12-月到底发生了什么">2025 年 12 月到底发生了什么</h2>
+<p>2025 年 12 月 6-7 日那个周末，Google 在<strong>没有任何预先通知</strong>的情况下大幅削减了所有免费配额模型的速率限制：</p>
+<ul>
+<li>有些模型的限制削减了 <strong>50%</strong>，有些削减了多达 <strong>80%</strong></li>
+<li>Reddit r/GeminiAI 相关帖子累计收到超过 <strong>210 条</strong>来自沮丧开发者的评论</li>
+<li>聊天机器人停止响应、批处理流水线停滞、自动化工作流全面瘫痪</li>
+</ul>
+<p>Google AI Studio 首席产品经理解释：慷慨的免费配额&quot;最初只计划在一个周末内提供&quot;，但&quot;无意中持续了几个月&quot;，削减主因是&quot;大规模的欺诈和滥用&quot;。</p>
+<blockquote><p><strong>教训：完全依赖免费配额构建生产系统存在固有风险，无论配额当时看起来多么慷慨。</strong></p>
+</blockquote><hr>
+<h2 id="gemini-vs-openai-vs-claude免费方案对比">Gemini vs OpenAI vs Claude：免费方案对比</h2>
+<table>
+	<thead>
+			<tr>
+					<th>功能</th>
+					<th>Gemini（免费）</th>
+					<th>OpenAI（$5 额度）</th>
+					<th>Claude（$5 额度）</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>需要信用卡</td>
+					<td><strong>否</strong></td>
+					<td>是</td>
+					<td>是</td>
+			</tr>
+			<tr>
+					<td>RPM</td>
+					<td>5-15</td>
+					<td>500（Tier 1）</td>
+					<td>50（Tier 1）</td>
+			</tr>
+			<tr>
+					<td>RPD</td>
+					<td>100-1,000</td>
+					<td>10,000</td>
+					<td>1,000</td>
+			</tr>
+			<tr>
+					<td>TPM</td>
+					<td>250,000</td>
+					<td>200,000</td>
+					<td>40,000</td>
+			</tr>
+			<tr>
+					<td>上下文窗口</td>
+					<td><strong>100 万 tokens</strong></td>
+					<td>128K（GPT-4o）</td>
+					<td>200K（Claude）</td>
+			</tr>
+			<tr>
+					<td>有效期</td>
+					<td><strong>无限制</strong></td>
+					<td>3 个月</td>
+					<td>30 天</td>
+			</tr>
+			<tr>
+					<td>数据隐私</td>
+					<td>⚠️ 可能用于训练</td>
+					<td>不用于训练</td>
+					<td>不用于训练</td>
+			</tr>
+			<tr>
+					<td>搜索/Grounding</td>
+					<td>免费（500 RPD）</td>
+					<td>不可用</td>
+					<td>不可用</td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>关键差异：</strong></p>
+<ul>
+<li><strong>上下文窗口</strong>是 Gemini 最大的优势——100 万 token，单次请求即可处理整个代码库或数小时对话历史</li>
+<li><strong>数据隐私</strong>是最大的权衡——免费配额下数据可能被用于改进 Google 产品</li>
+<li>升级到 Gemini <strong>付费 Tier 1 即可消除数据共享</strong>，且无需预付费用</li>
+</ul>
+<hr>
+<h2 id="升级路径什么时候该付费">升级路径：什么时候该付费</h2>
+<table>
+	<thead>
+			<tr>
+					<th>层级</th>
+					<th>触发条件</th>
+					<th>RPM</th>
+					<th>消费上限</th>
+					<th>适合场景</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>免费配额</td>
+					<td>Google 账号即可</td>
+					<td>5-15</td>
+					<td>无</td>
+					<td>个人项目、原型、研究</td>
+			</tr>
+			<tr>
+					<td><strong>Tier 1</strong></td>
+					<td>绑定结算账号，无最低消费</td>
+					<td>150-300</td>
+					<td>$250/月</td>
+					<td>日调用 &gt;100 次、需数据隐私</td>
+			</tr>
+			<tr>
+					<td>Tier 2</td>
+					<td>累计消费 $100 且首次付款 ≥3 天</td>
+					<td>最高 1,000</td>
+					<td>$2,000/月</td>
+					<td>服务数百用户的产品</td>
+			</tr>
+			<tr>
+					<td>Tier 3</td>
+					<td>累计消费 $1,000 且首次付款 ≥30 天</td>
+					<td>最高</td>
+					<td>$20K-$100K+/月</td>
+					<td>企业级工作负载</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote><p>💡 <strong>关键信息</strong>：Tier 1 本质上是&quot;免费进入&quot;的——只需为实际消耗的 token 付费，没有订阅费或最低消费。月账单可能只有几美元，但能获得 <strong>30 倍速率提升</strong>和完整的数据隐私保护。</p>
+</blockquote><hr>
+<h2 id="最大化免费额度的-7-大策略">最大化免费额度的 7 大策略</h2>
+<h3 id="1-智能模型路由">1. 智能模型路由</h3>
+<p>将简单请求（分类、问答、结构化提取）路由到 <strong>Flash-Lite</strong>（免费配额下 15 RPM、1,000 RPD），将 Pro 留给真正需要高级推理的任务。</p>
+<h3 id="2-善用批量-api">2. 善用批量 API</h3>
+<p>不需要实时响应的工作负载可使用批量 API，<strong>所有模型定价固定 50% 折扣</strong>，免费配额下还有独立的速率限制。</p>
+<h3 id="3-上下文缓存">3. 上下文缓存</h3>
+<p>对重复发送的系统提示词、参考文档启用上下文缓存，计费约为标准输入的 <strong>25%</strong>。一小时内复用 4-5 次以上即可盈亏平衡。</p>
+<h3 id="4-提示词压缩">4. 提示词压缩</h3>
+<p>去除冗余表达、使用简洁格式指令、优化输出 schema。良好优化的提示词可比初始版本短 <strong>40-60%</strong>。</p>
+<h3 id="5-指数退避--抖动">5. 指数退避 + 抖动</h3>
+<p>触限后实现带随机抖动的指数退避：从 1 秒开始，每次翻倍，上限 60 秒，最多重试 5 次。</p>
+<h3 id="6-请求去重与本地缓存">6. 请求去重与本地缓存</h3>
+<p>发送前先检查是否已有相似响应。约 <strong>20-40%</strong> 的请求可直接从缓存响应。</p>
+<h3 id="7-多提供商故障转移">7. 多提供商故障转移</h3>
+<p>Gemini 配额耗尽时自动切换到 OpenAI、Claude 等。可通过统一 API 平台简化多提供商架构。</p>
+<hr>
+<h2 id="升级后的真实成本三个场景">升级后的真实成本：三个场景</h2>
+<table>
+	<thead>
+			<tr>
+					<th>场景</th>
+					<th>Gemini 2.5 Flash</th>
+					<th>GPT-4o</th>
+					<th>节省</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>聊天机器人（200 次/天）</td>
+					<td>$16.20/月</td>
+					<td>$76.50/月</td>
+					<td><strong>79%</strong></td>
+			</tr>
+			<tr>
+					<td>RAG 检索（500 次/天）</td>
+					<td>$82.50/月</td>
+					<td>$525/月</td>
+					<td><strong>84%</strong></td>
+			</tr>
+			<tr>
+					<td>内容处理（2K 文档/天）</td>
+					<td>$348/月*</td>
+					<td>$522/月**</td>
+					<td><strong>33%</strong></td>
+			</tr>
+	</tbody>
+</table>
+<p>* 使用 Flash-Lite + 批量 API 可降至约 $174/月<br>
+** 使用 GPT-4o mini</p>
+<hr>
+<h2 id="常见问题速答">常见问题速答</h2>
+<p><strong>Gemini API 免费额度可以用于生产应用吗？</strong><br>
+技术上可以，但风险很大。2025 年 12 月的配额削减证明 Google 可以在无通知下改变限制。对于服务真实用户的应用，Tier 1 是推荐的最低配置。</p>
+<p><strong>如何解决 429 错误？</strong><br>
+先检查错误响应头确认触的是 RPM、TPM 还是 RPD。RPD 到期则等午夜重置；RPM/TPM 则用带抖动的退避策略，或切换到 Flash-Lite，或升级到 Tier 1。</p>
+<p><strong>Gemini 免费额度与本地 LLM 相比如何？</strong><br>
+本地 LLM 无速率限制和 API成本，但需要大量硬件（强模型至少 12GB 显存）。对大多数需要前沿模型质量但不想投入硬件的开发者来说，Gemini 免费额度是更好的选择。</p>
+<p><strong>Google 还会再次削减免费配额吗？</strong><br>
+尚未宣布，但 2025 年 12 月的先例表明可能随时变化。建议架构设计能优雅应对配额变化，并使用多策略降低对单一提供商的依赖。</p>
+<hr>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://www.aifreeapi.com/zh/posts/gemini-api-free-tier-complete-guide" rel="noopener">Gemini API 免费配额完整指南</a>
+</li>
+<li><a href="https://aistudio.google.com" rel="noopener">Google AI Studio</a>
+</li>
+<li><a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Gemini API 定价</a>
+</li>
+<li><a href="https://github.com/google-gemini/gemini-cli" rel="noopener">Gemini CLI 官方文档</a>
+</li>
+</ul>
+
+        <nav class="docs__pagination" aria-label="pagination">
+            <a class="prev" href="/haoyang/cline-tutorial/">
+              <small>上一篇</small>
+              <span>cline也可以免费使用deepseek v4 Flash</span>
+            </a>
+            <a class="next" href="/haoyang/opencode-tutorial/">
+              <small>下一篇</small>
+              <span>用 opencode 白嫖 deepseek v4 Flash</span>
+            </a>
+        </nav>
+      </article>
+      <aside class="docs__toc" aria-label="本页目录">
+          <h2>本页目录</h2>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#核心速览">核心速览</a></li>
+    <li><a href="#5-分钟获取免费-api-key">5 分钟获取免费 API Key</a></li>
+    <li><a href="#2025-年-12-月到底发生了什么">2025 年 12 月到底发生了什么</a></li>
+    <li><a href="#gemini-vs-openai-vs-claude免费方案对比">Gemini vs OpenAI vs Claude：免费方案对比</a></li>
+    <li><a href="#升级路径什么时候该付费">升级路径：什么时候该付费</a></li>
+    <li><a href="#最大化免费额度的-7-大策略">最大化免费额度的 7 大策略</a>
+      <ul>
+        <li><a href="#1-智能模型路由">1. 智能模型路由</a></li>
+        <li><a href="#2-善用批量-api">2. 善用批量 API</a></li>
+        <li><a href="#3-上下文缓存">3. 上下文缓存</a></li>
+        <li><a href="#4-提示词压缩">4. 提示词压缩</a></li>
+        <li><a href="#5-指数退避--抖动">5. 指数退避 + 抖动</a></li>
+        <li><a href="#6-请求去重与本地缓存">6. 请求去重与本地缓存</a></li>
+        <li><a href="#7-多提供商故障转移">7. 多提供商故障转移</a></li>
+      </ul>
+    </li>
+    <li><a href="#升级后的真实成本三个场景">升级后的真实成本：三个场景</a></li>
+    <li><a href="#常见问题速答">常见问题速答</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ul>
+</nav>
+      </aside>
+    </div>
+  </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+  <div class="site-footer__brand">
+    <a class="site-footer__logo" href="/">
+      <img class="site-header__brand-mark" src="/images/logo.png" alt="聚模盒">
+      <span class="site-footer__brand-title">聚模盒</span>
+    </a>
+  </div>
+</div><div class="site-footer__bottom">
+  <span class="site-footer__copy">
+    &copy; 2026 聚模盒
+  </span>
+  <span class="site-footer__powered">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer">聚模盒</a>
+  </span>
+</div>
+
+    </div>
+  </footer>
+</body>
+</html>

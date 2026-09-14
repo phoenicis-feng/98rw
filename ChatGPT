@@ -1,0 +1,50 @@
+ChatGPT
+Claude
+Gemini
+DeepSeek
+通义千问
+Grok
+Kimi
+智谱 GLM
+豆包
+MiniMax
+文心 ERNIE
+Cohere
+阶跃星辰
+腾讯混元
+Llama
+
+
+
+
+写一个脚本，搜索这些品牌下从2025年以后发布的模型，
+搜索入口：这些品牌的官网和https://huggingface.co/  
+发布时间最好精确到年月日，每个模型都要以模型的名字起一个目录，放在models目录下
+
+
+把搜索到的内容整理到json文件，文件结构要包括品牌，因为后续要在models页面根据品牌搜索
+
+
+
+搜索gemini，cline,opencode,openrouter的薅羊毛的教程
+
+
+
+根据这些教程，按照gemini opencode cline openrouter 分类整理，归纳总结，形成安装，运行，免费使用模型的教程，写入到md文件，要有配
+  图，涉及到代码，表格等要用模版里面的组件，整理好后先看下效果，最好以一篇内容比较详尽的文章做基础，再参考其他文章。不要全文复制，
+  要用自己的语言来写，要求简单易读，逻辑清晰，段落分明，文笔流畅
+
+写个脚本，搜索图文内容（不搜视频），包括gemini,opencode,cline,openrouter的薅羊毛教程，将搜到的文章标题和url整理到json文件
+
+
+
+1 opencode的文章 参考https://developer.cloud.tencent.com/article/2730312 和现有的内容做整合后发布 
+标题： 用opencode白嫖deepseek v4 Flash
+
+
+cline  参考https://docs.cline.bot/getting-started/free-models 翻译润色后发布，标题：cline也可以免费使用deepseek v4 Flash
+
+gemini   参考https://www.aifreeapi.com/zh/posts/gemini-api-free-tier-complete-guide  
+ 标题：白嫖google gemini的flash模型 
+
+ openrouter 标题：用openrouter接入多种免费模型  参考https://surfmind.ai/zh/blog/best-free-openrouter-models 和现有的内容做整合后发布

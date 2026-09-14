@@ -1,0 +1,539 @@
+<!DOCTYPE html><html lang="zh-cn" dir="ltr" data-theme="dark">
+<head>
+	<meta name="generator" content="Hugo 0.166.0">
+  <meta charset="utf-8">
+<meta name="baidu-site-verification" content="codeva-obY9Qm8pkC" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>聚模盒</title>
+
+
+  <link rel="stylesheet" href="/css/fonts.min.4c1fa68d0ca8d13b2c7f7b7f4911c01c66ba9f0d1a4f7b192dd58965ac072907.css" integrity="sha256-TB&#43;mjQyo0Tssf3t/SRHAHGa6nw0aT3sZLdWJZawHKQc=" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/main.6226521278eeb52f1a053e710ba5fccf257282393b907f7a530dd8392d95c80b.css" integrity="sha256-YiZSEnjutS8aBT5xC6X8zyVygjk7kH96Uw3YOS2VyAs=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/custom.min.612b1a715520a9115bea367201b13404c7b6aa7cbaa9e1f06738734376fe3d3d.css" integrity="sha256-YSsacVUgqRFb6jZyAbE0BMe2qny6qeHwZzhzQ3b&#43;PT0=" crossorigin="anonymous">
+
+
+<meta name="description" content="聚模盒 - 聚合最新AI模型的评测、对比与应用指南。涵盖OpenAI、Anthropic、Google DeepMind、Meta、DeepSeek等主流模型，提供选型建议与实战教程。">
+<meta name="author" content="聚模盒">
+<meta name="copyright" content="聚模盒">
+<meta name="language" content="zh-cn">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="AI模型, 大语言模型, LLM, 模型评测, 模型对比, 模型选型, AI模型排行, 免费API, 白嫖模型, 免费模型, 模型薅羊毛, OpenAI, GPT, Claude, Gemini, DeepSeek, Llama, Qwen, ERNIE, Hunyuan, OpenRouter, 模型API, API接入, AI教程, 模型教程">
+<link rel="canonical" href="https://www.jumohub.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="聚模盒">
+<meta property="og:url" content="https://www.jumohub.com/">
+<meta property="og:site_name" content="聚模盒">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:description" content="聚模盒 - 聚合最新AI模型的评测、对比与应用指南。涵盖OpenAI、Anthropic、Google DeepMind、Meta、DeepSeek等主流模型，提供选型建议与实战教程。">
+<meta property="og:image" content="https://www.jumohub.com/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="聚模盒">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="聚模盒">
+<meta name="twitter:description" content="聚模盒 - 聚合最新AI模型的评测、对比与应用指南。涵盖OpenAI、Anthropic、Google DeepMind、Meta、DeepSeek等主流模型，提供选型建议与实战教程。">
+<meta name="twitter:image" content="https://www.jumohub.com/images/og-default.png">
+<meta name="twitter:site" content="@junmohuo">
+<meta name="twitter:creator" content="聚模盒">
+
+
+<link rel="icon" href="/favicon.svg" type="image/svg&#43;xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "聚模盒",
+  "url": "https:\/\/www.jumohub.com\/",
+  "description": "聚模盒 - 聚合最新AI模型的评测、对比与应用指南。涵盖OpenAI、Anthropic、Google DeepMind、Meta、DeepSeek等主流模型，提供选型建议与实战教程。",
+  "inLanguage": "zh-cn"
+}
+</script>
+
+
+        <script src="/js/main.8624fbd09e3efbc73b1071a4b46135f09370e07a13094f17792988ac37bee977.js" integrity="sha256-hiT70J4&#43;&#43;8c7EHGktGE18JNw4HoTCU8XeSmIrDe&#43;6Xc=" crossorigin="anonymous" defer></script>
+        <script src="/js/custom.7948bda9daa57a2b83582ce73ca9f05b1c9d68a1e0c69ad367b64ee2286c203e.js" integrity="sha256-eUi9qdqleiuDWCznPKnwWxydaKHgxprTZ7ZO4ihsID4=" crossorigin="anonymous" defer></script>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</head>
+<body class="page page--home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" data-menu-open="false">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="/">
+  <img class="site-header__brand-mark" src="/images/logo.png" alt="聚模盒">
+  <span>聚模盒</span>
+</a>
+
+<button class="site-header__menu-toggle" type="button"
+  aria-expanded="false"
+  aria-controls="site-nav"
+  aria-label="Open menu"
+  data-action="toggle-menu">
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+</button>
+
+<nav class="site-header__nav" id="site-nav" aria-label="Main">
+  
+  <ul>
+    <li>
+      <a aria-current="page" class="active" href="/">首页</a>
+    </li>
+    <li>
+      <a href="/haoyang/">免费攻略</a>
+    </li>
+    <li>
+      <a href="/recommendations/">应用场景</a>
+    </li>
+    <li>
+      <a href="/openrouter/">openrouter专题</a>
+    </li>
+    <li>
+      <a href="/models/">模型仓库</a>
+    </li>
+    <li>
+      <a href="/leaderboards/">榜单</a>
+    </li>
+  </ul>
+
+</nav>
+
+<div class="site-header__actions">
+  
+
+  
+  <ul class="social-icons" aria-label="Social"><li>
+        <a href="mailto:phillfeng@gmail.com" rel="noopener me" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>
+        </a>
+      </li>
+  </ul>
+
+  
+
+
+  <button class="site-header__theme-toggle" type="button"
+    aria-label="Toggle theme"
+    data-action="toggle-theme">
+    <span data-theme-icon="dark"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m17.75 4.09l-2.53 1.94l.91 3.06l-2.63-1.81l-2.63 1.81l.91-3.06l-2.53-1.94L12.44 4l1.06-3l1.06 3zm3.5 6.91l-1.64 1.25l.59 1.98l-1.7-1.17l-1.7 1.17l.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85c-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14c.4-.4.82-.76 1.27-1.08c.75-.53 1.93.36 1.85 1.19c-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82c-2.81 3.14-2.7 7.96.31 10.98c3.02 3.01 7.84 3.12 10.98.31"/></svg></span>
+    <span data-theme-icon="light"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0-7l2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10l1.76-3.77a7.13 7.13 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10l-4.14.36c.59-.51 1.12-1.14 1.54-1.86c.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44c.82 0 1.63-.17 2.37-.44z"/></svg></span>
+  </button>
+</div>
+
+    </div>
+  </header>
+  <main id="main-content">
+    
+  
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <h1 class="hero__title">
+        聚模盒
+          <span class="hero__title-accent">大模型的聚能站</span>
+      </h1>
+        <p class="hero__subtitle">一站式 AI 模型评测、对比与实战指南</p>
+        <ul class="pills hero__highlights">
+            <li class="pill"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M18 2c-.9 0-2 1-2 2H8c0-1-1.1-2-2-2H2v9c0 1 1 2 2 2h2.2c.4 2 1.7 3.7 4.8 4v2.08C8 19.54 8 22 8 22h8s0-2.46-3-2.92V17c3.1-.3 4.4-2 4.8-4H20c1 0 2-1 2-2V2zM6 11H4V4h2zm14 0h-2V4h2z"/></svg>
+              <span>榜单实时</span>
+            </li>
+            <li class="pill"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5l-1.5 1.5l-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16A6.5 6.5 0 0 1 3 9.5A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14S14 12 14 9.5S12 5 9.5 5"/></svg>
+              <span>多维评测</span>
+            </li>
+            <li class="pill"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L1 9l11 6l9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+              <span>实战教程</span>
+            </li>
+        </ul>
+    </div>
+  </section>
+
+  
+<section class="home-leaderboards" aria-label="模型榜单">
+  <div class="section-head">
+    <h2 class="home-leaderboards__heading">模型榜单</h2>
+    <a class="btn btn--ghost btn--sm" href="/leaderboards/">查看全部榜单</a>
+  </div>
+  <div class="home-leaderboards__grid"><article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-trophy" aria-hidden="true"></i>综合评分榜</h3>
+        <p class="leaderboard__subtitle">按综合评分排序</p>
+      </header>
+      <div class="leaderboard__table">
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">1</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/claude-opus-5/">Claude Opus 5</a><span class="badge">Anthropic</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">84</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">2</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gpt-6-astra/">GPT-6 Astra</a><span class="badge">OpenAI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">82</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">3</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/claude-fable/">Claude Fable 5</a><span class="badge">Anthropic</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">81</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">4</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/kimi-k3/">Kimi K3</a><span class="badge">月之暗面</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">80</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">5</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gpt-5-6-sol/">GPT-5.6 Sol</a><span class="badge">OpenAI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">79</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">6</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/claude-fable-5-1/">Claude Fable 5.1</a><span class="badge">Anthropic</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">77</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">7</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/qwen3-8-max/">Qwen3.8 Max</a><span class="badge">阿里通义</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">77</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">8</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gemini-3-8-flash/">Gemini 3.8 Flash</a><span class="badge">谷歌</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">75</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">9</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gpt-5-6-terra/">GPT-5.6 Terra</a><span class="badge">OpenAI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">74</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">10</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/claude-opus-4-8/">Claude Opus 4.8</a><span class="badge">Anthropic</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">73</span>
+          </div>
+      </div>
+    </article><article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-coins" aria-hidden="true"></i>低价榜</h3>
+        <p class="leaderboard__subtitle">按价格从低到高</p>
+      </header>
+      <div class="leaderboard__table">
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">1</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gpt-oss-120b/">GPT-OSS 120B</a><span class="badge">OpenAI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">57</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">2</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/muse-glimmer-30b/">Muse Glimmer 30B</a><span class="badge">Meta</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">55</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">3</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/qwen3-6-27b/">Qwen3.6-27B</a><span class="badge">阿里通义</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">54</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">4</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gemma-4-26b-a4b/">Gemma 4 26B A4B</a><span class="badge">谷歌</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">54</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">5</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gemma-4-31b/">Gemma 4 31B</a><span class="badge">谷歌</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">51</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">6</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/qwen3-5-27b/">Qwen3.5-27B</a><span class="badge">阿里通义</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">50</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">7</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/qwen3-5-122b-a10b/">Qwen3.5-122B-A10B</a><span class="badge">阿里通义</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">49</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">8</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/nemotron-3-ultra/">Nemotron 3 Ultra</a><span class="badge">英伟达</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">49</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">9</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/nemotron-3-nano-omni-30b-a3b/">Nemotron 3 Nano Omni 30B A3B</a><span class="badge">英伟达</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">46</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">10</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/qwen3-5-35b-a3b/">Qwen3.5-35B-A3B</a><span class="badge">阿里通义</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">44</span>
+          </div>
+      </div>
+    </article><article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-star" aria-hidden="true"></i>免费模型榜</h3>
+        <p class="leaderboard__subtitle">免费可用模型</p>
+      </header>
+      <div class="leaderboard__table">
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">1</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/qwen3-8-27b/">Qwen3.8-27B</a><span class="badge">阿里通义</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">69</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">2</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/hy4-preview/">Hy4 preview</a><span class="badge">腾讯</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">68</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">3</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/ornith-1-5-397b/">Ornith-1.5-397B</a><span class="badge">Ornith AI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">67</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">4</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/dots3-note-preview/">dots3-note Preview</a><span class="badge">Dots Studio</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">66</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">5</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/glm-5-3/">GLM-5.3</a><span class="badge">智谱 AI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">64</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">6</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/glm-5-3-flash/">GLM-5.3-Flash</a><span class="badge">智谱 AI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">64</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">7</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/hy3/">Hy3</a><span class="badge">腾讯</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">64</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">8</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/ornith-1-0-397b/">Ornith-1.0-397B</a><span class="badge">DeepReinforce AI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">64</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">9</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/ling-3-0-flash-vl/">Ling 3.0 Flash VL</a><span class="badge">蚂蚁集团 InclusionAI</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">62</span>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">10</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/btl-4/">BTL-4</a><span class="badge">Bad Theory Labs</span>
+            </span>
+            <span class="leaderboard__cell leaderboard__col-value leaderboard__score">60</span>
+          </div>
+      </div>
+    </article><article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-update" aria-hidden="true"></i>最新榜单</h3>
+        <p class="leaderboard__subtitle">按发布时间排序</p>
+      </header>
+      <div class="leaderboard__table">
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">发布时间</span>
+        </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">1</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/claude-fable-5-1/">Claude Fable 5.1</a><span class="badge">Anthropic</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">2</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/deepseek-v4-1-flash/">DeepSeek V4.1 Flash</a><span class="badge">深度求索</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">3</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gemini-3-8-flash/">Gemini 3.8 Flash</a><span class="badge">谷歌</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">4</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/gpt-6-astra/">GPT-6 Astra</a><span class="badge">OpenAI</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">5</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/ling-3-0-flash-vl/">Ling 3.0 Flash VL</a><span class="badge">蚂蚁集团 InclusionAI</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">6</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/mercury-2-5/">Mercury 2.5</a><span class="badge">Inception</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">7</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/minicpm5-2b/">MiniCPM5-2B</a><span class="badge">清华 OpenBMB</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">8</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/muse-spark-1-3/">Muse Spark 1.3</a><span class="badge">Meta</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">9</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/quasar-438b/">Quasar 438B</a><span class="badge">Multiverse Computing</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-09">2026-09</time>
+          </div>
+          <div class="leaderboard__row">
+            <span class="leaderboard__cell leaderboard__rank">10</span>
+            <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+              <a href="/models/apodex-1-1/">Apodex 1.1</a><span class="badge">Apodex</span>
+            </span>
+            <time class="leaderboard__cell leaderboard__col-value leaderboard__released" datetime="2026-08">2026-08</time>
+          </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+  <section class="section">
+    <div class="container-narrow">
+      
+    </div>
+  </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+  <div class="site-footer__brand">
+    <a class="site-footer__logo" href="/">
+      <img class="site-header__brand-mark" src="/images/logo.png" alt="聚模盒">
+      <span class="site-footer__brand-title">聚模盒</span>
+    </a>
+  </div>
+</div><div class="site-footer__bottom">
+  <span class="site-footer__copy">
+    &copy; 2026 聚模盒
+  </span>
+  <span class="site-footer__powered">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer">聚模盒</a>
+  </span>
+</div>
+
+    </div>
+  </footer>
+</body>
+</html>

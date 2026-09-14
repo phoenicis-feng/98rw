@@ -11,6 +11,7 @@
   {{- $sectionTitle = merge $sectionTitle (dict "openrouter" "OpenRouter模型专题") -}}
   {{- $sectionTitle = merge $sectionTitle (dict "posts" "AI资讯") -}}
   {{- $sectionTitle = merge $sectionTitle (dict "recommendations" "应用场景 | 模型选型") -}}
+  {{- $sectionTitle = merge $sectionTitle (dict "leaderboards" "榜单 | 聚模盒") -}}
   {{- $title = printf "%s - 聚模盒" (index $sectionTitle .Section) -}}
 {{- else -}}
   {{- /* 内容页：文章/模型标题 - 聚模盒 | 栏目描述 */ -}}

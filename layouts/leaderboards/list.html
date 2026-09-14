@@ -1,0 +1,58 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  <div class="container docs-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">榜单</span>
+    </nav>
+    <div class="leaderboards-index">
+      <h2>全部榜单</h2>
+      {{ $lbData := site.Data.jumo_leaderboards }}
+      {{ $leaderboards := index $lbData "leaderboards" }}
+      <div class="leaderboard-2col">
+        {{- $i := 0 }}
+        {{- range $leaderboards }}
+          {{- if or (eq .key "cat_math") (eq .key "cat_instructionFollowing") (eq .key "latency") }}{{/* skip */}}{{else}}
+          {{- if eq (mod $i 2) 0 }}
+          <div class="leaderboard-row">
+          {{- end }}
+          <div class="leaderboard-col">
+            <div class="leaderboard-panel">
+              <h3 class="leaderboard-panel__title"><a href="/leaderboards/{{ .key }}/">{{ .name }}</a></h3>
+              <div class="leaderboard-panel__table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>模型</th>
+                      <th>评分</th>
+                      <th>输入价</th>
+                      <th>输出价</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{- range first 10 .rows }}
+                        <tr>
+                          <td>{{ .rank }}</td>
+                          <td><a href="/models/{{ .slug }}/">{{ .name }}<small> · {{ .creatorZh }}</small></a></td>
+                          <td>{{ .score }}</td>
+                          <td>{{ if .inputPrice }}${{ .inputPrice }}/M{{ else }}—{{ end }}</td>
+                          <td>{{ if .outputPrice }}${{ .outputPrice }}/M{{ else }}—{{ end }}</td>
+                        </tr>
+                    {{- end }}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          {{- if or (eq (mod $i 2) 1) (eq (add $i 1) (sub (len $leaderboards) 3)) }}
+          </div>
+          {{- end }}
+          {{- $i = add $i 1 }}
+          {{- end }}
+        {{- end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

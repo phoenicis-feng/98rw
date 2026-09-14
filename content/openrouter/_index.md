@@ -2,7 +2,7 @@
 title: "openrouter专题"
 description: "OpenRouter 聚合平台模型专题，精选主流大模型对比与推荐。"
 hero:
-  title: "openrouter专题"
+  titleAccent: 模型中转神站
   subtitle: "聚合全球顶尖 AI 模型，一站对比，按需选择。"
 ---
 

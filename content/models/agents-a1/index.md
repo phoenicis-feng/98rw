@@ -1,0 +1,56 @@
+---
+title: "Agents-A1"
+model: true
+description: "书生 InternScience发布的 Agents-A1 大语言模型：综合评分 53，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
+specs:
+  vendor: "书生 InternScience"
+  category: "开源权重"
+  released: "2026-06"
+  scores:
+    overall: {score: 53}
+    verified: {score: 52}
+    agentic: {score: 57, rank: 51}
+    reasoning: {score: 34.1}
+    knowledge: {score: 65.6, rank: 78}
+  best_use: "知识问答"
+  use_cases:
+    - "通用对话"
+similar:
+  - slug: "claude-opus-4-5"
+    name: "Claude Opus 4.5"
+    score: 53
+    price: "$25/M"
+  - slug: "kimi-k2"
+    name: "Kimi K2"
+    score: 53
+    price: "$2.5/M"
+  - slug: "mercury-2-5"
+    name: "Mercury 2.5"
+    score: 53
+    price: "$0.15/M"
+  - slug: "ling-3-0-tiny"
+    name: "Ling 3.0 Tiny"
+    score: 53
+    price: "免费"
+  - slug: "glm-5"
+    name: "GLM-5"
+    score: 54
+    price: "$3.2/M"
+same_creator:
+  - slug: "agents-a1-4b"
+    name: "Agents-A1-4B"
+    score: 0
+    price: "免费"
+  - slug: "agents-a1-f16-gguf"
+    name: "Agents-A1-F16-GGUF"
+    score: 0
+  - slug: "agents-a1-fp8"
+    name: "Agents-A1-FP8"
+    score: 0
+  - slug: "agents-a1-q4-k-m-gguf"
+    name: "Agents-A1-Q4_K_M-GGUF"
+    score: 0
+  - slug: "agents-a1-q8-0-gguf"
+    name: "Agents-A1-Q8_0-GGUF"
+    score: 0
+---

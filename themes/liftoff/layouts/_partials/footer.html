@@ -20,7 +20,6 @@ Footer. Three regions:
         <address class="site-footer__address">{{ . | markdownify }}</address>
       {{- end }}
     {{- end }}
-    {{ partial "social-icons.html" . }}
   </div>
 
   {{- with index site.Menus "footer" }}

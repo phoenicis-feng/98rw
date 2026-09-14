@@ -1,0 +1,167 @@
+{{ define "main" }}
+  <div class="container docs-page models-page">
+    <nav class="docs__breadcrumb" aria-label="breadcrumb">
+      <a href="{{ site.Home.RelPermalink }}">首页</a>
+      {{- range after 1 .Ancestors.Reverse }}
+        <span aria-hidden="true">/</span>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- end }}
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ .Title }}</span>
+    </nav>
+    <header class="docs__header">
+      <h1>{{ .Title }}</h1>
+      {{- $specs := .Params.specs }}
+      {{- with $specs }}
+      <p class="model-subtitle">
+        {{- with .vendor }}{{ . }}{{ end }}
+        {{- with .category }} · {{ . }}{{ end }}
+        {{- with .released }} · {{ . }} 发布{{ end }}
+      </p>
+      {{- with .best_use }}
+      <div class="model-tags">
+        <span class="badge">{{ . }}</span>
+        {{- range $specs.use_cases }}
+          {{- if not (eq . $specs.best_use) }}
+        <span class="badge">{{ . }}</span>
+          {{- end }}
+        {{- end }}
+      </div>
+      {{- end }}
+      {{- end }}
+    </header>
+    {{- with $specs }}
+    <div class="icon-grid model-kpi">
+      {{- with .scores.overall }}
+      <div class="icon-tile model-kpi__item model-kpi__item--score">
+        <span class="icon-tile__mark" aria-hidden="true">{{ partial "icon.html" "mdi:star" }}</span>
+        <span class="model-kpi__value">{{ .score }}<small>分</small></span>
+        <span class="model-kpi__label">综合评分{{ with .rank }} · 第 {{ . }} 位{{ end }}</span>
+      </div>
+      {{- end }}
+      {{- with .price_input }}
+      <div class="icon-tile model-kpi__item">
+        <span class="icon-tile__mark" aria-hidden="true">{{ partial "icon.html" "mdi:cash" }}</span>
+        <span class="model-kpi__value">{{ . }}</span>
+        <span class="model-kpi__label">输入价格</span>
+      </div>
+      {{- end }}
+      {{- with .price_output }}
+      <div class="icon-tile model-kpi__item">
+        <span class="icon-tile__mark" aria-hidden="true">{{ partial "icon.html" "mdi:cash-multiple" }}</span>
+        <span class="model-kpi__value">{{ . }}</span>
+        <span class="model-kpi__label">输出价格</span>
+      </div>
+      {{- end }}
+      {{- with .speed }}
+      <div class="icon-tile model-kpi__item">
+        <span class="icon-tile__mark" aria-hidden="true">{{ partial "icon.html" "mdi:speedometer" }}</span>
+        <span class="model-kpi__value">{{ . }}</span>
+        <span class="model-kpi__label">输出速度</span>
+      </div>
+      {{- end }}
+      {{- with .ttft }}
+      <div class="icon-tile model-kpi__item">
+        <span class="icon-tile__mark" aria-hidden="true">{{ partial "icon.html" "mdi:timer-outline" }}</span>
+        <span class="model-kpi__value">{{ . }}</span>
+        <span class="model-kpi__label">首 Token 延迟</span>
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+    <div class="docs">
+      <article class="docs__content">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "{{ .Title }}",
+          "description": "{{ .Description | default site.Params.description }}",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web",
+          "provider": {
+            "@type": "Organization",
+            "name": "{{ .Params.specs.vendor | default "未知厂商" }}"
+          },
+          "inLanguage": "{{ site.Language.Lang }}"
+        }
+        </script>
+
+        {{ .Content }}
+
+        {{- with $specs }}
+        {{- with .scores }}
+        {{- $s := . }}
+        {{- $labels := dict "agentic" "智能体" "coding" "编程" "reasoning" "推理" "multimodal" "多模态" "knowledge" "知识" "multilingual" "多语言" "instructionFollowing" "指令遵循" "math" "数学" }}
+        <section class="score-section">
+          <div class="score-blocks">
+            {{- with .overall }}
+            <div class="score-block score-block--overall">
+              <span class="score-block__label">综合评分</span>
+              <span class="score-block__value">{{ .score }}<small>分</small></span>
+              {{- with .rank }}<span class="score-block__meta">总排名第 {{ . }} 位</span>{{ end }}
+            </div>
+            {{- end }}
+            {{- with .verified }}
+            <div class="score-block">
+              <span class="score-block__label">综合（已验证）</span>
+              <span class="score-block__value">{{ .score }}<small>分</small></span>
+            </div>
+            {{- end }}
+            {{- range $k := slice "agentic" "coding" "reasoning" "multimodal" "knowledge" "multilingual" "instructionFollowing" "math" }}
+              {{- with index $s $k }}
+              <div class="score-block">
+                <span class="score-block__label">{{ index $labels $k }}</span>
+                <span class="score-block__value">{{ .score }}<small>分</small></span>
+                {{- with .rank }}<span class="score-block__meta">分类第 {{ . }} 位</span>{{ end }}
+              </div>
+              {{- end }}
+            {{- end }}
+          </div>
+        </section>
+        {{- end }}
+        {{- end }}
+
+        {{- with .Params.similar }}
+        <section class="related-section">
+          <div class="related-head">
+            <span class="badge badge--accent">近似模型</span>
+            <span class="related-head__hint">价格与得分接近的模型</span>
+          </div>
+          <div class="related-list">
+            {{- range . }}
+            <a class="related-item" href="{{ relLangURL (printf "/models/%s/" .slug) }}">
+              <span class="related-item__name">{{ .name }}</span>
+              <span class="related-item__meta">
+                {{- with .score }}评分 {{ . }}{{ end }}
+                {{- with .price }} · ${{ . }}{{ end }}
+              </span>
+            </a>
+            {{- end }}
+          </div>
+        </section>
+        {{- end }}
+
+        {{- with .Params.same_creator }}
+        <section class="related-section">
+          <div class="related-head">
+            <span class="badge badge--secondary">同厂模型</span>
+            <span class="related-head__hint">同厂商的其他模型</span>
+          </div>
+          <div class="related-list">
+            {{- range . }}
+            <a class="related-item" href="{{ relLangURL (printf "/models/%s/" .slug) }}">
+              <span class="related-item__name">{{ .name }}</span>
+              <span class="related-item__meta">
+                {{- with .score }}评分 {{ . }}{{ end }}
+                {{- with .price }} · ${{ . }}{{ end }}
+              </span>
+            </a>
+            {{- end }}
+          </div>
+        </section>
+        {{- end }}
+      </article>
+    </div>
+  </div>
+{{ end }}

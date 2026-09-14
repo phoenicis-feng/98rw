@@ -1,8 +1,8 @@
 ---
-title: "薅羊毛"
+title: "免费攻略"
 hero:
-  title: "薅羊毛"
-  subtitle: "免费额度、优惠活动、薅羊毛攻略，让每一分钱都花在刀刃上。"
+  titleAccent: "让每一分钱都花在刀刃上。"
+  subtitle: "免费额度与白嫖方法，覆盖 Gemini、OpenCode、Cline、OpenRouter 四大平台。"
 ---
 
 本栏目整理热门 AI 工具的免费额度与白嫖方法，覆盖 Gemini、OpenCode、Cline、OpenRouter 四大平台。
@@ -32,7 +32,7 @@ hero:
 ## 教程列表
 
 {{< feature-grid >}}
-  {{< feature-card title="Gemini 薅羊毛教程" icon="mdi:robot-outline" url="/haoyang/gemini-tutorial/" >}}
+  {{< feature-card title="Gemini 免费攻略教程" icon="mdi:robot-outline" url="/haoyang/gemini-tutorial/" >}}
   AI Studio 网页版 + Gemini CLI，免费额度每日 1000 次。
   {{< /feature-card >}}
   {{< feature-card title="OpenCode + DeepSeek V4" icon="mdi:terminal" url="/haoyang/opencode-tutorial/" >}}
@@ -41,7 +41,7 @@ hero:
   {{< feature-card title="Cline + DeepSeek V4" icon="mdi:vscode" url="/haoyang/cline-tutorial/" >}}
   基于 VSCode 的 AI 插件，配合 OpenRouter 无限制使用。
   {{< /feature-card >}}
-  {{< feature-card title="OpenRouter 薅羊毛教程" icon="mdi:server-network" url="/haoyang/openrouter-tutorial/" >}}
+  {{< feature-card title="OpenRouter 免费攻略教程" icon="mdi:server-network" url="/haoyang/openrouter-tutorial/" >}}
   统一 LLM API 平台，400+ 免费模型任君挑选。
   {{< /feature-card >}}
 {{< /feature-grid >}}
