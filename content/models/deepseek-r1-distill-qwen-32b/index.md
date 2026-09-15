@@ -1,6 +1,7 @@
 ---
 title: "DeepSeek R1 Distill Qwen 32B"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "深度求索发布的 DeepSeek R1 Distill Qwen 32B 大语言模型：综合评分 38，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"

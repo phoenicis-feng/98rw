@@ -1,6 +1,7 @@
 ---
 title: "Ultravox v0.6 Llama 3.3 70B"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "Fixie AI发布的 Ultravox v0.6 Llama 3.3 70B 大语言模型：综合评分 0，开源权重，上下文 N/A。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Fixie AI"

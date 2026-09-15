@@ -1,6 +1,7 @@
 ---
 title: "MiniMax Speech-02 HD"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "MiniMax发布的 MiniMax Speech-02 HD 大语言模型：综合评分 0，闭源专有，上下文 N/A。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "MiniMax"

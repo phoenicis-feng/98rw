@@ -1,6 +1,7 @@
 ---
 title: "Granite-4.0-H-350M"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "IBM发布的 Granite-4.0-H-350M 大语言模型：综合评分 36，开源权重，上下文 32K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "IBM"

@@ -1,6 +1,7 @@
 ---
 title: "Holo2-235B-A22B"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "H Company发布的 Holo2-235B-A22B 大语言模型：综合评分 0，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "H Company"

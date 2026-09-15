@@ -1,6 +1,7 @@
 ---
 title: "GLM-4.5-Air"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "智谱 AI发布的 GLM-4.5-Air 大语言模型：综合评分 50，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "智谱 AI"

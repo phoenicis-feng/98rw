@@ -3,6 +3,7 @@ title: "综合评分榜"
 model: false
 count: 210
 description: "基于多基准加权综合评分的总排名（数据源 benchlm.ai）"
+date: "2026-09-15T18:55:26+08:00"
 ---
 
 <!-- 榜单: 综合评分榜 (210个模型) -->

@@ -1,6 +1,7 @@
 ---
 title: "MiniMax M3"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "MiniMax发布的 MiniMax M3 大语言模型：综合评分 61，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "MiniMax"

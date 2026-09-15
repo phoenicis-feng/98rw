@@ -1,6 +1,7 @@
 ---
 title: "GLM-4.6"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "智谱 AI发布的 GLM-4.6 大语言模型：综合评分 45，开源权重，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "智谱 AI"

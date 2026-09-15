@@ -1,6 +1,7 @@
 ---
 title: "Gemma 4 12B"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "谷歌发布的 Gemma 4 12B 大语言模型：综合评分 47，开源权重，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"

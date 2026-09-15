@@ -1,6 +1,7 @@
 ---
 title: "Nemotron 3.5 Lightning 30B A3B NVFP4"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "英伟达发布的 Nemotron 3.5 Lightning 30B A3B NVFP4 大语言模型：综合评分 37，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "英伟达"

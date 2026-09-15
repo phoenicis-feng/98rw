@@ -3,6 +3,7 @@ title: "响应延迟榜"
 model: false
 count: 128
 description: "首 Token 延迟（秒，越小越快），来源 Artificial Analysis"
+date: "2026-09-15T18:55:26+08:00"
 ---
 
 <!-- 榜单: 响应延迟榜 (128个模型) -->

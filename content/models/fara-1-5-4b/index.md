@@ -1,6 +1,7 @@
 ---
 title: "Fara1.5-4B"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "微软发布的 Fara1.5-4B 大语言模型：综合评分 0，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "微软"

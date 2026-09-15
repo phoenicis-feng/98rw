@@ -1,6 +1,7 @@
 ---
 title: "DeepSeek V3.2"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "深度求索发布的 DeepSeek V3.2 大语言模型：综合评分 56，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"

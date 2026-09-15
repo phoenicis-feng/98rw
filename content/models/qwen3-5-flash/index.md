@@ -1,6 +1,7 @@
 ---
 title: "Qwen3.5 Flash"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "阿里通义发布的 Qwen3.5 Flash 大语言模型：综合评分 42，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"

@@ -48,12 +48,14 @@ hugo
 - /compare/ 支持 `/compare/?model=<slug>` 预选模型 A
 - 已废弃脚本：`fetch_hf_top_vendors.py`、`regroup_series.py`、`build_vendor_series.py`（不要再用）
 
-## IndexNow 增量提交
-- `python3 scripts/index-submit/indexnow_submit.py`：默认增量（sitemap lastmod 与 `.pipeline_tmp/indexnow_state.json` 基线对比，只提交有变化的 URL）
-- `--full` 全量（仅新站首次/整站改版）；`--dry-run` 预览；传路径（如 `/leaderboards/domestic/`）手动指定提交
-- 验证 key 统一用 `4380e811...`，key 文件在 `static/4380e811ce2749c2a1b705f74803ab60.txt`（此前 content/、static/ 各有一份重复已清理）
+## 搜索引擎推送（scripts/index-submit/）
+- **indexnow_submit.py**（Bing/搜索引擎联盟）：增量提交（sitemap lastmod 与 `.pipeline_tmp/indexnow_state.json` 基线对比，只提交有变化的 URL）；`--full` 全量；`--dry-run` 预览；传路径手动指定
+- **baidu_submit.py**（百度）：每日配额小（约 10 条），策略 = 变更页优先 + 轮转覆盖全站（核心页先于模型页），严守 `BAIDU_DAILY_CAP`（默认 10）；配额用尽（HTTP 400 over quota）时如实报告且状态无损；`--reset` 重置轮转
+- **google_submit.py**：Google 无可用推送 API（Indexing API 仅限职位/直播页、sitemap ping 已废弃、不支持 IndexNow），此脚本只做变化检查并输出「值得人工去 GSC 请求编入索引」的核心页清单
+- **sitemap lastmod 链路**：`build_benchlm_data.py` 生成内容稳定时间戳（数据未变则 generatedAt 不变，防增量误判）→ 两个生成器写入 md front matter `date` → Hugo 自动进 `<lastmod>`；手写页面靠 front matter 自带 date
 - **站点 CF 防护会拦默认 Python-urllib UA（403）**，脚本所有请求必须带 User-Agent 头
-- 提交成功才更新基线状态文件；状态文件已 gitignore，换机器首次运行会自动重建基线
+- 验证 key 统一用 `4380e811...`，key 文件在 `static/4380e811ce2749c2a1b705f74803ab60.txt`
+- 推送成功才更新基线状态文件；状态文件在 `.pipeline_tmp/`（gitignore），换机器首次运行自动重建基线
 
 ## 其他约定
 - remote URL 含 GitHub token 明文，建议改用 SSH/credential manager

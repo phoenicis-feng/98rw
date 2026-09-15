@@ -39,6 +39,19 @@ ECHARTS_BOARDS = {
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FILE = os.path.join(BASE_DIR, "data", "jumo_leaderboards.json")
+DATA_TS = ""
+
+
+def data_ts():
+    """数据构建时间戳，写入 front matter date → Hugo sitemap <lastmod>。"""
+    global DATA_TS
+    if not DATA_TS:
+        try:
+            with open(DATA_FILE, encoding="utf-8") as fh:
+                DATA_TS = (json.load(fh).get("metadata") or {}).get("generatedAt", "")
+        except (OSError, ValueError):
+            DATA_TS = ""
+    return DATA_TS
 LEADERBOARDS_DIR = os.path.join(BASE_DIR, "content", "leaderboards")
 
 
@@ -159,12 +172,14 @@ def render_page(board, max_items=200):
     table = render_table(rows, max_items)
 
     chart = render_chart(board) if key in ECHARTS_BOARDS else ""
+    ts = data_ts()
 
     frontmatter = f"""---
 title: "{name}"
 model: false
 count: {total}
 description: "{description}"
+date: "{ts}"
 ---
 
 <!-- 榜单: {name} ({total}个模型) -->

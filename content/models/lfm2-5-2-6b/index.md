@@ -1,6 +1,7 @@
 ---
 title: "LFM2.5-2.6B"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "Liquid AI发布的 LFM2.5-2.6B 大语言模型：综合评分 39，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Liquid AI"

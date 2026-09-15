@@ -1,6 +1,7 @@
 ---
 title: "Gemini 1.0 Pro"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "谷歌发布的 Gemini 1.0 Pro 大语言模型：综合评分 0，闭源专有，上下文 32K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "谷歌"

@@ -1,6 +1,7 @@
 ---
 title: "GPT-5.3-Codex-Spark"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "OpenAI发布的 GPT-5.3-Codex-Spark 大语言模型：综合评分 0，闭源专有，上下文 256K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"

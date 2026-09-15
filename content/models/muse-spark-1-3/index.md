@@ -1,6 +1,7 @@
 ---
 title: "Muse Spark 1.3"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "Meta发布的 Muse Spark 1.3 大语言模型：综合评分 69，闭源专有，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Meta"

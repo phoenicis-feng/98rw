@@ -681,9 +681,35 @@ def main():
 
     now_cn = datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds")
 
+    # 内容稳定时间戳：数据与上次完全一致时沿用旧 generatedAt，
+    # 避免「数据未变但时间戳天天刷新」导致 sitemap lastmod 失真、增量推送误判全站有更新
+    def _canon(obj):
+        return json.dumps(obj, sort_keys=True, ensure_ascii=False)
+
+    def _prev_doc(fname):
+        try:
+            with open(os.path.join(args.data_dir, fname), encoding="utf-8") as fh:
+                return json.load(fh)
+        except (OSError, ValueError):
+            return None
+
+    def stable_ts(payload, fname, payload_key):
+        old = _prev_doc(fname)
+        if isinstance(old, dict):
+            old_payload = old.get(payload_key)
+            if old_payload is not None and _canon(old_payload) == _canon(payload):
+                prev = (old.get("metadata") or {}).get("generatedAt")
+                if prev:
+                    return prev
+        return now_cn
+
+    ts_models = stable_ts(master, "jumo_models.json", "models")
+    ts_boards = stable_ts(boards, "jumo_leaderboards.json", "leaderboards")
+    ts_bench = stable_ts(bench_meta, "jumo_benchmarks.json", "benchmarks")
+
     master_doc = {
         "metadata": {
-            "generatedAt": now_cn,
+            "generatedAt": ts_models,
             "source": "benchlm.ai machine-readable data",
             "sourceUpdatedAt": raw["models"].get("sourceLastUpdated"),
             "totalModels": len(master),
@@ -698,7 +724,7 @@ def main():
 
     boards_doc = {
         "metadata": {
-            "generatedAt": now_cn,
+            "generatedAt": ts_boards,
             "source": "benchlm.ai machine-readable data",
             "sourceUpdatedAt": raw["leaderboard"].get("sourceLastUpdated"),
             "boardCount": len(boards),
@@ -708,7 +734,7 @@ def main():
 
     bench_doc = {
         "metadata": {
-            "generatedAt": now_cn,
+            "generatedAt": ts_bench,
             "source": "benchlm.ai machine-readable data",
             "totalBenchmarks": len(bench_meta),
         },

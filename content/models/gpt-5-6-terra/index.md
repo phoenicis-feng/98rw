@@ -1,6 +1,7 @@
 ---
 title: "GPT-5.6 Terra"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "OpenAI发布的 GPT-5.6 Terra 大语言模型：综合评分 74，闭源专有，上下文 1.05M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "OpenAI"

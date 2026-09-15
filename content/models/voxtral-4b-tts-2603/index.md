@@ -1,6 +1,7 @@
 ---
 title: "Voxtral 4B TTS 2603"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "Mistral AI发布的 Voxtral 4B TTS 2603 大语言模型：综合评分 0，开源权重，上下文 N/A。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Mistral AI"

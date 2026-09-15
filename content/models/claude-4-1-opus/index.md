@@ -1,6 +1,7 @@
 ---
 title: "Claude 4.1 Opus"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "Anthropic发布的 Claude 4.1 Opus 大语言模型：综合评分 56，闭源专有，上下文 200K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Anthropic"

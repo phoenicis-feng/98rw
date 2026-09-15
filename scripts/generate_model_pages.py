@@ -19,6 +19,23 @@ import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FILE = os.path.join(BASE_DIR, "data", "jumo_models.json")
+DATA_TS = ""
+
+
+def data_ts():
+    """数据构建时间戳（jumo_models.json 的 metadata.generatedAt）。
+
+    写入 front matter 的 date 字段后，Hugo 会自动带进 sitemap <lastmod>，
+    供搜索引擎与增量推送脚本判断页面新旧。
+    """
+    global DATA_TS
+    if not DATA_TS:
+        try:
+            with open(DATA_FILE, encoding="utf-8") as fh:
+                DATA_TS = (json.load(fh).get("metadata") or {}).get("generatedAt", "")
+        except (OSError, ValueError):
+            DATA_TS = ""
+    return DATA_TS
 MODELS_DIR = os.path.join(BASE_DIR, "content", "models")
 
 CATEGORY_ZH = {
@@ -358,6 +375,9 @@ def render_page(m):
     ap("---")
     ap(f'title: "{esc(name)}"')
     ap("model: true")
+    ts = data_ts()
+    if ts:
+        ap(f"date: {ts}")
     score_txt = f"{score:g}" if isinstance(score, (int, float)) else ""
     ap(
         f'description: "{esc(creator_zh)}发布的 {esc(name)} 大语言模型：'

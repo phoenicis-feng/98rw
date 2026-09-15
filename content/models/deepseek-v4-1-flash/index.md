@@ -1,6 +1,7 @@
 ---
 title: "DeepSeek V4.1 Flash"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "深度求索发布的 DeepSeek V4.1 Flash 大语言模型：综合评分 66，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "深度求索"

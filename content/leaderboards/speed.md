@@ -3,6 +3,7 @@ title: "速度榜"
 model: false
 count: 128
 description: "模型输出吞吐量（tokens/秒），来源 Artificial Analysis"
+date: "2026-09-15T18:55:26+08:00"
 ---
 
 <!-- 榜单: 速度榜 (128个模型) -->

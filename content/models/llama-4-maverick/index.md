@@ -1,6 +1,7 @@
 ---
 title: "Llama 4 Maverick"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "Meta发布的 Llama 4 Maverick 大语言模型：综合评分 51，开源权重，上下文 1M。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "Meta"

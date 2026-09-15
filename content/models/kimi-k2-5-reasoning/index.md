@@ -1,6 +1,7 @@
 ---
 title: "Kimi K2.5 (Reasoning)"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "月之暗面发布的 Kimi K2.5 (Reasoning) 大语言模型：综合评分 54，闭源专有，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "月之暗面"

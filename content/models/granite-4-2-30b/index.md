@@ -1,6 +1,7 @@
 ---
 title: "Granite 4.2 30B"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "IBM发布的 Granite 4.2 30B 大语言模型：综合评分 50，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "IBM"

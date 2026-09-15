@@ -1,6 +1,7 @@
 ---
 title: "Agents-A1-Q8_0-GGUF"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "书生 InternScience发布的 Agents-A1-Q8_0-GGUF 大语言模型：综合评分 0，开源权重，上下文 262K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "书生 InternScience"

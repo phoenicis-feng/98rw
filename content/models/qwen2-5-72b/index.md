@@ -1,6 +1,7 @@
 ---
 title: "Qwen2.5-72B"
 model: true
+date: 2026-09-15T18:55:26+08:00
 description: "阿里通义发布的 Qwen2.5-72B 大语言模型：综合评分 0，开源权重，上下文 128K。含价格、速度、延迟与评分数据。"
 specs:
   vendor: "阿里通义"
