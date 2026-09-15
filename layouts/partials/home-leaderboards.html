@@ -68,6 +68,63 @@
       </div>
     </article>
 
+    {{- /* 国产模型榜 */ -}}
+    <article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-flag-variant" aria-hidden="true"></i>国产模型榜</h3>
+        <p class="leaderboard__subtitle">国产厂商按综合评分排序</p>
+      </header>
+      <div class="leaderboard__table">
+        {{- $domesticContent := readFile (printf "%s/leaderboards/domestic.md" $contentDir) -}}
+        {{- $tLines := split $domesticContent "\n" -}}
+        {{- $count := 0 -}}
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
+        {{- range $ti, $tline := $tLines -}}
+          {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}
+            {{- $cells := split $tline "|" -}}
+            {{- $rank := trim (index $cells 1) " " -}}
+            {{- $modelCell := trim (index $cells 2) " " -}}
+            {{- $vendorCell := trim (index $cells 3) " " -}}
+            {{- $scoreCell := trim (index $cells 4) " " -}}
+            {{- $modelName := "" -}}
+            {{- $modelSlug := "" -}}
+            {{- if hasPrefix $modelCell "[" -}}
+              {{- $cleanModel := replace $modelCell "[" "" -}}
+              {{- $cleanModel = replace $cleanModel "]" "" -}}
+              {{- $cleanModel = trim $cleanModel " " -}}
+              {{- $urlMatch := findRE `\(([^)]+)\)` $cleanModel -}}
+              {{- if $urlMatch -}}
+                {{- $matched := index $urlMatch 0 -}}
+                {{- $slugPath := replace $matched ")" "" -}}
+                {{- $slugPath = replace $slugPath "(" "" -}}
+                {{- $slugPath = trim $slugPath " " -}}
+                {{- $urlParts := split $slugPath "/" -}}
+                {{- if gt (len $urlParts) 2 -}}{{- $modelSlug = $slugPath -}}{{- end -}}
+                {{- $urlPattern := printf "(%s)" $slugPath -}}
+                {{- $modelName = replace $cleanModel $urlPattern "" -}}
+                {{- $modelName = trim $modelName " " -}}
+              {{- end -}}
+            {{- else -}}
+              {{- $modelName = $modelCell -}}
+            {{- end -}}
+            <div class="leaderboard__row">
+              <span class="leaderboard__cell leaderboard__rank">{{ $rank }}</span>
+              <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+                {{- if $modelSlug -}}<a href="{{ $modelSlug }}">{{ $modelName }}</a>{{- else -}}{{ $modelName }}{{- end -}}
+                {{- with $vendorCell }}<span class="badge">{{ . }}</span>{{ end }}
+              </span>
+              <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ $scoreCell }}</span>
+            </div>
+            {{- $count = add $count 1 -}}
+          {{- end -}}
+        {{- end }}
+      </div>
+    </article>
+
     {{- /* 低价榜 */ -}}
     <article class="leaderboard">
       <header class="leaderboard__head">
@@ -82,6 +139,63 @@
           <span class="leaderboard__cell leaderboard__col-rank">#</span>
           <span class="leaderboard__cell leaderboard__col-model">模型</span>
           <span class="leaderboard__cell leaderboard__col-value">评分</span>
+        </div>
+        {{- range $ti, $tline := $tLines -}}
+          {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}
+            {{- $cells := split $tline "|" -}}
+            {{- $rank := trim (index $cells 1) " " -}}
+            {{- $modelCell := trim (index $cells 2) " " -}}
+            {{- $vendorCell := trim (index $cells 3) " " -}}
+            {{- $scoreCell := trim (index $cells 4) " " -}}
+            {{- $modelName := "" -}}
+            {{- $modelSlug := "" -}}
+            {{- if hasPrefix $modelCell "[" -}}
+              {{- $cleanModel := replace $modelCell "[" "" -}}
+              {{- $cleanModel = replace $cleanModel "]" "" -}}
+              {{- $cleanModel = trim $cleanModel " " -}}
+              {{- $urlMatch := findRE `\(([^)]+)\)` $cleanModel -}}
+              {{- if $urlMatch -}}
+                {{- $matched := index $urlMatch 0 -}}
+                {{- $slugPath := replace $matched ")" "" -}}
+                {{- $slugPath = replace $slugPath "(" "" -}}
+                {{- $slugPath = trim $slugPath " " -}}
+                {{- $urlParts := split $slugPath "/" -}}
+                {{- if gt (len $urlParts) 2 -}}{{- $modelSlug = $slugPath -}}{{- end -}}
+                {{- $urlPattern := printf "(%s)" $slugPath -}}
+                {{- $modelName = replace $cleanModel $urlPattern "" -}}
+                {{- $modelName = trim $modelName " " -}}
+              {{- end -}}
+            {{- else -}}
+              {{- $modelName = $modelCell -}}
+            {{- end -}}
+            <div class="leaderboard__row">
+              <span class="leaderboard__cell leaderboard__rank">{{ $rank }}</span>
+              <span class="leaderboard__cell leaderboard__col-model leaderboard__name">
+                {{- if $modelSlug -}}<a href="{{ $modelSlug }}">{{ $modelName }}</a>{{- else -}}{{ $modelName }}{{- end -}}
+                {{- with $vendorCell }}<span class="badge">{{ . }}</span>{{ end }}
+              </span>
+              <span class="leaderboard__cell leaderboard__col-value leaderboard__score">{{ $scoreCell }}</span>
+            </div>
+            {{- $count = add $count 1 -}}
+          {{- end -}}
+        {{- end }}
+      </div>
+    </article>
+
+    {{- /* 国产性价比榜 */ -}}
+    <article class="leaderboard">
+      <header class="leaderboard__head">
+        <h3 class="leaderboard__title"><i class="mdi mdi-cash-multiple" aria-hidden="true"></i>国产性价比榜</h3>
+        <p class="leaderboard__subtitle">价格 70% + 评分 30%，越高越划算</p>
+      </header>
+      <div class="leaderboard__table">
+        {{- $domValueContent := readFile (printf "%s/leaderboards/domestic_value.md" $contentDir) -}}
+        {{- $tLines := split $domValueContent "\n" -}}
+        {{- $count := 0 -}}
+        <div class="leaderboard__row leaderboard__row--head">
+          <span class="leaderboard__cell leaderboard__col-rank">#</span>
+          <span class="leaderboard__cell leaderboard__col-model">模型</span>
+          <span class="leaderboard__cell leaderboard__col-value">性价比</span>
         </div>
         {{- range $ti, $tline := $tLines -}}
           {{- if and (hasPrefix $tline "| ") (not (hasPrefix $tline "|-")) (not (hasPrefix $tline "| 排名")) (lt $count $maxItems) -}}

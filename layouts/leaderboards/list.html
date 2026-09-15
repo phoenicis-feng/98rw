@@ -14,7 +14,7 @@
       {{- /* 直接筛选，排除以 _ 开头的文件 (如 _index.md) */ -}}
       {{- $lbPages := where $allPages "File.BaseFileName" "!=" "_" -}}
       {{- /* 固定展示顺序：未列入的榜单（知识榜、低价榜）按标题排在其后 */ -}}
-      {{- $lbOrder := slice "overall" "speed" "cat_reasoning" "cat_coding" "value" "cat_agentic" "free" "cat_multilingual" "cat_multimodalGrounded" "open_source" -}}
+      {{- $lbOrder := slice "domestic" "overall" "domestic_value" "speed" "cat_reasoning" "cat_coding" "value" "cat_agentic" "free" "cat_multilingual" "cat_multimodalGrounded" "open_source" -}}
       {{- $sortedLb := slice -}}
       {{- range $lbOrder -}}
         {{- range where $lbPages "File.BaseFileName" . -}}

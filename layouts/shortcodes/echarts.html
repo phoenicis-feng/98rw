@@ -1,0 +1,39 @@
+{{ $id := .Get "id" | default (print "echarts-" (now.UnixNano)) }}
+{{ $height := .Get "height" | default "400px" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $enableClick := .Get "enableClick" | default "false" }}
+
+<figure class="echarts-figure">
+  <div id="{{ $id }}" class="echarts-figure__canvas" style="width: {{ $width }}; height: {{ $height }};"></div>
+</figure>
+
+<!-- 引入 ECharts CDN（如果页面中已经引入过一次，可自行调整，保证全站加载一次即可） -->
+{{ if not ($.Page.Scratch.Get "echarts_loaded") }}
+  {{ $.Page.Scratch.Set "echarts_loaded" true }}
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+{{ end }}
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", (event) => {
+    var chartDom = document.getElementById('{{ $id }}');
+    var myChart = echarts.init(chartDom);
+    var option = {
+      {{ .Inner | safeJS }}
+    };
+    option && myChart.setOption(option);
+
+    {{ if eq $enableClick "true" }}
+    myChart.on('click', function (params) {
+      var slug = params.name;
+      if (slug) {
+        window.location.href = '/models/' + slug.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '/';
+      }
+    });
+    {{ end }}
+
+    // 适配响应式窗口大小调整
+    window.addEventListener('resize', function() {
+      myChart.resize();
+    });
+  });
+</script>
