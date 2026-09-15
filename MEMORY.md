@@ -44,9 +44,16 @@ hugo
 - /models/<slug>/ 详情页 → md 本身（第 2 步）
 
 ## 注意事项
-- `data/`、`scripts/`、`*.json` 不提交 git；页面只依赖 content/ 的 md → 改数据必须跑完 1→2→3→4，顺序不能颠倒，第 2/3 步 `--force` 不能省
+- `data/`、`*.json` 不提交 git；`scripts/` 下的管线脚本已用 `git add -f` 强制入库（.gitignore 的 `scripts/` 规则仍在，新增脚本需同样 `-f`）；页面只依赖 content/ 的 md → 改数据必须跑完 1→2→3→4，顺序不能颠倒，第 2/3 步 `--force` 不能省
 - /compare/ 支持 `/compare/?model=<slug>` 预选模型 A
 - 已废弃脚本：`fetch_hf_top_vendors.py`、`regroup_series.py`、`build_vendor_series.py`（不要再用）
+
+## IndexNow 增量提交
+- `python3 scripts/index-submit/indexnow_submit.py`：默认增量（sitemap lastmod 与 `.pipeline_tmp/indexnow_state.json` 基线对比，只提交有变化的 URL）
+- `--full` 全量（仅新站首次/整站改版）；`--dry-run` 预览；传路径（如 `/leaderboards/domestic/`）手动指定提交
+- 验证 key 统一用 `4380e811...`，key 文件在 `static/4380e811ce2749c2a1b705f74803ab60.txt`（此前 content/、static/ 各有一份重复已清理）
+- **站点 CF 防护会拦默认 Python-urllib UA（403）**，脚本所有请求必须带 User-Agent 头
+- 提交成功才更新基线状态文件；状态文件已 gitignore，换机器首次运行会自动重建基线
 
 ## 其他约定
 - remote URL 含 GitHub token 明文，建议改用 SSH/credential manager
