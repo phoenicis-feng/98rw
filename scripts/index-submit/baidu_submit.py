@@ -41,8 +41,12 @@ def fetch_sitemap():
         root = ET.fromstring(resp.read())
     ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     urls = {}
-    for loc in root.findall(".//sm:loc", ns):
-        mod = loc.find("sm:lastmod", ns)
+    # 注意：<lastmod> 是 <loc> 的兄弟节点（同在 <url> 内），不能在 <loc> 里找
+    for url_el in root.findall(".//sm:url", ns):
+        loc = url_el.find("sm:loc", ns)
+        if loc is None or not (loc.text or "").strip():
+            continue
+        mod = url_el.find("sm:lastmod", ns)
         urls[(loc.text or "").strip()] = (mod.text or "").strip() if mod is not None else ""
     print(f"  sitemap 共 {len(urls)} 个 URL")
     return urls
