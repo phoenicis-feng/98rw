@@ -10,6 +10,8 @@ specs:
   released: "2025-10"
   price_input: "$1/M"
   price_output: "$5/M"
+  price_cached: "$0.1/M"
+  pricing_source: "模型页面"
   scores:
     overall: {score: 44, rank: 103}
     coding: {score: 30.6, rank: 143}

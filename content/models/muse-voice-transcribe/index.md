@@ -8,6 +8,7 @@ specs:
   category: "闭源专有"
   context: "N/A"
   released: "2026-09"
+  pricing_source: "发布页"
   scores:
     overall: {score: 0}
   use_cases:

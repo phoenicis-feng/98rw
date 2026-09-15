@@ -8,6 +8,7 @@ specs:
   category: "闭源专有"
   context: "256K"
   released: "2026-02"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 0, rank: 94}
   use_cases:

@@ -9,6 +9,7 @@ specs:
   context: "128K"
   price_input: "$0.15/M"
   price_output: "$0.6/M"
+  pricing_source: "模型页面"
   scores:
     overall: {score: 0}
   use_cases:

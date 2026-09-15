@@ -10,6 +10,8 @@ specs:
   released: "2024-12"
   price_input: "$0.27/M"
   price_output: "$1.1/M"
+  price_cached: "$0.07/M"
+  pricing_source: "发布页"
   scores:
     overall: {score: 46, rank: 164}
     reasoning: {score: 41.2}

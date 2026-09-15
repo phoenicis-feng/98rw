@@ -7,6 +7,7 @@ specs:
   series: "DeepSeek Coder"
   category: "开源权重"
   context: "128K"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 0, rank: 124}
   use_cases:

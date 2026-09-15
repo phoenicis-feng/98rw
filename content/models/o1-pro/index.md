@@ -10,6 +10,7 @@ specs:
   released: "2024-12"
   price_input: "$150/M"
   price_output: "$600/M"
+  pricing_source: "模型页面"
   scores:
     overall: {score: 0, rank: 163}
   use_cases:

@@ -8,6 +8,8 @@ specs:
   category: "开源权重"
   context: "16K"
   released: "2026-09"
+  pricing_source: "官方文档"
+  free_note: "Cohere's model documentation says North Small Translate is free on the Cohere API for trial and production keys until rate limits are reached, with commercial use licensed through Cohere's Model Vault rather than a published per-token rate."
   scores:
     overall: {score: 0}
   use_cases:

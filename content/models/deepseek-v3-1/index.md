@@ -10,6 +10,7 @@ specs:
   released: "2025-08"
   price_input: "免费"
   price_output: "免费"
+  open_note: "开源权重"
   scores:
     overall: {score: 52, rank: 114}
     reasoning: {score: 53.3}

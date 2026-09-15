@@ -8,6 +8,8 @@ specs:
   category: "开源权重"
   context: "262K"
   released: "2026-04"
+  pricing_source: "官方定价页"
+  open_note: "开源权重"
   speed: "104 tokens/秒"
   ttft: "1.07 秒"
   scores:

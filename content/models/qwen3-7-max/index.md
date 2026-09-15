@@ -8,6 +8,7 @@ specs:
   category: "闭源专有"
   context: "1M"
   released: "2026-05"
+  pricing_source: "发布页 · 2026-05-16"
   speed: "168 tokens/秒"
   ttft: "16.58 秒"
   scores:

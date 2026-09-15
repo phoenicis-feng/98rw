@@ -10,6 +10,7 @@ specs:
   released: "2026-04"
   price_input: "$30/M"
   price_output: "$180/M"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 72, rank: 54}
     agentic: {score: 80.6, rank: 29}

@@ -849,7 +849,7 @@
       mk("多模态", cat("multimodal"), null, "high", true),
       mk("知识", cat("knowledge"), null, "high", true),
       mk("速度", [numOf(a.speed), numOf(b.speed)], [disp(a.speed), disp(b.speed)], "high", false),
-      mk("首字延迟 TTFT", [numOf(a.ttft), numOf(b.ttft)], [disp(a.ttft), disp(b.ttft)], "low", false),
+      mk("首字延迟", [numOf(a.ttft), numOf(b.ttft)], [disp(a.ttft), disp(b.ttft)], "low", false),
       mk("上下文窗口", [ctxNum(a.ctx), ctxNum(b.ctx)], [disp(a.ctx), disp(b.ctx)], "high", false),
       mk("输入价格", [priceNum(a.input), priceNum(b.input)], [disp(a.input), disp(b.input)], "low", false),
       mk("输出价格", [priceNum(a.output), priceNum(b.output)], [disp(a.output), disp(b.output)], "low", false),

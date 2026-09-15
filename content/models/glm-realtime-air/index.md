@@ -7,6 +7,7 @@ specs:
   series: "GLM Realtime Air"
   category: "闭源专有"
   context: "N/A"
+  pricing_source: "官方文档"
   scores:
     overall: {score: 0}
   use_cases:

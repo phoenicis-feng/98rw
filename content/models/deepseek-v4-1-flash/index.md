@@ -10,6 +10,8 @@ specs:
   released: "2026-09"
   price_input: "$0.3/M"
   price_output: "$1.2/M"
+  price_cached: "$0.006/M"
+  pricing_source: "官方定价页 · 2026-09-10"
   speed: "194 tokens/秒"
   ttft: "11.25 秒"
   scores:

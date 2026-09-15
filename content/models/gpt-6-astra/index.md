@@ -10,6 +10,12 @@ specs:
   released: "2026-09"
   price_input: "$10/M"
   price_output: "$50/M"
+  price_cached: "$1/M"
+  price_notes:
+    - "长上下文加价"
+    - "Fast 模式加价"
+    - "Batch/Flex 折扣"
+  pricing_source: "模型页面 · 2026-09-03"
   speed: "54 tokens/秒"
   ttft: "339.78 秒"
   scores:

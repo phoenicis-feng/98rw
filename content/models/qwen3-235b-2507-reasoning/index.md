@@ -10,6 +10,7 @@ specs:
   released: "2025-07"
   price_input: "免费"
   price_output: "免费"
+  open_note: "开源权重"
   scores:
     overall: {score: 43, rank: 85}
     math: {score: 30.2}

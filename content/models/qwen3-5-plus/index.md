@@ -10,6 +10,7 @@ specs:
   released: "2026-03"
   price_input: "$0.4/M"
   price_output: "$2.4/M"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 48, rank: 117}
     math: {score: 39.5}

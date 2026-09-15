@@ -10,6 +10,7 @@ specs:
   released: "2025-12"
   price_input: "$21/M"
   price_output: "$168/M"
+  pricing_source: "官方文档"
   scores:
     overall: {score: 0, rank: 21}
   use_cases:

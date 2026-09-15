@@ -10,6 +10,10 @@ specs:
   released: "2026-07"
   price_input: "$2/M"
   price_output: "$12/M"
+  price_cached: "$0.2/M"
+  price_notes:
+    - "长上下文加价"
+  pricing_source: "官方定价页 · 2026-09-11"
   scores:
     overall: {score: 74, rank: 11}
     agentic: {score: 87.9, rank: 20}

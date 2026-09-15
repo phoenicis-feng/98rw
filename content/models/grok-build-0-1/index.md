@@ -10,6 +10,10 @@ specs:
   released: "2026-05"
   price_input: "$1/M"
   price_output: "$2/M"
+  price_cached: "$0.2/M"
+  price_notes:
+    - "长上下文加价"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 0}
   use_cases:

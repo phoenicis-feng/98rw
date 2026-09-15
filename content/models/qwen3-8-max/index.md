@@ -8,6 +8,7 @@ specs:
   category: "开源权重"
   context: "1M"
   released: "2026-08"
+  pricing_source: "官方定价页"
   speed: "38 tokens/秒"
   ttft: "55.38 秒"
   scores:

@@ -67,10 +67,35 @@
       <div class="icon-tile model-kpi__item">
         <span class="icon-tile__mark" aria-hidden="true">{{ partial "icon.html" "mdi:timer-outline" }}</span>
         <span class="model-kpi__value">{{ . }}</span>
-        <span class="model-kpi__label">首 Token 延迟</span>
+        <span class="model-kpi__label">首字延迟</span>
       </div>
       {{- end }}
     </div>
+      {{- if or .price_cached .price_notes .pricing_source .open_note .free_note }}
+      <div class="model-pricing-notes">
+        {{- with .price_notes }}
+        <div class="model-pricing-notes__rules">
+          {{- range . }}
+          <span class="badge badge--warn">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
+        <dl class="model-pricing-notes__list">
+          {{- with .price_cached }}
+          <dt>缓存输入价</dt><dd>{{ . }}</dd>
+          {{- end }}
+          {{- with .open_note }}
+          <dt>开源计划</dt><dd>{{ . }}</dd>
+          {{- end }}
+          {{- with .free_note }}
+          <dt>免费口径</dt><dd>{{ . }}</dd>
+          {{- end }}
+          {{- with .pricing_source }}
+          <dt>价格来源</dt><dd class="model-pricing-notes__source">{{ . }}</dd>
+          {{- end }}
+        </dl>
+      </div>
+      {{- end }}
     {{- end }}
     <div class="docs">
       <article class="docs__content">

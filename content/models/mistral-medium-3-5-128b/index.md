@@ -10,6 +10,8 @@ specs:
   released: "2026-04"
   price_input: "$1.5/M"
   price_output: "$7.5/M"
+  pricing_source: "发布页 · 2026-04-29"
+  open_note: "开源权重（modified MIT license）"
   scores:
     overall: {score: 60, rank: 209}
     agentic: {score: 77.1, rank: 149}

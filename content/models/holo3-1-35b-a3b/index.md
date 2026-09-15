@@ -10,6 +10,7 @@ specs:
   released: "2026-06"
   price_input: "$0.25/M"
   price_output: "$1.8/M"
+  free_note: "H Company's Holo Models API lists model ID holo3-1-35b-a3b at $0.25 input / $1.80 output per million tokens with a 65,536-token context limit, text+image input, a 5-image limit, Apache 2.0 weights, and rate-limited free-tier access."
   scores:
     overall: {score: 0}
   use_cases:

@@ -8,6 +8,7 @@ specs:
   category: "开源权重"
   context: "64K"
   released: "2026-03"
+  open_note: "开源权重"
   scores:
     overall: {score: 71}
     verified: {score: 70}

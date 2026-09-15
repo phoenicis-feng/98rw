@@ -8,6 +8,7 @@ specs:
   category: "开源权重"
   context: "N/A"
   released: "2026-07"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 0}
   use_cases:

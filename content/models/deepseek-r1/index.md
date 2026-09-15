@@ -10,6 +10,7 @@ specs:
   released: "2025-01"
   price_input: "$0.55/M"
   price_output: "$2.19/M"
+  price_cached: "$0.14/M"
   scores:
     overall: {score: 56, rank: 115}
     reasoning: {score: 59.3}

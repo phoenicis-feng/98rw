@@ -10,6 +10,7 @@ specs:
   released: "2026-03"
   price_input: "免费"
   price_output: "免费"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 0, rank: 222}
   use_cases:

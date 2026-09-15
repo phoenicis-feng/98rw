@@ -10,6 +10,7 @@ specs:
   released: "2025-04"
   price_input: "$20/M"
   price_output: "$80/M"
+  pricing_source: "官方定价页"
   speed: "27 tokens/秒"
   ttft: "84.93 秒"
   scores:

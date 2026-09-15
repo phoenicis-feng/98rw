@@ -8,6 +8,7 @@ specs:
   category: "闭源专有"
   context: "128K"
   released: "2025-07"
+  pricing_source: "官方定价页"
   speed: "54 tokens/秒"
   ttft: "15.60 秒"
   scores:

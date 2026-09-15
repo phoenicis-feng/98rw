@@ -8,6 +8,7 @@ specs:
   category: "闭源专有"
   context: "N/A"
   released: "2025-12"
+  pricing_source: "官方文档"
   scores:
     overall: {score: 0}
   use_cases:

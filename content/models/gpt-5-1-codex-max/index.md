@@ -10,6 +10,8 @@ specs:
   released: "2025-11"
   price_input: "$1.25/M"
   price_output: "$10/M"
+  price_cached: "$0.125/M"
+  pricing_source: "模型页面"
   scores:
     overall: {score: 0, rank: 106}
   use_cases:

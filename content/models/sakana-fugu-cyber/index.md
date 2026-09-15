@@ -10,6 +10,7 @@ specs:
   released: "2026-07"
   price_input: "$6/M"
   price_output: "$36/M"
+  price_cached: "$0.6/M"
   scores:
     overall: {score: 0}
   use_cases:

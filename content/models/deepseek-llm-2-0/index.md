@@ -9,6 +9,7 @@ specs:
   context: "128K"
   price_input: "免费"
   price_output: "免费"
+  open_note: "开源权重"
   scores:
     overall: {score: 0, rank: 105}
   use_cases:

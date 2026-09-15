@@ -10,6 +10,8 @@ specs:
   released: "2026-07"
   price_input: "$4/M"
   price_output: "$24/M"
+  price_cached: "$0.4/M"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 0}
   use_cases:

@@ -10,6 +10,7 @@ specs:
   released: "2026-06"
   price_input: "$10/M"
   price_output: "$50/M"
+  price_cached: "$1/M"
   scores:
     overall: {score: 85}
     verified: {score: 84}

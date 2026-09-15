@@ -7,6 +7,7 @@ specs:
   series: "Moonshot v1"
   category: "闭源专有"
   context: "128K"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 0, rank: 156}
   use_cases:

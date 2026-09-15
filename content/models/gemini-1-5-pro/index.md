@@ -10,6 +10,7 @@ specs:
   released: "2024-02"
   price_input: "$1.25/M"
   price_output: "$5/M"
+  pricing_source: "定价文档"
   scores:
     overall: {score: 48, rank: 200}
     multimodal: {score: 41.1}

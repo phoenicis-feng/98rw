@@ -10,6 +10,7 @@ specs:
   released: "2026-08"
   price_input: "免费"
   price_output: "免费"
+  open_note: "开源权重"
   scores:
     overall: {score: 53}
     verified: {score: 52}

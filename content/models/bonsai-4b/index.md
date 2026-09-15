@@ -10,6 +10,7 @@ specs:
   released: "2026-03"
   price_input: "免费"
   price_output: "免费"
+  open_note: "开源权重"
   scores:
     overall: {score: 0}
   use_cases:

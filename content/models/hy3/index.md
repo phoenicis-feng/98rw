@@ -10,6 +10,7 @@ specs:
   released: "2026-07"
   price_input: "免费"
   price_output: "免费"
+  open_note: "开源权重"
   speed: "84 tokens/秒"
   ttft: "26.47 秒"
   scores:

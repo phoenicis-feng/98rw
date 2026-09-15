@@ -10,6 +10,10 @@ specs:
   released: "2026-04"
   price_input: "$5/M"
   price_output: "$30/M"
+  price_cached: "$0.5/M"
+  price_notes:
+    - "Batch/Flex 折扣"
+  pricing_source: "官方定价页"
   speed: "85 tokens/秒"
   ttft: "62.26 秒"
   scores:

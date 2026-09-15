@@ -8,6 +8,7 @@ specs:
   category: "闭源专有"
   context: "1M"
   released: "2025-11"
+  pricing_source: "官方定价页"
   scores:
     overall: {score: 0, rank: 71}
   use_cases:

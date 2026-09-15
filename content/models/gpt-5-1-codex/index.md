@@ -10,6 +10,8 @@ specs:
   released: "2025-10"
   price_input: "$1.25/M"
   price_output: "$10/M"
+  price_cached: "$0.125/M"
+  pricing_source: "官方文档"
   scores:
     overall: {score: 65, rank: 126}
     reasoning: {score: 68.6}
